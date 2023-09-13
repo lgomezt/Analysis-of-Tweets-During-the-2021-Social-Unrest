@@ -18,9 +18,9 @@ The repository is organized into three main folders:
 
 The `Tutorials` folder includes markdown files that guide you through the initial setup:
 
-- **0. VM Setup.md**: Instructions for setting up a Virtual Machine to run the project.
-- **1. Create venv.md**: A guide for creating a Python virtual environment to isolate the project's dependencies.
-- **2. Install graph-tool.md**: Instructions for installing the `graph-tool` library, which is essential for this project.
+- **[0. VM Setup.md](https://github.com/lgomezt/Analysis-of-Tweets-During-the-2021-Social-Unrest/blob/main/Tutorials/0.%20VM%20Setup.md)**: Instructions for setting up a Virtual Machine to run the project.
+- **[1. Create venv.md](https://github.com/lgomezt/Analysis-of-Tweets-During-the-2021-Social-Unrest/blob/main/Tutorials/1.%20Create%20venv.md)**: A guide for creating a Python virtual environment to isolate the project's dependencies.
+- **[2. Install graph-tool.md](https://github.com/lgomezt/Analysis-of-Tweets-During-the-2021-Social-Unrest/blob/main/Tutorials/2.%20Install%20graph-tool.md)**: Instructions for installing the `graph-tool` library, which is essential for this project.
 
 ### 2. Code
 
@@ -47,7 +47,14 @@ The `Results` folder includes all the output generated from the Jupyter notebook
     cd Analysis-of-Tweets-During-the-2021-Social-Unrest/Tutorials
     ```
     Follow the setup guides to prepare your environment.
-    
+
+3. **Install Requirements**:
+    ```bash
+    cd Analysis-of-Tweets-During-the-2021-Social-Unrest
+    pip install -r requirements.txt
+    ```
+    Install the necessary Python packages specified in requirements.txt.
+
 3. **Navigate to the Code folder**: 
     ```bash
     cd ../Code
