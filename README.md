@@ -8,9 +8,9 @@ This repository contains all the essential components for setting up and running
 
 The repository is organized into three main folders:
 
-1. **Tutorials**: Provides step-by-step instructions for setting up your environment and installing dependencies.
-2. **Code**: Houses the Jupyter notebooks needed for data analysis and other computational tasks.
-3. **Results**: Contains the outputs from the analyses, such as graphs, CSV files, etc.
+1. **Code**: Houses the Jupyter notebooks needed for data analysis and other computational tasks.
+2. **Results**: Contains the outputs from the analyses, such as graphs, CSV files, etc.
+3. **Tutorials**: Provides step-by-step instructions for setting up your environment and installing dependencies.
 
 ---
 
