@@ -15,7 +15,7 @@ import pickle
 from glob import glob
 import numpy as np
 import pandas as pd
-import graph_tool as gt
+import graph_tool.all as gt
 from datetime import datetime
 from tqdm import tqdm
 from scipy.sparse import csr_matrix
@@ -73,3 +73,5 @@ for file in tqdm(files):
     g.save(output_filepath)
     print(f"File '{filename}' successfully created and stored.")
     k += 1
+
+# sudo ~/.conda/envs/gt/bin/python "/mnt/disk2/fcastrillon/Analysis-of-Tweets-During-the-2021-Social-Unrest/Code/utils/Graph Tool Saves.py"
