@@ -62,6 +62,6 @@ The `Results` folder includes all the output generated from the Jupyter notebook
     Run the Jupyter notebooks in the following order.
    1. Save_tweets.ipynb
    2. Political Labelling.ipynb
-   3. 
+   3. Retweet Adjacency Matrices.ipynb
 
 5. **Check Results**: After successfully running the code, you can examine the `Results` folder for the output.
