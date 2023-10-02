@@ -1,6 +1,11 @@
-# Analysis of Tweets During the 2021 Social Unrest
+# Analysis of Tweets During the 2021 Social Outburst
 
-This repository contains all the essential components for setting up and running this project.
+In this project, we analyze the evolution of various segregation metrics during the "Social Outburst of Colombia" in 2021.
+
+To accomplish this, we collected over X million tweets for three distinct periods:
+1. Regional elections prior to the Social Outburst (October 2019).
+2. Three months preceding the Social Outburst (January 2021).
+3. The Social Outburst in Colombia (April 28th to June 29th, 2021).
 
 ---
 
