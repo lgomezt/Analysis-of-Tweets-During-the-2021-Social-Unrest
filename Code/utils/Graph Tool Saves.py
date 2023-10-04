@@ -42,7 +42,7 @@ date_list = pd.date_range(start = start, end = end, freq = 'D')
 # -----------------------
 # GRAPH CREATION IN FOR LOOP
 # -----------------------
-k = 1
+k = 0
 files = glob('/mnt/disk2/Data/Matrices/*.npz')
 for file in tqdm(files):
     
