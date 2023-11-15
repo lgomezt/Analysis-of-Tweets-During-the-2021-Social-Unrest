@@ -3,6 +3,7 @@ import numpy as np
 import graph_tool.all as gt
 from datetime import datetime
 import pandas as pd
+import networkx as nx
 
 def get_adjacency(g : gt.Graph, weight = None) -> np.ndarray:
     # Get EdgePropertyMap for Weights in Adjacency
@@ -123,3 +124,44 @@ def descriptive(g: gt.Graph, w=None) -> pd.DataFrame:
     df = pd.DataFrame([results]).set_index('Graph Date')
         
     return df
+
+# FILTERING A GRAPH BASED ON VERTEX PROPERTY
+def filter_graph(g:gt.Graph, type:str) -> gt.Graph:
+    # Filter edges connected to nodes labeled type
+    filtered_edges = g.new_edge_property("bool")
+    filtered_edges.a = False
+
+    # Filter nodes with label type
+    filtered_nodes = g.new_vertex_property("bool")
+    filtered_nodes.a = False
+
+    for v in g.vertices():
+        if g.vertex_properties['Political Label'][v] == type:
+            filtered_nodes[v] = True
+            for edge in v.out_edges():
+                if g.vertex_properties['Political Label'][edge.target()] == type:
+                    filtered_edges[edge] = True
+
+    # Generate the subgraph using the filtered nodes and edges
+    subgraph = gt.GraphView(g, vfilt=filtered_nodes, efilt=filtered_edges)
+    
+    return subgraph
+
+def to_networkx(g: gt.Graph) -> nx.Graph:
+    
+    if g.is_directed():
+        nx_graph = nx.DiGraph()
+    else:
+        nx_graph = nx.Graph()
+
+    # Add nodes with their properties to the NetworkX graph
+    for v in g.vertices():
+        node_properties = {prop_name: g.vp[prop_name][v] for prop_name in g.vp}
+        nx_graph.add_node(int(v), **node_properties)
+
+    # Add edges with their properties to the NetworkX graph
+    for e in g.edges():
+        edge_properties = {prop_name: g.ep[prop_name][e] for prop_name in g.ep}
+        nx_graph.add_edge(int(e.source()), int(e.target()), **edge_properties)
+    
+    return nx_graph
