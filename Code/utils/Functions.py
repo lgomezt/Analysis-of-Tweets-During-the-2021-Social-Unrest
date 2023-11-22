@@ -4,6 +4,47 @@ import graph_tool.all as gt
 from datetime import datetime
 import pandas as pd
 import networkx as nx
+import random
+
+def ayuda():
+    print( 'XD')
+
+# GETTING A FRACTION OF THE GRAPH
+def XD(g: gt.Graph, percentage:float, seed=437):
+    print('XD')
+    random.seed(seed)
+    # Get the total number of vertices and edges
+    edge_list = list(g.iter_edges())
+    vertex_list = list(g.iter_vertices())
+
+    # Calculate the number of vertices and edges for the subgraph
+    num_subgraph_vertices = int(len(vertex_list) * (percentage / 100))
+    num_subgraph_edges = int(len(edge_list) * (percentage / 100))
+
+    # Get random indices for vertices and edges
+    selected_vertices = random.sample(vertex_list, num_subgraph_vertices)
+    selected_edges = random.sample(edge_list, num_subgraph_edges)
+
+    # Filter edges connected to nodes labeled type
+    filtered_edges = g.new_edge_property("bool")
+    filtered_edges.a = False
+
+    # Filter nodes with label type
+    filtered_nodes = g.new_vertex_property("bool")
+    filtered_nodes.a = False
+            
+    for v in g.iter_vertices():
+        if v in selected_vertices:
+            vertex = g.vertex(v)
+            filtered_nodes[vertex] = True
+            for e in vertex.out_edges():
+                edge_tuple = [int(e.source()), int(e.target())]
+                if edge_tuple in selected_edges:
+                    filtered_edges[e] = True
+
+    subgraph = gt.GraphView(g,vfilt=filtered_nodes, efilt=filtered_edges)
+    
+    return subgraph
 
 def get_adjacency(g : gt.Graph, weight = None) -> np.ndarray:
     # Get EdgePropertyMap for Weights in Adjacency
@@ -144,7 +185,6 @@ def filter_graph(g:gt.Graph, type:str) -> gt.Graph:
 
     # Generate the subgraph using the filtered nodes and edges
     subgraph = gt.GraphView(g, vfilt=filtered_nodes, efilt=filtered_edges)
-    
     return subgraph
 
 def to_networkx(g: gt.Graph) -> nx.Graph:
@@ -165,3 +205,8 @@ def to_networkx(g: gt.Graph) -> nx.Graph:
         nx_graph.add_edge(int(e.source()), int(e.target()), **edge_properties)
     
     return nx_graph
+
+def look_up_graph(g: gt.Graph, idx:int):
+    array = list(g.vp['name'].a)
+    in_graph = array.index(idx)
+    return in_graph
