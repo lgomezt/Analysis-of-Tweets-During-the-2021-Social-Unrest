@@ -5,20 +5,17 @@ import scipy.sparse as sp
 
 # Graph Managment
 import graph_tool.all as gt
-from Functions import *
-from Segregation import *
 
 # Data Visualization
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Miscellaneous
-import pickle
 from glob import glob
 from tqdm import tqdm
 import random
 
-#=========================================================================================================================
+# =========================================================================================================================
 def Freeman_Global_No_Weight(g: gt.Graph, types:str) -> float:
     """
     Global freeman Segregation Index
