@@ -5,6 +5,7 @@ from datetime import datetime
 import pandas as pd
 import networkx as nx
 import random
+import math
 
 def ayuda():
     print( 'XD')
@@ -83,14 +84,12 @@ def get_types_matrix(g: gt.Graph, types = None) -> np.ndarray:
     types_vector = types_dict.values()
     return np.array(list(types_vector)).T
 
-def get_contact_layer(g, types = None, weights = None, contact = True) -> np.ndarray:
-    if contact:
-        adj = get_adjacency(g, weights)
-    else:
-        adj_1 = get_adjacency(g)
-        adj = 1 - adj_1
+def get_contact_layer(g, types = None, weights = None) -> np.ndarray:
+    
+    adj = get_adjacency(g, weights)
     types_matrix = get_types_matrix(g, types = types)
     M = types_matrix.T.dot(adj).dot(types_matrix)
+
     if g.is_directed():
         return M
     else: 
@@ -99,6 +98,28 @@ def get_contact_layer(g, types = None, weights = None, contact = True) -> np.nda
         np.fill_diagonal(M_undir, M_undir.diagonal() / 2)
         return M_undir
 
+def get_non_contact_layer(g, types = None) -> np.ndarray:
+    adj_1 = get_adjacency(g)
+    adj = 1 - adj_1
+    
+    types_matrix = get_types_matrix(g, types = types)
+    M = types_matrix.T.dot(adj).dot(types_matrix)
+    M_1 = types_matrix.T.dot(adj_1).dot(types_matrix)
+    contact_diag = np.diag(M_1)
+    
+    total_dyads = []
+    for g in range(types_matrix.shape[1]):
+        G_g = np.sum(types_matrix[:, g])
+        if G_g < 2:
+            M_gg = 0
+        else:
+            M_gg = math.perm(G_g,2)
+        total_dyads.append(M_gg)
+    non_contact_diag = np.array(total_dyads) - contact_diag
+    np.fill_diagonal(M, non_contact_diag)
+        
+    return M
+      
 def me_vs_others(M: np.array, group_index: int) -> np.array:
     M_11 = M[group_index, group_index]
     M_12 = np.sum(M[group_index,:]) - M_11
