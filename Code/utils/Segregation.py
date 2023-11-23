@@ -5,7 +5,7 @@ import scipy.sparse as sp
 
 # Graph Managment
 import graph_tool.all as gt
-from Code.utils.Functions import *
+from utils.Functions import *
 
 # Data Visualization
 import seaborn as sns

@@ -83,8 +83,12 @@ def get_types_matrix(g: gt.Graph, types = None) -> np.ndarray:
     types_vector = types_dict.values()
     return np.array(list(types_vector)).T
 
-def get_contact_layer(g, types = None, weights = None) -> np.ndarray:
-    adj = get_adjacency(g, weights)
+def get_contact_layer(g, types = None, weights = None, contact = True) -> np.ndarray:
+    if contact:
+        adj = get_adjacency(g, weights)
+    else:
+        adj_1 = get_adjacency(g)
+        adj = 1 - adj_1
     types_matrix = get_types_matrix(g, types = types)
     M = types_matrix.T.dot(adj).dot(types_matrix)
     if g.is_directed():
