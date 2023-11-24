@@ -1,4 +1,3 @@
-
 import numpy as np
 import graph_tool.all as gt
 from datetime import datetime
@@ -6,9 +5,6 @@ import pandas as pd
 import networkx as nx
 import random
 import math
-
-def ayuda():
-    print( 'XD')
 
 # GETTING A FRACTION OF THE GRAPH
 def XD(g: gt.Graph, percentage:float, seed=437):
@@ -56,11 +52,11 @@ def get_adjacency(g : gt.Graph, weight = None) -> np.ndarray:
     adj = gt.adjacency(g, weight = weights).T
     return adj.toarray()
 
-def get_types_array(g: gt.Graph, types = None) -> np.ndarray:
+def get_types_array(g: gt.Graph, types:str) -> np.ndarray:
     t = g.vp[types].get_2d_array([0])[0]
     return t
 
-def get_types_dict(g: gt.Graph, types = None) -> dict:
+def get_types_dict(g: gt.Graph, types:str) -> dict:
     # Get array of types
     t = get_types_array(g,types)
     T = {}
@@ -74,20 +70,19 @@ def get_types_dict(g: gt.Graph, types = None) -> dict:
         T[str(tipo)] = row
     return T
 
-def get_types_index(g: gt.Graph, types = None) -> dict:
+def get_types_index(g: gt.Graph, types:str) -> dict:
     T = get_types_dict(g, types)
     Type_to_row = {k:v for v,k in enumerate(T.keys())}
     return Type_to_row
 
-def get_types_matrix(g: gt.Graph, types = None) -> np.ndarray:
+def get_types_matrix(g:gt.Graph , types:str) -> np.ndarray:
     types_dict = get_types_dict(g,types = types)
     types_vector = types_dict.values()
     return np.array(list(types_vector)).T
 
-def get_contact_layer(g, types = None, weights = None) -> np.ndarray:
-    
+def get_contact_layer(g, types:str , weights = None) -> np.ndarray:
     adj = get_adjacency(g, weights)
-    types_matrix = get_types_matrix(g, types = types)
+    types_matrix = get_types_matrix(g, types)
     M = types_matrix.T.dot(adj).dot(types_matrix)
 
     if g.is_directed():
@@ -192,7 +187,7 @@ def descriptive(g: gt.Graph, w=None) -> pd.DataFrame:
     return df
 
 # FILTERING A GRAPH BASED ON VERTEX PROPERTY
-def filter_graph(g:gt.Graph, type:str) -> gt.Graph:
+def filter_graph(g:gt.Graph, label:str, type:str) -> gt.Graph:
     # Filter edges connected to nodes labeled type
     filtered_edges = g.new_edge_property("bool")
     filtered_edges.a = False
@@ -202,10 +197,10 @@ def filter_graph(g:gt.Graph, type:str) -> gt.Graph:
     filtered_nodes.a = False
 
     for v in g.vertices():
-        if g.vertex_properties['Political Label'][v] == type:
+        if g.vertex_properties[label][v] == type:
             filtered_nodes[v] = True
             for edge in v.out_edges():
-                if g.vertex_properties['Political Label'][edge.target()] == type:
+                if g.vertex_properties[label][edge.target()] == type:
                     filtered_edges[edge] = True
 
     # Generate the subgraph using the filtered nodes and edges
