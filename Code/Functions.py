@@ -7,8 +7,8 @@ import random
 import math
 
 # GETTING A FRACTION OF THE GRAPH
-def XD(g: gt.Graph, percentage:float, seed=437):
-    print('XD')
+def fraction_graph(g: gt.Graph, percentage:float, seed=437):
+ 
     random.seed(seed)
     # Get the total number of vertices and edges
     edge_list = list(g.iter_edges())
