@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 # Miscellaneous
 from glob import glob
 from tqdm import tqdm
-import random
 
 # =========================================================================================================================
 def Freeman_Global_No_Weight(g: gt.Graph, types:str) -> float:
@@ -133,7 +132,7 @@ def Freeman_Groups_Weight(g: gt.Graph, types:str, group:str, weights:str) -> flo
     me_vs_others = np.array([[M_11, M_12],[M_21,M_22]])
 
     # Calculate P
-    P = me_vs_others[1,1] / np.sum(me_vs_others[1,:])
+    P = me_vs_others[0,1] / np.sum(me_vs_others[1,:])
             
     # Calculate Pi
     nodes = g.num_vertices()
