@@ -18,7 +18,7 @@ from tqdm import tqdm
 # =========================================================================================================================
 def Freeman_Global_No_Weight(g: gt.Graph, types:str) -> float:
     """
-    Global freeman Segregation Index
+    Global Freeman Segregation Index for more than 2 groups. This is based on the Bojanoski Formula from his paper.
 
     Args:
         g (Graph): The Graph object to analize.
@@ -103,7 +103,9 @@ def Freeman_Groups_No_Weight(g: gt.Graph, types:str, group:str) -> float:
 #=========================================================================================================================
 def Freeman_Groups_Weight(g: gt.Graph, types:str, group:str, weights:str) -> float:
     """
-    Description of your function.
+    Calculates the Freeman Segregation Index without weights for graphs wtih more than 2 groups.
+    This functions takes one of the groups and calculates the Segregation of this group against all other groups.
+    This formula generalices the Classic Freeman Approuch for contact layers with more than 2 dimensions.
 
     Args:
         g (Graph): The Graph object to analize.
@@ -144,7 +146,21 @@ def Freeman_Groups_Weight(g: gt.Graph, types:str, group:str, weights:str) -> flo
     return 1 - (P / pi)
 
 #=========================================================================================================================
-def Freeman_Two_Groups(g: gt.Graph, types:str):
+def Freeman_Two_Groups(g: gt.Graph, types:str) -> float:
+    """
+    Classic Freeman Segregation Index for Unweighted Graphs. This calculates the proprotion of cross ties in the graph as
+    a fraction of the proportion os cross ties if the graph were randomly distributed.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where the tipification of the nodes groups resides.
+        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        groups (String): The name of the group To calculate the Segregation Index
+
+    Returns:
+        type: Segregation Index of Freeman from one group against all the other groups using a
+            weighted adjacency matrix
+    """
     M = get_contact_layer(g, types=types)
     
     assert M.shape[0] == M.shape[1] == 2, 'Usar Freeman_Group_Global'
@@ -161,3 +177,55 @@ def Freeman_Two_Groups(g: gt.Graph, types:str):
     
     Pi = (2*n_1*n_2)/(nodes * (nodes - 1))
     return 1 - (P / Pi) 
+
+#=====================
+def homophily_index(graph: gt.Graph, property_name: str) -> dict:
+    """
+    Classic Freeman Segregation Index for Unweighted Graphs. This calculates the proprotion of cross ties in the graph as
+    a fraction of the proportion os cross ties if the graph were randomly distributed.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where the tipification of the nodes groups resides.
+        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        groups (String): The name of the group To calculate the Segregation Index
+
+    Returns:
+        type: Segregation Index of Freeman from one group against all the other groups using a
+            weighted adjacency matrix
+    """
+    prop_map = graph.vp[property_name]
+
+    # Extraigamos las categorías disponibles
+    labels = [prop_map[v] for v in graph.vertices()]
+    categorias = np.unique(labels)
+    # Contemos cuantos nodos tenemos
+    N = len(labels)
+
+    # Extraigamos todos los tipos de enlaces
+    edges_data = []
+    for e in graph.edges():
+        source_type = prop_map[e.source()]
+        target_type = prop_map[e.target()]
+        edges_data.append((source_type, target_type))
+
+    enlaces = pd.DataFrame(edges_data, columns = ["Source", "Target"])
+
+
+    w_i = dict()
+    s_i = dict()
+    d_i = dict()
+    H_i = dict()
+    IH_i = dict()
+    for c in categorias:
+        # Calculate w_i
+        w_i[c] = labels.count(c)/N
+        # Calculate s_i and d_i 
+        s_i[c] = enlaces[(enlaces["Source"] == c) & (enlaces["Target"] == c)].shape[0]/enlaces.shape[0]
+        d_i[c] = enlaces[(enlaces["Source"] == c) & (enlaces["Target"] != c)].shape[0]/enlaces.shape[0]
+        # Calculate Homophily index
+        H_i[c] = s_i[c]/(s_i[c] + d_i[c])
+        # Calculate Coleman's inbreeding Homophily Index
+        IH_i[c] = (H_i[c] - w_i[c])/(1 - w_i[c])
+
+    return {"w_i": w_i, "s_i": s_i, "d_i": d_i, "H_i": H_i, "IH_i": IH_i}
