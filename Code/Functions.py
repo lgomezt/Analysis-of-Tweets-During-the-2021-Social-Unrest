@@ -16,15 +16,9 @@ def fraction_graph(g: gt.Graph, percentage:float, seed=437):
 
     # Calculate the number of vertices and edges for the subgraph
     num_subgraph_vertices = int(len(vertex_list) * (percentage / 100))
-    num_subgraph_edges = int(len(edge_list) * (percentage / 100))
 
     # Get random indices for vertices and edges
     selected_vertices = random.sample(vertex_list, num_subgraph_vertices)
-    selected_edges = random.sample(edge_list, num_subgraph_edges)
-
-    # Filter edges connected to nodes labeled type
-    filtered_edges = g.new_edge_property("bool")
-    filtered_edges.a = False
 
     # Filter nodes with label type
     filtered_nodes = g.new_vertex_property("bool")
@@ -34,16 +28,23 @@ def fraction_graph(g: gt.Graph, percentage:float, seed=437):
         if v in selected_vertices:
             vertex = g.vertex(v)
             filtered_nodes[vertex] = True
-            for e in vertex.out_edges():
-                edge_tuple = [int(e.source()), int(e.target())]
-                if edge_tuple in selected_edges:
-                    filtered_edges[e] = True
 
-    subgraph = gt.GraphView(g,vfilt=filtered_nodes, efilt=filtered_edges)
+    subgraph = gt.GraphView(g,vfilt=filtered_nodes)
     
     return subgraph
 
 def get_adjacency(g : gt.Graph, weight = None) -> np.ndarray:
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        weight (String): The name of the PropertyMap where eights of the edges resides.
+
+    Returns:
+        ndarray: Adjcancecy Matrix
+
+    """
     # Get EdgePropertyMap for Weights in Adjacency
     if weight is not None:
         weights = g.ep[weight]
@@ -53,10 +54,37 @@ def get_adjacency(g : gt.Graph, weight = None) -> np.ndarray:
     return adj.toarray()
 
 def get_types_array(g: gt.Graph, types:str) -> np.ndarray:
-    t = g.vp[types].get_2d_array([0])[0]
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where tipification of the groups resides.
+
+    Returns:
+        ndarray: Array for the nodes where each element of the array corresponds to its type
+
+    """
+    property_map = g.vp[types]
+    if "vector" in property_map.value_type() or 'string' in property_map.value_type():
+        t = property_map.get_2d_array([0])[0]
+    else:
+        t = property_map.a
     return t
 
 def get_types_dict(g: gt.Graph, types:str) -> dict:
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where tipification of the groups resides.
+
+    Returns:
+        ndarray: Dictionary where the keys are groups and the values are arrays.
+        Each array has a 1 if that node corresponds to that group and 0 if not
+
+    """
     # Get array of types
     t = get_types_array(g,types)
     T = {}
@@ -71,16 +99,54 @@ def get_types_dict(g: gt.Graph, types:str) -> dict:
     return T
 
 def get_types_index(g: gt.Graph, types:str) -> dict:
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where tipification of the groups resides.
+
+    Returns:
+        dict: Dictionary where the keys are groups and the values are the indexes in the contact and
+        non contact layer. Also have the indexes for the types matrix.
+
+    """
     T = get_types_dict(g, types)
     Type_to_row = {k:v for v,k in enumerate(T.keys())}
     return Type_to_row
 
 def get_types_matrix(g:gt.Graph , types:str) -> np.ndarray:
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where tipification of the groups resides.
+
+    Returns:
+        ndarray: Matrix of shape (N,G) where each column is a types vector from the types dict.
+
+    """
     types_dict = get_types_dict(g,types = types)
-    types_vector = types_dict.values()
-    return np.array(list(types_vector)).T
+    types_vector = list(types_dict.values())
+    if g.vp[types].value_type() == 'bool':
+        types_vector = types_vector[::-1]
+    return np.array(types_vector).T
 
 def get_contact_layer(g, types:str , weights = None) -> np.ndarray:
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where tipification of the groups resides.
+        weight (String): The name of the PropertyMap where weights of the edges resides.
+
+    Returns:
+        ndarray: Matrix of shape (G,G) where each entry cof the matrix calculates the number of ties between or witthin groups.
+        See Bojanowski for more info. If weights provided, it calculates the summ of the weights between or within groups.
+
+    """
     adj = get_adjacency(g, weights)
     types_matrix = get_types_matrix(g, types)
     M = types_matrix.T.dot(adj).dot(types_matrix)
@@ -94,6 +160,18 @@ def get_contact_layer(g, types:str , weights = None) -> np.ndarray:
         return M_undir
 
 def get_non_contact_layer(g, types = None) -> np.ndarray:
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        types (String): The name of the PropertyMap where tipification of the groups resides.
+
+    Returns:
+        ndarray: Matrix of shape (G,G) where each entry cof the matrix calculates the number of NON ties between or within groups.
+        See Bojanowski for more info.
+
+    """
     adj_1 = get_adjacency(g)
     adj = 1 - adj_1
     
@@ -116,6 +194,18 @@ def get_non_contact_layer(g, types = None) -> np.ndarray:
     return M
       
 def me_vs_others(M: np.array, group_index: int) -> np.array:
+    """
+    Description of your function.
+
+    Args:
+        g (Graph): The Graph object to analize.
+        group_index (int): index of the group to create the matrix
+
+    Returns:
+        ndarray: Matrix of shape (2,2) that summarizes a contact layer from G groups into two groups. It takes one,
+        specific group in particular and aggregates all the other groups as one. Calculates the contact layer for this case.
+
+    """
     M_11 = M[group_index, group_index]
     M_12 = np.sum(M[group_index,:]) - M_11
     M_21 = np.sum(M[:, group_index]) - M_11
