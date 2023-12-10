@@ -8,28 +8,32 @@ import math
 
 # GETTING A FRACTION OF THE GRAPH
 def fraction_graph(g: gt.Graph, percentage:float, seed=437):
- 
-    random.seed(seed)
-    # Get the total number of vertices and edges
-    edge_list = list(g.iter_edges())
-    vertex_list = list(g.iter_vertices())
 
-    # Calculate the number of vertices and edges for the subgraph
-    num_subgraph_vertices = int(len(vertex_list) * (percentage / 100))
+    if percentage == 100:
+        return g
+    elif percentage > 100:
+        return None
+    else:
+        random.seed(seed)
+        # Get the total number of vertices and edges
+        vertex_list = list(g.iter_vertices())
 
-    # Get random indices for vertices and edges
-    selected_vertices = random.sample(vertex_list, num_subgraph_vertices)
+        # Calculate the number of vertices and edges for the subgraph
+        num_subgraph_vertices = int(len(vertex_list) * (percentage / 100))
 
-    # Filter nodes with label type
-    filtered_nodes = g.new_vertex_property("bool")
-    filtered_nodes.a = False
-            
-    for v in g.iter_vertices():
-        if v in selected_vertices:
-            vertex = g.vertex(v)
-            filtered_nodes[vertex] = True
+        # Get random indices for vertices and edges
+        selected_vertices = random.sample(vertex_list, num_subgraph_vertices)
 
-    subgraph = gt.GraphView(g,vfilt=filtered_nodes)
+        # Filter nodes with label type
+        filtered_nodes = g.new_vertex_property("bool")
+        filtered_nodes.a = False
+                
+        for v in g.iter_vertices():
+            if v in selected_vertices:
+                vertex = g.vertex(v)
+                filtered_nodes[vertex] = True
+
+        subgraph = gt.GraphView(g,vfilt=filtered_nodes)
     
     return subgraph
 
