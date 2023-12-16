@@ -1,19 +1,10 @@
 # Mathematical and Data Managment
 import numpy as np
 import pandas as pd
-import scipy.sparse as sp
 
 # Graph Managment
 import graph_tool.all as gt
-from Functions import *
-
-# Data Visualization
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# Miscellaneous
-from glob import glob
-from tqdm import tqdm
+from utils.Functions import *
 
 # =========================================================================================================================
 def Freeman_Global_No_Weight(g: gt.Graph, types:str) -> float:
@@ -178,21 +169,17 @@ def Freeman_Two_Groups(g: gt.Graph, types:str) -> float:
     Pi = (2*n_1*n_2)/(nodes * (nodes - 1))
     return 1 - (P / Pi) 
 
-#=====================
+#=========================================================================================================================
 def homophily_index(graph: gt.Graph, property_name: str) -> dict:
     """
-    Classic Freeman Segregation Index for Unweighted Graphs. This calculates the proprotion of cross ties in the graph as
-    a fraction of the proportion os cross ties if the graph were randomly distributed.
+    Calculates the homiphily Index
 
     Args:
         g (Graph): The Graph object to analize.
-        types (String): The name of the PropertyMap where the tipification of the nodes groups resides.
-        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
-        groups (String): The name of the group To calculate the Segregation Index
+        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
 
     Returns:
-        type: Segregation Index of Freeman from one group against all the other groups using a
-            weighted adjacency matrix
+        type: dict with somethings XD
     """
     prop_map = graph.vp[property_name]
 
@@ -229,3 +216,55 @@ def homophily_index(graph: gt.Graph, property_name: str) -> dict:
         IH_i[c] = (H_i[c] - w_i[c])/(1 - w_i[c])
 
     return {"w_i": w_i, "s_i": s_i, "d_i": d_i, "H_i": H_i, "IH_i": IH_i}
+
+#=========================================================================================================================
+def SSI(g:gt.Graph, type:str):
+    # Get undirected graph
+    g_undir = g.copy()
+    g_undir.set_directed(False)
+
+    # Normalize adjacency
+    adj = get_adjacency(g_undir)
+    adj_norm = adj / adj.sum(axis=1, keepdims=True)
+
+    # Get B matrix
+    tipos = g.vp[type].a
+    B = adj_norm[tipos.astype(bool)][:, tipos.astype(bool)]
+    B.shape
+
+    # Add edges to the graph based on the weighted adjacency matrix
+    idx = B.nonzero()
+    weights = B[idx]
+    sub = gt.Graph(directed = False)
+    sub.add_edge_list(np.transpose(idx))
+    ew = sub.new_edge_property("double")
+    ew.a = weights 
+    sub.ep['weights'] = ew
+
+    # Get connected components
+    components, hist = gt.label_components(sub)
+    del hist
+    eigvals_CC = {}
+    eigvect_CC = {}
+
+    for label in np.unique(components.a):
+        # Prepare filter map
+        filtered_nodes = sub.new_vertex_property("bool")
+        filtered_nodes.a = False
+        
+        for v in sub.vertices():
+            if components[v] == label:
+                filtered_nodes[v] = True
+        
+        # create a new subgraph object for each of the components
+        subgraph = gt.GraphView(sub, vfilt=filtered_nodes)
+        B_CC = get_adjacency(subgraph, 'weights')
+        
+        # Get igen values and vector. Store the biigest eigenvalue with its vector
+        eigenvalues, eigenvectors = np.linalg.eig(B_CC)
+        node_level_seg = eigenvectors[np.argmax(eigenvalues)]
+        SSI_CC = np.max(eigenvalues)
+        eigvals_CC[f"Component {label}"] = SSI_CC
+        eigvect_CC[f"Component {label}"] = node_level_seg
+    
+    return eigvals_CC, eigvect_CC
