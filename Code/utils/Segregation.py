@@ -4,7 +4,7 @@ import pandas as pd
 
 # Graph Managment
 import graph_tool.all as gt
-from utils.Functions import *
+from utils.subutils.Functions import *
 
 # =========================================================================================================================
 def Freeman_Global_No_Weight(g: gt.Graph, types:str) -> float:
