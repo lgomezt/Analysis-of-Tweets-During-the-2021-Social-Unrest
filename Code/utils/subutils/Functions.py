@@ -321,6 +321,6 @@ def to_networkx(g: gt.Graph) -> nx.Graph:
     return nx_graph
 
 def look_up_graph(g: gt.Graph, idx:int):
-    array = list(g.vp['name'].a)
+    array = list(g.vp['Master Index'].a)
     in_graph = array.index(idx)
     return in_graph
