@@ -197,7 +197,7 @@ def get_non_contact_layer(g, types = None) -> np.ndarray:
         
     return M
       
-def me_vs_others(M: np.array, group_index: int) -> np.array:
+def me_vs_others(M: np.array, group_index: int) -> np.ndarray:
     """
     Description of your function.
 
@@ -220,7 +220,7 @@ def me_vs_others(M: np.array, group_index: int) -> np.array:
     
     return me_vs_others
 
-def diametros(g: gt.Graph, w = None):
+def diametros(g: gt.Graph, w = None) -> pd.DataFrame:
     if w==None:
         weights = None
         name = 'Diametro Simple'
@@ -318,9 +318,12 @@ def to_networkx(g: gt.Graph) -> nx.Graph:
         edge_properties = {prop_name: g.ep[prop_name][e] for prop_name in g.ep}
         nx_graph.add_edge(int(e.source()), int(e.target()), **edge_properties)
     
+    for key, value in dict(g.gp).items():
+        nx_graph.graph[key] = value
+    
     return nx_graph
 
-def look_up_graph(g: gt.Graph, idx:int):
+def look_up_graph(g: gt.Graph, idx:int) -> int:
     array = list(g.vp['Master Index'].a)
     in_graph = array.index(idx)
     return in_graph
