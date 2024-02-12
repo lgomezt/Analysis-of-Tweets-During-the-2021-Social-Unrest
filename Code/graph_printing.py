@@ -4,7 +4,7 @@ import numpy as np
 # Graph Managment
 import graph_tool.all as gt
 import networkx as nx
-from utils.subutils.Functions import *
+from Code.utils.Functions import *
 from utils.Segregation import *
 
 # Data Visualization
@@ -150,8 +150,8 @@ def process_graph(file):
 
 def main():
     files = glob('/mnt/disk2/Data/3_Day_Graphs/*.graphml')
-    with concurrent.futures.ProcessPoolExecutor() as executor:
-        executor.map(process_graph, files)
+    # with concurrent.futures.ProcessPoolExecutor() as executor:
+    #     executor.map(process_graph, files)
 
 if __name__ == '__main__':
     main()

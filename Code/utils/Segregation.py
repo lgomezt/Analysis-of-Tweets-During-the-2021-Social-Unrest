@@ -4,7 +4,55 @@ import pandas as pd
 
 # Graph Managment
 import graph_tool.all as gt
-from utils.subutils.Functions import * 
+from utils.Functions import * 
+
+# ========================================================================================
+def attention_g_others(g, types, weights, group,in_attention=True):
+    index = get_types_index(g,types)[group]
+    M_v_others = me_vs_others(g, index, types, weights)
+    
+    active_nodes = set()
+    for e in g.edges():
+        active_nodes.add(int(e.source()))
+    N_active_nodes = len(active_nodes)
+    
+    if in_attention:
+        P = (M_v_others[0,1]) / N_active_nodes
+    else:
+        P = (M_v_others[1,0]) / N_active_nodes
+    
+    tweets_no_g = 0
+    tweets = 0
+    for v in g.vertices():
+        tweets += (g.vp['Tweets'][v])
+        if g.vp[types][v] != group:
+            tweets_no_g += (g.vp['Tweets'][v])
+    
+    Pi = tweets_no_g/tweets
+    
+    return P/Pi
+
+#=========================================================================================================================
+def attention_g_h(g, types, weights, group1, group2, in_attention = True):
+    M = get_contact_layer(g, types, weights)
+    index_1 = get_types_index(g,types)[group1]
+    index_2 = get_types_index(g,types)[group2]
+    
+    if in_attention:
+        P = (M[index_1,index_2]) / np.sum(M)
+    else:
+        P = (M[index_2,index_1]) / np.sum(M)
+    
+    tweets_h = 0 # Contador para Retweets del grupo2
+    tweets = 0 # Contador del total de Retweets
+    for v in g.vertices():
+        tweets += (g.vp['Tweets'][v])
+        if g.vp[types][v] == group2:
+            tweets_h += (g.vp['Tweets'][v])
+            
+    Pi = tweets_h/tweets
+    
+    return P/Pi
 
 #=========================================================================================================================
 def homophily_index(graph: gt.Graph, property_name: str) -> dict:
