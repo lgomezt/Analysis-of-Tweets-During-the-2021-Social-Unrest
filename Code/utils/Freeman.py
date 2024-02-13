@@ -7,10 +7,10 @@ import graph_tool.all as gt
 from utils.Functions import *
 
 #=========================================================================================================================
-def Freeman_Classic(g: gt.Graph, types:str) -> float:
+def Freeman_Classic(G: gt.Graph, types:str) -> float:
     """
     Classic Freeman Segregation Index for Unweighted Graphs. This calculates the proprotion of cross ties in the graph as
-    a fraction of the proportion os cross ties if the graph were randomly distributed.
+    a fraction of the proportion of cross ties if the graph were randomly distributed.
 
     Args:
         g (Graph): The Graph object to analize.
@@ -21,6 +21,7 @@ def Freeman_Classic(g: gt.Graph, types:str) -> float:
         type: Segregation Index of Freeman from one group against all the other groups using a
             weighted adjacency matrix
     """
+    g = G.copy()
     if g.is_directed():
         g.set_directed(False)
     else:
@@ -42,7 +43,7 @@ def Freeman_Classic(g: gt.Graph, types:str) -> float:
     return 1 - (P / Pi) 
 
 #=========================================================================================================================
-def Freeman_Groups(g: gt.Graph, types:str, group:str) -> float:
+def Freeman_Groups(G: gt.Graph, types:str, group:str) -> float:
     """
     Description of your function.
 
@@ -55,20 +56,20 @@ def Freeman_Groups(g: gt.Graph, types:str, group:str) -> float:
         type: Segregation Index of Freeman from one group against all the other groups
 
     """
-    G = g.copy()
+    g = G.copy()
     # This Measure is for Undirected Graphs and Unweighted
     if g.is_directed():
-        G.set_directed(False)
+        g.set_directed(False)
     else:
         pass 
     
     # get important stuff
-    groups = get_types_index(G, types)
-    groups_list = get_types_dict(G, types=types)[group]
+    groups = get_types_index(g, types)
+    groups_list = get_types_dict(g, types=types)[group]
     group_index = groups[group]
     
     # Calculate contact Matrix, me vs others
-    me_vs_others_matrix = me_vs_others(G, group_index, types)
+    me_vs_others_matrix = me_vs_others(g, group_index, types)
     
     # Getting group sizes
     total = g.num_vertices()
@@ -83,7 +84,7 @@ def Freeman_Groups(g: gt.Graph, types:str, group:str) -> float:
     return (Pi-P)/Pi
 
 # =========================================================================================================================
-def Freeman_Global(g: gt.Graph, types:str) -> float:
+def Freeman_Global(G: gt.Graph, types:str) -> float:
     """
     Global Freeman Segregation Index for more than 2 groups. This is based on the Bojanoski Formula from his paper.
 
@@ -95,14 +96,14 @@ def Freeman_Global(g: gt.Graph, types:str) -> float:
         type: Segregation Index of Freeman
 
     """
-    G = g.copy()
-    if g.is_directed():
-        G.set_directed(False)
+    g = G.copy()
+    if G.is_directed():
+        g.set_directed(False)
     else:
         pass  
     
-    types_matrix = get_types_matrix(G, types = types)
-    M = get_contact_layer(G, types = types)
+    types_matrix = get_types_matrix(g, types = types)
+    M = get_contact_layer(g, types = types)
     
     # We get the amount of vertices and groups
     N, K = types_matrix.shape
@@ -135,7 +136,7 @@ def Freeman_Global(g: gt.Graph, types:str) -> float:
     return S
 
 #=========================================================================================================================
-def Freeman_homophily(g:gt.Graph, type:str, group1:str, group2:str):
+def Freeman_homophily(G: gt.Graph, type:str, group1:str, group2:str):
     """
     Calculates the homophily Index
 
@@ -147,14 +148,14 @@ def Freeman_homophily(g:gt.Graph, type:str, group1:str, group2:str):
         type: dict with some things XD
     """
     # Filter Graph
-    filter = g.new_vp('bool')
+    filter = G.new_vp('bool')
     filter.a = False
     
-    for v in g.vertices():
-        if g.vp[type][v] == group1 or g.vp[type][v] == group2:
+    for v in G.vertices():
+        if G.vp[type][v] == group1 or G.vp[type][v] == group2:
             filter[v] = True
     
-    sub = gt.GraphView(g, vfilt = filter, directed = True)
+    sub = gt.GraphView(G, vfilt = filter, directed = True)
     
     cross_in_ties = 0
     cross_out_ties = 0

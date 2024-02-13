@@ -7,12 +7,30 @@ import graph_tool.all as gt
 from utils.Functions import * 
 
 # ========================================================================================
-def attention_g_others(g, types, weights, group,in_attention=True):
-    index = get_types_index(g,types)[group]
-    M_v_others = me_vs_others(g, index, types, weights)
+def attention_g_others(G: gt.Graph, property_label:str, weights:str, g:str, in_attention=True):
+    """
+    Attention Index that group g devotes to all other groups (-g). This index takes in count
+    weight and of the edges and directionality
+
+    Args:
+        G (Graph): The Graph object to analize.
+        
+        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
+        
+        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        
+        g (String): name of the group g
+        
+        in_attention (bool): boolean that specifes if you want the attention from g to h or from h to g
+
+    Returns:
+        index (float): The Attention Index 
+    """
+    index = get_types_index(G, property_label)[g]
+    M_v_others = me_vs_others(G, index, property_label, weights)
     
     active_nodes = set()
-    for e in g.edges():
+    for e in G.edges():
         active_nodes.add(int(e.source()))
     N_active_nodes = len(active_nodes)
     
@@ -21,22 +39,42 @@ def attention_g_others(g, types, weights, group,in_attention=True):
     else:
         P = (M_v_others[1,0]) / N_active_nodes
     
-    tweets_no_g = 0
-    tweets = 0
-    for v in g.vertices():
-        tweets += (g.vp['Tweets'][v])
-        if g.vp[types][v] != group:
-            tweets_no_g += (g.vp['Tweets'][v])
-    
+    tweets_no_g = 0 # Contador para Retweets gel grupo -g
+    tweets = 0 # Contador del total de Retweets
+    for v in G.vertices():
+        tweets += (G.vp['Tweets'][v])
+        if G.vp[property_label][v] != g:
+            tweets_no_g += (G.vp['Tweets'][v])
+
     Pi = tweets_no_g/tweets
     
     return P/Pi
 
 #=========================================================================================================================
-def attention_g_h(g, types, weights, group1, group2, in_attention = True):
-    M = get_contact_layer(g, types, weights)
-    index_1 = get_types_index(g,types)[group1]
-    index_2 = get_types_index(g,types)[group2]
+def attention_g_h(G, property_label:str, weights:str, g:str, h:str, in_attention = True):
+    """
+    Attention Index that group g devotes to group h. This index takes in count
+    weight and of the edges and directionality
+
+    Args:
+        G (Graph): The Graph object to analize.
+        
+        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
+        
+        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        
+        g (String): name of the group g
+        
+        h (String): name of the group h
+        
+        in_attention (bool): boolean that specifes if you want the attention from g to h or from h to g
+
+    Returns:
+        index (float): The Attention Index 
+    """
+    M = get_contact_layer(G, property_label, weights)
+    index_1 = get_types_index(G,property_label)[g]
+    index_2 = get_types_index(G,property_label)[h]
     
     if in_attention:
         P = (M[index_1,index_2]) / np.sum(M)
@@ -45,10 +83,10 @@ def attention_g_h(g, types, weights, group1, group2, in_attention = True):
     
     tweets_h = 0 # Contador para Retweets del grupo2
     tweets = 0 # Contador del total de Retweets
-    for v in g.vertices():
-        tweets += (g.vp['Tweets'][v])
-        if g.vp[types][v] == group2:
-            tweets_h += (g.vp['Tweets'][v])
+    for v in G.vertices():
+        tweets += (G.vp['Tweets'][v])
+        if G.vp[property_label][v] == h:
+            tweets_h += (G.vp['Tweets'][v])
             
     Pi = tweets_h/tweets
     
