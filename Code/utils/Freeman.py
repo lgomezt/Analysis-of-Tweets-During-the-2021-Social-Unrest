@@ -27,7 +27,7 @@ def Freeman_Classic(G: gt.Graph, types:str) -> float:
     else:
         pass      
         
-    M = get_contact_layer(g, types=types)
+    M = get_contact_layer(g, property_label=types)
     
     cross_ties = M[0,1]
     edges = g.num_edges()
@@ -84,7 +84,7 @@ def Freeman_Groups(G: gt.Graph, types:str, group:str) -> float:
     return (Pi-P)/Pi
 
 # =========================================================================================================================
-def Freeman_Global(G: gt.Graph, types:str) -> float:
+def Freeman_Global(G: gt.Graph, property_label:str) -> float:
     """
     Global Freeman Segregation Index for more than 2 groups. This is based on the Bojanoski Formula from his paper.
 
@@ -102,8 +102,8 @@ def Freeman_Global(G: gt.Graph, types:str) -> float:
     else:
         pass  
     
-    types_matrix = get_types_matrix(g, types = types)
-    M = get_contact_layer(g, types = types)
+    types_matrix = get_types_matrix(g, property_label)
+    M = get_contact_layer(g, property_label)
     
     # We get the amount of vertices and groups
     N, K = types_matrix.shape

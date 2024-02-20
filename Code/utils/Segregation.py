@@ -26,18 +26,32 @@ def attention_g_others(G: gt.Graph, property_label:str, weights:str, g:str, in_a
     Returns:
         index (float): The Attention Index 
     """
-    index = get_types_index(G, property_label)[g]
-    M_v_others = me_vs_others(G, index, property_label, weights)
+    # index = get_types_index(G, property_label)[g]
+    # M_v_others = me_vs_others(G, index, property_label, weights)
+    
+    # active_nodes = set()
+    # for e in G.edges():
+    #     active_nodes.add(int(e.source()))
+    # N_active_nodes = len(active_nodes)
+    
+    # if in_attention:
+    #     P = (M_v_others[0,1]) / N_active_nodes
+    # else:
+    #     P = (M_v_others[1,0]) / N_active_nodes
     
     active_nodes = set()
+    sum_weight = 0
     for e in G.edges():
-        active_nodes.add(int(e.source()))
+        if G.vp[property_label][e.source()] == g:
+            active_nodes.add(int(e.source()))
+        if in_attention:
+            if G.vp[property_label][e.source()] == g and G.vp[property_label][e.target()] != g:
+                sum_weight += G.ep[weights][e]
+        else:
+            if G.vp[property_label][e.source()] != g and G.vp[property_label][e.target()] == g:
+                sum_weight += G.ep[weights][e]
     N_active_nodes = len(active_nodes)
-    
-    if in_attention:
-        P = (M_v_others[0,1]) / N_active_nodes
-    else:
-        P = (M_v_others[1,0]) / N_active_nodes
+    P = sum_weight/N_active_nodes
     
     tweets_no_g = 0 # Contador para Retweets gel grupo -g
     tweets = 0 # Contador del total de Retweets
@@ -72,14 +86,19 @@ def attention_g_h(G, property_label:str, weights:str, g:str, h:str, in_attention
     Returns:
         index (float): The Attention Index 
     """
-    M = get_contact_layer(G, property_label, weights)
-    index_1 = get_types_index(G,property_label)[g]
-    index_2 = get_types_index(G,property_label)[h]
-    
-    if in_attention:
-        P = (M[index_1,index_2]) / np.sum(M)
-    else:
-        P = (M[index_2,index_1]) / np.sum(M)
+    active_nodes = set()
+    sum_weight = 0
+    for e in G.edges():
+        if G.vp[property_label][e.source()] == g:
+            active_nodes.add(int(e.source()))
+        if in_attention:
+            if G.vp[property_label][e.source()] == g and G.vp[property_label][e.target()] == h:
+                sum_weight += G.ep[weights][e]
+        else:
+            if G.vp[property_label][e.source()] == h and G.vp[property_label][e.target()] == g:
+                sum_weight += G.ep[weights][e]
+    N_active_nodes = len(active_nodes)
+    P = sum_weight/N_active_nodes
     
     tweets_h = 0 # Contador para Retweets del grupo2
     tweets = 0 # Contador del total de Retweets
