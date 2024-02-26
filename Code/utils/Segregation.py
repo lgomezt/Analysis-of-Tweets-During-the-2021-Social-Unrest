@@ -7,38 +7,40 @@ import graph_tool.all as gt
 from utils.Functions import * 
 
 # ========================================================================================
+def individual_attention_to_h(G: gt.Graph, v_index:int, property_label:str, group:str, in_attention = True): 
+    """
+     Individual Attention Index: This index calculates the proximity from and individual to a political group
+    Args:
+        G (Graph): The Graph object to analize.
+        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
+        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        g (String): name of the group g
+        in_attention (bool): boolean that specifes if you want the attention from g to h or from h to g
+    Returns:
+        index (float): The Attention Index 
+    """
+    individual_weight = 0
+    v = G.vertex(v_index)
+    for e in v.out_edges():
+        if G.vp[property_label][e.target()] == group:
+            individual_weight += G.ep['Normal Weight'][e]
+    
+    return individual_weight
+
+# ========================================================================================
 def attention_g_others(G: gt.Graph, property_label:str, weights:str, g:str, in_attention=True):
     """
     Attention Index that group g devotes to all other groups (-g). This index takes in count
     weight and of the edges and directionality
-
     Args:
         G (Graph): The Graph object to analize.
-        
         property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
-        
         weights (String): The name of the EdgePropertyMap where the weights of the edges resides
-        
         g (String): name of the group g
-        
         in_attention (bool): boolean that specifes if you want the attention from g to h or from h to g
-
     Returns:
         index (float): The Attention Index 
     """
-    # index = get_types_index(G, property_label)[g]
-    # M_v_others = me_vs_others(G, index, property_label, weights)
-    
-    # active_nodes = set()
-    # for e in G.edges():
-    #     active_nodes.add(int(e.source()))
-    # N_active_nodes = len(active_nodes)
-    
-    # if in_attention:
-    #     P = (M_v_others[0,1]) / N_active_nodes
-    # else:
-    #     P = (M_v_others[1,0]) / N_active_nodes
-    
     active_nodes = set()
     sum_weight = 0
     for e in G.edges():
@@ -51,37 +53,21 @@ def attention_g_others(G: gt.Graph, property_label:str, weights:str, g:str, in_a
             if G.vp[property_label][e.source()] != g and G.vp[property_label][e.target()] == g:
                 sum_weight += G.ep[weights][e]
     N_active_nodes = len(active_nodes)
-    P = sum_weight/N_active_nodes
-    
-    tweets_no_g = 0 # Contador para Retweets gel grupo -g
-    tweets = 0 # Contador del total de Retweets
-    for v in G.vertices():
-        tweets += (G.vp['Tweets'][v])
-        if G.vp[property_label][v] != g:
-            tweets_no_g += (G.vp['Tweets'][v])
 
-    Pi = tweets_no_g/tweets
-    
-    return P/Pi
+    return sum_weight/N_active_nodes
 
 #=========================================================================================================================
 def attention_g_h(G, property_label:str, weights:str, g:str, h:str, in_attention = True):
     """
     Attention Index that group g devotes to group h. This index takes in count
     weight and of the edges and directionality
-
     Args:
-        G (Graph): The Graph object to analize.
-        
-        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
-        
-        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
-        
-        g (String): name of the group g
-        
-        h (String): name of the group h
-        
-        in_attention (bool): boolean that specifes if you want the attention from g to h or from h to g
+        - G (Graph): The Graph object to analize.
+        - property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
+        - weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        - g (String): name of the group g
+        - h (String): name of the group h
+        - in_attention (bool): boolean that specifes if you want the attention from g to h or from h to g
 
     Returns:
         index (float): The Attention Index 
@@ -98,18 +84,25 @@ def attention_g_h(G, property_label:str, weights:str, g:str, h:str, in_attention
             if G.vp[property_label][e.source()] == h and G.vp[property_label][e.target()] == g:
                 sum_weight += G.ep[weights][e]
     N_active_nodes = len(active_nodes)
-    P = sum_weight/N_active_nodes
     
-    tweets_h = 0 # Contador para Retweets del grupo2
-    tweets = 0 # Contador del total de Retweets
+    return sum_weight/N_active_nodes
+
+#=========================================================================================================================
+def at_random_scenario(G:gt.Graph, property_label:str, group:str, use_case:str):
+    tweets_numerador = 0 
+    tweets = 0
     for v in G.vertices():
         tweets += (G.vp['Tweets'][v])
-        if G.vp[property_label][v] == h:
-            tweets_h += (G.vp['Tweets'][v])
-            
-    Pi = tweets_h/tweets
-    
-    return P/Pi
+        # Condicional para índice de atención a otros. Cuenta Tweets del grupo (-g)
+        if use_case == 'Proximity to Others':
+            if G.vp[property_label][v] != group:
+                tweets_numerador += (G.vp['Tweets'][v])
+        # Condicional para índice de atención a cierto grupo h. Cuenta Tweets del grupo (h)
+        elif use_case == 'Proximity to Group':
+            if G.vp[property_label][v] == group:
+                tweets_numerador += (G.vp['Tweets'][v])
+        
+    return tweets_numerador/tweets
 
 #=========================================================================================================================
 def homophily_index(graph: gt.Graph, property_name: str) -> dict:
