@@ -1,10 +1,6 @@
-# Mathematical and Data Managment
 import numpy as np
-import pandas as pd
-
-# Graph Managment
 import graph_tool.all as gt
-from utils.Functions import *
+from utils.Bojanowski import *
 
 #=========================================================================================================================
 def Freeman_Classic(G: gt.Graph, types:str) -> float:
@@ -134,53 +130,3 @@ def Freeman_Global(G: gt.Graph, property_label:str) -> float:
     S = 1 - (numerator / denominator)
     
     return S
-
-#=========================================================================================================================
-def Freeman_homophily(G: gt.Graph, type:str, group1:str, group2:str):
-    """
-    Calculates the homophily Index
-
-    Args:
-        g (Graph): The Graph object to analize.
-        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
-
-    Returns:
-        type: dict with some things XD
-    """
-    # Filter Graph
-    filter = G.new_vp('bool')
-    filter.a = False
-    
-    for v in G.vertices():
-        if G.vp[type][v] == group1 or G.vp[type][v] == group2:
-            filter[v] = True
-    
-    sub = gt.GraphView(G, vfilt = filter, directed = True)
-    
-    cross_in_ties = 0
-    cross_out_ties = 0
-    same_ties = 0
-    for e in sub.edges():
-        if sub.vp[group1][e.source()]:
-            if sub.vp[group1][e.target()]:
-                same_ties += 0
-            else:
-                cross_out_ties += 1
-        else:
-            if sub.vp[group1][e.target()]:
-                cross_in_ties += 1
-            else:
-                same_ties += 1
-    
-    edges = sub.num_edges()
-    nodes = sub.num_vertices()
-    
-    P_in = cross_in_ties/edges
-    P_out = cross_out_ties/edges
-    
-    n_1 = sum(sub.vp[group1].a)
-    n_2 = sum(sub.vp[group2].a)
-    
-    Pi = (2*n_1*n_2)/(nodes * (nodes - 1))
-    
-    return {'Homophily in': (P_in/Pi), 'Homophily out': (P_out/Pi)}
