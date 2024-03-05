@@ -1,3 +1,3 @@
-from utils.Functions import *
-from utils.Segregation import *
+from utils.Bojanowski import *
+from utils.Proximity import *
 from utils.Freeman import *
