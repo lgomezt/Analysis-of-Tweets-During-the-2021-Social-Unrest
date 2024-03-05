@@ -17,9 +17,44 @@ def individual_proximity_to_h(G: gt.Graph, v_index:int, property_label:str, grou
         index (float): The Proximity Index 
     """
     individual_weight = 0
-    v = G.vertex(v_index)
+    if isinstance(v,gt.Vertex):
+        pass
+    else:
+        v = G.vertex(v_index)
+    if G.vp['Isolate'][v]:
+        return np.nan
     for e in v.out_edges():
         if G.vp[property_label][e.target()] == group:
+            individual_weight += G.ep['Normal Weight'][e]
+    
+    return individual_weight
+
+# ========================================================================================
+def individual_proximity_to_others(G: gt.Graph, v_index:int, property_label:str, in_proximity = True): 
+    """
+     Individual Proximity Index: This index calculates the proximity from and individual to a political group
+     Different from its political group
+     
+     W_jk
+    Args:
+        G (Graph): The Graph object to analize.
+        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
+        weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        g (String): name of the group g
+        in_proximity (bool): boolean that specifes if you want the proximity from g to h or from h to g
+    Returns:
+        index (float): The Proximity Index 
+    """
+    individual_weight = 0
+    if isinstance(v_index, gt.Vertex):
+        pass
+    else:
+        v = G.vertex(v_index)
+    if G.vp['Isolate'][v]:
+        return np.nan
+    for e in v.out_edges():
+        group = G.vp['Political Label'][v]
+        if G.vp[property_label][e.target()] != group:
             individual_weight += G.ep['Normal Weight'][e]
     
     return individual_weight
