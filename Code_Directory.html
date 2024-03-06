@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Author" content="Made by 'tree'">
+    <meta name="GENERATOR" content="$Version: $ tree v1.8.0 (c) 1996 - 2018 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+    <title>Code Folder</title>
+    <style type="text/css">
+      <!-- 
+      BODY {
+        font-family: ariel, monospace, sans-serif;
+      }
+
+      P {
+        font-weight: normal;
+        font-family: ariel, monospace, sans-serif;
+        color: white;
+        background-color: transparent;
+      }
+
+      B {
+        font-weight: normal;
+        color: white;
+        background-color: transparent;
+      }
+
+      A:visited {
+        font-weight: normal;
+        text-decoration: none;
+        background-color: transparent;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        display: inline;
+      }
+
+      A:link {
+        font-weight: normal;
+        text-decoration: none;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        display: inline;
+      }
+
+      A:hover {
+        color: #000000;
+        font-weight: normal;
+        text-decoration: underline;
+        background-color: yellow;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        display: inline;
+      }
+
+      A:active {
+        color: #000000;
+        font-weight: normal;
+        background-color: transparent;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        display: inline;
+      }
+
+      .VERSION {
+        font-size: small;
+        font-family: arial, sans-serif;
+      }
+
+      .NORM {
+        color: white;
+        background-color: transparent;
+      }
+
+      .FIFO {
+        color: purple;
+        background-color: transparent;
+      }
+
+      .CHAR {
+        color: yellow;
+        background-color: transparent;
+      }
+
+      .DIR {
+        color: rgb(0, 89, 255);
+        background-color: transparent;
+      }
+
+      .BLOCK {
+        color: yellow;
+        background-color: transparent;
+      }
+
+      .LINK {
+        color: aqua;
+        background-color: transparent;
+      }
+
+      .NOTEBOOK {
+        color: rgb(243, 130, 243);
+        background-color: transparent;
+      }
+
+      .PY {
+        color: rgb(121, 189, 121);
+        background-color: transparent;
+      }
+
+      table {
+          width: 50%;
+          border-collapse: collapse;
+      }
+      th, td {
+          border: 1px solid #dddddd5d;
+          padding: 8px;
+          text-align: left;
+      }
+      th {
+          background-color: #f2f2f259;
+      }
+      -->
+    </style>
+  </head>
+  <body>
+    <h1>Code Folder</h1>
+    <h3>Color Conventions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Color</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="PY">light green</td>
+                <td>Python files with functions</td>
+            </tr>
+            <tr>
+                <td class="NOTEBOOK">fucsia</td>
+                <td>Jupiter Notebooks</td>
+            </tr>
+            <tr>
+                <td class="DIR">light blue</td>
+                <td>Directories</td>
+            </tr>
+            <!-- Add more rows for other file types as needed -->
+        </tbody>
+    </table>
+    <p>
+      <b class="NORM">Code</b>
+
+      <!-- 3 Day Graphs Directory -->
+      <br> ├──<b class="NOTEBOOK">1_Concatenate_Tweets.ipynb</b><b>: Juntar todos los tweets y crear DataFrames con ellos</b>
+      <br> ├──<b class="NOTEBOOK">2_Political_Labelling.ipynb</b><b>: Etiquetar cada usuario con una ideología política</b>
+      <br> ├──<b class="NOTEBOOK">3.1_Original_Tweets.ipynb</b><b>: Calcular la cantidad de tweets escritos de cada usuario</b>
+      <br> ├──<b class="NOTEBOOK">3.2_Retweets_Networks.ipynb</b><b>: Crear los Grafos con todas sus propiedades</b>
+      <br> ├──<b class="NOTEBOOK">4.1_Visualize_Networks.ipynb</b><b>: Visualización de las redes</b>
+      <br> ├──<b class="NOTEBOOK">4.2_Resume_Networkx.ipynb</b><b>: Visualizar las redes a nivel de ideología política</b>
+      <br> ├──<b class="NOTEBOOK">5_Segregation_Indexes.ipynb</b><b>: Descripción y cálculo de lasmedidas de segregación</b>
+      <br> ├──<b class="NOTEBOOK">6_Descriptive_Statistics.ipynb</b><b>: Estadísticas descriptivas de los grafos</b>
+      <br> ├──<b class="NOTEBOOK">8_Histograms_for_individuals.ipynb</b>
+      <br> ├──<b class="DIR">ACLED</b>
+      <br> │   ├──<b class="NOTEBOOK">Daily ACLED.ipynb</b><b>: Análisis de los datos de violencia en ACLED a nivel diario</b>
+      <br> │   └──<b class="NOTEBOOK">Weekly ACLED.ipynb</b><b>: Análisis de los datos de violencia en ACLED a nivel semanal</b>
+      <br> ├──<b class="DIR">deprecated</b>
+      <br> ├──<b class="NOTEBOOK">Toy_Graph_tol.ipynb</b><b>: Cuaderno para experimentos (BORRAR A FUTURO)</b>
+      <br> └──<b class="DIR">utils</b>
+      <br>    &nbsp;├──<b class="PY">Bojanowski.py</b><b>: Funciones tomando enc uenta la notación y framework de Bojanowski</b>
+      <br>    &nbsp;├──<b class="PY">Freeman.py</b><b>: Cálculo de segregación basados en Freeman</b>
+      <br>    &nbsp;├──<b class="PY">GraphTransform.py</b><b>: Transformación del objeto 'Grafo' entre librerias</b>
+      <br>    &nbsp;├──<b class="PY">Homophily.py</b><b>: Cálculo de Índices de Homofilia</b>
+      <br>    &nbsp;├──<b class="PY">Proximity.py</b><b>: Cálculo de índices de Proximidad</b>
+      <br>    &nbsp;├──<b class="PY">SSI.py</b><b>: Cálculo de Indie de Segregación Espectral</b>
+      <br>    &nbsp;└──<b class="PY">__init__.py</b>
+      <br>
+      <br>
+      <br>
+    </p>
+    <hr>
+    <p class="VERSION"> tree v1.8.0 © 1996 - 2018 by Steve Baker and Thomas Moore <br> HTML output hacked and copyleft © 1998 by Francesc Rocher <br> JSON output hacked and copyleft © 2014 by Florian Sesser <br> Charsets / OS/2 support © 2001 by Kyosuke Tokoro </p>
+  </body>
+</html>
