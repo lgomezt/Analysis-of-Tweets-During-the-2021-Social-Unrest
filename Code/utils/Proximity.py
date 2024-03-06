@@ -2,7 +2,7 @@ from utils.Bojanowski import *
 import graph_tool.all as gt
 
 # ========================================================================================
-def individual_proximity_to_h(G: gt.Graph, v_index:int, property_label:str, group:str, in_proximity = True): 
+def individual_proximity_to_h(G: gt.Graph, vertex:int, property_label:str, group:str, in_proximity = True): 
     """
      Individual Proximity Index: This index calculates the proximity from and individual to a political group
      
@@ -17,10 +17,10 @@ def individual_proximity_to_h(G: gt.Graph, v_index:int, property_label:str, grou
         index (float): The Proximity Index 
     """
     individual_weight = 0
-    if isinstance(v,gt.Vertex):
+    if isinstance(vertex,gt.Vertex):
         pass
     else:
-        v = G.vertex(v_index)
+        v = G.vertex(vertex)
     if G.vp['Isolate'][v]:
         return np.nan
     for e in v.out_edges():
@@ -30,7 +30,7 @@ def individual_proximity_to_h(G: gt.Graph, v_index:int, property_label:str, grou
     return individual_weight
 
 # ========================================================================================
-def individual_proximity_to_others(G: gt.Graph, v_index:int, property_label:str, in_proximity = True): 
+def individual_proximity_to_others(G: gt.Graph, vertex:int, property_label:str, in_proximity = True): 
     """
      Individual Proximity Index: This index calculates the proximity from and individual to a political group
      Different from its political group
@@ -46,10 +46,10 @@ def individual_proximity_to_others(G: gt.Graph, v_index:int, property_label:str,
         index (float): The Proximity Index 
     """
     individual_weight = 0
-    if isinstance(v_index, gt.Vertex):
+    if isinstance(vertex, gt.Vertex):
         pass
     else:
-        v = G.vertex(v_index)
+        v = G.vertex(vertex)
     if G.vp['Isolate'][v]:
         return np.nan
     for e in v.out_edges():
