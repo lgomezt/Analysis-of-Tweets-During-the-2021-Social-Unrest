@@ -29,7 +29,7 @@ The `Tutorials` folder includes markdown files that guide you through the initia
 
 ### 2. Code
 
-The `Code` folder contains all the Jupyter notebooks necessary for the analysis. For a more detailed explanation of the project's pipeline, refer to `Dictionary.xlsx`.
+The `Code` folder contains all the Jupyter notebooks necessary for the analysis. For a more detailed explanation of the project's pipeline, refer to [Code Directory](./Code_Directory.html).
 
 ### 3. Results
 

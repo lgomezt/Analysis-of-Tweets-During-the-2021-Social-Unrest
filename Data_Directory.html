@@ -81,7 +81,7 @@
       }
 
       .DIR {
-        color: rgb(0, 89, 255);
+        color: rgb(82, 141, 250);
         background-color: transparent;
       }
 
@@ -95,74 +95,153 @@
         background-color: transparent;
       }
 
-      .SOCK {
-        color: fuchsia;
+      .DF {
+        color: rgb(247, 133, 247);
         background-color: transparent;
       }
 
-      .EXEC {
-        color: green;
+      .PKL {
+        color: rgb(121, 189, 121);
         background-color: transparent;
+      }
+
+      table {
+          width: 50%;
+          border-collapse: collapse;
+      }
+      th, td {
+          border: 1px solid #dddddd5d;
+          padding: 8px;
+          text-align: left;
+      }
+      th {
+          background-color: #f2f2f259;
       }
       -->
     </style>
   </head>
   <body>
     <h1>Data Folder</h1>
+    <h3>Color Conventions</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th>Color</th>
+                  <th>Description</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="DF">fucsia</td>
+                  <td>pandas DataFrame Objects</td>
+              </tr>
+              <tr>
+                  <td class="PKL">light green</td>
+                  <td>Pickle Dictionaries in most cases</td>
+              </tr>
+              <tr>
+                  <td class="DIR">light blue</td>
+                  <td>Directories</td>
+              </tr>
+              <tr>
+                <td class="BLOCK">yellow</td>
+                <td>Collections of files too big to show</td>
+            </tr>
+              <!-- Add more rows for other file types as needed -->
+          </tbody>
+      </table>
     <p>
       <b class="NORM">Data</b>
+
+      <!-- 3 Day Graphs Directory -->
       <br> ├──<b class="DIR">3_Day_Graphs</b>
-      <br> │   ├── <b class="BLOCK">*.graphml</b>
-      <br> │   ├── <b class="NORM">Nodes.csv</b>
-      <br> │   ├── <b class="NORM">nodes_dict.pkl</b>
-      <br> │   ├──<b class="DIR">Source_Target</b>
-      <br> │   │   ├── <b class="BLOCK">*.csv</b>
-      <br> │   └── <b class="NORM">Source_Target.zip</b>
-      <br> ├── <b class="NORM">3_Day_Graphs.zip</b>
-      <br> ├── <b class="NORM">ACLED Colombia (2018-01-01-2023-10-31).csv</b>
+      <br> │   ├──<b class="DIR">Graphs</b><b>: Carpeta con los Grafos</b>
+      <br> │   │   └── <b class="BLOCK">*.graphml</b>
+      <br> │   ├──<b class="DF">Master_Index.csv</b><b>: Usuarios relevantes</b>
+      <br> │   ├──<b class="DF">positions_gephi.csv</b><b>: Posiciones calculadas en Gephi</b>
+      <br> │   ├──<b class="DIR">Source_Target</b><b>: Lista de Enlaces en csv para exportar</b>
+      <br> │   │   └── <b class="BLOCK">*.csv</b>
+      <br> │   └──<b class="DIR">Tweets_Per_Day</b><b>: Diccionarios. Usuarios son llaves, el valor sus tweets originales</b>
+      <br> │   &nbsp;   └── <b class="BLOCK">*.pkl</b>
+      <br> │   <b class="BLOCK"></b>
+
+      <!-- ACLED File -->
+      <br> ├── <b class="DF">ACLED Colombia (2018-01-01-2023-10-31).csv</b>
+      <br> │   <b class="BLOCK"></b>
+      
+      <!-- Daily Graphs Directory -->
       <br> ├──<b class="DIR">Daily_graphs</b>
-      <br> │   ├── [&nbsp;1.2G]<b class="BLOCK">*.graphml</b>
-      <br> │   ├── [&nbsp;19M]<b class="NORM">nodes_dict.pkl</b>
-      <br> │   └──<b class="DIR">Source-Target</b>
-      <br> │   &nbsp;└── <b class="BLOCK">*.csv</b>
-      <br> ├──<b class="DIR">Graphs_2</b>
-      <br> │   ├── <b class="BLOCK">*.graphml</b>
-      <br> ├── <b class="NORM">nodes.csv</b>
+      <br> │   ├──<b class="DIR">Graphs</b><b>: Carpeta con los Grafos</b>
+      <br> │   │   └── <b class="BLOCK">*.graphml</b>
+      <br> │   ├──<b class="DF">Master_Index.csv</b><b>: Usuarios relevantes</b>
+      <br> │   ├──<b class="DF">positions_gephi.csv</b><b>: Posiciones calculadas en Gephi</b>
+      <br> │   ├──<b class="DIR">Source_Target</b><b>: Lista de Enlaces en csv para exportar</b>
+      <br> │   │   └── <b class="BLOCK">*.csv</b>
+      <br> │   └──<b class="DIR">Tweets_Per_Day</b><b>: Diccionarios. Usuarios son llaves, el valor sus tweets originales</b>
+      <br> │   &nbsp;   └── <b class="BLOCK">*.pkl</b>
+      <br> │   <b class="BLOCK"></b>
+
+      <!-- Deprecated -->
+      <br> ├──<b class="DIR">deprecated</b>
+      <br> │   <b class="BLOCK"></b>
+
+      <!-- Pickles Directory -->
       <br> ├──<b class="DIR">Pickle</b>
-      <br> │   ├── <b class="NORM">global_segregation.pkl</b>
-      <br> │   ├── <b class="NORM">group_segregation.pkl</b>
-      <br> │   ├── <b class="NORM">mapa.pkl</b>
-      <br> │   ├── <b class="NORM">pos_fruchterman_reingold.pkl</b>
-      <br> │   ├── <b class="NORM">rts_usuario_jan_oct.pkl</b>
-      <br> │   ├── <b class="NORM">rts_usuario_paro.pkl</b>
-      <br> │   ├── <b class="NORM">rts_usuario.pkl</b>
-      <br> │   ├── <b class="NORM">user_indices.pkl</b>
-      <br> │   ├── <b class="NORM">users_to_date.pkl</b>
-      <br> │   ├── <b class="NORM">user_to_party_jan_oct.pkl</b>
-      <br> │   ├── <b class="NORM">user_to_party_paro.pkl</b>
-      <br> │   └── <b class="NORM">user_to_party.pkl</b>
+      <br> │   ├──<b class="PKL">layout_forceatlas2.pkl</b>
+      <br> │   ├──<b class="DIR">Segregation</b>
+      <br> │   │   ├── <b class="DF">global_segregation_3day.pkl</b><b>: Segregación a nivel de grafo (3 dias móviles)</b>
+      <br> │   │   ├── <b class="DF">global_segregation_daily.pkl</b><b>: Segregación a nivel de grafo (diarios)</b>
+      <br> │   │   ├── <b class="DF">group_segregation_3day.pkl</b><b>: Segregación a nivel de ideologia (3 dias móviles)</b>
+      <br> │   │   ├── <b class="DF">group_segregation_daily.pkl</b><b>: Segregación a nivel de ideologia (diario)</b>
+      <br> │   │   ├── <b class="DF">individual_group_segregation.pkl</b><b>: Segregación a nivel de nodo y grupo (diario)</b>
+      <br> │   │   └── <b class="DF">individual_node_segregation.pkl</b><b>: Segregación a nivel de nodo, proximidad a otros (diario)</b>
+      <br> │   ├──<b class="DF">tweets_node_day.pkl</b><b>: filas son nodos y columnas fechas. el valor es la cantidad de tweets originales</b>
+      <br> │   ├──<b class="DF">rts_node_day.pkl</b><b>: filas son nodos y columnas fechas. el valor es la cantidad de retweets</b>
+      <br> │   ├──<b class="DIR">User_Dicts</b>
+      <br> │   │   ├── <b class="PKL">mapa.pkl</b><b>: Diccionarios. Llaves son Usuarios</b>
+      <br> │   │   ├── <b class="PKL">user_indices.pkl</b>
+      <br> │   │   ├── <b class="PKL">users_to_date.pkl</b>
+      <br> │   │   ├── <b class="PKL">user_to_party_jan_oct.pkl</b>
+      <br> │   │   ├── <b class="PKL">user_to_party_paro.pkl</b>
+      <br> │   │   └── <b class="PKL">user_to_party.pkl</b>
+      <br> │   └──<b class="DIR">User_Rts_Vector</b><b>: vectores en R3 de cada usuairo en espectro político</b>
+      <br> │   &nbsp;   ├── <b class="DF">rts_usuario_jan_oct.pkl</b>
+      <br> │   &nbsp;   ├── <b class="DF">rts_usuario_paro.pkl</b>
+      <br> │   &nbsp;   └── <b class="DF">rts_usuario.pkl</b>
+      <br> │   <b class="BLOCK"></b>
+
+      <!-- Raw Twitter Data Directory -->
       <br> ├──<b class="DIR">RawData</b>
       <br> │   ├── <b class="DIR">users_jan</b>
       <br> │   │   ├── <b class="NORM">users_jan.zip</b>
-      <br> │   │   ├── <b class="BLOCK">*.csv</b>
+      <br> │   │   └── <b class="BLOCK">*.csv</b>
       <br> │   ├── <b class="DIR">users_oct_19</b>
       <br> │   │   ├── <b class="NORM">users_oct_19.zip</b>
-      <br> │   │   ├── <b class="BLOCK">*.csv</b>
+      <br> │   │   └── <b class="BLOCK">*.csv</b>
       <br> │   └── <b class="DIR">Usuarios_V1</b>
-      <br> │   &nbsp;├── <b class="NORM">location_39k.pickle</b>
-      <br> │   &nbsp;├── <b class="NORM">tres_semanas.pickle</b>
-      <br> │   &nbsp;├── <b class="NORM">tweets_usuarios.pickle</b>
-      <br> │   &nbsp;├── <b class="BLOCK">Usuario_*.csv</b>
+      <br> │   &nbsp;   ├── <b class="PKL">location_39k.pickle</b>
+      <br> │   &nbsp;   ├── <b class="PKL">tres_semanas.pickle</b>
+      <br> │   &nbsp;   ├── <b class="PKL">tweets_usuarios.pickle</b>
+      <br> │   &nbsp;   └── <b class="BLOCK">Usuario_*.csv</b>
+      <br> │   <b class="BLOCK"></b>
+
+      <!-- Tweets DataFrames Directory -->
       <br> └──<b class="DIR">Tweets_DataFrames</b>
-      <br> &nbsp;├── <b class="NORM">tweets_jan21.gzip</b>
-      <br> &nbsp;├── <b class="NORM">tweets_lite.gzip</b>
-      <br> &nbsp;├── <b class="NORM">tweets_oct19.gzip</b>
-      <br> &nbsp;├── <b class="NORM">tweets_paro_1.gzip</b>
-      <br> &nbsp;├── <b class="NORM">tweets_paro_2.gzip</b>
-      <br> &nbsp;├── <b class="NORM">tweets_paro_3.gzip</b>
-      <br> &nbsp;├── <b class="NORM">tweets_paro_4.gzip</b>
-      <br> &nbsp;├── <b class="NORM">tweets_paro_5.gzip</b>
-      <br> &nbsp;└── <b class="NORM">users_information.gzip</b>
+      <br>    ├──<b class="DF">original.gzip</b><b>: Lista de Tweets Originales</b>
+      <br>    ├──<b class="DF">original_retweets.gzip</b><b>: Lista de tweets originales que fueron retweeteados</b>
+      <br>    ├──<b class="DF">original_tweets_lite.gzip</b><b>: Lista de Tweets Originales (Información básica sin texto)</b>
+      <br>    ├──<b class="DF">retweets_lite.gzip</b><b>: Lista de Retweets (Sin Texto))</b>
+      <br>    ├──<b class="DF">tweets_jan21.gzip</b><b>: Lista de Tweets de Enero 2021 (Información completa con texto)</b>
+      <br>    ├──<b class="DF">tweets_lite.gzip</b><b>: Lista de Tweets del Paro (Información básica sin texto)</b>
+      <br>    ├── <b class="DIR">Tweets_Paro_Total</b><b>: Lista de Tweets del Paro (Información completa con texto)</b>
+      <br>    │   ├── <b class="DF">tweets_paro_1.gzip</b>
+      <br>    │   ├── <b class="DF">tweets_paro_2.gzip</b>
+      <br>    │   ├── <b class="DF">tweets_paro_3.gzip</b>
+      <br>    │   ├── <b class="DF">tweets_paro_4.gzip</b>
+      <br>    │   ├── <b class="DF">tweets_paro_5.gzip</b>
+      <br>    │   ├── <b class="DF">tweets_paro_6.gzip</b>
+      <br>    │   └──<b class="DF">tweets_paro_7.gzip</b>
+      <br>    └── <b class="DF">users_information.gzip</b><b>: Información a Nivel de usuario</b>
       <br>
       <br>
       <br>
