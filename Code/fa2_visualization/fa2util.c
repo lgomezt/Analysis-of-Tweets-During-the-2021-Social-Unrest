@@ -4,12 +4,12 @@
 {
     "distutils": {
         "depends": [],
-        "name": "fa2util",
+        "name": "fa2_visualization.fa2util",
         "sources": [
             "fa2util.pyx"
         ]
     },
-    "module_name": "fa2util"
+    "module_name": "fa2_visualization.fa2util"
 }
 END: Cython Metadata */
 
@@ -1194,8 +1194,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__fa2util
-#define __PYX_HAVE_API__fa2util
+#define __PYX_HAVE__fa2_visualization__fa2util
+#define __PYX_HAVE_API__fa2_visualization__fa2util
 /* Early includes */
 #include <math.h>
 #ifdef _OPENMP
@@ -1477,109 +1477,109 @@ static const char *__pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
-struct __pyx_obj_7fa2util_Node;
-struct __pyx_obj_7fa2util_Edge;
-struct __pyx_obj_7fa2util_Region;
-struct __pyx_opt_args_7fa2util_linRepulsion;
-struct __pyx_opt_args_7fa2util_linRepulsion_region;
-struct __pyx_opt_args_7fa2util_strongGravity;
-struct __pyx_opt_args_7fa2util_linAttraction;
-struct __pyx_opt_args_7fa2util_apply_gravity;
-struct __pyx_opt_args_7fa2util_6Region_applyForce;
-struct __pyx_opt_args_7fa2util_6Region_applyForceOnNodes;
+struct __pyx_obj_17fa2_visualization_7fa2util_Node;
+struct __pyx_obj_17fa2_visualization_7fa2util_Edge;
+struct __pyx_obj_17fa2_visualization_7fa2util_Region;
+struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion;
+struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion_region;
+struct __pyx_opt_args_17fa2_visualization_7fa2util_strongGravity;
+struct __pyx_opt_args_17fa2_visualization_7fa2util_linAttraction;
+struct __pyx_opt_args_17fa2_visualization_7fa2util_apply_gravity;
+struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce;
+struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForceOnNodes;
 
-/* "fa2util.pyx":32
+/* "fa2_visualization/fa2util.pyx":32
  *         self.weight = 0.0
  * 
  * cpdef linRepulsion(Node n1, Node n2, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n1.x - n2.x
  *     cdef double yDist = n1.y - n2.y
  */
-struct __pyx_opt_args_7fa2util_linRepulsion {
+struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion {
   int __pyx_n;
   double coefficient;
 };
 
-/* "fa2util.pyx":45
+/* "fa2_visualization/fa2util.pyx":45
  *         n2.dy -= yDist * factor
  * 
  * cpdef linRepulsion_region(Node n, Region r, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n.x - r.massCenterX
  *     cdef double yDist = n.y - r.massCenterY
  */
-struct __pyx_opt_args_7fa2util_linRepulsion_region {
+struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion_region {
   int __pyx_n;
   double coefficient;
 };
 
-/* "fa2util.pyx":67
+/* "fa2_visualization/fa2util.pyx":67
  *         n.dy -= yDist * factor
  * 
  * cpdef strongGravity(Node n, double g, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n.x
  *     cdef double yDist = n.y
  */
-struct __pyx_opt_args_7fa2util_strongGravity {
+struct __pyx_opt_args_17fa2_visualization_7fa2util_strongGravity {
   int __pyx_n;
   double coefficient;
 };
 
-/* "fa2util.pyx":77
+/* "fa2_visualization/fa2util.pyx":77
  *         n.dy -= yDist * factor
  * 
  * cpdef linAttraction(Node n1, Node n2, double e, bint distributedAttraction, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n1.x - n2.x
  *     cdef double yDist = n1.y - n2.y
  */
-struct __pyx_opt_args_7fa2util_linAttraction {
+struct __pyx_opt_args_17fa2_visualization_7fa2util_linAttraction {
   int __pyx_n;
   double coefficient;
 };
 
-/* "fa2util.pyx":105
+/* "fa2_visualization/fa2util.pyx":105
  *         i += 1
  * 
  * cpdef apply_gravity(list[Node] nodes, double gravity, double scalingRatio, bint useStrongGravity=False):             # <<<<<<<<<<<<<<
  *     cdef Node n
  *     for n in nodes:
  */
-struct __pyx_opt_args_7fa2util_apply_gravity {
+struct __pyx_opt_args_17fa2_visualization_7fa2util_apply_gravity {
   int __pyx_n;
   int useStrongGravity;
 };
 
-/* "fa2util.pyx":222
+/* "fa2_visualization/fa2util.pyx":222
  *                 subregion.buildSubRegions()
  * 
  *     cpdef applyForce(self, Node n, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
  *         cdef double distance
  *         cdef Region subregion
  */
-struct __pyx_opt_args_7fa2util_6Region_applyForce {
+struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce {
   int __pyx_n;
   double coefficient;
 };
 
-/* "fa2util.pyx":236
+/* "fa2_visualization/fa2util.pyx":236
  *                     subregion.applyForce(n, theta, coefficient)
  * 
  *     cpdef applyForceOnNodes(self, list[Node] nodes, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
  *         cdef Node n
  *         for n in nodes:
  */
-struct __pyx_opt_args_7fa2util_6Region_applyForceOnNodes {
+struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForceOnNodes {
   int __pyx_n;
   double coefficient;
 };
 
-/* "fa2util.pyx":4
+/* "fa2_visualization/fa2util.pyx":4
  * from libc.math cimport sqrt
  * 
  * cdef class Node:             # <<<<<<<<<<<<<<
  *     cdef public double mass
  *     cdef public double old_dx
  */
-struct __pyx_obj_7fa2util_Node {
+struct __pyx_obj_17fa2_visualization_7fa2util_Node {
   PyObject_HEAD
   double mass;
   double old_dx;
@@ -1591,14 +1591,14 @@ struct __pyx_obj_7fa2util_Node {
 };
 
 
-/* "fa2util.pyx":22
+/* "fa2_visualization/fa2util.pyx":22
  *         self.y = 0.0
  * 
  * cdef class Edge:             # <<<<<<<<<<<<<<
  *     cdef public int node1
  *     cdef public int node2
  */
-struct __pyx_obj_7fa2util_Edge {
+struct __pyx_obj_17fa2_visualization_7fa2util_Edge {
   PyObject_HEAD
   int node1;
   int node2;
@@ -1606,16 +1606,16 @@ struct __pyx_obj_7fa2util_Edge {
 };
 
 
-/* "fa2util.pyx":126
+/* "fa2_visualization/fa2util.pyx":126
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], pow(edge.weight, edgeWeightInfluence), distributedAttraction, coefficient)
  * 
  * cdef class Region:             # <<<<<<<<<<<<<<
  *     cdef public double mass, massCenterX, massCenterY, size
  *     cdef public list[Node] nodes
  */
-struct __pyx_obj_7fa2util_Region {
+struct __pyx_obj_17fa2_visualization_7fa2util_Region {
   PyObject_HEAD
-  struct __pyx_vtabstruct_7fa2util_Region *__pyx_vtab;
+  struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region *__pyx_vtab;
   double mass;
   double massCenterX;
   double massCenterY;
@@ -1626,13 +1626,13 @@ struct __pyx_obj_7fa2util_Region {
 
 
 
-struct __pyx_vtabstruct_7fa2util_Region {
-  PyObject *(*updateMassAndGeometry)(struct __pyx_obj_7fa2util_Region *, int __pyx_skip_dispatch);
-  PyObject *(*buildSubRegions)(struct __pyx_obj_7fa2util_Region *, int __pyx_skip_dispatch);
-  PyObject *(*applyForce)(struct __pyx_obj_7fa2util_Region *, struct __pyx_obj_7fa2util_Node *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForce *__pyx_optional_args);
-  PyObject *(*applyForceOnNodes)(struct __pyx_obj_7fa2util_Region *, PyObject *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args);
+struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region {
+  PyObject *(*updateMassAndGeometry)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, int __pyx_skip_dispatch);
+  PyObject *(*buildSubRegions)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, int __pyx_skip_dispatch);
+  PyObject *(*applyForce)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, struct __pyx_obj_17fa2_visualization_7fa2util_Node *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce *__pyx_optional_args);
+  PyObject *(*applyForceOnNodes)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, PyObject *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args);
 };
-static struct __pyx_vtabstruct_7fa2util_Region *__pyx_vtabptr_7fa2util_Region;
+static struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region *__pyx_vtabptr_17fa2_visualization_7fa2util_Region;
 /* #### Code section: utility_code_proto ### */
 
 /* --- Runtime support code (head) --- */
@@ -2483,33 +2483,33 @@ static int __Pyx_check_binary_version(unsigned long ct_version, unsigned long rt
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* #### Code section: module_declarations ### */
-static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_Region *__pyx_v_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForce *__pyx_optional_args); /* proto*/
-static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args); /* proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_buildSubRegions(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_applyForce(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce *__pyx_optional_args); /* proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args); /* proto*/
 
 /* Module declarations from "libc.math" */
 
-/* Module declarations from "fa2util" */
-static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *, struct __pyx_obj_7fa2util_Node *, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_linRepulsion *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_Node *, struct __pyx_obj_7fa2util_Region *, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_linRepulsion_region *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *, double, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_strongGravity *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *, struct __pyx_obj_7fa2util_Node *, double, int, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_linAttraction *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *, double, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *, double, double, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_apply_gravity *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *, PyObject *, int, double, double, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *, double, double, double, int __pyx_skip_dispatch); /*proto*/
-static PyObject *__pyx_f_7fa2util___pyx_unpickle_Node__set_state(struct __pyx_obj_7fa2util_Node *, PyObject *); /*proto*/
-static PyObject *__pyx_f_7fa2util___pyx_unpickle_Edge__set_state(struct __pyx_obj_7fa2util_Edge *, PyObject *); /*proto*/
-static PyObject *__pyx_f_7fa2util___pyx_unpickle_Region__set_state(struct __pyx_obj_7fa2util_Region *, PyObject *); /*proto*/
+/* Module declarations from "fa2_visualization.fa2util" */
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linRepulsion(struct __pyx_obj_17fa2_visualization_7fa2util_Node *, struct __pyx_obj_17fa2_visualization_7fa2util_Node *, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linRepulsion_region(struct __pyx_obj_17fa2_visualization_7fa2util_Node *, struct __pyx_obj_17fa2_visualization_7fa2util_Region *, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion_region *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linGravity(struct __pyx_obj_17fa2_visualization_7fa2util_Node *, double, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_strongGravity(struct __pyx_obj_17fa2_visualization_7fa2util_Node *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_strongGravity *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linAttraction(struct __pyx_obj_17fa2_visualization_7fa2util_Node *, struct __pyx_obj_17fa2_visualization_7fa2util_Node *, double, int, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_linAttraction *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_apply_repulsion(PyObject *, double, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_apply_gravity(PyObject *, double, double, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_apply_gravity *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_apply_attraction(PyObject *, PyObject *, int, double, double, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_adjustSpeedAndApplyForces(PyObject *, double, double, double, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Node__set_state(struct __pyx_obj_17fa2_visualization_7fa2util_Node *, PyObject *); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Edge__set_state(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *, PyObject *); /*proto*/
+static PyObject *__pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Region__set_state(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, PyObject *); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "fa2util"
-extern int __pyx_module_is_main_fa2util;
-int __pyx_module_is_main_fa2util = 0;
+#define __Pyx_MODULE_NAME "fa2_visualization.fa2util"
+extern int __pyx_module_is_main_fa2_visualization__fa2util;
+int __pyx_module_is_main_fa2_visualization__fa2util = 0;
 
-/* Implementation of "fa2util" */
+/* Implementation of "fa2_visualization.fa2util" */
 /* #### Code section: global_var ### */
 /* #### Code section: string_decls ### */
 static const char __pyx_k_e[] = "e";
@@ -2543,7 +2543,6 @@ static const char __pyx_k_pickle[] = "pickle";
 static const char __pyx_k_reduce[] = "__reduce__";
 static const char __pyx_k_update[] = "update";
 static const char __pyx_k_disable[] = "disable";
-static const char __pyx_k_fa2util[] = "fa2util";
 static const char __pyx_k_gravity[] = "gravity";
 static const char __pyx_k_getstate[] = "__getstate__";
 static const char __pyx_k_pyx_type[] = "__pyx_type";
@@ -2596,73 +2595,74 @@ static const char __pyx_k_Region_buildSubRegions[] = "Region.buildSubRegions";
 static const char __pyx_k_Region___setstate_cython[] = "Region.__setstate_cython__";
 static const char __pyx_k_Region_applyForceOnNodes[] = "Region.applyForceOnNodes";
 static const char __pyx_k_adjustSpeedAndApplyForces[] = "adjustSpeedAndApplyForces";
+static const char __pyx_k_fa2_visualization_fa2util[] = "fa2_visualization.fa2util";
 static const char __pyx_k_Region_updateMassAndGeometry[] = "Region.updateMassAndGeometry";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0[] = "Incompatible checksums (0x%x vs (0x0d1592e, 0xe83997b, 0x2f233dd) = (dx, dy, mass, old_dx, old_dy, x, y))";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_2[] = "Incompatible checksums (0x%x vs (0x3fa673e, 0x4ef3770, 0xb469544) = (node1, node2, weight))";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_3[] = "Incompatible checksums (0x%x vs (0x00160cb, 0x2e352ab, 0x66ef4c7) = (mass, massCenterX, massCenterY, nodes, size, subregions))";
 /* #### Code section: decls ### */
-static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_4mass___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Node_4mass_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_6old_dx___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Node_6old_dx_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_6old_dy___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Node_6old_dy_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_2dx___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Node_2dx_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_2dy___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Node_2dy_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_1x___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Node_1x_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_1y___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Node_1y_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_2__reduce_cython__(struct __pyx_obj_7fa2util_Node *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_7fa2util_4Edge___init__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Edge_5node1___get__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Edge_5node1_2__set__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Edge_5node2___get__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Edge_5node2_2__set__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Edge_6weight___get__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_4Edge_6weight_2__set__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Edge_2__reduce_cython__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_7fa2util_Node *__pyx_v_n2, double __pyx_v_coefficient); /* proto */
-static PyObject *__pyx_pf_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, struct __pyx_obj_7fa2util_Region *__pyx_v_r, double __pyx_v_coefficient); /* proto */
-static PyObject *__pyx_pf_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_g); /* proto */
-static PyObject *__pyx_pf_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_g, double __pyx_v_coefficient); /* proto */
-static PyObject *__pyx_pf_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_7fa2util_Node *__pyx_v_n2, double __pyx_v_e, int __pyx_v_distributedAttraction, double __pyx_v_coefficient); /* proto */
-static PyObject *__pyx_pf_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_coefficient); /* proto */
-static PyObject *__pyx_pf_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_gravity, double __pyx_v_scalingRatio, int __pyx_v_useStrongGravity); /* proto */
-static PyObject *__pyx_pf_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, PyObject *__pyx_v_edges, int __pyx_v_distributedAttraction, double __pyx_v_coefficient, double __pyx_v_edgeWeightInfluence); /* proto */
-static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_6applyForce(struct __pyx_obj_7fa2util_Region *__pyx_v_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, double __pyx_v_coefficient); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, double __pyx_v_coefficient); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_4mass___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_6Region_4mass_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_11massCenterX___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_6Region_11massCenterX_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_11massCenterY___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_6Region_11massCenterY_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_4size___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_6Region_4size_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_5nodes___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_6Region_5nodes_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static int __pyx_pf_7fa2util_6Region_5nodes_4__del__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_10subregions___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static int __pyx_pf_7fa2util_6Region_10subregions_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
-static int __pyx_pf_7fa2util_6Region_10subregions_4__del__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_10__reduce_cython__(struct __pyx_obj_7fa2util_Region *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7fa2util_6Region_12__setstate_cython__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_7fa2util_16adjustSpeedAndApplyForces(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_speed, double __pyx_v_speedEfficiency, double __pyx_v_jitterTolerance); /* proto */
-static PyObject *__pyx_pf_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_tp_new_7fa2util_Node(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_7fa2util_Edge(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_7fa2util_Region(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node___init__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_4mass___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_4mass_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dx___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dx_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dy___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dy_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_2dx___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_2dx_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_2dy___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_2dy_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_1x___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_1x_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_1y___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_1y_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_2__reduce_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge___init__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_5node1___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node1_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_5node2___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node2_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_6weight___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge_6weight_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_2__reduce_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2, double __pyx_v_coefficient); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_r, double __pyx_v_coefficient); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_g); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_g, double __pyx_v_coefficient); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2, double __pyx_v_e, int __pyx_v_distributedAttraction, double __pyx_v_coefficient); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_coefficient); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_gravity, double __pyx_v_scalingRatio, int __pyx_v_useStrongGravity); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, PyObject *__pyx_v_edges, int __pyx_v_distributedAttraction, double __pyx_v_coefficient, double __pyx_v_edgeWeightInfluence); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region___init__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_6applyForce(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, double __pyx_v_coefficient); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, double __pyx_v_coefficient); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_4mass___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_4mass_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterX___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterX_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterY___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterY_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_4size___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_4size_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes_4__del__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions_4__del__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_10__reduce_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_12__setstate_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_16adjustSpeedAndApplyForces(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_speed, double __pyx_v_speedEfficiency, double __pyx_v_jitterTolerance); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_tp_new_17fa2_visualization_7fa2util_Node(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_17fa2_visualization_7fa2util_Edge(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_17fa2_visualization_7fa2util_Region(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 typedef struct {
@@ -2693,13 +2693,13 @@ typedef struct {
   #if CYTHON_USE_MODULE_STATE
   #endif
   #if CYTHON_USE_MODULE_STATE
-  PyObject *__pyx_type_7fa2util_Node;
-  PyObject *__pyx_type_7fa2util_Edge;
-  PyObject *__pyx_type_7fa2util_Region;
+  PyObject *__pyx_type_17fa2_visualization_7fa2util_Node;
+  PyObject *__pyx_type_17fa2_visualization_7fa2util_Edge;
+  PyObject *__pyx_type_17fa2_visualization_7fa2util_Region;
   #endif
-  PyTypeObject *__pyx_ptype_7fa2util_Node;
-  PyTypeObject *__pyx_ptype_7fa2util_Edge;
-  PyTypeObject *__pyx_ptype_7fa2util_Region;
+  PyTypeObject *__pyx_ptype_17fa2_visualization_7fa2util_Node;
+  PyTypeObject *__pyx_ptype_17fa2_visualization_7fa2util_Edge;
+  PyTypeObject *__pyx_ptype_17fa2_visualization_7fa2util_Region;
   PyObject *__pyx_n_s_Edge;
   PyObject *__pyx_n_s_Edge___reduce_cython;
   PyObject *__pyx_n_s_Edge___setstate_cython;
@@ -2737,7 +2737,7 @@ typedef struct {
   PyObject *__pyx_n_s_edgeWeightInfluence;
   PyObject *__pyx_n_s_edges;
   PyObject *__pyx_kp_u_enable;
-  PyObject *__pyx_n_s_fa2util;
+  PyObject *__pyx_n_s_fa2_visualization_fa2util;
   PyObject *__pyx_kp_s_fa2util_pyx;
   PyObject *__pyx_n_s_g;
   PyObject *__pyx_kp_u_gc;
@@ -2884,12 +2884,12 @@ static int __pyx_m_clear(PyObject *m) {
   #ifdef __Pyx_FusedFunction_USED
   Py_CLEAR(clear_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_CLEAR(clear_module_state->__pyx_ptype_7fa2util_Node);
-  Py_CLEAR(clear_module_state->__pyx_type_7fa2util_Node);
-  Py_CLEAR(clear_module_state->__pyx_ptype_7fa2util_Edge);
-  Py_CLEAR(clear_module_state->__pyx_type_7fa2util_Edge);
-  Py_CLEAR(clear_module_state->__pyx_ptype_7fa2util_Region);
-  Py_CLEAR(clear_module_state->__pyx_type_7fa2util_Region);
+  Py_CLEAR(clear_module_state->__pyx_ptype_17fa2_visualization_7fa2util_Node);
+  Py_CLEAR(clear_module_state->__pyx_type_17fa2_visualization_7fa2util_Node);
+  Py_CLEAR(clear_module_state->__pyx_ptype_17fa2_visualization_7fa2util_Edge);
+  Py_CLEAR(clear_module_state->__pyx_type_17fa2_visualization_7fa2util_Edge);
+  Py_CLEAR(clear_module_state->__pyx_ptype_17fa2_visualization_7fa2util_Region);
+  Py_CLEAR(clear_module_state->__pyx_type_17fa2_visualization_7fa2util_Region);
   Py_CLEAR(clear_module_state->__pyx_n_s_Edge);
   Py_CLEAR(clear_module_state->__pyx_n_s_Edge___reduce_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_Edge___setstate_cython);
@@ -2927,7 +2927,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_edgeWeightInfluence);
   Py_CLEAR(clear_module_state->__pyx_n_s_edges);
   Py_CLEAR(clear_module_state->__pyx_kp_u_enable);
-  Py_CLEAR(clear_module_state->__pyx_n_s_fa2util);
+  Py_CLEAR(clear_module_state->__pyx_n_s_fa2_visualization_fa2util);
   Py_CLEAR(clear_module_state->__pyx_kp_s_fa2util_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_g);
   Py_CLEAR(clear_module_state->__pyx_kp_u_gc);
@@ -3052,12 +3052,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   #ifdef __Pyx_FusedFunction_USED
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_VISIT(traverse_module_state->__pyx_ptype_7fa2util_Node);
-  Py_VISIT(traverse_module_state->__pyx_type_7fa2util_Node);
-  Py_VISIT(traverse_module_state->__pyx_ptype_7fa2util_Edge);
-  Py_VISIT(traverse_module_state->__pyx_type_7fa2util_Edge);
-  Py_VISIT(traverse_module_state->__pyx_ptype_7fa2util_Region);
-  Py_VISIT(traverse_module_state->__pyx_type_7fa2util_Region);
+  Py_VISIT(traverse_module_state->__pyx_ptype_17fa2_visualization_7fa2util_Node);
+  Py_VISIT(traverse_module_state->__pyx_type_17fa2_visualization_7fa2util_Node);
+  Py_VISIT(traverse_module_state->__pyx_ptype_17fa2_visualization_7fa2util_Edge);
+  Py_VISIT(traverse_module_state->__pyx_type_17fa2_visualization_7fa2util_Edge);
+  Py_VISIT(traverse_module_state->__pyx_ptype_17fa2_visualization_7fa2util_Region);
+  Py_VISIT(traverse_module_state->__pyx_type_17fa2_visualization_7fa2util_Region);
   Py_VISIT(traverse_module_state->__pyx_n_s_Edge);
   Py_VISIT(traverse_module_state->__pyx_n_s_Edge___reduce_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_Edge___setstate_cython);
@@ -3095,7 +3095,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_edgeWeightInfluence);
   Py_VISIT(traverse_module_state->__pyx_n_s_edges);
   Py_VISIT(traverse_module_state->__pyx_kp_u_enable);
-  Py_VISIT(traverse_module_state->__pyx_n_s_fa2util);
+  Py_VISIT(traverse_module_state->__pyx_n_s_fa2_visualization_fa2util);
   Py_VISIT(traverse_module_state->__pyx_kp_s_fa2util_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_g);
   Py_VISIT(traverse_module_state->__pyx_kp_u_gc);
@@ -3231,13 +3231,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #if CYTHON_USE_MODULE_STATE
 #endif
 #if CYTHON_USE_MODULE_STATE
-#define __pyx_type_7fa2util_Node __pyx_mstate_global->__pyx_type_7fa2util_Node
-#define __pyx_type_7fa2util_Edge __pyx_mstate_global->__pyx_type_7fa2util_Edge
-#define __pyx_type_7fa2util_Region __pyx_mstate_global->__pyx_type_7fa2util_Region
+#define __pyx_type_17fa2_visualization_7fa2util_Node __pyx_mstate_global->__pyx_type_17fa2_visualization_7fa2util_Node
+#define __pyx_type_17fa2_visualization_7fa2util_Edge __pyx_mstate_global->__pyx_type_17fa2_visualization_7fa2util_Edge
+#define __pyx_type_17fa2_visualization_7fa2util_Region __pyx_mstate_global->__pyx_type_17fa2_visualization_7fa2util_Region
 #endif
-#define __pyx_ptype_7fa2util_Node __pyx_mstate_global->__pyx_ptype_7fa2util_Node
-#define __pyx_ptype_7fa2util_Edge __pyx_mstate_global->__pyx_ptype_7fa2util_Edge
-#define __pyx_ptype_7fa2util_Region __pyx_mstate_global->__pyx_ptype_7fa2util_Region
+#define __pyx_ptype_17fa2_visualization_7fa2util_Node __pyx_mstate_global->__pyx_ptype_17fa2_visualization_7fa2util_Node
+#define __pyx_ptype_17fa2_visualization_7fa2util_Edge __pyx_mstate_global->__pyx_ptype_17fa2_visualization_7fa2util_Edge
+#define __pyx_ptype_17fa2_visualization_7fa2util_Region __pyx_mstate_global->__pyx_ptype_17fa2_visualization_7fa2util_Region
 #define __pyx_n_s_Edge __pyx_mstate_global->__pyx_n_s_Edge
 #define __pyx_n_s_Edge___reduce_cython __pyx_mstate_global->__pyx_n_s_Edge___reduce_cython
 #define __pyx_n_s_Edge___setstate_cython __pyx_mstate_global->__pyx_n_s_Edge___setstate_cython
@@ -3275,7 +3275,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_edgeWeightInfluence __pyx_mstate_global->__pyx_n_s_edgeWeightInfluence
 #define __pyx_n_s_edges __pyx_mstate_global->__pyx_n_s_edges
 #define __pyx_kp_u_enable __pyx_mstate_global->__pyx_kp_u_enable
-#define __pyx_n_s_fa2util __pyx_mstate_global->__pyx_n_s_fa2util
+#define __pyx_n_s_fa2_visualization_fa2util __pyx_mstate_global->__pyx_n_s_fa2_visualization_fa2util
 #define __pyx_kp_s_fa2util_pyx __pyx_mstate_global->__pyx_kp_s_fa2util_pyx
 #define __pyx_n_s_g __pyx_mstate_global->__pyx_n_s_g
 #define __pyx_kp_u_gc __pyx_mstate_global->__pyx_kp_u_gc
@@ -3382,7 +3382,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_codeobj__43 __pyx_mstate_global->__pyx_codeobj__43
 /* #### Code section: module_code ### */
 
-/* "fa2util.pyx":13
+/* "fa2_visualization/fa2util.pyx":13
  *     cdef public double y
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -3391,8 +3391,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
  */
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_7fa2util_4Node_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
@@ -3407,17 +3407,17 @@ static int __pyx_pw_7fa2util_4Node_1__init__(PyObject *__pyx_v_self, PyObject *_
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("__init__", 1, 0, 0, __pyx_nargs); return -1;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_VARARGS(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__init__", 0))) return -1;
-  __pyx_r = __pyx_pf_7fa2util_4Node___init__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node___init__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node___init__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   int __pyx_r;
 
-  /* "fa2util.pyx":14
+  /* "fa2_visualization/fa2util.pyx":14
  * 
  *     def __init__(self):
  *         self.mass = 0.0             # <<<<<<<<<<<<<<
@@ -3426,7 +3426,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
   __pyx_v_self->mass = 0.0;
 
-  /* "fa2util.pyx":15
+  /* "fa2_visualization/fa2util.pyx":15
  *     def __init__(self):
  *         self.mass = 0.0
  *         self.old_dx = 0.0             # <<<<<<<<<<<<<<
@@ -3435,7 +3435,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
   __pyx_v_self->old_dx = 0.0;
 
-  /* "fa2util.pyx":16
+  /* "fa2_visualization/fa2util.pyx":16
  *         self.mass = 0.0
  *         self.old_dx = 0.0
  *         self.old_dy = 0.0             # <<<<<<<<<<<<<<
@@ -3444,7 +3444,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
   __pyx_v_self->old_dy = 0.0;
 
-  /* "fa2util.pyx":17
+  /* "fa2_visualization/fa2util.pyx":17
  *         self.old_dx = 0.0
  *         self.old_dy = 0.0
  *         self.dx = 0.0             # <<<<<<<<<<<<<<
@@ -3453,7 +3453,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
   __pyx_v_self->dx = 0.0;
 
-  /* "fa2util.pyx":18
+  /* "fa2_visualization/fa2util.pyx":18
  *         self.old_dy = 0.0
  *         self.dx = 0.0
  *         self.dy = 0.0             # <<<<<<<<<<<<<<
@@ -3462,7 +3462,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
   __pyx_v_self->dy = 0.0;
 
-  /* "fa2util.pyx":19
+  /* "fa2_visualization/fa2util.pyx":19
  *         self.dx = 0.0
  *         self.dy = 0.0
  *         self.x = 0.0             # <<<<<<<<<<<<<<
@@ -3471,7 +3471,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
   __pyx_v_self->x = 0.0;
 
-  /* "fa2util.pyx":20
+  /* "fa2_visualization/fa2util.pyx":20
  *         self.dy = 0.0
  *         self.x = 0.0
  *         self.y = 0.0             # <<<<<<<<<<<<<<
@@ -3480,7 +3480,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
   __pyx_v_self->y = 0.0;
 
-  /* "fa2util.pyx":13
+  /* "fa2_visualization/fa2util.pyx":13
  *     cdef public double y
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -3493,7 +3493,7 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
   return __pyx_r;
 }
 
-/* "fa2util.pyx":5
+/* "fa2_visualization/fa2util.pyx":5
  * 
  * cdef class Node:
  *     cdef public double mass             # <<<<<<<<<<<<<<
@@ -3502,21 +3502,21 @@ static int __pyx_pf_7fa2util_4Node___init__(struct __pyx_obj_7fa2util_Node *__py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_4mass_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Node_4mass_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_4mass_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_4mass_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_4mass___get__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_4mass___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_4mass___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_4mass___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3534,7 +3534,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_4mass___get__(struct __pyx_obj_7fa2util
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.mass.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.mass.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3543,21 +3543,21 @@ static PyObject *__pyx_pf_7fa2util_4Node_4mass___get__(struct __pyx_obj_7fa2util
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Node_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_4mass_2__set__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_4mass_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node_4mass_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_4mass_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -3570,13 +3570,13 @@ static int __pyx_pf_7fa2util_4Node_4mass_2__set__(struct __pyx_obj_7fa2util_Node
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Node.mass.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.mass.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":6
+/* "fa2_visualization/fa2util.pyx":6
  * cdef class Node:
  *     cdef public double mass
  *     cdef public double old_dx             # <<<<<<<<<<<<<<
@@ -3585,21 +3585,21 @@ static int __pyx_pf_7fa2util_4Node_4mass_2__set__(struct __pyx_obj_7fa2util_Node
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_6old_dx_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Node_6old_dx_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dx_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dx_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_6old_dx___get__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dx___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_6old_dx___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dx___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3617,7 +3617,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_6old_dx___get__(struct __pyx_obj_7fa2ut
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.old_dx.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.old_dx.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3626,21 +3626,21 @@ static PyObject *__pyx_pf_7fa2util_4Node_6old_dx___get__(struct __pyx_obj_7fa2ut
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_6old_dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Node_6old_dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_6old_dx_2__set__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dx_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node_6old_dx_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dx_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -3653,13 +3653,13 @@ static int __pyx_pf_7fa2util_4Node_6old_dx_2__set__(struct __pyx_obj_7fa2util_No
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Node.old_dx.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.old_dx.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":7
+/* "fa2_visualization/fa2util.pyx":7
  *     cdef public double mass
  *     cdef public double old_dx
  *     cdef public double old_dy             # <<<<<<<<<<<<<<
@@ -3668,21 +3668,21 @@ static int __pyx_pf_7fa2util_4Node_6old_dx_2__set__(struct __pyx_obj_7fa2util_No
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_6old_dy_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Node_6old_dy_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dy_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dy_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_6old_dy___get__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dy___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_6old_dy___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dy___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3700,7 +3700,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_6old_dy___get__(struct __pyx_obj_7fa2ut
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.old_dy.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.old_dy.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3709,21 +3709,21 @@ static PyObject *__pyx_pf_7fa2util_4Node_6old_dy___get__(struct __pyx_obj_7fa2ut
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_6old_dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Node_6old_dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_6old_dy_2__set__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dy_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node_6old_dy_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_6old_dy_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -3736,13 +3736,13 @@ static int __pyx_pf_7fa2util_4Node_6old_dy_2__set__(struct __pyx_obj_7fa2util_No
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Node.old_dy.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.old_dy.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":8
+/* "fa2_visualization/fa2util.pyx":8
  *     cdef public double old_dx
  *     cdef public double old_dy
  *     cdef public double dx             # <<<<<<<<<<<<<<
@@ -3751,21 +3751,21 @@ static int __pyx_pf_7fa2util_4Node_6old_dy_2__set__(struct __pyx_obj_7fa2util_No
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_2dx_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Node_2dx_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_2dx_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_2dx_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_2dx___get__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_2dx___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_2dx___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_2dx___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3783,7 +3783,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_2dx___get__(struct __pyx_obj_7fa2util_N
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.dx.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.dx.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3792,21 +3792,21 @@ static PyObject *__pyx_pf_7fa2util_4Node_2dx___get__(struct __pyx_obj_7fa2util_N
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_2dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Node_2dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_2dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_2dx_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_2dx_2__set__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_2dx_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node_2dx_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_2dx_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -3819,13 +3819,13 @@ static int __pyx_pf_7fa2util_4Node_2dx_2__set__(struct __pyx_obj_7fa2util_Node *
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Node.dx.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.dx.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":9
+/* "fa2_visualization/fa2util.pyx":9
  *     cdef public double old_dy
  *     cdef public double dx
  *     cdef public double dy             # <<<<<<<<<<<<<<
@@ -3834,21 +3834,21 @@ static int __pyx_pf_7fa2util_4Node_2dx_2__set__(struct __pyx_obj_7fa2util_Node *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_2dy_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Node_2dy_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_2dy_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_2dy_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_2dy___get__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_2dy___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_2dy___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_2dy___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3866,7 +3866,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_2dy___get__(struct __pyx_obj_7fa2util_N
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.dy.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.dy.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3875,21 +3875,21 @@ static PyObject *__pyx_pf_7fa2util_4Node_2dy___get__(struct __pyx_obj_7fa2util_N
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_2dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Node_2dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_2dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_2dy_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_2dy_2__set__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_2dy_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node_2dy_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_2dy_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -3902,13 +3902,13 @@ static int __pyx_pf_7fa2util_4Node_2dy_2__set__(struct __pyx_obj_7fa2util_Node *
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Node.dy.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.dy.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":10
+/* "fa2_visualization/fa2util.pyx":10
  *     cdef public double dx
  *     cdef public double dy
  *     cdef public double x             # <<<<<<<<<<<<<<
@@ -3917,21 +3917,21 @@ static int __pyx_pf_7fa2util_4Node_2dy_2__set__(struct __pyx_obj_7fa2util_Node *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_1x_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Node_1x_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_1x_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_1x_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_1x___get__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_1x___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_1x___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_1x___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3949,7 +3949,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_1x___get__(struct __pyx_obj_7fa2util_No
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.x.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.x.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3958,21 +3958,21 @@ static PyObject *__pyx_pf_7fa2util_4Node_1x___get__(struct __pyx_obj_7fa2util_No
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_1x_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Node_1x_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_1x_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_1x_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_1x_2__set__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_1x_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node_1x_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_1x_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -3985,13 +3985,13 @@ static int __pyx_pf_7fa2util_4Node_1x_2__set__(struct __pyx_obj_7fa2util_Node *_
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Node.x.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.x.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":11
+/* "fa2_visualization/fa2util.pyx":11
  *     cdef public double dy
  *     cdef public double x
  *     cdef public double y             # <<<<<<<<<<<<<<
@@ -4000,21 +4000,21 @@ static int __pyx_pf_7fa2util_4Node_1x_2__set__(struct __pyx_obj_7fa2util_Node *_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_1y_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Node_1y_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_1y_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_1y_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_1y___get__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_1y___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_1y___get__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_1y___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4032,7 +4032,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_1y___get__(struct __pyx_obj_7fa2util_No
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.y.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.y.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4041,21 +4041,21 @@ static PyObject *__pyx_pf_7fa2util_4Node_1y___get__(struct __pyx_obj_7fa2util_No
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Node_1y_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Node_1y_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_1y_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Node_1y_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Node_1y_2__set__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_1y_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Node_1y_2__set__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Node_1y_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -4068,7 +4068,7 @@ static int __pyx_pf_7fa2util_4Node_1y_2__set__(struct __pyx_obj_7fa2util_Node *_
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Node.y.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.y.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
@@ -4081,15 +4081,15 @@ static int __pyx_pf_7fa2util_4Node_1y_2__set__(struct __pyx_obj_7fa2util_Node *_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_3__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_4Node_3__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Node_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_4Node_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_4Node_3__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Node_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_3__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4114,14 +4114,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__reduce_cython__", 0))) return NULL;
-  __pyx_r = __pyx_pf_7fa2util_4Node_2__reduce_cython__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_2__reduce_cython__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_2__reduce_cython__(struct __pyx_obj_7fa2util_Node *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_2__reduce_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v__dict = 0;
   int __pyx_v_use_setstate;
@@ -4364,7 +4364,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_2__reduce_cython__(struct __pyx_obj_7fa
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("fa2util.Node.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_state);
@@ -4382,15 +4382,15 @@ static PyObject *__pyx_pf_7fa2util_4Node_2__reduce_cython__(struct __pyx_obj_7fa
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Node_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_5__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_4Node_5__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Node_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_4Node_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_4Node_5__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Node_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Node_5__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4460,11 +4460,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fa2util_4Node_4__setstate_cython__(((struct __pyx_obj_7fa2util_Node *)__pyx_v_self), __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Node_4__setstate_cython__(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v_self), __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -4477,7 +4477,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4492,7 +4492,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_7
  *     __pyx_unpickle_Node__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
  */
   if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 17, __pyx_L1_error)
-  __pyx_t_1 = __pyx_f_7fa2util___pyx_unpickle_Node__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Node__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -4508,7 +4508,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_7
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Node.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4516,7 +4516,7 @@ static PyObject *__pyx_pf_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "fa2util.pyx":27
+/* "fa2_visualization/fa2util.pyx":27
  *     cdef public double weight
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -4525,8 +4525,8 @@ static PyObject *__pyx_pf_7fa2util_4Node_4__setstate_cython__(struct __pyx_obj_7
  */
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Edge_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_7fa2util_4Edge_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
@@ -4541,17 +4541,17 @@ static int __pyx_pw_7fa2util_4Edge_1__init__(PyObject *__pyx_v_self, PyObject *_
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("__init__", 1, 0, 0, __pyx_nargs); return -1;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_VARARGS(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__init__", 0))) return -1;
-  __pyx_r = __pyx_pf_7fa2util_4Edge___init__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge___init__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Edge___init__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge___init__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self) {
   int __pyx_r;
 
-  /* "fa2util.pyx":28
+  /* "fa2_visualization/fa2util.pyx":28
  * 
  *     def __init__(self):
  *         self.node1 = -1             # <<<<<<<<<<<<<<
@@ -4560,7 +4560,7 @@ static int __pyx_pf_7fa2util_4Edge___init__(struct __pyx_obj_7fa2util_Edge *__py
  */
   __pyx_v_self->node1 = -1;
 
-  /* "fa2util.pyx":29
+  /* "fa2_visualization/fa2util.pyx":29
  *     def __init__(self):
  *         self.node1 = -1
  *         self.node2 = -1             # <<<<<<<<<<<<<<
@@ -4569,7 +4569,7 @@ static int __pyx_pf_7fa2util_4Edge___init__(struct __pyx_obj_7fa2util_Edge *__py
  */
   __pyx_v_self->node2 = -1;
 
-  /* "fa2util.pyx":30
+  /* "fa2_visualization/fa2util.pyx":30
  *         self.node1 = -1
  *         self.node2 = -1
  *         self.weight = 0.0             # <<<<<<<<<<<<<<
@@ -4578,7 +4578,7 @@ static int __pyx_pf_7fa2util_4Edge___init__(struct __pyx_obj_7fa2util_Edge *__py
  */
   __pyx_v_self->weight = 0.0;
 
-  /* "fa2util.pyx":27
+  /* "fa2_visualization/fa2util.pyx":27
  *     cdef public double weight
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -4591,7 +4591,7 @@ static int __pyx_pf_7fa2util_4Edge___init__(struct __pyx_obj_7fa2util_Edge *__py
   return __pyx_r;
 }
 
-/* "fa2util.pyx":23
+/* "fa2_visualization/fa2util.pyx":23
  * 
  * cdef class Edge:
  *     cdef public int node1             # <<<<<<<<<<<<<<
@@ -4600,21 +4600,21 @@ static int __pyx_pf_7fa2util_4Edge___init__(struct __pyx_obj_7fa2util_Edge *__py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Edge_5node1_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Edge_5node1_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_5node1_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_5node1_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Edge_5node1___get__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node1___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Edge_5node1___get__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_5node1___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4632,7 +4632,7 @@ static PyObject *__pyx_pf_7fa2util_4Edge_5node1___get__(struct __pyx_obj_7fa2uti
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Edge.node1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.node1.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4641,21 +4641,21 @@ static PyObject *__pyx_pf_7fa2util_4Edge_5node1___get__(struct __pyx_obj_7fa2uti
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Edge_5node1_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Edge_5node1_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node1_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node1_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Edge_5node1_2__set__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node1_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Edge_5node1_2__set__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node1_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   int __pyx_t_1;
   int __pyx_lineno = 0;
@@ -4668,13 +4668,13 @@ static int __pyx_pf_7fa2util_4Edge_5node1_2__set__(struct __pyx_obj_7fa2util_Edg
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Edge.node1.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.node1.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":24
+/* "fa2_visualization/fa2util.pyx":24
  * cdef class Edge:
  *     cdef public int node1
  *     cdef public int node2             # <<<<<<<<<<<<<<
@@ -4683,21 +4683,21 @@ static int __pyx_pf_7fa2util_4Edge_5node1_2__set__(struct __pyx_obj_7fa2util_Edg
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Edge_5node2_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Edge_5node2_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_5node2_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_5node2_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Edge_5node2___get__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node2___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Edge_5node2___get__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_5node2___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4715,7 +4715,7 @@ static PyObject *__pyx_pf_7fa2util_4Edge_5node2___get__(struct __pyx_obj_7fa2uti
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Edge.node2.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.node2.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4724,21 +4724,21 @@ static PyObject *__pyx_pf_7fa2util_4Edge_5node2___get__(struct __pyx_obj_7fa2uti
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Edge_5node2_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Edge_5node2_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node2_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node2_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Edge_5node2_2__set__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node2_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Edge_5node2_2__set__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge_5node2_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   int __pyx_t_1;
   int __pyx_lineno = 0;
@@ -4751,13 +4751,13 @@ static int __pyx_pf_7fa2util_4Edge_5node2_2__set__(struct __pyx_obj_7fa2util_Edg
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Edge.node2.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.node2.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":25
+/* "fa2_visualization/fa2util.pyx":25
  *     cdef public int node1
  *     cdef public int node2
  *     cdef public double weight             # <<<<<<<<<<<<<<
@@ -4766,21 +4766,21 @@ static int __pyx_pf_7fa2util_4Edge_5node2_2__set__(struct __pyx_obj_7fa2util_Edg
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Edge_6weight_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_4Edge_6weight_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_6weight_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_6weight_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Edge_6weight___get__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_6weight___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Edge_6weight___get__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_6weight___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4798,7 +4798,7 @@ static PyObject *__pyx_pf_7fa2util_4Edge_6weight___get__(struct __pyx_obj_7fa2ut
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Edge.weight.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.weight.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4807,21 +4807,21 @@ static PyObject *__pyx_pf_7fa2util_4Edge_6weight___get__(struct __pyx_obj_7fa2ut
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_4Edge_6weight_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_4Edge_6weight_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_6weight_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_4Edge_6weight_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_4Edge_6weight_2__set__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_6weight_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_4Edge_6weight_2__set__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_4Edge_6weight_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -4834,7 +4834,7 @@ static int __pyx_pf_7fa2util_4Edge_6weight_2__set__(struct __pyx_obj_7fa2util_Ed
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Edge.weight.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.weight.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
@@ -4847,15 +4847,15 @@ static int __pyx_pf_7fa2util_4Edge_6weight_2__set__(struct __pyx_obj_7fa2util_Ed
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Edge_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_3__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_4Edge_3__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Edge_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_4Edge_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_4Edge_3__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Edge_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_3__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4880,14 +4880,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__reduce_cython__", 0))) return NULL;
-  __pyx_r = __pyx_pf_7fa2util_4Edge_2__reduce_cython__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_2__reduce_cython__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Edge_2__reduce_cython__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_2__reduce_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v__dict = 0;
   int __pyx_v_use_setstate;
@@ -5102,7 +5102,7 @@ static PyObject *__pyx_pf_7fa2util_4Edge_2__reduce_cython__(struct __pyx_obj_7fa
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fa2util.Edge.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_state);
@@ -5120,15 +5120,15 @@ static PyObject *__pyx_pf_7fa2util_4Edge_2__reduce_cython__(struct __pyx_obj_7fa
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_4Edge_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_5__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_4Edge_5__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Edge_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_4Edge_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_4Edge_5__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Edge_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_4Edge_5__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5198,11 +5198,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fa2util_4Edge_4__setstate_cython__(((struct __pyx_obj_7fa2util_Edge *)__pyx_v_self), __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4Edge_4__setstate_cython__(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v_self), __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -5215,7 +5215,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -5230,7 +5230,7 @@ static PyObject *__pyx_pf_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_7
  *     __pyx_unpickle_Edge__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
  */
   if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 17, __pyx_L1_error)
-  __pyx_t_1 = __pyx_f_7fa2util___pyx_unpickle_Edge__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Edge__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -5246,7 +5246,7 @@ static PyObject *__pyx_pf_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_7
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Edge.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5254,7 +5254,7 @@ static PyObject *__pyx_pf_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "fa2util.pyx":32
+/* "fa2_visualization/fa2util.pyx":32
  *         self.weight = 0.0
  * 
  * cpdef linRepulsion(Node n1, Node n2, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -5262,14 +5262,14 @@ static PyObject *__pyx_pf_7fa2util_4Edge_4__setstate_cython__(struct __pyx_obj_7
  *     cdef double yDist = n1.y - n2.y
  */
 
-static PyObject *__pyx_pw_7fa2util_1linRepulsion(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_1linRepulsion(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_7fa2util_Node *__pyx_v_n2, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_linRepulsion *__pyx_optional_args) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linRepulsion(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion *__pyx_optional_args) {
   double __pyx_v_coefficient = ((double)0.0);
   double __pyx_v_xDist;
   double __pyx_v_yDist;
@@ -5289,7 +5289,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
     }
   }
 
-  /* "fa2util.pyx":33
+  /* "fa2_visualization/fa2util.pyx":33
  * 
  * cpdef linRepulsion(Node n1, Node n2, double coefficient=0):
  *     cdef double xDist = n1.x - n2.x             # <<<<<<<<<<<<<<
@@ -5298,7 +5298,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
   __pyx_v_xDist = (__pyx_v_n1->x - __pyx_v_n2->x);
 
-  /* "fa2util.pyx":34
+  /* "fa2_visualization/fa2util.pyx":34
  * cpdef linRepulsion(Node n1, Node n2, double coefficient=0):
  *     cdef double xDist = n1.x - n2.x
  *     cdef double yDist = n1.y - n2.y             # <<<<<<<<<<<<<<
@@ -5307,7 +5307,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
   __pyx_v_yDist = (__pyx_v_n1->y - __pyx_v_n2->y);
 
-  /* "fa2util.pyx":35
+  /* "fa2_visualization/fa2util.pyx":35
  *     cdef double xDist = n1.x - n2.x
  *     cdef double yDist = n1.y - n2.y
  *     cdef double distance2 = xDist * xDist + yDist * yDist  # Distance squared             # <<<<<<<<<<<<<<
@@ -5316,7 +5316,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
   __pyx_v_distance2 = ((__pyx_v_xDist * __pyx_v_xDist) + (__pyx_v_yDist * __pyx_v_yDist));
 
-  /* "fa2util.pyx":38
+  /* "fa2_visualization/fa2util.pyx":38
  *     cdef double factor
  * 
  *     if distance2 > 0:             # <<<<<<<<<<<<<<
@@ -5326,7 +5326,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
   __pyx_t_1 = (__pyx_v_distance2 > 0.0);
   if (__pyx_t_1) {
 
-    /* "fa2util.pyx":39
+    /* "fa2_visualization/fa2util.pyx":39
  * 
  *     if distance2 > 0:
  *         factor = coefficient * n1.mass * n2.mass / distance2             # <<<<<<<<<<<<<<
@@ -5340,7 +5340,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
     }
     __pyx_v_factor = (__pyx_t_2 / __pyx_v_distance2);
 
-    /* "fa2util.pyx":40
+    /* "fa2_visualization/fa2util.pyx":40
  *     if distance2 > 0:
  *         factor = coefficient * n1.mass * n2.mass / distance2
  *         n1.dx += xDist * factor             # <<<<<<<<<<<<<<
@@ -5349,7 +5349,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
     __pyx_v_n1->dx = (__pyx_v_n1->dx + (__pyx_v_xDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":41
+    /* "fa2_visualization/fa2util.pyx":41
  *         factor = coefficient * n1.mass * n2.mass / distance2
  *         n1.dx += xDist * factor
  *         n1.dy += yDist * factor             # <<<<<<<<<<<<<<
@@ -5358,7 +5358,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
     __pyx_v_n1->dy = (__pyx_v_n1->dy + (__pyx_v_yDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":42
+    /* "fa2_visualization/fa2util.pyx":42
  *         n1.dx += xDist * factor
  *         n1.dy += yDist * factor
  *         n2.dx -= xDist * factor             # <<<<<<<<<<<<<<
@@ -5367,7 +5367,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
     __pyx_v_n2->dx = (__pyx_v_n2->dx - (__pyx_v_xDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":43
+    /* "fa2_visualization/fa2util.pyx":43
  *         n1.dy += yDist * factor
  *         n2.dx -= xDist * factor
  *         n2.dy -= yDist * factor             # <<<<<<<<<<<<<<
@@ -5376,7 +5376,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
     __pyx_v_n2->dy = (__pyx_v_n2->dy - (__pyx_v_yDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":38
+    /* "fa2_visualization/fa2util.pyx":38
  *     cdef double factor
  * 
  *     if distance2 > 0:             # <<<<<<<<<<<<<<
@@ -5385,7 +5385,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
  */
   }
 
-  /* "fa2util.pyx":32
+  /* "fa2_visualization/fa2util.pyx":32
  *         self.weight = 0.0
  * 
  * cpdef linRepulsion(Node n1, Node n2, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -5397,7 +5397,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.linRepulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linRepulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5406,23 +5406,23 @@ static PyObject *__pyx_f_7fa2util_linRepulsion(struct __pyx_obj_7fa2util_Node *_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_1linRepulsion(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_1linRepulsion(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_1linRepulsion = {"linRepulsion", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_1linRepulsion, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_1linRepulsion(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_1linRepulsion = {"linRepulsion", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_1linRepulsion, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_1linRepulsion(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n1 = 0;
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n2 = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1 = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2 = 0;
   double __pyx_v_coefficient;
   #if !CYTHON_METH_FASTCALL
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
@@ -5498,8 +5498,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_n1 = ((struct __pyx_obj_7fa2util_Node *)values[0]);
-    __pyx_v_n2 = ((struct __pyx_obj_7fa2util_Node *)values[1]);
+    __pyx_v_n1 = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[0]);
+    __pyx_v_n2 = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[1]);
     if (values[2]) {
       __pyx_v_coefficient = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_coefficient == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L3_error)
     } else {
@@ -5518,13 +5518,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.linRepulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linRepulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n1), __pyx_ptype_7fa2util_Node, 1, "n1", 0))) __PYX_ERR(0, 32, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n2), __pyx_ptype_7fa2util_Node, 1, "n2", 0))) __PYX_ERR(0, 32, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_linRepulsion(__pyx_self, __pyx_v_n1, __pyx_v_n2, __pyx_v_coefficient);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n1), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n1", 0))) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n2), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n2", 0))) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_linRepulsion(__pyx_self, __pyx_v_n1, __pyx_v_n2, __pyx_v_coefficient);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5541,11 +5541,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_7fa2util_Node *__pyx_v_n2, double __pyx_v_coefficient) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2, double __pyx_v_coefficient) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_7fa2util_linRepulsion __pyx_t_2;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -5553,7 +5553,7 @@ static PyObject *__pyx_pf_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_se
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.coefficient = __pyx_v_coefficient;
-  __pyx_t_1 = __pyx_f_7fa2util_linRepulsion(__pyx_v_n1, __pyx_v_n2, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_linRepulsion(__pyx_v_n1, __pyx_v_n2, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5562,7 +5562,7 @@ static PyObject *__pyx_pf_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_se
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.linRepulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linRepulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5570,7 +5570,7 @@ static PyObject *__pyx_pf_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "fa2util.pyx":45
+/* "fa2_visualization/fa2util.pyx":45
  *         n2.dy -= yDist * factor
  * 
  * cpdef linRepulsion_region(Node n, Region r, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -5578,14 +5578,14 @@ static PyObject *__pyx_pf_7fa2util_linRepulsion(CYTHON_UNUSED PyObject *__pyx_se
  *     cdef double yDist = n.y - r.massCenterY
  */
 
-static PyObject *__pyx_pw_7fa2util_3linRepulsion_region(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_3linRepulsion_region(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_Node *__pyx_v_n, struct __pyx_obj_7fa2util_Region *__pyx_v_r, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_linRepulsion_region *__pyx_optional_args) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linRepulsion_region(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_r, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion_region *__pyx_optional_args) {
   double __pyx_v_coefficient = ((double)0.0);
   double __pyx_v_xDist;
   double __pyx_v_yDist;
@@ -5605,7 +5605,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
     }
   }
 
-  /* "fa2util.pyx":46
+  /* "fa2_visualization/fa2util.pyx":46
  * 
  * cpdef linRepulsion_region(Node n, Region r, double coefficient=0):
  *     cdef double xDist = n.x - r.massCenterX             # <<<<<<<<<<<<<<
@@ -5614,7 +5614,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
  */
   __pyx_v_xDist = (__pyx_v_n->x - __pyx_v_r->massCenterX);
 
-  /* "fa2util.pyx":47
+  /* "fa2_visualization/fa2util.pyx":47
  * cpdef linRepulsion_region(Node n, Region r, double coefficient=0):
  *     cdef double xDist = n.x - r.massCenterX
  *     cdef double yDist = n.y - r.massCenterY             # <<<<<<<<<<<<<<
@@ -5623,7 +5623,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
  */
   __pyx_v_yDist = (__pyx_v_n->y - __pyx_v_r->massCenterY);
 
-  /* "fa2util.pyx":48
+  /* "fa2_visualization/fa2util.pyx":48
  *     cdef double xDist = n.x - r.massCenterX
  *     cdef double yDist = n.y - r.massCenterY
  *     cdef double distance2 = xDist * xDist + yDist * yDist             # <<<<<<<<<<<<<<
@@ -5632,7 +5632,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
  */
   __pyx_v_distance2 = ((__pyx_v_xDist * __pyx_v_xDist) + (__pyx_v_yDist * __pyx_v_yDist));
 
-  /* "fa2util.pyx":51
+  /* "fa2_visualization/fa2util.pyx":51
  *     cdef double factor
  * 
  *     if distance2 > 0:             # <<<<<<<<<<<<<<
@@ -5642,7 +5642,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
   __pyx_t_1 = (__pyx_v_distance2 > 0.0);
   if (__pyx_t_1) {
 
-    /* "fa2util.pyx":52
+    /* "fa2_visualization/fa2util.pyx":52
  * 
  *     if distance2 > 0:
  *         factor = coefficient * n.mass * r.mass / distance2             # <<<<<<<<<<<<<<
@@ -5656,7 +5656,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
     }
     __pyx_v_factor = (__pyx_t_2 / __pyx_v_distance2);
 
-    /* "fa2util.pyx":53
+    /* "fa2_visualization/fa2util.pyx":53
  *     if distance2 > 0:
  *         factor = coefficient * n.mass * r.mass / distance2
  *         n.dx += xDist * factor             # <<<<<<<<<<<<<<
@@ -5665,7 +5665,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
  */
     __pyx_v_n->dx = (__pyx_v_n->dx + (__pyx_v_xDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":54
+    /* "fa2_visualization/fa2util.pyx":54
  *         factor = coefficient * n.mass * r.mass / distance2
  *         n.dx += xDist * factor
  *         n.dy += yDist * factor             # <<<<<<<<<<<<<<
@@ -5674,7 +5674,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
  */
     __pyx_v_n->dy = (__pyx_v_n->dy + (__pyx_v_yDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":51
+    /* "fa2_visualization/fa2util.pyx":51
  *     cdef double factor
  * 
  *     if distance2 > 0:             # <<<<<<<<<<<<<<
@@ -5683,7 +5683,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
  */
   }
 
-  /* "fa2util.pyx":45
+  /* "fa2_visualization/fa2util.pyx":45
  *         n2.dy -= yDist * factor
  * 
  * cpdef linRepulsion_region(Node n, Region r, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -5695,7 +5695,7 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.linRepulsion_region", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linRepulsion_region", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5704,23 +5704,23 @@ static PyObject *__pyx_f_7fa2util_linRepulsion_region(struct __pyx_obj_7fa2util_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_3linRepulsion_region(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_3linRepulsion_region(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_3linRepulsion_region = {"linRepulsion_region", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_3linRepulsion_region, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_3linRepulsion_region(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_3linRepulsion_region = {"linRepulsion_region", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_3linRepulsion_region, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_3linRepulsion_region(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
-  struct __pyx_obj_7fa2util_Region *__pyx_v_r = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_r = 0;
   double __pyx_v_coefficient;
   #if !CYTHON_METH_FASTCALL
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
@@ -5796,8 +5796,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_n = ((struct __pyx_obj_7fa2util_Node *)values[0]);
-    __pyx_v_r = ((struct __pyx_obj_7fa2util_Region *)values[1]);
+    __pyx_v_n = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[0]);
+    __pyx_v_r = ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)values[1]);
     if (values[2]) {
       __pyx_v_coefficient = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_coefficient == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L3_error)
     } else {
@@ -5816,13 +5816,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.linRepulsion_region", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linRepulsion_region", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 45, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_r), __pyx_ptype_7fa2util_Region, 1, "r", 0))) __PYX_ERR(0, 45, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_2linRepulsion_region(__pyx_self, __pyx_v_n, __pyx_v_r, __pyx_v_coefficient);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 45, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_r), __pyx_ptype_17fa2_visualization_7fa2util_Region, 1, "r", 0))) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_2linRepulsion_region(__pyx_self, __pyx_v_n, __pyx_v_r, __pyx_v_coefficient);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5839,11 +5839,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, struct __pyx_obj_7fa2util_Region *__pyx_v_r, double __pyx_v_coefficient) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_r, double __pyx_v_coefficient) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_7fa2util_linRepulsion_region __pyx_t_2;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion_region __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -5851,7 +5851,7 @@ static PyObject *__pyx_pf_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.coefficient = __pyx_v_coefficient;
-  __pyx_t_1 = __pyx_f_7fa2util_linRepulsion_region(__pyx_v_n, __pyx_v_r, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_linRepulsion_region(__pyx_v_n, __pyx_v_r, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5860,7 +5860,7 @@ static PyObject *__pyx_pf_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.linRepulsion_region", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linRepulsion_region", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5868,7 +5868,7 @@ static PyObject *__pyx_pf_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "fa2util.pyx":56
+/* "fa2_visualization/fa2util.pyx":56
  *         n.dy += yDist * factor
  * 
  * cpdef linGravity(Node n, double g):             # <<<<<<<<<<<<<<
@@ -5876,14 +5876,14 @@ static PyObject *__pyx_pf_7fa2util_2linRepulsion_region(CYTHON_UNUSED PyObject *
  *     cdef double yDist = n.y
  */
 
-static PyObject *__pyx_pw_7fa2util_5linGravity(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_5linGravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_g, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linGravity(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_g, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_v_xDist;
   double __pyx_v_yDist;
   double __pyx_v_distance;
@@ -5897,7 +5897,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("linGravity", 1);
 
-  /* "fa2util.pyx":57
+  /* "fa2_visualization/fa2util.pyx":57
  * 
  * cpdef linGravity(Node n, double g):
  *     cdef double xDist = n.x             # <<<<<<<<<<<<<<
@@ -5907,7 +5907,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
   __pyx_t_1 = __pyx_v_n->x;
   __pyx_v_xDist = __pyx_t_1;
 
-  /* "fa2util.pyx":58
+  /* "fa2_visualization/fa2util.pyx":58
  * cpdef linGravity(Node n, double g):
  *     cdef double xDist = n.x
  *     cdef double yDist = n.y             # <<<<<<<<<<<<<<
@@ -5917,7 +5917,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
   __pyx_t_1 = __pyx_v_n->y;
   __pyx_v_yDist = __pyx_t_1;
 
-  /* "fa2util.pyx":59
+  /* "fa2_visualization/fa2util.pyx":59
  *     cdef double xDist = n.x
  *     cdef double yDist = n.y
  *     cdef double distance = sqrt(xDist * xDist + yDist * yDist)             # <<<<<<<<<<<<<<
@@ -5926,7 +5926,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
  */
   __pyx_v_distance = sqrt(((__pyx_v_xDist * __pyx_v_xDist) + (__pyx_v_yDist * __pyx_v_yDist)));
 
-  /* "fa2util.pyx":62
+  /* "fa2_visualization/fa2util.pyx":62
  *     cdef double factor
  * 
  *     if distance > 0:             # <<<<<<<<<<<<<<
@@ -5936,7 +5936,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
   __pyx_t_2 = (__pyx_v_distance > 0.0);
   if (__pyx_t_2) {
 
-    /* "fa2util.pyx":63
+    /* "fa2_visualization/fa2util.pyx":63
  * 
  *     if distance > 0:
  *         factor = n.mass * g / distance             # <<<<<<<<<<<<<<
@@ -5950,7 +5950,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
     }
     __pyx_v_factor = (__pyx_t_1 / __pyx_v_distance);
 
-    /* "fa2util.pyx":64
+    /* "fa2_visualization/fa2util.pyx":64
  *     if distance > 0:
  *         factor = n.mass * g / distance
  *         n.dx -= xDist * factor             # <<<<<<<<<<<<<<
@@ -5959,7 +5959,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
  */
     __pyx_v_n->dx = (__pyx_v_n->dx - (__pyx_v_xDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":65
+    /* "fa2_visualization/fa2util.pyx":65
  *         factor = n.mass * g / distance
  *         n.dx -= xDist * factor
  *         n.dy -= yDist * factor             # <<<<<<<<<<<<<<
@@ -5968,7 +5968,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
  */
     __pyx_v_n->dy = (__pyx_v_n->dy - (__pyx_v_yDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":62
+    /* "fa2_visualization/fa2util.pyx":62
  *     cdef double factor
  * 
  *     if distance > 0:             # <<<<<<<<<<<<<<
@@ -5977,7 +5977,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
  */
   }
 
-  /* "fa2util.pyx":56
+  /* "fa2_visualization/fa2util.pyx":56
  *         n.dy += yDist * factor
  * 
  * cpdef linGravity(Node n, double g):             # <<<<<<<<<<<<<<
@@ -5989,7 +5989,7 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.linGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5998,22 +5998,22 @@ static PyObject *__pyx_f_7fa2util_linGravity(struct __pyx_obj_7fa2util_Node *__p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_5linGravity(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_5linGravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_5linGravity = {"linGravity", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_5linGravity, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_5linGravity(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_5linGravity = {"linGravity", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_5linGravity, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_5linGravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
   double __pyx_v_g;
   #if !CYTHON_METH_FASTCALL
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
@@ -6076,7 +6076,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
       values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
     }
-    __pyx_v_n = ((struct __pyx_obj_7fa2util_Node *)values[0]);
+    __pyx_v_n = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[0]);
     __pyx_v_g = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_g == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
@@ -6091,12 +6091,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.linGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 56, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_4linGravity(__pyx_self, __pyx_v_n, __pyx_v_g);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_4linGravity(__pyx_self, __pyx_v_n, __pyx_v_g);
 
   /* function exit code */
   goto __pyx_L0;
@@ -6113,7 +6113,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_g) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_g) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6122,7 +6122,7 @@ static PyObject *__pyx_pf_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("linGravity", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7fa2util_linGravity(__pyx_v_n, __pyx_v_g, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_linGravity(__pyx_v_n, __pyx_v_g, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6131,7 +6131,7 @@ static PyObject *__pyx_pf_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_sel
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.linGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6139,7 +6139,7 @@ static PyObject *__pyx_pf_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "fa2util.pyx":67
+/* "fa2_visualization/fa2util.pyx":67
  *         n.dy -= yDist * factor
  * 
  * cpdef strongGravity(Node n, double g, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -6147,14 +6147,14 @@ static PyObject *__pyx_pf_7fa2util_4linGravity(CYTHON_UNUSED PyObject *__pyx_sel
  *     cdef double yDist = n.y
  */
 
-static PyObject *__pyx_pw_7fa2util_7strongGravity(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_7strongGravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_g, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_strongGravity *__pyx_optional_args) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_strongGravity(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_g, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_strongGravity *__pyx_optional_args) {
   double __pyx_v_coefficient = ((double)0.0);
   double __pyx_v_xDist;
   double __pyx_v_yDist;
@@ -6171,7 +6171,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
     }
   }
 
-  /* "fa2util.pyx":68
+  /* "fa2_visualization/fa2util.pyx":68
  * 
  * cpdef strongGravity(Node n, double g, double coefficient=0):
  *     cdef double xDist = n.x             # <<<<<<<<<<<<<<
@@ -6181,7 +6181,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
   __pyx_t_1 = __pyx_v_n->x;
   __pyx_v_xDist = __pyx_t_1;
 
-  /* "fa2util.pyx":69
+  /* "fa2_visualization/fa2util.pyx":69
  * cpdef strongGravity(Node n, double g, double coefficient=0):
  *     cdef double xDist = n.x
  *     cdef double yDist = n.y             # <<<<<<<<<<<<<<
@@ -6191,7 +6191,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
   __pyx_t_1 = __pyx_v_n->y;
   __pyx_v_yDist = __pyx_t_1;
 
-  /* "fa2util.pyx":72
+  /* "fa2_visualization/fa2util.pyx":72
  *     cdef double factor
  * 
  *     if xDist != 0 and yDist != 0:             # <<<<<<<<<<<<<<
@@ -6209,7 +6209,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "fa2util.pyx":73
+    /* "fa2_visualization/fa2util.pyx":73
  * 
  *     if xDist != 0 and yDist != 0:
  *         factor = coefficient * n.mass * g             # <<<<<<<<<<<<<<
@@ -6218,7 +6218,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
  */
     __pyx_v_factor = ((__pyx_v_coefficient * __pyx_v_n->mass) * __pyx_v_g);
 
-    /* "fa2util.pyx":74
+    /* "fa2_visualization/fa2util.pyx":74
  *     if xDist != 0 and yDist != 0:
  *         factor = coefficient * n.mass * g
  *         n.dx -= xDist * factor             # <<<<<<<<<<<<<<
@@ -6227,7 +6227,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
  */
     __pyx_v_n->dx = (__pyx_v_n->dx - (__pyx_v_xDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":75
+    /* "fa2_visualization/fa2util.pyx":75
  *         factor = coefficient * n.mass * g
  *         n.dx -= xDist * factor
  *         n.dy -= yDist * factor             # <<<<<<<<<<<<<<
@@ -6236,7 +6236,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
  */
     __pyx_v_n->dy = (__pyx_v_n->dy - (__pyx_v_yDist * __pyx_v_factor));
 
-    /* "fa2util.pyx":72
+    /* "fa2_visualization/fa2util.pyx":72
  *     cdef double factor
  * 
  *     if xDist != 0 and yDist != 0:             # <<<<<<<<<<<<<<
@@ -6245,7 +6245,7 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
  */
   }
 
-  /* "fa2util.pyx":67
+  /* "fa2_visualization/fa2util.pyx":67
  *         n.dy -= yDist * factor
  * 
  * cpdef strongGravity(Node n, double g, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -6261,22 +6261,22 @@ static PyObject *__pyx_f_7fa2util_strongGravity(struct __pyx_obj_7fa2util_Node *
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_7strongGravity(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_7strongGravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_7strongGravity = {"strongGravity", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_7strongGravity, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_7strongGravity(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_7strongGravity = {"strongGravity", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_7strongGravity, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_7strongGravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
   double __pyx_v_g;
   double __pyx_v_coefficient;
   #if !CYTHON_METH_FASTCALL
@@ -6353,7 +6353,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_n = ((struct __pyx_obj_7fa2util_Node *)values[0]);
+    __pyx_v_n = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[0]);
     __pyx_v_g = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_g == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
     if (values[2]) {
       __pyx_v_coefficient = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_coefficient == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
@@ -6373,12 +6373,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.strongGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.strongGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 67, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_6strongGravity(__pyx_self, __pyx_v_n, __pyx_v_g, __pyx_v_coefficient);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6strongGravity(__pyx_self, __pyx_v_n, __pyx_v_g, __pyx_v_coefficient);
 
   /* function exit code */
   goto __pyx_L0;
@@ -6395,11 +6395,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_g, double __pyx_v_coefficient) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_g, double __pyx_v_coefficient) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_7fa2util_strongGravity __pyx_t_2;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_strongGravity __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -6407,7 +6407,7 @@ static PyObject *__pyx_pf_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.coefficient = __pyx_v_coefficient;
-  __pyx_t_1 = __pyx_f_7fa2util_strongGravity(__pyx_v_n, __pyx_v_g, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_strongGravity(__pyx_v_n, __pyx_v_g, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6416,7 +6416,7 @@ static PyObject *__pyx_pf_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.strongGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.strongGravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6424,7 +6424,7 @@ static PyObject *__pyx_pf_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "fa2util.pyx":77
+/* "fa2_visualization/fa2util.pyx":77
  *         n.dy -= yDist * factor
  * 
  * cpdef linAttraction(Node n1, Node n2, double e, bint distributedAttraction, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -6432,14 +6432,14 @@ static PyObject *__pyx_pf_7fa2util_6strongGravity(CYTHON_UNUSED PyObject *__pyx_
  *     cdef double yDist = n1.y - n2.y
  */
 
-static PyObject *__pyx_pw_7fa2util_9linAttraction(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_9linAttraction(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_7fa2util_Node *__pyx_v_n2, double __pyx_v_e, int __pyx_v_distributedAttraction, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_linAttraction *__pyx_optional_args) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_linAttraction(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2, double __pyx_v_e, int __pyx_v_distributedAttraction, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_linAttraction *__pyx_optional_args) {
   double __pyx_v_coefficient = ((double)0.0);
   double __pyx_v_xDist;
   double __pyx_v_yDist;
@@ -6458,7 +6458,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
     }
   }
 
-  /* "fa2util.pyx":78
+  /* "fa2_visualization/fa2util.pyx":78
  * 
  * cpdef linAttraction(Node n1, Node n2, double e, bint distributedAttraction, double coefficient=0):
  *     cdef double xDist = n1.x - n2.x             # <<<<<<<<<<<<<<
@@ -6467,7 +6467,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
  */
   __pyx_v_xDist = (__pyx_v_n1->x - __pyx_v_n2->x);
 
-  /* "fa2util.pyx":79
+  /* "fa2_visualization/fa2util.pyx":79
  * cpdef linAttraction(Node n1, Node n2, double e, bint distributedAttraction, double coefficient=0):
  *     cdef double xDist = n1.x - n2.x
  *     cdef double yDist = n1.y - n2.y             # <<<<<<<<<<<<<<
@@ -6476,7 +6476,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
  */
   __pyx_v_yDist = (__pyx_v_n1->y - __pyx_v_n2->y);
 
-  /* "fa2util.pyx":82
+  /* "fa2_visualization/fa2util.pyx":82
  *     cdef double factor
  * 
  *     if not distributedAttraction:             # <<<<<<<<<<<<<<
@@ -6486,7 +6486,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
   __pyx_t_1 = (!__pyx_v_distributedAttraction);
   if (__pyx_t_1) {
 
-    /* "fa2util.pyx":83
+    /* "fa2_visualization/fa2util.pyx":83
  * 
  *     if not distributedAttraction:
  *         factor = -coefficient * e             # <<<<<<<<<<<<<<
@@ -6495,7 +6495,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
  */
     __pyx_v_factor = ((-__pyx_v_coefficient) * __pyx_v_e);
 
-    /* "fa2util.pyx":82
+    /* "fa2_visualization/fa2util.pyx":82
  *     cdef double factor
  * 
  *     if not distributedAttraction:             # <<<<<<<<<<<<<<
@@ -6505,7 +6505,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
     goto __pyx_L3;
   }
 
-  /* "fa2util.pyx":85
+  /* "fa2_visualization/fa2util.pyx":85
  *         factor = -coefficient * e
  *     else:
  *         factor = -coefficient * e / n1.mass             # <<<<<<<<<<<<<<
@@ -6522,7 +6522,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
   }
   __pyx_L3:;
 
-  /* "fa2util.pyx":87
+  /* "fa2_visualization/fa2util.pyx":87
  *         factor = -coefficient * e / n1.mass
  * 
  *     n1.dx += xDist * factor             # <<<<<<<<<<<<<<
@@ -6531,7 +6531,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
  */
   __pyx_v_n1->dx = (__pyx_v_n1->dx + (__pyx_v_xDist * __pyx_v_factor));
 
-  /* "fa2util.pyx":88
+  /* "fa2_visualization/fa2util.pyx":88
  * 
  *     n1.dx += xDist * factor
  *     n1.dy += yDist * factor             # <<<<<<<<<<<<<<
@@ -6540,7 +6540,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
  */
   __pyx_v_n1->dy = (__pyx_v_n1->dy + (__pyx_v_yDist * __pyx_v_factor));
 
-  /* "fa2util.pyx":89
+  /* "fa2_visualization/fa2util.pyx":89
  *     n1.dx += xDist * factor
  *     n1.dy += yDist * factor
  *     n2.dx -= xDist * factor             # <<<<<<<<<<<<<<
@@ -6549,7 +6549,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
  */
   __pyx_v_n2->dx = (__pyx_v_n2->dx - (__pyx_v_xDist * __pyx_v_factor));
 
-  /* "fa2util.pyx":90
+  /* "fa2_visualization/fa2util.pyx":90
  *     n1.dy += yDist * factor
  *     n2.dx -= xDist * factor
  *     n2.dy -= yDist * factor             # <<<<<<<<<<<<<<
@@ -6558,7 +6558,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
  */
   __pyx_v_n2->dy = (__pyx_v_n2->dy - (__pyx_v_yDist * __pyx_v_factor));
 
-  /* "fa2util.pyx":77
+  /* "fa2_visualization/fa2util.pyx":77
  *         n.dy -= yDist * factor
  * 
  * cpdef linAttraction(Node n1, Node n2, double e, bint distributedAttraction, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -6570,7 +6570,7 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.linAttraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linAttraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6579,23 +6579,23 @@ static PyObject *__pyx_f_7fa2util_linAttraction(struct __pyx_obj_7fa2util_Node *
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_9linAttraction(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_9linAttraction(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_9linAttraction = {"linAttraction", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_9linAttraction, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_9linAttraction(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_9linAttraction = {"linAttraction", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_9linAttraction, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_9linAttraction(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n1 = 0;
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n2 = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1 = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2 = 0;
   double __pyx_v_e;
   int __pyx_v_distributedAttraction;
   double __pyx_v_coefficient;
@@ -6699,8 +6699,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_n1 = ((struct __pyx_obj_7fa2util_Node *)values[0]);
-    __pyx_v_n2 = ((struct __pyx_obj_7fa2util_Node *)values[1]);
+    __pyx_v_n1 = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[0]);
+    __pyx_v_n2 = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[1]);
     __pyx_v_e = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_e == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
     __pyx_v_distributedAttraction = __Pyx_PyObject_IsTrue(values[3]); if (unlikely((__pyx_v_distributedAttraction == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
     if (values[4]) {
@@ -6721,13 +6721,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.linAttraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linAttraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n1), __pyx_ptype_7fa2util_Node, 1, "n1", 0))) __PYX_ERR(0, 77, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n2), __pyx_ptype_7fa2util_Node, 1, "n2", 0))) __PYX_ERR(0, 77, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_8linAttraction(__pyx_self, __pyx_v_n1, __pyx_v_n2, __pyx_v_e, __pyx_v_distributedAttraction, __pyx_v_coefficient);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n1), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n1", 0))) __PYX_ERR(0, 77, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n2), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n2", 0))) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_8linAttraction(__pyx_self, __pyx_v_n1, __pyx_v_n2, __pyx_v_e, __pyx_v_distributedAttraction, __pyx_v_coefficient);
 
   /* function exit code */
   goto __pyx_L0;
@@ -6744,11 +6744,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_7fa2util_Node *__pyx_v_n2, double __pyx_v_e, int __pyx_v_distributedAttraction, double __pyx_v_coefficient) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2, double __pyx_v_e, int __pyx_v_distributedAttraction, double __pyx_v_coefficient) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_7fa2util_linAttraction __pyx_t_2;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_linAttraction __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -6756,7 +6756,7 @@ static PyObject *__pyx_pf_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.coefficient = __pyx_v_coefficient;
-  __pyx_t_1 = __pyx_f_7fa2util_linAttraction(__pyx_v_n1, __pyx_v_n2, __pyx_v_e, __pyx_v_distributedAttraction, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_linAttraction(__pyx_v_n1, __pyx_v_n2, __pyx_v_e, __pyx_v_distributedAttraction, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -6765,7 +6765,7 @@ static PyObject *__pyx_pf_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.linAttraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.linAttraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -6773,7 +6773,7 @@ static PyObject *__pyx_pf_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "fa2util.pyx":92
+/* "fa2_visualization/fa2util.pyx":92
  *     n2.dy -= yDist * factor
  * 
  * cpdef apply_repulsion(list[Node] nodes, double coefficient):             # <<<<<<<<<<<<<<
@@ -6781,18 +6781,18 @@ static PyObject *__pyx_pf_7fa2util_8linAttraction(CYTHON_UNUSED PyObject *__pyx_
  *     cdef Node n1, n2
  */
 
-static PyObject *__pyx_pw_7fa2util_11apply_repulsion(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_11apply_repulsion(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, double __pyx_v_coefficient, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, double __pyx_v_coefficient, CYTHON_UNUSED int __pyx_skip_dispatch) {
   int __pyx_v_i;
   int __pyx_v_j;
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n1 = 0;
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n2 = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n1 = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n2 = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6801,13 +6801,13 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
   Py_ssize_t __pyx_t_4;
   PyObject *__pyx_t_5 = NULL;
   int __pyx_t_6;
-  struct __pyx_opt_args_7fa2util_linRepulsion __pyx_t_7;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion __pyx_t_7;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("apply_repulsion", 1);
 
-  /* "fa2util.pyx":93
+  /* "fa2_visualization/fa2util.pyx":93
  * 
  * cpdef apply_repulsion(list[Node] nodes, double coefficient):
  *     cdef int i = 0, j             # <<<<<<<<<<<<<<
@@ -6816,7 +6816,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
  */
   __pyx_v_i = 0;
 
-  /* "fa2util.pyx":96
+  /* "fa2_visualization/fa2util.pyx":96
  *     cdef Node n1, n2
  * 
  *     for n1 in nodes:             # <<<<<<<<<<<<<<
@@ -6843,11 +6843,11 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
     __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 96, __pyx_L1_error)
-    __Pyx_XDECREF_SET(__pyx_v_n1, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_3));
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 96, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_n1, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "fa2util.pyx":97
+    /* "fa2_visualization/fa2util.pyx":97
  * 
  *     for n1 in nodes:
  *         j = i             # <<<<<<<<<<<<<<
@@ -6856,7 +6856,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
  */
     __pyx_v_j = __pyx_v_i;
 
-    /* "fa2util.pyx":98
+    /* "fa2_visualization/fa2util.pyx":98
  *     for n1 in nodes:
  *         j = i
  *         for n2 in nodes:             # <<<<<<<<<<<<<<
@@ -6883,11 +6883,11 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
       __pyx_t_5 = __Pyx_PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 98, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       #endif
-      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 98, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_n2, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_5));
+      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 98, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_n2, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_5));
       __pyx_t_5 = 0;
 
-      /* "fa2util.pyx":99
+      /* "fa2_visualization/fa2util.pyx":99
  *         j = i
  *         for n2 in nodes:
  *             if j == 0:             # <<<<<<<<<<<<<<
@@ -6897,7 +6897,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
       __pyx_t_6 = (__pyx_v_j == 0);
       if (__pyx_t_6) {
 
-        /* "fa2util.pyx":100
+        /* "fa2_visualization/fa2util.pyx":100
  *         for n2 in nodes:
  *             if j == 0:
  *                 break             # <<<<<<<<<<<<<<
@@ -6906,7 +6906,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
  */
         goto __pyx_L6_break;
 
-        /* "fa2util.pyx":99
+        /* "fa2_visualization/fa2util.pyx":99
  *         j = i
  *         for n2 in nodes:
  *             if j == 0:             # <<<<<<<<<<<<<<
@@ -6915,7 +6915,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
  */
       }
 
-      /* "fa2util.pyx":101
+      /* "fa2_visualization/fa2util.pyx":101
  *             if j == 0:
  *                 break
  *             linRepulsion(n1, n2, coefficient)             # <<<<<<<<<<<<<<
@@ -6924,11 +6924,11 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
  */
       __pyx_t_7.__pyx_n = 1;
       __pyx_t_7.coefficient = __pyx_v_coefficient;
-      __pyx_t_5 = __pyx_f_7fa2util_linRepulsion(__pyx_v_n1, __pyx_v_n2, 0, &__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 101, __pyx_L1_error)
+      __pyx_t_5 = __pyx_f_17fa2_visualization_7fa2util_linRepulsion(__pyx_v_n1, __pyx_v_n2, 0, &__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "fa2util.pyx":102
+      /* "fa2_visualization/fa2util.pyx":102
  *                 break
  *             linRepulsion(n1, n2, coefficient)
  *             j -= 1             # <<<<<<<<<<<<<<
@@ -6937,7 +6937,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
  */
       __pyx_v_j = (__pyx_v_j - 1);
 
-      /* "fa2util.pyx":98
+      /* "fa2_visualization/fa2util.pyx":98
  *     for n1 in nodes:
  *         j = i
  *         for n2 in nodes:             # <<<<<<<<<<<<<<
@@ -6952,7 +6952,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
     goto __pyx_L8_for_end;
     __pyx_L8_for_end:;
 
-    /* "fa2util.pyx":103
+    /* "fa2_visualization/fa2util.pyx":103
  *             linRepulsion(n1, n2, coefficient)
  *             j -= 1
  *         i += 1             # <<<<<<<<<<<<<<
@@ -6961,7 +6961,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
  */
     __pyx_v_i = (__pyx_v_i + 1);
 
-    /* "fa2util.pyx":96
+    /* "fa2_visualization/fa2util.pyx":96
  *     cdef Node n1, n2
  * 
  *     for n1 in nodes:             # <<<<<<<<<<<<<<
@@ -6971,7 +6971,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":92
+  /* "fa2_visualization/fa2util.pyx":92
  *     n2.dy -= yDist * factor
  * 
  * cpdef apply_repulsion(list[Node] nodes, double coefficient):             # <<<<<<<<<<<<<<
@@ -6986,7 +6986,7 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("fa2util.apply_repulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_repulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_n1);
@@ -6997,15 +6997,15 @@ static PyObject *__pyx_f_7fa2util_apply_repulsion(PyObject *__pyx_v_nodes, doubl
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_11apply_repulsion(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_11apply_repulsion(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_11apply_repulsion = {"apply_repulsion", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_11apply_repulsion, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_11apply_repulsion(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_11apply_repulsion = {"apply_repulsion", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_11apply_repulsion, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_11apply_repulsion(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7090,12 +7090,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.apply_repulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_repulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_nodes), (&PyList_Type), 1, "nodes", 1))) __PYX_ERR(0, 92, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_10apply_repulsion(__pyx_self, __pyx_v_nodes, __pyx_v_coefficient);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_10apply_repulsion(__pyx_self, __pyx_v_nodes, __pyx_v_coefficient);
 
   /* function exit code */
   goto __pyx_L0;
@@ -7112,7 +7112,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_coefficient) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_coefficient) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -7121,7 +7121,7 @@ static PyObject *__pyx_pf_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("apply_repulsion", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7fa2util_apply_repulsion(__pyx_v_nodes, __pyx_v_coefficient, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_apply_repulsion(__pyx_v_nodes, __pyx_v_coefficient, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7130,7 +7130,7 @@ static PyObject *__pyx_pf_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__p
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.apply_repulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_repulsion", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7138,7 +7138,7 @@ static PyObject *__pyx_pf_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "fa2util.pyx":105
+/* "fa2_visualization/fa2util.pyx":105
  *         i += 1
  * 
  * cpdef apply_gravity(list[Node] nodes, double gravity, double scalingRatio, bint useStrongGravity=False):             # <<<<<<<<<<<<<<
@@ -7146,23 +7146,23 @@ static PyObject *__pyx_pf_7fa2util_10apply_repulsion(CYTHON_UNUSED PyObject *__p
  *     for n in nodes:
  */
 
-static PyObject *__pyx_pw_7fa2util_13apply_gravity(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_13apply_gravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double __pyx_v_gravity, double __pyx_v_scalingRatio, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_apply_gravity *__pyx_optional_args) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double __pyx_v_gravity, double __pyx_v_scalingRatio, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_apply_gravity *__pyx_optional_args) {
   int __pyx_v_useStrongGravity = ((int)0);
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   int __pyx_t_4;
-  struct __pyx_opt_args_7fa2util_strongGravity __pyx_t_5;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_strongGravity __pyx_t_5;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -7173,7 +7173,7 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
     }
   }
 
-  /* "fa2util.pyx":107
+  /* "fa2_visualization/fa2util.pyx":107
  * cpdef apply_gravity(list[Node] nodes, double gravity, double scalingRatio, bint useStrongGravity=False):
  *     cdef Node n
  *     for n in nodes:             # <<<<<<<<<<<<<<
@@ -7200,11 +7200,11 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
     __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 107, __pyx_L1_error)
-    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_3));
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 107, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "fa2util.pyx":108
+    /* "fa2_visualization/fa2util.pyx":108
  *     cdef Node n
  *     for n in nodes:
  *         if not useStrongGravity:             # <<<<<<<<<<<<<<
@@ -7214,18 +7214,18 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
     __pyx_t_4 = (!__pyx_v_useStrongGravity);
     if (__pyx_t_4) {
 
-      /* "fa2util.pyx":109
+      /* "fa2_visualization/fa2util.pyx":109
  *     for n in nodes:
  *         if not useStrongGravity:
  *             linGravity(n, gravity)             # <<<<<<<<<<<<<<
  *         else:
  *             strongGravity(n, gravity, scalingRatio)
  */
-      __pyx_t_3 = __pyx_f_7fa2util_linGravity(__pyx_v_n, __pyx_v_gravity, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
+      __pyx_t_3 = __pyx_f_17fa2_visualization_7fa2util_linGravity(__pyx_v_n, __pyx_v_gravity, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "fa2util.pyx":108
+      /* "fa2_visualization/fa2util.pyx":108
  *     cdef Node n
  *     for n in nodes:
  *         if not useStrongGravity:             # <<<<<<<<<<<<<<
@@ -7235,7 +7235,7 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
       goto __pyx_L5;
     }
 
-    /* "fa2util.pyx":111
+    /* "fa2_visualization/fa2util.pyx":111
  *             linGravity(n, gravity)
  *         else:
  *             strongGravity(n, gravity, scalingRatio)             # <<<<<<<<<<<<<<
@@ -7245,13 +7245,13 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
     /*else*/ {
       __pyx_t_5.__pyx_n = 1;
       __pyx_t_5.coefficient = __pyx_v_scalingRatio;
-      __pyx_t_3 = __pyx_f_7fa2util_strongGravity(__pyx_v_n, __pyx_v_gravity, 0, &__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+      __pyx_t_3 = __pyx_f_17fa2_visualization_7fa2util_strongGravity(__pyx_v_n, __pyx_v_gravity, 0, &__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __pyx_L5:;
 
-    /* "fa2util.pyx":107
+    /* "fa2_visualization/fa2util.pyx":107
  * cpdef apply_gravity(list[Node] nodes, double gravity, double scalingRatio, bint useStrongGravity=False):
  *     cdef Node n
  *     for n in nodes:             # <<<<<<<<<<<<<<
@@ -7261,7 +7261,7 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":105
+  /* "fa2_visualization/fa2util.pyx":105
  *         i += 1
  * 
  * cpdef apply_gravity(list[Node] nodes, double gravity, double scalingRatio, bint useStrongGravity=False):             # <<<<<<<<<<<<<<
@@ -7275,7 +7275,7 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("fa2util.apply_gravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_gravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_n);
@@ -7285,15 +7285,15 @@ static PyObject *__pyx_f_7fa2util_apply_gravity(PyObject *__pyx_v_nodes, double 
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_13apply_gravity(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_13apply_gravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_13apply_gravity = {"apply_gravity", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_13apply_gravity, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_13apply_gravity(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_13apply_gravity = {"apply_gravity", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_13apply_gravity, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_13apply_gravity(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7412,12 +7412,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.apply_gravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_gravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_nodes), (&PyList_Type), 1, "nodes", 1))) __PYX_ERR(0, 105, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_12apply_gravity(__pyx_self, __pyx_v_nodes, __pyx_v_gravity, __pyx_v_scalingRatio, __pyx_v_useStrongGravity);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_12apply_gravity(__pyx_self, __pyx_v_nodes, __pyx_v_gravity, __pyx_v_scalingRatio, __pyx_v_useStrongGravity);
 
   /* function exit code */
   goto __pyx_L0;
@@ -7434,11 +7434,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_gravity, double __pyx_v_scalingRatio, int __pyx_v_useStrongGravity) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_gravity, double __pyx_v_scalingRatio, int __pyx_v_useStrongGravity) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_7fa2util_apply_gravity __pyx_t_2;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_apply_gravity __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -7446,7 +7446,7 @@ static PyObject *__pyx_pf_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.useStrongGravity = __pyx_v_useStrongGravity;
-  __pyx_t_1 = __pyx_f_7fa2util_apply_gravity(__pyx_v_nodes, __pyx_v_gravity, __pyx_v_scalingRatio, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_apply_gravity(__pyx_v_nodes, __pyx_v_gravity, __pyx_v_scalingRatio, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7455,7 +7455,7 @@ static PyObject *__pyx_pf_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.apply_gravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_gravity", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7463,7 +7463,7 @@ static PyObject *__pyx_pf_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "fa2util.pyx":113
+/* "fa2_visualization/fa2util.pyx":113
  *             strongGravity(n, gravity, scalingRatio)
  * 
  * cpdef apply_attraction(list[Node] nodes, list[Edge] edges, bint distributedAttraction, double coefficient, double edgeWeightInfluence):             # <<<<<<<<<<<<<<
@@ -7471,15 +7471,15 @@ static PyObject *__pyx_pf_7fa2util_12apply_gravity(CYTHON_UNUSED PyObject *__pyx
  * 
  */
 
-static PyObject *__pyx_pw_7fa2util_15apply_attraction(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_15apply_attraction(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyObject *__pyx_v_edges, int __pyx_v_distributedAttraction, double __pyx_v_coefficient, double __pyx_v_edgeWeightInfluence, CYTHON_UNUSED int __pyx_skip_dispatch) {
-  struct __pyx_obj_7fa2util_Edge *__pyx_v_edge = 0;
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyObject *__pyx_v_edges, int __pyx_v_distributedAttraction, double __pyx_v_coefficient, double __pyx_v_edgeWeightInfluence, CYTHON_UNUSED int __pyx_skip_dispatch) {
+  struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v_edge = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -7488,7 +7488,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  struct __pyx_opt_args_7fa2util_linAttraction __pyx_t_7;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_linAttraction __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
   double __pyx_t_10;
@@ -7497,7 +7497,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("apply_attraction", 1);
 
-  /* "fa2util.pyx":116
+  /* "fa2_visualization/fa2util.pyx":116
  *     cdef Edge edge
  * 
  *     if edgeWeightInfluence == 0:             # <<<<<<<<<<<<<<
@@ -7507,7 +7507,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
   __pyx_t_1 = (__pyx_v_edgeWeightInfluence == 0.0);
   if (__pyx_t_1) {
 
-    /* "fa2util.pyx":117
+    /* "fa2_visualization/fa2util.pyx":117
  * 
  *     if edgeWeightInfluence == 0:
  *         for edge in edges:             # <<<<<<<<<<<<<<
@@ -7534,11 +7534,11 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
       __pyx_t_4 = __Pyx_PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       #endif
-      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_7fa2util_Edge))))) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_edge, ((struct __pyx_obj_7fa2util_Edge *)__pyx_t_4));
+      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_17fa2_visualization_7fa2util_Edge))))) __PYX_ERR(0, 117, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_edge, ((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_t_4));
       __pyx_t_4 = 0;
 
-      /* "fa2util.pyx":118
+      /* "fa2_visualization/fa2util.pyx":118
  *     if edgeWeightInfluence == 0:
  *         for edge in edges:
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], 1, distributedAttraction, coefficient)             # <<<<<<<<<<<<<<
@@ -7551,23 +7551,23 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
       }
       __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_nodes, __pyx_v_edge->node1, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 118, __pyx_L1_error)
+      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 118, __pyx_L1_error)
       if (unlikely(__pyx_v_nodes == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
         __PYX_ERR(0, 118, __pyx_L1_error)
       }
       __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_nodes, __pyx_v_edge->node2, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 118, __pyx_L1_error)
+      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 118, __pyx_L1_error)
       __pyx_t_7.__pyx_n = 1;
       __pyx_t_7.coefficient = __pyx_v_coefficient;
-      __pyx_t_6 = __pyx_f_7fa2util_linAttraction(((struct __pyx_obj_7fa2util_Node *)__pyx_t_4), ((struct __pyx_obj_7fa2util_Node *)__pyx_t_5), 1.0, __pyx_v_distributedAttraction, 0, &__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
+      __pyx_t_6 = __pyx_f_17fa2_visualization_7fa2util_linAttraction(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_4), ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_5), 1.0, __pyx_v_distributedAttraction, 0, &__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "fa2util.pyx":117
+      /* "fa2_visualization/fa2util.pyx":117
  * 
  *     if edgeWeightInfluence == 0:
  *         for edge in edges:             # <<<<<<<<<<<<<<
@@ -7577,7 +7577,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fa2util.pyx":116
+    /* "fa2_visualization/fa2util.pyx":116
  *     cdef Edge edge
  * 
  *     if edgeWeightInfluence == 0:             # <<<<<<<<<<<<<<
@@ -7587,7 +7587,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
     goto __pyx_L3;
   }
 
-  /* "fa2util.pyx":119
+  /* "fa2_visualization/fa2util.pyx":119
  *         for edge in edges:
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], 1, distributedAttraction, coefficient)
  *     elif edgeWeightInfluence == 1:             # <<<<<<<<<<<<<<
@@ -7597,7 +7597,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
   __pyx_t_1 = (__pyx_v_edgeWeightInfluence == 1.0);
   if (__pyx_t_1) {
 
-    /* "fa2util.pyx":120
+    /* "fa2_visualization/fa2util.pyx":120
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], 1, distributedAttraction, coefficient)
  *     elif edgeWeightInfluence == 1:
  *         for edge in edges:             # <<<<<<<<<<<<<<
@@ -7624,11 +7624,11 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
       __pyx_t_6 = __Pyx_PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 120, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       #endif
-      if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_7fa2util_Edge))))) __PYX_ERR(0, 120, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_edge, ((struct __pyx_obj_7fa2util_Edge *)__pyx_t_6));
+      if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_17fa2_visualization_7fa2util_Edge))))) __PYX_ERR(0, 120, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_edge, ((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_t_6));
       __pyx_t_6 = 0;
 
-      /* "fa2util.pyx":121
+      /* "fa2_visualization/fa2util.pyx":121
  *     elif edgeWeightInfluence == 1:
  *         for edge in edges:
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], edge.weight, distributedAttraction, coefficient)             # <<<<<<<<<<<<<<
@@ -7641,23 +7641,23 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
       }
       __pyx_t_6 = __Pyx_GetItemInt_List(__pyx_v_nodes, __pyx_v_edge->node1, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 121, __pyx_L1_error)
+      if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 121, __pyx_L1_error)
       if (unlikely(__pyx_v_nodes == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
         __PYX_ERR(0, 121, __pyx_L1_error)
       }
       __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_nodes, __pyx_v_edge->node2, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 121, __pyx_L1_error)
+      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 121, __pyx_L1_error)
       __pyx_t_7.__pyx_n = 1;
       __pyx_t_7.coefficient = __pyx_v_coefficient;
-      __pyx_t_4 = __pyx_f_7fa2util_linAttraction(((struct __pyx_obj_7fa2util_Node *)__pyx_t_6), ((struct __pyx_obj_7fa2util_Node *)__pyx_t_5), __pyx_v_edge->weight, __pyx_v_distributedAttraction, 0, &__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L1_error)
+      __pyx_t_4 = __pyx_f_17fa2_visualization_7fa2util_linAttraction(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_6), ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_5), __pyx_v_edge->weight, __pyx_v_distributedAttraction, 0, &__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "fa2util.pyx":120
+      /* "fa2_visualization/fa2util.pyx":120
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], 1, distributedAttraction, coefficient)
  *     elif edgeWeightInfluence == 1:
  *         for edge in edges:             # <<<<<<<<<<<<<<
@@ -7667,7 +7667,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fa2util.pyx":119
+    /* "fa2_visualization/fa2util.pyx":119
  *         for edge in edges:
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], 1, distributedAttraction, coefficient)
  *     elif edgeWeightInfluence == 1:             # <<<<<<<<<<<<<<
@@ -7677,7 +7677,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
     goto __pyx_L3;
   }
 
-  /* "fa2util.pyx":123
+  /* "fa2_visualization/fa2util.pyx":123
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], edge.weight, distributedAttraction, coefficient)
  *     else:
  *         for edge in edges:             # <<<<<<<<<<<<<<
@@ -7705,11 +7705,11 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
       __pyx_t_4 = __Pyx_PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       #endif
-      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_7fa2util_Edge))))) __PYX_ERR(0, 123, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_edge, ((struct __pyx_obj_7fa2util_Edge *)__pyx_t_4));
+      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_17fa2_visualization_7fa2util_Edge))))) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_edge, ((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_t_4));
       __pyx_t_4 = 0;
 
-      /* "fa2util.pyx":124
+      /* "fa2_visualization/fa2util.pyx":124
  *     else:
  *         for edge in edges:
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], pow(edge.weight, edgeWeightInfluence), distributedAttraction, coefficient)             # <<<<<<<<<<<<<<
@@ -7722,14 +7722,14 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
       }
       __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_nodes, __pyx_v_edge->node1, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 124, __pyx_L1_error)
+      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 124, __pyx_L1_error)
       if (unlikely(__pyx_v_nodes == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
         __PYX_ERR(0, 124, __pyx_L1_error)
       }
       __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_nodes, __pyx_v_edge->node2, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 124, __pyx_L1_error)
+      if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 124, __pyx_L1_error)
       __pyx_t_6 = PyFloat_FromDouble(__pyx_v_edge->weight); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_8 = PyFloat_FromDouble(__pyx_v_edgeWeightInfluence); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 124, __pyx_L1_error)
@@ -7742,13 +7742,13 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_7.__pyx_n = 1;
       __pyx_t_7.coefficient = __pyx_v_coefficient;
-      __pyx_t_9 = __pyx_f_7fa2util_linAttraction(((struct __pyx_obj_7fa2util_Node *)__pyx_t_4), ((struct __pyx_obj_7fa2util_Node *)__pyx_t_5), __pyx_t_10, __pyx_v_distributedAttraction, 0, &__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 124, __pyx_L1_error)
+      __pyx_t_9 = __pyx_f_17fa2_visualization_7fa2util_linAttraction(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_4), ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_5), __pyx_t_10, __pyx_v_distributedAttraction, 0, &__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "fa2util.pyx":123
+      /* "fa2_visualization/fa2util.pyx":123
  *             linAttraction(nodes[edge.node1], nodes[edge.node2], edge.weight, distributedAttraction, coefficient)
  *     else:
  *         for edge in edges:             # <<<<<<<<<<<<<<
@@ -7760,7 +7760,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
   }
   __pyx_L3:;
 
-  /* "fa2util.pyx":113
+  /* "fa2_visualization/fa2util.pyx":113
  *             strongGravity(n, gravity, scalingRatio)
  * 
  * cpdef apply_attraction(list[Node] nodes, list[Edge] edges, bint distributedAttraction, double coefficient, double edgeWeightInfluence):             # <<<<<<<<<<<<<<
@@ -7778,7 +7778,7 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("fa2util.apply_attraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_attraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_edge);
@@ -7788,15 +7788,15 @@ static PyObject *__pyx_f_7fa2util_apply_attraction(PyObject *__pyx_v_nodes, PyOb
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_15apply_attraction(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_15apply_attraction(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_15apply_attraction = {"apply_attraction", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_15apply_attraction, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_15apply_attraction(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_15apply_attraction = {"apply_attraction", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_15apply_attraction, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_15apply_attraction(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7926,13 +7926,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.apply_attraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_attraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_nodes), (&PyList_Type), 1, "nodes", 1))) __PYX_ERR(0, 113, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_edges), (&PyList_Type), 1, "edges", 1))) __PYX_ERR(0, 113, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_14apply_attraction(__pyx_self, __pyx_v_nodes, __pyx_v_edges, __pyx_v_distributedAttraction, __pyx_v_coefficient, __pyx_v_edgeWeightInfluence);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_14apply_attraction(__pyx_self, __pyx_v_nodes, __pyx_v_edges, __pyx_v_distributedAttraction, __pyx_v_coefficient, __pyx_v_edgeWeightInfluence);
 
   /* function exit code */
   goto __pyx_L0;
@@ -7949,7 +7949,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, PyObject *__pyx_v_edges, int __pyx_v_distributedAttraction, double __pyx_v_coefficient, double __pyx_v_edgeWeightInfluence) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, PyObject *__pyx_v_edges, int __pyx_v_distributedAttraction, double __pyx_v_coefficient, double __pyx_v_edgeWeightInfluence) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -7958,7 +7958,7 @@ static PyObject *__pyx_pf_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("apply_attraction", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7fa2util_apply_attraction(__pyx_v_nodes, __pyx_v_edges, __pyx_v_distributedAttraction, __pyx_v_coefficient, __pyx_v_edgeWeightInfluence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_apply_attraction(__pyx_v_nodes, __pyx_v_edges, __pyx_v_distributedAttraction, __pyx_v_coefficient, __pyx_v_edgeWeightInfluence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -7967,7 +7967,7 @@ static PyObject *__pyx_pf_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.apply_attraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.apply_attraction", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -7975,7 +7975,7 @@ static PyObject *__pyx_pf_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "fa2util.pyx":131
+/* "fa2_visualization/fa2util.pyx":131
  *     cdef public list[Region] subregions
  * 
  *     def __init__(self, list[Node] nodes):             # <<<<<<<<<<<<<<
@@ -7984,8 +7984,8 @@ static PyObject *__pyx_pf_7fa2util_14apply_attraction(CYTHON_UNUSED PyObject *__
  */
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_7fa2util_6Region_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_nodes = 0;
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
@@ -8045,12 +8045,12 @@ static int __pyx_pw_7fa2util_6Region_1__init__(PyObject *__pyx_v_self, PyObject 
       __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.Region.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_nodes), (&PyList_Type), 1, "nodes", 1))) __PYX_ERR(0, 131, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_6Region___init__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), __pyx_v_nodes);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region___init__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), __pyx_v_nodes);
 
   /* function exit code */
   goto __pyx_L0;
@@ -8067,7 +8067,7 @@ static int __pyx_pw_7fa2util_6Region_1__init__(PyObject *__pyx_v_self, PyObject 
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region___init__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -8076,7 +8076,7 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "fa2util.pyx":132
+  /* "fa2_visualization/fa2util.pyx":132
  * 
  *     def __init__(self, list[Node] nodes):
  *         self.mass = 0.0             # <<<<<<<<<<<<<<
@@ -8085,7 +8085,7 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
  */
   __pyx_v_self->mass = 0.0;
 
-  /* "fa2util.pyx":133
+  /* "fa2_visualization/fa2util.pyx":133
  *     def __init__(self, list[Node] nodes):
  *         self.mass = 0.0
  *         self.massCenterX = 0.0             # <<<<<<<<<<<<<<
@@ -8094,7 +8094,7 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
  */
   __pyx_v_self->massCenterX = 0.0;
 
-  /* "fa2util.pyx":134
+  /* "fa2_visualization/fa2util.pyx":134
  *         self.mass = 0.0
  *         self.massCenterX = 0.0
  *         self.massCenterY = 0.0             # <<<<<<<<<<<<<<
@@ -8103,7 +8103,7 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
  */
   __pyx_v_self->massCenterY = 0.0;
 
-  /* "fa2util.pyx":135
+  /* "fa2_visualization/fa2util.pyx":135
  *         self.massCenterX = 0.0
  *         self.massCenterY = 0.0
  *         self.size = 0.0             # <<<<<<<<<<<<<<
@@ -8112,7 +8112,7 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
  */
   __pyx_v_self->size = 0.0;
 
-  /* "fa2util.pyx":136
+  /* "fa2_visualization/fa2util.pyx":136
  *         self.massCenterY = 0.0
  *         self.size = 0.0
  *         self.nodes = nodes             # <<<<<<<<<<<<<<
@@ -8125,7 +8125,7 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
   __Pyx_DECREF(__pyx_v_self->nodes);
   __pyx_v_self->nodes = __pyx_v_nodes;
 
-  /* "fa2util.pyx":137
+  /* "fa2_visualization/fa2util.pyx":137
  *         self.size = 0.0
  *         self.nodes = nodes
  *         self.subregions = []             # <<<<<<<<<<<<<<
@@ -8140,18 +8140,18 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
   __pyx_v_self->subregions = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":138
+  /* "fa2_visualization/fa2util.pyx":138
  *         self.nodes = nodes
  *         self.subregions = []
  *         self.updateMassAndGeometry()             # <<<<<<<<<<<<<<
  * 
  *     cpdef updateMassAndGeometry(self):
  */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_7fa2util_Region *)__pyx_v_self->__pyx_vtab)->updateMassAndGeometry(__pyx_v_self, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region *)__pyx_v_self->__pyx_vtab)->updateMassAndGeometry(__pyx_v_self, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":131
+  /* "fa2_visualization/fa2util.pyx":131
  *     cdef public list[Region] subregions
  * 
  *     def __init__(self, list[Node] nodes):             # <<<<<<<<<<<<<<
@@ -8164,14 +8164,14 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fa2util.pyx":140
+/* "fa2_visualization/fa2util.pyx":140
  *         self.updateMassAndGeometry()
  * 
  *     cpdef updateMassAndGeometry(self):             # <<<<<<<<<<<<<<
@@ -8179,18 +8179,18 @@ static int __pyx_pf_7fa2util_6Region___init__(struct __pyx_obj_7fa2util_Region *
  *         cdef double massSumY = 0
  */
 
-static PyObject *__pyx_pw_7fa2util_6Region_3updateMassAndGeometry(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_3updateMassAndGeometry(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch) {
   double __pyx_v_massSumX;
   double __pyx_v_massSumY;
   double __pyx_v_distance;
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -8218,7 +8218,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
       #endif
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_updateMassAndGeometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_7fa2util_6Region_3updateMassAndGeometry)) {
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_17fa2_visualization_7fa2util_6Region_3updateMassAndGeometry)) {
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -8261,7 +8261,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
     #endif
   }
 
-  /* "fa2util.pyx":141
+  /* "fa2_visualization/fa2util.pyx":141
  * 
  *     cpdef updateMassAndGeometry(self):
  *         cdef double massSumX = 0             # <<<<<<<<<<<<<<
@@ -8270,7 +8270,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
   __pyx_v_massSumX = 0.0;
 
-  /* "fa2util.pyx":142
+  /* "fa2_visualization/fa2util.pyx":142
  *     cpdef updateMassAndGeometry(self):
  *         cdef double massSumX = 0
  *         cdef double massSumY = 0             # <<<<<<<<<<<<<<
@@ -8279,7 +8279,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
   __pyx_v_massSumY = 0.0;
 
-  /* "fa2util.pyx":146
+  /* "fa2_visualization/fa2util.pyx":146
  *         cdef Node n
  * 
  *         if len(self.nodes) > 1:             # <<<<<<<<<<<<<<
@@ -8297,7 +8297,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
   __pyx_t_7 = (__pyx_t_6 > 1);
   if (__pyx_t_7) {
 
-    /* "fa2util.pyx":147
+    /* "fa2_visualization/fa2util.pyx":147
  * 
  *         if len(self.nodes) > 1:
  *             self.mass = 0             # <<<<<<<<<<<<<<
@@ -8306,7 +8306,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
     __pyx_v_self->mass = 0.0;
 
-    /* "fa2util.pyx":149
+    /* "fa2_visualization/fa2util.pyx":149
  *             self.mass = 0
  * 
  *             for n in self.nodes:             # <<<<<<<<<<<<<<
@@ -8333,11 +8333,11 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
       __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
-      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 149, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_2));
+      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 149, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_2));
       __pyx_t_2 = 0;
 
-      /* "fa2util.pyx":150
+      /* "fa2_visualization/fa2util.pyx":150
  * 
  *             for n in self.nodes:
  *                 self.mass += n.mass             # <<<<<<<<<<<<<<
@@ -8346,7 +8346,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
       __pyx_v_self->mass = (__pyx_v_self->mass + __pyx_v_n->mass);
 
-      /* "fa2util.pyx":151
+      /* "fa2_visualization/fa2util.pyx":151
  *             for n in self.nodes:
  *                 self.mass += n.mass
  *                 massSumX += n.x * n.mass             # <<<<<<<<<<<<<<
@@ -8355,7 +8355,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
       __pyx_v_massSumX = (__pyx_v_massSumX + (__pyx_v_n->x * __pyx_v_n->mass));
 
-      /* "fa2util.pyx":152
+      /* "fa2_visualization/fa2util.pyx":152
  *                 self.mass += n.mass
  *                 massSumX += n.x * n.mass
  *                 massSumY += n.y * n.mass             # <<<<<<<<<<<<<<
@@ -8364,7 +8364,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
       __pyx_v_massSumY = (__pyx_v_massSumY + (__pyx_v_n->y * __pyx_v_n->mass));
 
-      /* "fa2util.pyx":149
+      /* "fa2_visualization/fa2util.pyx":149
  *             self.mass = 0
  * 
  *             for n in self.nodes:             # <<<<<<<<<<<<<<
@@ -8374,7 +8374,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "fa2util.pyx":154
+    /* "fa2_visualization/fa2util.pyx":154
  *                 massSumY += n.y * n.mass
  * 
  *             self.massCenterX = massSumX / self.mass             # <<<<<<<<<<<<<<
@@ -8387,7 +8387,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
     }
     __pyx_v_self->massCenterX = (__pyx_v_massSumX / __pyx_v_self->mass);
 
-    /* "fa2util.pyx":155
+    /* "fa2_visualization/fa2util.pyx":155
  * 
  *             self.massCenterX = massSumX / self.mass
  *             self.massCenterY = massSumY / self.mass             # <<<<<<<<<<<<<<
@@ -8400,7 +8400,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
     }
     __pyx_v_self->massCenterY = (__pyx_v_massSumY / __pyx_v_self->mass);
 
-    /* "fa2util.pyx":157
+    /* "fa2_visualization/fa2util.pyx":157
  *             self.massCenterY = massSumY / self.mass
  * 
  *             self.size = 0.0             # <<<<<<<<<<<<<<
@@ -8409,7 +8409,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
     __pyx_v_self->size = 0.0;
 
-    /* "fa2util.pyx":158
+    /* "fa2_visualization/fa2util.pyx":158
  * 
  *             self.size = 0.0
  *             for n in self.nodes:             # <<<<<<<<<<<<<<
@@ -8436,11 +8436,11 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
       __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
-      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 158, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_2));
+      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 158, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_2));
       __pyx_t_2 = 0;
 
-      /* "fa2util.pyx":159
+      /* "fa2_visualization/fa2util.pyx":159
  *             self.size = 0.0
  *             for n in self.nodes:
  *                 distance = sqrt((n.x - self.massCenterX) ** 2 + (n.y - self.massCenterY) ** 2)             # <<<<<<<<<<<<<<
@@ -8449,7 +8449,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
       __pyx_v_distance = sqrt((pow((__pyx_v_n->x - __pyx_v_self->massCenterX), 2.0) + pow((__pyx_v_n->y - __pyx_v_self->massCenterY), 2.0)));
 
-      /* "fa2util.pyx":160
+      /* "fa2_visualization/fa2util.pyx":160
  *             for n in self.nodes:
  *                 distance = sqrt((n.x - self.massCenterX) ** 2 + (n.y - self.massCenterY) ** 2)
  *                 self.size = max(self.size, 2 * distance)             # <<<<<<<<<<<<<<
@@ -8466,7 +8466,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
       }
       __pyx_v_self->size = __pyx_t_10;
 
-      /* "fa2util.pyx":158
+      /* "fa2_visualization/fa2util.pyx":158
  * 
  *             self.size = 0.0
  *             for n in self.nodes:             # <<<<<<<<<<<<<<
@@ -8476,7 +8476,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "fa2util.pyx":146
+    /* "fa2_visualization/fa2util.pyx":146
  *         cdef Node n
  * 
  *         if len(self.nodes) > 1:             # <<<<<<<<<<<<<<
@@ -8485,7 +8485,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
  */
   }
 
-  /* "fa2util.pyx":140
+  /* "fa2_visualization/fa2util.pyx":140
  *         self.updateMassAndGeometry()
  * 
  *     cpdef updateMassAndGeometry(self):             # <<<<<<<<<<<<<<
@@ -8501,7 +8501,7 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fa2util.Region.updateMassAndGeometry", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.updateMassAndGeometry", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_n);
@@ -8511,15 +8511,15 @@ static PyObject *__pyx_f_7fa2util_6Region_updateMassAndGeometry(struct __pyx_obj
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_3updateMassAndGeometry(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_3updateMassAndGeometry(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_6Region_3updateMassAndGeometry = {"updateMassAndGeometry", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_3updateMassAndGeometry, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_6Region_3updateMassAndGeometry(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_6Region_3updateMassAndGeometry = {"updateMassAndGeometry", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_3updateMassAndGeometry, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_3updateMassAndGeometry(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8544,14 +8544,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("updateMassAndGeometry", 1, 0, 0, __pyx_nargs); return NULL;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "updateMassAndGeometry", 0))) return NULL;
-  __pyx_r = __pyx_pf_7fa2util_6Region_2updateMassAndGeometry(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_2updateMassAndGeometry(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -8560,7 +8560,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_o
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("updateMassAndGeometry", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7fa2util_6Region_updateMassAndGeometry(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_6Region_updateMassAndGeometry(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8569,7 +8569,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_o
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.updateMassAndGeometry", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.updateMassAndGeometry", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -8577,7 +8577,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_o
   return __pyx_r;
 }
 
-/* "fa2util.pyx":162
+/* "fa2_visualization/fa2util.pyx":162
  *                 self.size = max(self.size, 2 * distance)
  * 
  *     cpdef buildSubRegions(self):             # <<<<<<<<<<<<<<
@@ -8585,20 +8585,20 @@ static PyObject *__pyx_pf_7fa2util_6Region_2updateMassAndGeometry(struct __pyx_o
  *         cdef list[Node] bottomleftNodes = []
  */
 
-static PyObject *__pyx_pw_7fa2util_6Region_5buildSubRegions(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_5buildSubRegions(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_buildSubRegions(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, int __pyx_skip_dispatch) {
   PyObject *__pyx_v_topleftNodes = 0;
   PyObject *__pyx_v_bottomleftNodes = 0;
   PyObject *__pyx_v_toprightNodes = 0;
   PyObject *__pyx_v_bottomrightNodes = 0;
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
-  struct __pyx_obj_7fa2util_Region *__pyx_v_subregion = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_subregion = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -8625,7 +8625,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       #endif
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_buildSubRegions); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_7fa2util_6Region_5buildSubRegions)) {
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_17fa2_visualization_7fa2util_6Region_5buildSubRegions)) {
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -8668,7 +8668,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
     #endif
   }
 
-  /* "fa2util.pyx":163
+  /* "fa2_visualization/fa2util.pyx":163
  * 
  *     cpdef buildSubRegions(self):
  *         cdef list[Node] topleftNodes = []             # <<<<<<<<<<<<<<
@@ -8680,7 +8680,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
   __pyx_v_topleftNodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":164
+  /* "fa2_visualization/fa2util.pyx":164
  *     cpdef buildSubRegions(self):
  *         cdef list[Node] topleftNodes = []
  *         cdef list[Node] bottomleftNodes = []             # <<<<<<<<<<<<<<
@@ -8692,7 +8692,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
   __pyx_v_bottomleftNodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":165
+  /* "fa2_visualization/fa2util.pyx":165
  *         cdef list[Node] topleftNodes = []
  *         cdef list[Node] bottomleftNodes = []
  *         cdef list[Node] toprightNodes = []             # <<<<<<<<<<<<<<
@@ -8704,7 +8704,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
   __pyx_v_toprightNodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":166
+  /* "fa2_visualization/fa2util.pyx":166
  *         cdef list[Node] bottomleftNodes = []
  *         cdef list[Node] toprightNodes = []
  *         cdef list[Node] bottomrightNodes = []             # <<<<<<<<<<<<<<
@@ -8716,7 +8716,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
   __pyx_v_bottomrightNodes = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":170
+  /* "fa2_visualization/fa2util.pyx":170
  *         cdef Region subregion
  * 
  *         if len(self.nodes) > 1:             # <<<<<<<<<<<<<<
@@ -8734,7 +8734,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
   __pyx_t_7 = (__pyx_t_6 > 1);
   if (__pyx_t_7) {
 
-    /* "fa2util.pyx":171
+    /* "fa2_visualization/fa2util.pyx":171
  * 
  *         if len(self.nodes) > 1:
  *             for n in self.nodes:             # <<<<<<<<<<<<<<
@@ -8761,11 +8761,11 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 171, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
-      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 171, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_2));
+      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 171, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_2));
       __pyx_t_2 = 0;
 
-      /* "fa2util.pyx":172
+      /* "fa2_visualization/fa2util.pyx":172
  *         if len(self.nodes) > 1:
  *             for n in self.nodes:
  *                 if n.x < self.massCenterX:             # <<<<<<<<<<<<<<
@@ -8775,7 +8775,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       __pyx_t_7 = (__pyx_v_n->x < __pyx_v_self->massCenterX);
       if (__pyx_t_7) {
 
-        /* "fa2util.pyx":173
+        /* "fa2_visualization/fa2util.pyx":173
  *             for n in self.nodes:
  *                 if n.x < self.massCenterX:
  *                     if n.y < self.massCenterY:             # <<<<<<<<<<<<<<
@@ -8785,7 +8785,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         __pyx_t_7 = (__pyx_v_n->y < __pyx_v_self->massCenterY);
         if (__pyx_t_7) {
 
-          /* "fa2util.pyx":174
+          /* "fa2_visualization/fa2util.pyx":174
  *                 if n.x < self.massCenterX:
  *                     if n.y < self.massCenterY:
  *                         bottomleftNodes.append(n)             # <<<<<<<<<<<<<<
@@ -8794,7 +8794,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
  */
           __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_bottomleftNodes, ((PyObject *)__pyx_v_n)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 174, __pyx_L1_error)
 
-          /* "fa2util.pyx":173
+          /* "fa2_visualization/fa2util.pyx":173
  *             for n in self.nodes:
  *                 if n.x < self.massCenterX:
  *                     if n.y < self.massCenterY:             # <<<<<<<<<<<<<<
@@ -8804,7 +8804,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           goto __pyx_L7;
         }
 
-        /* "fa2util.pyx":176
+        /* "fa2_visualization/fa2util.pyx":176
  *                         bottomleftNodes.append(n)
  *                     else:
  *                         topleftNodes.append(n)             # <<<<<<<<<<<<<<
@@ -8816,7 +8816,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         }
         __pyx_L7:;
 
-        /* "fa2util.pyx":172
+        /* "fa2_visualization/fa2util.pyx":172
  *         if len(self.nodes) > 1:
  *             for n in self.nodes:
  *                 if n.x < self.massCenterX:             # <<<<<<<<<<<<<<
@@ -8826,7 +8826,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         goto __pyx_L6;
       }
 
-      /* "fa2util.pyx":178
+      /* "fa2_visualization/fa2util.pyx":178
  *                         topleftNodes.append(n)
  *                 else:
  *                     if n.y < self.massCenterY:             # <<<<<<<<<<<<<<
@@ -8837,7 +8837,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         __pyx_t_7 = (__pyx_v_n->y < __pyx_v_self->massCenterY);
         if (__pyx_t_7) {
 
-          /* "fa2util.pyx":179
+          /* "fa2_visualization/fa2util.pyx":179
  *                 else:
  *                     if n.y < self.massCenterY:
  *                         bottomrightNodes.append(n)             # <<<<<<<<<<<<<<
@@ -8846,7 +8846,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
  */
           __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_bottomrightNodes, ((PyObject *)__pyx_v_n)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 179, __pyx_L1_error)
 
-          /* "fa2util.pyx":178
+          /* "fa2_visualization/fa2util.pyx":178
  *                         topleftNodes.append(n)
  *                 else:
  *                     if n.y < self.massCenterY:             # <<<<<<<<<<<<<<
@@ -8856,7 +8856,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           goto __pyx_L8;
         }
 
-        /* "fa2util.pyx":181
+        /* "fa2_visualization/fa2util.pyx":181
  *                         bottomrightNodes.append(n)
  *                     else:
  *                         toprightNodes.append(n)             # <<<<<<<<<<<<<<
@@ -8870,7 +8870,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       }
       __pyx_L6:;
 
-      /* "fa2util.pyx":171
+      /* "fa2_visualization/fa2util.pyx":171
  * 
  *         if len(self.nodes) > 1:
  *             for n in self.nodes:             # <<<<<<<<<<<<<<
@@ -8880,7 +8880,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "fa2util.pyx":183
+    /* "fa2_visualization/fa2util.pyx":183
  *                         toprightNodes.append(n)
  * 
  *             if len(topleftNodes) > 0:             # <<<<<<<<<<<<<<
@@ -8891,7 +8891,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
     __pyx_t_7 = (__pyx_t_6 > 0);
     if (__pyx_t_7) {
 
-      /* "fa2util.pyx":184
+      /* "fa2_visualization/fa2util.pyx":184
  * 
  *             if len(topleftNodes) > 0:
  *                 if len(topleftNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -8910,19 +8910,19 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       __pyx_t_7 = (__pyx_t_6 < __pyx_t_9);
       if (__pyx_t_7) {
 
-        /* "fa2util.pyx":185
+        /* "fa2_visualization/fa2util.pyx":185
  *             if len(topleftNodes) > 0:
  *                 if len(topleftNodes) < len(self.nodes):
  *                     subregion = Region(topleftNodes)             # <<<<<<<<<<<<<<
  *                     self.subregions.append(subregion)
  *                 else:
  */
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_v_topleftNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_v_topleftNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_v_subregion = ((struct __pyx_obj_7fa2util_Region *)__pyx_t_1);
+        __pyx_v_subregion = ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_1);
         __pyx_t_1 = 0;
 
-        /* "fa2util.pyx":186
+        /* "fa2_visualization/fa2util.pyx":186
  *                 if len(topleftNodes) < len(self.nodes):
  *                     subregion = Region(topleftNodes)
  *                     self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -8935,7 +8935,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         }
         __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 186, __pyx_L1_error)
 
-        /* "fa2util.pyx":184
+        /* "fa2_visualization/fa2util.pyx":184
  * 
  *             if len(topleftNodes) > 0:
  *                 if len(topleftNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -8945,7 +8945,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         goto __pyx_L11;
       }
 
-      /* "fa2util.pyx":188
+      /* "fa2_visualization/fa2util.pyx":188
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in topleftNodes:             # <<<<<<<<<<<<<<
@@ -8969,11 +8969,11 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 188, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
-          if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 188, __pyx_L1_error)
-          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_2));
+          if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 188, __pyx_L1_error)
+          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_2));
           __pyx_t_2 = 0;
 
-          /* "fa2util.pyx":189
+          /* "fa2_visualization/fa2util.pyx":189
  *                 else:
  *                     for n in topleftNodes:
  *                         subregion = Region([n])             # <<<<<<<<<<<<<<
@@ -8985,13 +8985,13 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __Pyx_INCREF((PyObject *)__pyx_v_n);
           __Pyx_GIVEREF((PyObject *)__pyx_v_n);
           if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_v_n))) __PYX_ERR(0, 189, __pyx_L1_error);
-          __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 189, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 189, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_3));
+          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_3));
           __pyx_t_3 = 0;
 
-          /* "fa2util.pyx":190
+          /* "fa2_visualization/fa2util.pyx":190
  *                     for n in topleftNodes:
  *                         subregion = Region([n])
  *                         self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -9004,7 +9004,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           }
           __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 190, __pyx_L1_error)
 
-          /* "fa2util.pyx":188
+          /* "fa2_visualization/fa2util.pyx":188
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in topleftNodes:             # <<<<<<<<<<<<<<
@@ -9016,7 +9016,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       }
       __pyx_L11:;
 
-      /* "fa2util.pyx":183
+      /* "fa2_visualization/fa2util.pyx":183
  *                         toprightNodes.append(n)
  * 
  *             if len(topleftNodes) > 0:             # <<<<<<<<<<<<<<
@@ -9025,7 +9025,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
  */
     }
 
-    /* "fa2util.pyx":192
+    /* "fa2_visualization/fa2util.pyx":192
  *                         self.subregions.append(subregion)
  * 
  *             if len(bottomleftNodes) > 0:             # <<<<<<<<<<<<<<
@@ -9036,7 +9036,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
     __pyx_t_7 = (__pyx_t_9 > 0);
     if (__pyx_t_7) {
 
-      /* "fa2util.pyx":193
+      /* "fa2_visualization/fa2util.pyx":193
  * 
  *             if len(bottomleftNodes) > 0:
  *                 if len(bottomleftNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -9055,19 +9055,19 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       __pyx_t_7 = (__pyx_t_9 < __pyx_t_6);
       if (__pyx_t_7) {
 
-        /* "fa2util.pyx":194
+        /* "fa2_visualization/fa2util.pyx":194
  *             if len(bottomleftNodes) > 0:
  *                 if len(bottomleftNodes) < len(self.nodes):
  *                     subregion = Region(bottomleftNodes)             # <<<<<<<<<<<<<<
  *                     self.subregions.append(subregion)
  *                 else:
  */
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_v_bottomleftNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 194, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_v_bottomleftNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 194, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_1));
+        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "fa2util.pyx":195
+        /* "fa2_visualization/fa2util.pyx":195
  *                 if len(bottomleftNodes) < len(self.nodes):
  *                     subregion = Region(bottomleftNodes)
  *                     self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -9080,7 +9080,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         }
         __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 195, __pyx_L1_error)
 
-        /* "fa2util.pyx":193
+        /* "fa2_visualization/fa2util.pyx":193
  * 
  *             if len(bottomleftNodes) > 0:
  *                 if len(bottomleftNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -9090,7 +9090,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         goto __pyx_L16;
       }
 
-      /* "fa2util.pyx":197
+      /* "fa2_visualization/fa2util.pyx":197
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in bottomleftNodes:             # <<<<<<<<<<<<<<
@@ -9114,11 +9114,11 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 197, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           #endif
-          if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 197, __pyx_L1_error)
-          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_3));
+          if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 197, __pyx_L1_error)
+          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_3));
           __pyx_t_3 = 0;
 
-          /* "fa2util.pyx":198
+          /* "fa2_visualization/fa2util.pyx":198
  *                 else:
  *                     for n in bottomleftNodes:
  *                         subregion = Region([n])             # <<<<<<<<<<<<<<
@@ -9130,13 +9130,13 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __Pyx_INCREF((PyObject *)__pyx_v_n);
           __Pyx_GIVEREF((PyObject *)__pyx_v_n);
           if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, ((PyObject *)__pyx_v_n))) __PYX_ERR(0, 198, __pyx_L1_error);
-          __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_2));
+          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_2));
           __pyx_t_2 = 0;
 
-          /* "fa2util.pyx":199
+          /* "fa2_visualization/fa2util.pyx":199
  *                     for n in bottomleftNodes:
  *                         subregion = Region([n])
  *                         self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -9149,7 +9149,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           }
           __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 199, __pyx_L1_error)
 
-          /* "fa2util.pyx":197
+          /* "fa2_visualization/fa2util.pyx":197
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in bottomleftNodes:             # <<<<<<<<<<<<<<
@@ -9161,7 +9161,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       }
       __pyx_L16:;
 
-      /* "fa2util.pyx":192
+      /* "fa2_visualization/fa2util.pyx":192
  *                         self.subregions.append(subregion)
  * 
  *             if len(bottomleftNodes) > 0:             # <<<<<<<<<<<<<<
@@ -9170,7 +9170,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
  */
     }
 
-    /* "fa2util.pyx":201
+    /* "fa2_visualization/fa2util.pyx":201
  *                         self.subregions.append(subregion)
  * 
  *             if len(toprightNodes) > 0:             # <<<<<<<<<<<<<<
@@ -9181,7 +9181,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
     __pyx_t_7 = (__pyx_t_6 > 0);
     if (__pyx_t_7) {
 
-      /* "fa2util.pyx":202
+      /* "fa2_visualization/fa2util.pyx":202
  * 
  *             if len(toprightNodes) > 0:
  *                 if len(toprightNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -9200,19 +9200,19 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       __pyx_t_7 = (__pyx_t_6 < __pyx_t_9);
       if (__pyx_t_7) {
 
-        /* "fa2util.pyx":203
+        /* "fa2_visualization/fa2util.pyx":203
  *             if len(toprightNodes) > 0:
  *                 if len(toprightNodes) < len(self.nodes):
  *                     subregion = Region(toprightNodes)             # <<<<<<<<<<<<<<
  *                     self.subregions.append(subregion)
  *                 else:
  */
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_v_toprightNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 203, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_v_toprightNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 203, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_1));
+        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "fa2util.pyx":204
+        /* "fa2_visualization/fa2util.pyx":204
  *                 if len(toprightNodes) < len(self.nodes):
  *                     subregion = Region(toprightNodes)
  *                     self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -9225,7 +9225,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         }
         __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 204, __pyx_L1_error)
 
-        /* "fa2util.pyx":202
+        /* "fa2_visualization/fa2util.pyx":202
  * 
  *             if len(toprightNodes) > 0:
  *                 if len(toprightNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -9235,7 +9235,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         goto __pyx_L21;
       }
 
-      /* "fa2util.pyx":206
+      /* "fa2_visualization/fa2util.pyx":206
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in toprightNodes:             # <<<<<<<<<<<<<<
@@ -9259,11 +9259,11 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 206, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
-          if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 206, __pyx_L1_error)
-          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_2));
+          if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 206, __pyx_L1_error)
+          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_2));
           __pyx_t_2 = 0;
 
-          /* "fa2util.pyx":207
+          /* "fa2_visualization/fa2util.pyx":207
  *                 else:
  *                     for n in toprightNodes:
  *                         subregion = Region([n])             # <<<<<<<<<<<<<<
@@ -9275,13 +9275,13 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __Pyx_INCREF((PyObject *)__pyx_v_n);
           __Pyx_GIVEREF((PyObject *)__pyx_v_n);
           if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, ((PyObject *)__pyx_v_n))) __PYX_ERR(0, 207, __pyx_L1_error);
-          __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 207, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 207, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_3));
+          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_3));
           __pyx_t_3 = 0;
 
-          /* "fa2util.pyx":208
+          /* "fa2_visualization/fa2util.pyx":208
  *                     for n in toprightNodes:
  *                         subregion = Region([n])
  *                         self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -9294,7 +9294,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           }
           __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 208, __pyx_L1_error)
 
-          /* "fa2util.pyx":206
+          /* "fa2_visualization/fa2util.pyx":206
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in toprightNodes:             # <<<<<<<<<<<<<<
@@ -9306,7 +9306,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       }
       __pyx_L21:;
 
-      /* "fa2util.pyx":201
+      /* "fa2_visualization/fa2util.pyx":201
  *                         self.subregions.append(subregion)
  * 
  *             if len(toprightNodes) > 0:             # <<<<<<<<<<<<<<
@@ -9315,7 +9315,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
  */
     }
 
-    /* "fa2util.pyx":210
+    /* "fa2_visualization/fa2util.pyx":210
  *                         self.subregions.append(subregion)
  * 
  *             if len(bottomrightNodes) > 0:             # <<<<<<<<<<<<<<
@@ -9326,7 +9326,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
     __pyx_t_7 = (__pyx_t_9 > 0);
     if (__pyx_t_7) {
 
-      /* "fa2util.pyx":211
+      /* "fa2_visualization/fa2util.pyx":211
  * 
  *             if len(bottomrightNodes) > 0:
  *                 if len(bottomrightNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -9345,19 +9345,19 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       __pyx_t_7 = (__pyx_t_9 < __pyx_t_6);
       if (__pyx_t_7) {
 
-        /* "fa2util.pyx":212
+        /* "fa2_visualization/fa2util.pyx":212
  *             if len(bottomrightNodes) > 0:
  *                 if len(bottomrightNodes) < len(self.nodes):
  *                     subregion = Region(bottomrightNodes)             # <<<<<<<<<<<<<<
  *                     self.subregions.append(subregion)
  *                 else:
  */
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_v_bottomrightNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_v_bottomrightNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_1));
+        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "fa2util.pyx":213
+        /* "fa2_visualization/fa2util.pyx":213
  *                 if len(bottomrightNodes) < len(self.nodes):
  *                     subregion = Region(bottomrightNodes)
  *                     self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -9370,7 +9370,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         }
         __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 213, __pyx_L1_error)
 
-        /* "fa2util.pyx":211
+        /* "fa2_visualization/fa2util.pyx":211
  * 
  *             if len(bottomrightNodes) > 0:
  *                 if len(bottomrightNodes) < len(self.nodes):             # <<<<<<<<<<<<<<
@@ -9380,7 +9380,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
         goto __pyx_L26;
       }
 
-      /* "fa2util.pyx":215
+      /* "fa2_visualization/fa2util.pyx":215
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in bottomrightNodes:             # <<<<<<<<<<<<<<
@@ -9404,11 +9404,11 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 215, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           #endif
-          if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 215, __pyx_L1_error)
-          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_3));
+          if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 215, __pyx_L1_error)
+          __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_3));
           __pyx_t_3 = 0;
 
-          /* "fa2util.pyx":216
+          /* "fa2_visualization/fa2util.pyx":216
  *                 else:
  *                     for n in bottomrightNodes:
  *                         subregion = Region([n])             # <<<<<<<<<<<<<<
@@ -9420,13 +9420,13 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           __Pyx_INCREF((PyObject *)__pyx_v_n);
           __Pyx_GIVEREF((PyObject *)__pyx_v_n);
           if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, ((PyObject *)__pyx_v_n))) __PYX_ERR(0, 216, __pyx_L1_error);
-          __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_2));
+          __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_2));
           __pyx_t_2 = 0;
 
-          /* "fa2util.pyx":217
+          /* "fa2_visualization/fa2util.pyx":217
  *                     for n in bottomrightNodes:
  *                         subregion = Region([n])
  *                         self.subregions.append(subregion)             # <<<<<<<<<<<<<<
@@ -9439,7 +9439,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
           }
           __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_self->subregions, ((PyObject *)__pyx_v_subregion)); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 217, __pyx_L1_error)
 
-          /* "fa2util.pyx":215
+          /* "fa2_visualization/fa2util.pyx":215
  *                     self.subregions.append(subregion)
  *                 else:
  *                     for n in bottomrightNodes:             # <<<<<<<<<<<<<<
@@ -9451,7 +9451,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       }
       __pyx_L26:;
 
-      /* "fa2util.pyx":210
+      /* "fa2_visualization/fa2util.pyx":210
  *                         self.subregions.append(subregion)
  * 
  *             if len(bottomrightNodes) > 0:             # <<<<<<<<<<<<<<
@@ -9460,7 +9460,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
  */
     }
 
-    /* "fa2util.pyx":219
+    /* "fa2_visualization/fa2util.pyx":219
  *                         self.subregions.append(subregion)
  * 
  *             for subregion in self.subregions:             # <<<<<<<<<<<<<<
@@ -9487,22 +9487,22 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
       __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
-      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7fa2util_Region))))) __PYX_ERR(0, 219, __pyx_L1_error)
-      __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_2));
+      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_17fa2_visualization_7fa2util_Region))))) __PYX_ERR(0, 219, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_2));
       __pyx_t_2 = 0;
 
-      /* "fa2util.pyx":220
+      /* "fa2_visualization/fa2util.pyx":220
  * 
  *             for subregion in self.subregions:
  *                 subregion.buildSubRegions()             # <<<<<<<<<<<<<<
  * 
  *     cpdef applyForce(self, Node n, double theta, double coefficient=0):
  */
-      __pyx_t_2 = ((struct __pyx_vtabstruct_7fa2util_Region *)__pyx_v_subregion->__pyx_vtab)->buildSubRegions(__pyx_v_subregion, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+      __pyx_t_2 = ((struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region *)__pyx_v_subregion->__pyx_vtab)->buildSubRegions(__pyx_v_subregion, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "fa2util.pyx":219
+      /* "fa2_visualization/fa2util.pyx":219
  *                         self.subregions.append(subregion)
  * 
  *             for subregion in self.subregions:             # <<<<<<<<<<<<<<
@@ -9512,7 +9512,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "fa2util.pyx":170
+    /* "fa2_visualization/fa2util.pyx":170
  *         cdef Region subregion
  * 
  *         if len(self.nodes) > 1:             # <<<<<<<<<<<<<<
@@ -9521,7 +9521,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
  */
   }
 
-  /* "fa2util.pyx":162
+  /* "fa2_visualization/fa2util.pyx":162
  *                 self.size = max(self.size, 2 * distance)
  * 
  *     cpdef buildSubRegions(self):             # <<<<<<<<<<<<<<
@@ -9537,7 +9537,7 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fa2util.Region.buildSubRegions", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.buildSubRegions", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_topleftNodes);
@@ -9552,15 +9552,15 @@ static PyObject *__pyx_f_7fa2util_6Region_buildSubRegions(struct __pyx_obj_7fa2u
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_5buildSubRegions(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_5buildSubRegions(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_6Region_5buildSubRegions = {"buildSubRegions", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_5buildSubRegions, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_6Region_5buildSubRegions(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_6Region_5buildSubRegions = {"buildSubRegions", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_5buildSubRegions, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_5buildSubRegions(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9585,14 +9585,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("buildSubRegions", 1, 0, 0, __pyx_nargs); return NULL;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "buildSubRegions", 0))) return NULL;
-  __pyx_r = __pyx_pf_7fa2util_6Region_4buildSubRegions(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_4buildSubRegions(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -9601,7 +9601,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_7fa
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("buildSubRegions", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7fa2util_6Region_buildSubRegions(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_6Region_buildSubRegions(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9610,7 +9610,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_7fa
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.buildSubRegions", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.buildSubRegions", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -9618,7 +9618,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_7fa
   return __pyx_r;
 }
 
-/* "fa2util.pyx":222
+/* "fa2_visualization/fa2util.pyx":222
  *                 subregion.buildSubRegions()
  * 
  *     cpdef applyForce(self, Node n, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -9626,17 +9626,17 @@ static PyObject *__pyx_pf_7fa2util_6Region_4buildSubRegions(struct __pyx_obj_7fa
  *         cdef Region subregion
  */
 
-static PyObject *__pyx_pw_7fa2util_6Region_7applyForce(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_7applyForce(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_Region *__pyx_v_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForce *__pyx_optional_args) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_applyForce(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce *__pyx_optional_args) {
   double __pyx_v_coefficient = ((double)0.0);
   double __pyx_v_distance;
-  struct __pyx_obj_7fa2util_Region *__pyx_v_subregion = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_subregion = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -9648,9 +9648,9 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
   int __pyx_t_7;
   Py_ssize_t __pyx_t_8;
   int __pyx_t_9;
-  struct __pyx_opt_args_7fa2util_linRepulsion __pyx_t_10;
-  struct __pyx_opt_args_7fa2util_linRepulsion_region __pyx_t_11;
-  struct __pyx_opt_args_7fa2util_6Region_applyForce __pyx_t_12;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion __pyx_t_10;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_linRepulsion_region __pyx_t_11;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce __pyx_t_12;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -9671,7 +9671,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
       #endif
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_applyForce); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_7fa2util_6Region_7applyForce)) {
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_17fa2_visualization_7fa2util_6Region_7applyForce)) {
         __Pyx_XDECREF(__pyx_r);
         __pyx_t_3 = PyFloat_FromDouble(__pyx_v_theta); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 222, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
@@ -9720,7 +9720,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
     #endif
   }
 
-  /* "fa2util.pyx":226
+  /* "fa2_visualization/fa2util.pyx":226
  *         cdef Region subregion
  * 
  *         if len(self.nodes) < 2:             # <<<<<<<<<<<<<<
@@ -9738,7 +9738,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
   __pyx_t_9 = (__pyx_t_8 < 2);
   if (__pyx_t_9) {
 
-    /* "fa2util.pyx":227
+    /* "fa2_visualization/fa2util.pyx":227
  * 
  *         if len(self.nodes) < 2:
  *             linRepulsion(n, self.nodes[0], coefficient)             # <<<<<<<<<<<<<<
@@ -9751,15 +9751,15 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
     }
     __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_self->nodes, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 227, __pyx_L1_error)
+    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 227, __pyx_L1_error)
     __pyx_t_10.__pyx_n = 1;
     __pyx_t_10.coefficient = __pyx_v_coefficient;
-    __pyx_t_2 = __pyx_f_7fa2util_linRepulsion(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_1), 0, &__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
+    __pyx_t_2 = __pyx_f_17fa2_visualization_7fa2util_linRepulsion(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_1), 0, &__pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fa2util.pyx":226
+    /* "fa2_visualization/fa2util.pyx":226
  *         cdef Region subregion
  * 
  *         if len(self.nodes) < 2:             # <<<<<<<<<<<<<<
@@ -9769,7 +9769,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
     goto __pyx_L3;
   }
 
-  /* "fa2util.pyx":229
+  /* "fa2_visualization/fa2util.pyx":229
  *             linRepulsion(n, self.nodes[0], coefficient)
  *         else:
  *             distance = sqrt((n.x - self.massCenterX) ** 2 + (n.y - self.massCenterY) ** 2)             # <<<<<<<<<<<<<<
@@ -9779,7 +9779,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
   /*else*/ {
     __pyx_v_distance = sqrt((pow((__pyx_v_n->x - __pyx_v_self->massCenterX), 2.0) + pow((__pyx_v_n->y - __pyx_v_self->massCenterY), 2.0)));
 
-    /* "fa2util.pyx":230
+    /* "fa2_visualization/fa2util.pyx":230
  *         else:
  *             distance = sqrt((n.x - self.massCenterX) ** 2 + (n.y - self.massCenterY) ** 2)
  *             if distance * theta > self.size:             # <<<<<<<<<<<<<<
@@ -9789,7 +9789,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
     __pyx_t_9 = ((__pyx_v_distance * __pyx_v_theta) > __pyx_v_self->size);
     if (__pyx_t_9) {
 
-      /* "fa2util.pyx":231
+      /* "fa2_visualization/fa2util.pyx":231
  *             distance = sqrt((n.x - self.massCenterX) ** 2 + (n.y - self.massCenterY) ** 2)
  *             if distance * theta > self.size:
  *                 linRepulsion_region(n, self, coefficient)             # <<<<<<<<<<<<<<
@@ -9798,11 +9798,11 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
  */
       __pyx_t_11.__pyx_n = 1;
       __pyx_t_11.coefficient = __pyx_v_coefficient;
-      __pyx_t_2 = __pyx_f_7fa2util_linRepulsion_region(__pyx_v_n, __pyx_v_self, 0, &__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_2 = __pyx_f_17fa2_visualization_7fa2util_linRepulsion_region(__pyx_v_n, __pyx_v_self, 0, &__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "fa2util.pyx":230
+      /* "fa2_visualization/fa2util.pyx":230
  *         else:
  *             distance = sqrt((n.x - self.massCenterX) ** 2 + (n.y - self.massCenterY) ** 2)
  *             if distance * theta > self.size:             # <<<<<<<<<<<<<<
@@ -9812,7 +9812,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
       goto __pyx_L4;
     }
 
-    /* "fa2util.pyx":233
+    /* "fa2_visualization/fa2util.pyx":233
  *                 linRepulsion_region(n, self, coefficient)
  *             else:
  *                 for subregion in self.subregions:             # <<<<<<<<<<<<<<
@@ -9840,11 +9840,11 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
         __pyx_t_1 = __Pyx_PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
-        if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_7fa2util_Region))))) __PYX_ERR(0, 233, __pyx_L1_error)
-        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_7fa2util_Region *)__pyx_t_1));
+        if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_17fa2_visualization_7fa2util_Region))))) __PYX_ERR(0, 233, __pyx_L1_error)
+        __Pyx_XDECREF_SET(__pyx_v_subregion, ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_t_1));
         __pyx_t_1 = 0;
 
-        /* "fa2util.pyx":234
+        /* "fa2_visualization/fa2util.pyx":234
  *             else:
  *                 for subregion in self.subregions:
  *                     subregion.applyForce(n, theta, coefficient)             # <<<<<<<<<<<<<<
@@ -9853,11 +9853,11 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
  */
         __pyx_t_12.__pyx_n = 1;
         __pyx_t_12.coefficient = __pyx_v_coefficient;
-        __pyx_t_1 = ((struct __pyx_vtabstruct_7fa2util_Region *)__pyx_v_subregion->__pyx_vtab)->applyForce(__pyx_v_subregion, __pyx_v_n, __pyx_v_theta, 0, &__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+        __pyx_t_1 = ((struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region *)__pyx_v_subregion->__pyx_vtab)->applyForce(__pyx_v_subregion, __pyx_v_n, __pyx_v_theta, 0, &__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "fa2util.pyx":233
+        /* "fa2_visualization/fa2util.pyx":233
  *                 linRepulsion_region(n, self, coefficient)
  *             else:
  *                 for subregion in self.subregions:             # <<<<<<<<<<<<<<
@@ -9871,7 +9871,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
   }
   __pyx_L3:;
 
-  /* "fa2util.pyx":222
+  /* "fa2_visualization/fa2util.pyx":222
  *                 subregion.buildSubRegions()
  * 
  *     cpdef applyForce(self, Node n, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -9889,7 +9889,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("fa2util.Region.applyForce", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.applyForce", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_subregion);
@@ -9899,22 +9899,22 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForce(struct __pyx_obj_7fa2util_R
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_7applyForce(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_7applyForce(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_6Region_7applyForce = {"applyForce", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_7applyForce, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_6Region_7applyForce(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_6Region_7applyForce = {"applyForce", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_7applyForce, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_7applyForce(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ) {
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
   double __pyx_v_theta;
   double __pyx_v_coefficient;
   #if !CYTHON_METH_FASTCALL
@@ -9991,7 +9991,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_n = ((struct __pyx_obj_7fa2util_Node *)values[0]);
+    __pyx_v_n = ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)values[0]);
     __pyx_v_theta = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_theta == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
     if (values[2]) {
       __pyx_v_coefficient = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_coefficient == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 222, __pyx_L3_error)
@@ -10011,12 +10011,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.Region.applyForce", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.applyForce", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 222, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_6Region_6applyForce(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), __pyx_v_n, __pyx_v_theta, __pyx_v_coefficient);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n), __pyx_ptype_17fa2_visualization_7fa2util_Node, 1, "n", 0))) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_6applyForce(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), __pyx_v_n, __pyx_v_theta, __pyx_v_coefficient);
 
   /* function exit code */
   goto __pyx_L0;
@@ -10033,11 +10033,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_6applyForce(struct __pyx_obj_7fa2util_Region *__pyx_v_self, struct __pyx_obj_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, double __pyx_v_coefficient) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_6applyForce(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n, double __pyx_v_theta, double __pyx_v_coefficient) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_7fa2util_6Region_applyForce __pyx_t_2;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -10045,7 +10045,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_6applyForce(struct __pyx_obj_7fa2util
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.coefficient = __pyx_v_coefficient;
-  __pyx_t_1 = __pyx_vtabptr_7fa2util_Region->applyForce(__pyx_v_self, __pyx_v_n, __pyx_v_theta, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_17fa2_visualization_7fa2util_Region->applyForce(__pyx_v_self, __pyx_v_n, __pyx_v_theta, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10054,7 +10054,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_6applyForce(struct __pyx_obj_7fa2util
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.applyForce", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.applyForce", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10062,7 +10062,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_6applyForce(struct __pyx_obj_7fa2util
   return __pyx_r;
 }
 
-/* "fa2util.pyx":236
+/* "fa2_visualization/fa2util.pyx":236
  *                     subregion.applyForce(n, theta, coefficient)
  * 
  *     cpdef applyForceOnNodes(self, list[Node] nodes, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -10070,16 +10070,16 @@ static PyObject *__pyx_pf_7fa2util_6Region_6applyForce(struct __pyx_obj_7fa2util
  *         for n in nodes:
  */
 
-static PyObject *__pyx_pw_7fa2util_6Region_9applyForceOnNodes(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_9applyForceOnNodes(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args) {
   double __pyx_v_coefficient = ((double)0.0);
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10090,7 +10090,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
   PyObject *__pyx_t_6 = NULL;
   int __pyx_t_7;
   Py_ssize_t __pyx_t_8;
-  struct __pyx_opt_args_7fa2util_6Region_applyForce __pyx_t_9;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce __pyx_t_9;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -10111,7 +10111,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
       #endif
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_applyForceOnNodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_7fa2util_6Region_9applyForceOnNodes)) {
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_17fa2_visualization_7fa2util_6Region_9applyForceOnNodes)) {
         __Pyx_XDECREF(__pyx_r);
         __pyx_t_3 = PyFloat_FromDouble(__pyx_v_theta); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 236, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
@@ -10160,7 +10160,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
     #endif
   }
 
-  /* "fa2util.pyx":238
+  /* "fa2_visualization/fa2util.pyx":238
  *     cpdef applyForceOnNodes(self, list[Node] nodes, double theta, double coefficient=0):
  *         cdef Node n
  *         for n in nodes:             # <<<<<<<<<<<<<<
@@ -10187,11 +10187,11 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
     __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     #endif
-    if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 238, __pyx_L1_error)
-    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_2));
+    if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 238, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "fa2util.pyx":239
+    /* "fa2_visualization/fa2util.pyx":239
  *         cdef Node n
  *         for n in nodes:
  *             self.applyForce(n, theta, coefficient)             # <<<<<<<<<<<<<<
@@ -10200,11 +10200,11 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
  */
     __pyx_t_9.__pyx_n = 1;
     __pyx_t_9.coefficient = __pyx_v_coefficient;
-    __pyx_t_2 = ((struct __pyx_vtabstruct_7fa2util_Region *)__pyx_v_self->__pyx_vtab)->applyForce(__pyx_v_self, __pyx_v_n, __pyx_v_theta, 0, &__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L1_error)
+    __pyx_t_2 = ((struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region *)__pyx_v_self->__pyx_vtab)->applyForce(__pyx_v_self, __pyx_v_n, __pyx_v_theta, 0, &__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "fa2util.pyx":238
+    /* "fa2_visualization/fa2util.pyx":238
  *     cpdef applyForceOnNodes(self, list[Node] nodes, double theta, double coefficient=0):
  *         cdef Node n
  *         for n in nodes:             # <<<<<<<<<<<<<<
@@ -10214,7 +10214,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":236
+  /* "fa2_visualization/fa2util.pyx":236
  *                     subregion.applyForce(n, theta, coefficient)
  * 
  *     cpdef applyForceOnNodes(self, list[Node] nodes, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -10232,7 +10232,7 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("fa2util.Region.applyForceOnNodes", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.applyForceOnNodes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_n);
@@ -10242,15 +10242,15 @@ static PyObject *__pyx_f_7fa2util_6Region_applyForceOnNodes(struct __pyx_obj_7fa
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_9applyForceOnNodes(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_9applyForceOnNodes(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_6Region_9applyForceOnNodes = {"applyForceOnNodes", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_9applyForceOnNodes, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_6Region_9applyForceOnNodes(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_6Region_9applyForceOnNodes = {"applyForceOnNodes", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_9applyForceOnNodes, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_9applyForceOnNodes(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10354,12 +10354,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.Region.applyForceOnNodes", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.applyForceOnNodes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_nodes), (&PyList_Type), 1, "nodes", 1))) __PYX_ERR(0, 236, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_6Region_8applyForceOnNodes(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), __pyx_v_nodes, __pyx_v_theta, __pyx_v_coefficient);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_8applyForceOnNodes(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), __pyx_v_nodes, __pyx_v_theta, __pyx_v_coefficient);
 
   /* function exit code */
   goto __pyx_L0;
@@ -10376,11 +10376,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, double __pyx_v_coefficient) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_nodes, double __pyx_v_theta, double __pyx_v_coefficient) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_7fa2util_6Region_applyForceOnNodes __pyx_t_2;
+  struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForceOnNodes __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -10388,7 +10388,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_7
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.coefficient = __pyx_v_coefficient;
-  __pyx_t_1 = __pyx_vtabptr_7fa2util_Region->applyForceOnNodes(__pyx_v_self, __pyx_v_nodes, __pyx_v_theta, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_17fa2_visualization_7fa2util_Region->applyForceOnNodes(__pyx_v_self, __pyx_v_nodes, __pyx_v_theta, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10397,7 +10397,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_7
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.applyForceOnNodes", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.applyForceOnNodes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10405,7 +10405,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_7
   return __pyx_r;
 }
 
-/* "fa2util.pyx":127
+/* "fa2_visualization/fa2util.pyx":127
  * 
  * cdef class Region:
  *     cdef public double mass, massCenterX, massCenterY, size             # <<<<<<<<<<<<<<
@@ -10414,21 +10414,21 @@ static PyObject *__pyx_pf_7fa2util_6Region_8applyForceOnNodes(struct __pyx_obj_7
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_4mass_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_6Region_4mass_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_4mass_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_4mass_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_4mass___get__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_4mass___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_4mass___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_4mass___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10446,7 +10446,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_4mass___get__(struct __pyx_obj_7fa2ut
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.mass.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.mass.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10455,21 +10455,21 @@ static PyObject *__pyx_pf_7fa2util_6Region_4mass___get__(struct __pyx_obj_7fa2ut
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_6Region_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_4mass_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_4mass_2__set__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_4mass_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_4mass_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_4mass_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -10482,28 +10482,28 @@ static int __pyx_pf_7fa2util_6Region_4mass_2__set__(struct __pyx_obj_7fa2util_Re
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Region.mass.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.mass.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_11massCenterX_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_6Region_11massCenterX_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterX_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterX_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_11massCenterX___get__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterX___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_11massCenterX___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterX___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10521,7 +10521,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_11massCenterX___get__(struct __pyx_ob
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.massCenterX.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.massCenterX.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10530,21 +10530,21 @@ static PyObject *__pyx_pf_7fa2util_6Region_11massCenterX___get__(struct __pyx_ob
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_11massCenterX_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_6Region_11massCenterX_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterX_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterX_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_11massCenterX_2__set__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterX_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_11massCenterX_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterX_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -10557,28 +10557,28 @@ static int __pyx_pf_7fa2util_6Region_11massCenterX_2__set__(struct __pyx_obj_7fa
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Region.massCenterX.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.massCenterX.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_11massCenterY_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_6Region_11massCenterY_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterY_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterY_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_11massCenterY___get__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterY___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_11massCenterY___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterY___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10596,7 +10596,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_11massCenterY___get__(struct __pyx_ob
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.massCenterY.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.massCenterY.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10605,21 +10605,21 @@ static PyObject *__pyx_pf_7fa2util_6Region_11massCenterY___get__(struct __pyx_ob
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_11massCenterY_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_6Region_11massCenterY_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterY_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterY_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_11massCenterY_2__set__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterY_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_11massCenterY_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_11massCenterY_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -10632,28 +10632,28 @@ static int __pyx_pf_7fa2util_6Region_11massCenterY_2__set__(struct __pyx_obj_7fa
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Region.massCenterY.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.massCenterY.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_4size_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_6Region_4size_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_4size_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_4size_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_4size___get__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_4size___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_4size___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_4size___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10671,7 +10671,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_4size___get__(struct __pyx_obj_7fa2ut
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.size.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.size.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -10680,21 +10680,21 @@ static PyObject *__pyx_pf_7fa2util_6Region_4size___get__(struct __pyx_obj_7fa2ut
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_4size_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_6Region_4size_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_4size_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_4size_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_4size_2__set__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_4size_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_4size_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_4size_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   double __pyx_t_1;
   int __pyx_lineno = 0;
@@ -10707,13 +10707,13 @@ static int __pyx_pf_7fa2util_6Region_4size_2__set__(struct __pyx_obj_7fa2util_Re
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("fa2util.Region.size.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.size.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "fa2util.pyx":128
+/* "fa2_visualization/fa2util.pyx":128
  * cdef class Region:
  *     cdef public double mass, massCenterX, massCenterY, size
  *     cdef public list[Node] nodes             # <<<<<<<<<<<<<<
@@ -10722,21 +10722,21 @@ static int __pyx_pf_7fa2util_6Region_4size_2__set__(struct __pyx_obj_7fa2util_Re
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_5nodes_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_6Region_5nodes_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_5nodes___get__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_5nodes___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__", 1);
@@ -10753,21 +10753,21 @@ static PyObject *__pyx_pf_7fa2util_6Region_5nodes___get__(struct __pyx_obj_7fa2u
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_5nodes_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_6Region_5nodes_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_5nodes_2__set__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_5nodes_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10789,7 +10789,7 @@ static int __pyx_pf_7fa2util_6Region_5nodes_2__set__(struct __pyx_obj_7fa2util_R
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.nodes.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.nodes.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -10797,21 +10797,21 @@ static int __pyx_pf_7fa2util_6Region_5nodes_2__set__(struct __pyx_obj_7fa2util_R
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_5nodes_5__del__(PyObject *__pyx_v_self); /*proto*/
-static int __pyx_pw_7fa2util_6Region_5nodes_5__del__(PyObject *__pyx_v_self) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_5__del__(PyObject *__pyx_v_self); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_5__del__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__del__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_5nodes_4__del__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes_4__del__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_5nodes_4__del__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_5nodes_4__del__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__del__", 1);
@@ -10827,7 +10827,7 @@ static int __pyx_pf_7fa2util_6Region_5nodes_4__del__(struct __pyx_obj_7fa2util_R
   return __pyx_r;
 }
 
-/* "fa2util.pyx":129
+/* "fa2_visualization/fa2util.pyx":129
  *     cdef public double mass, massCenterX, massCenterY, size
  *     cdef public list[Node] nodes
  *     cdef public list[Region] subregions             # <<<<<<<<<<<<<<
@@ -10836,21 +10836,21 @@ static int __pyx_pf_7fa2util_6Region_5nodes_4__del__(struct __pyx_obj_7fa2util_R
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_10subregions_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_7fa2util_6Region_10subregions_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_10subregions___get__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions___get__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_10subregions___get__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions___get__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__", 1);
@@ -10867,21 +10867,21 @@ static PyObject *__pyx_pf_7fa2util_6Region_10subregions___get__(struct __pyx_obj
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_10subregions_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_7fa2util_6Region_10subregions_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_10subregions_2__set__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions_2__set__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_10subregions_2__set__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions_2__set__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10903,7 +10903,7 @@ static int __pyx_pf_7fa2util_6Region_10subregions_2__set__(struct __pyx_obj_7fa2
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.subregions.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.subregions.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -10911,21 +10911,21 @@ static int __pyx_pf_7fa2util_6Region_10subregions_2__set__(struct __pyx_obj_7fa2
 }
 
 /* Python wrapper */
-static int __pyx_pw_7fa2util_6Region_10subregions_5__del__(PyObject *__pyx_v_self); /*proto*/
-static int __pyx_pw_7fa2util_6Region_10subregions_5__del__(PyObject *__pyx_v_self) {
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_5__del__(PyObject *__pyx_v_self); /*proto*/
+static int __pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_5__del__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__del__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_7fa2util_6Region_10subregions_4__del__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions_4__del__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_7fa2util_6Region_10subregions_4__del__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static int __pyx_pf_17fa2_visualization_7fa2util_6Region_10subregions_4__del__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__del__", 1);
@@ -10948,15 +10948,15 @@ static int __pyx_pf_7fa2util_6Region_10subregions_4__del__(struct __pyx_obj_7fa2
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_11__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_11__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_6Region_11__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_11__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_6Region_11__reduce_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_6Region_11__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_11__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_11__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10981,14 +10981,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   if (unlikely(__pyx_nargs > 0)) {
     __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL;}
   if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__reduce_cython__", 0))) return NULL;
-  __pyx_r = __pyx_pf_7fa2util_6Region_10__reduce_cython__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self));
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_10__reduce_cython__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_10__reduce_cython__(struct __pyx_obj_7fa2util_Region *__pyx_v_self) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_10__reduce_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v__dict = 0;
   int __pyx_v_use_setstate;
@@ -11226,7 +11226,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_10__reduce_cython__(struct __pyx_obj_
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("fa2util.Region.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_state);
@@ -11244,15 +11244,15 @@ static PyObject *__pyx_pf_7fa2util_6Region_10__reduce_cython__(struct __pyx_obj_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_6Region_13__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_13__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_6Region_13__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_13__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_6Region_13__setstate_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_6Region_13__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_13__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_6Region_13__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11322,11 +11322,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.Region.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fa2util_6Region_12__setstate_cython__(((struct __pyx_obj_7fa2util_Region *)__pyx_v_self), __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_6Region_12__setstate_cython__(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v_self), __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -11339,7 +11339,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_6Region_12__setstate_cython__(struct __pyx_obj_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_6Region_12__setstate_cython__(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -11354,7 +11354,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_12__setstate_cython__(struct __pyx_ob
  *     __pyx_unpickle_Region__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
  */
   if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 17, __pyx_L1_error)
-  __pyx_t_1 = __pyx_f_7fa2util___pyx_unpickle_Region__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Region__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -11370,7 +11370,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_12__setstate_cython__(struct __pyx_ob
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.Region.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.Region.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -11378,7 +11378,7 @@ static PyObject *__pyx_pf_7fa2util_6Region_12__setstate_cython__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "fa2util.pyx":241
+/* "fa2_visualization/fa2util.pyx":241
  *             self.applyForce(n, theta, coefficient)
  * 
  * cpdef adjustSpeedAndApplyForces(list[Node] nodes, double speed, double speedEfficiency, double jitterTolerance):             # <<<<<<<<<<<<<<
@@ -11386,18 +11386,18 @@ static PyObject *__pyx_pf_7fa2util_6Region_12__setstate_cython__(struct __pyx_ob
  *     cdef double totalEffectiveTraction = 0.0
  */
 
-static PyObject *__pyx_pw_7fa2util_17adjustSpeedAndApplyForces(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_17adjustSpeedAndApplyForces(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_nodes, double __pyx_v_speed, double __pyx_v_speedEfficiency, double __pyx_v_jitterTolerance, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_nodes, double __pyx_v_speed, double __pyx_v_speedEfficiency, double __pyx_v_jitterTolerance, CYTHON_UNUSED int __pyx_skip_dispatch) {
   double __pyx_v_totalSwinging;
   double __pyx_v_totalEffectiveTraction;
   double __pyx_v_swinging;
-  struct __pyx_obj_7fa2util_Node *__pyx_v_n = 0;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v_n = 0;
   double __pyx_v_estimatedOptimalJitterTolerance;
   double __pyx_v_minJT;
   double __pyx_v_maxJT;
@@ -11424,7 +11424,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("adjustSpeedAndApplyForces", 1);
 
-  /* "fa2util.pyx":242
+  /* "fa2_visualization/fa2util.pyx":242
  * 
  * cpdef adjustSpeedAndApplyForces(list[Node] nodes, double speed, double speedEfficiency, double jitterTolerance):
  *     cdef double totalSwinging = 0.0             # <<<<<<<<<<<<<<
@@ -11433,7 +11433,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_v_totalSwinging = 0.0;
 
-  /* "fa2util.pyx":243
+  /* "fa2_visualization/fa2util.pyx":243
  * cpdef adjustSpeedAndApplyForces(list[Node] nodes, double speed, double speedEfficiency, double jitterTolerance):
  *     cdef double totalSwinging = 0.0
  *     cdef double totalEffectiveTraction = 0.0             # <<<<<<<<<<<<<<
@@ -11442,7 +11442,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_v_totalEffectiveTraction = 0.0;
 
-  /* "fa2util.pyx":247
+  /* "fa2_visualization/fa2util.pyx":247
  *     cdef Node n
  * 
  *     for n in nodes:             # <<<<<<<<<<<<<<
@@ -11469,11 +11469,11 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 247, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 247, __pyx_L1_error)
-    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_3));
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 247, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "fa2util.pyx":248
+    /* "fa2_visualization/fa2util.pyx":248
  * 
  *     for n in nodes:
  *         swinging = sqrt((n.old_dx - n.dx) * (n.old_dx - n.dx) + (n.old_dy - n.dy) * (n.old_dy - n.dy))             # <<<<<<<<<<<<<<
@@ -11482,7 +11482,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     __pyx_v_swinging = sqrt((((__pyx_v_n->old_dx - __pyx_v_n->dx) * (__pyx_v_n->old_dx - __pyx_v_n->dx)) + ((__pyx_v_n->old_dy - __pyx_v_n->dy) * (__pyx_v_n->old_dy - __pyx_v_n->dy))));
 
-    /* "fa2util.pyx":249
+    /* "fa2_visualization/fa2util.pyx":249
  *     for n in nodes:
  *         swinging = sqrt((n.old_dx - n.dx) * (n.old_dx - n.dx) + (n.old_dy - n.dy) * (n.old_dy - n.dy))
  *         totalSwinging += n.mass * swinging             # <<<<<<<<<<<<<<
@@ -11491,7 +11491,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     __pyx_v_totalSwinging = (__pyx_v_totalSwinging + (__pyx_v_n->mass * __pyx_v_swinging));
 
-    /* "fa2util.pyx":250
+    /* "fa2_visualization/fa2util.pyx":250
  *         swinging = sqrt((n.old_dx - n.dx) * (n.old_dx - n.dx) + (n.old_dy - n.dy) * (n.old_dy - n.dy))
  *         totalSwinging += n.mass * swinging
  *         totalEffectiveTraction += 0.5 * n.mass * sqrt(             # <<<<<<<<<<<<<<
@@ -11500,7 +11500,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     __pyx_v_totalEffectiveTraction = (__pyx_v_totalEffectiveTraction + ((0.5 * __pyx_v_n->mass) * sqrt((((__pyx_v_n->old_dx + __pyx_v_n->dx) * (__pyx_v_n->old_dx + __pyx_v_n->dx)) + ((__pyx_v_n->old_dy + __pyx_v_n->dy) * (__pyx_v_n->old_dy + __pyx_v_n->dy))))));
 
-    /* "fa2util.pyx":247
+    /* "fa2_visualization/fa2util.pyx":247
  *     cdef Node n
  * 
  *     for n in nodes:             # <<<<<<<<<<<<<<
@@ -11510,7 +11510,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":253
+  /* "fa2_visualization/fa2util.pyx":253
  *             (n.old_dx + n.dx) * (n.old_dx + n.dx) + (n.old_dy + n.dy) * (n.old_dy + n.dy))
  * 
  *     cdef double estimatedOptimalJitterTolerance = 0.05 * sqrt(len(nodes))             # <<<<<<<<<<<<<<
@@ -11524,7 +11524,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_t_2 = __Pyx_PyList_GET_SIZE(__pyx_v_nodes); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 253, __pyx_L1_error)
   __pyx_v_estimatedOptimalJitterTolerance = (0.05 * sqrt(__pyx_t_2));
 
-  /* "fa2util.pyx":254
+  /* "fa2_visualization/fa2util.pyx":254
  * 
  *     cdef double estimatedOptimalJitterTolerance = 0.05 * sqrt(len(nodes))
  *     cdef double minJT = sqrt(estimatedOptimalJitterTolerance)             # <<<<<<<<<<<<<<
@@ -11533,7 +11533,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_v_minJT = sqrt(__pyx_v_estimatedOptimalJitterTolerance);
 
-  /* "fa2util.pyx":255
+  /* "fa2_visualization/fa2util.pyx":255
  *     cdef double estimatedOptimalJitterTolerance = 0.05 * sqrt(len(nodes))
  *     cdef double minJT = sqrt(estimatedOptimalJitterTolerance)
  *     cdef double maxJT = 10             # <<<<<<<<<<<<<<
@@ -11542,7 +11542,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_v_maxJT = 10.0;
 
-  /* "fa2util.pyx":259
+  /* "fa2_visualization/fa2util.pyx":259
  * 
  *     jt = jitterTolerance * max(minJT,
  *                                min(maxJT, estimatedOptimalJitterTolerance * totalEffectiveTraction / (len(nodes) * len(nodes))))             # <<<<<<<<<<<<<<
@@ -11575,7 +11575,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   }
   __pyx_t_7 = __pyx_t_8;
 
-  /* "fa2util.pyx":258
+  /* "fa2_visualization/fa2util.pyx":258
  *     cdef double jt
  * 
  *     jt = jitterTolerance * max(minJT,             # <<<<<<<<<<<<<<
@@ -11584,7 +11584,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_t_8 = __pyx_v_minJT;
 
-  /* "fa2util.pyx":259
+  /* "fa2_visualization/fa2util.pyx":259
  * 
  *     jt = jitterTolerance * max(minJT,
  *                                min(maxJT, estimatedOptimalJitterTolerance * totalEffectiveTraction / (len(nodes) * len(nodes))))             # <<<<<<<<<<<<<<
@@ -11598,7 +11598,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     __pyx_t_4 = __pyx_t_8;
   }
 
-  /* "fa2util.pyx":258
+  /* "fa2_visualization/fa2util.pyx":258
  *     cdef double jt
  * 
  *     jt = jitterTolerance * max(minJT,             # <<<<<<<<<<<<<<
@@ -11607,7 +11607,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_v_jt = (__pyx_v_jitterTolerance * __pyx_t_4);
 
-  /* "fa2util.pyx":261
+  /* "fa2_visualization/fa2util.pyx":261
  *                                min(maxJT, estimatedOptimalJitterTolerance * totalEffectiveTraction / (len(nodes) * len(nodes))))
  * 
  *     cdef double minSpeedEfficiency = 0.05             # <<<<<<<<<<<<<<
@@ -11616,7 +11616,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_v_minSpeedEfficiency = 0.05;
 
-  /* "fa2util.pyx":264
+  /* "fa2_visualization/fa2util.pyx":264
  *     # Return calculated jitter tolerance or any other required values
  * 
  *     if totalEffectiveTraction and totalSwinging / totalEffectiveTraction > 2.0:             # <<<<<<<<<<<<<<
@@ -11638,7 +11638,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_L7_bool_binop_done:;
   if (__pyx_t_9) {
 
-    /* "fa2util.pyx":265
+    /* "fa2_visualization/fa2util.pyx":265
  * 
  *     if totalEffectiveTraction and totalSwinging / totalEffectiveTraction > 2.0:
  *         if speedEfficiency > minSpeedEfficiency:             # <<<<<<<<<<<<<<
@@ -11648,7 +11648,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     __pyx_t_9 = (__pyx_v_speedEfficiency > __pyx_v_minSpeedEfficiency);
     if (__pyx_t_9) {
 
-      /* "fa2util.pyx":266
+      /* "fa2_visualization/fa2util.pyx":266
  *     if totalEffectiveTraction and totalSwinging / totalEffectiveTraction > 2.0:
  *         if speedEfficiency > minSpeedEfficiency:
  *             speedEfficiency *= 0.5             # <<<<<<<<<<<<<<
@@ -11657,7 +11657,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
       __pyx_v_speedEfficiency = (__pyx_v_speedEfficiency * 0.5);
 
-      /* "fa2util.pyx":265
+      /* "fa2_visualization/fa2util.pyx":265
  * 
  *     if totalEffectiveTraction and totalSwinging / totalEffectiveTraction > 2.0:
  *         if speedEfficiency > minSpeedEfficiency:             # <<<<<<<<<<<<<<
@@ -11666,7 +11666,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     }
 
-    /* "fa2util.pyx":267
+    /* "fa2_visualization/fa2util.pyx":267
  *         if speedEfficiency > minSpeedEfficiency:
  *             speedEfficiency *= 0.5
  *         jt = max(jt, jitterTolerance)             # <<<<<<<<<<<<<<
@@ -11683,7 +11683,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     }
     __pyx_v_jt = __pyx_t_8;
 
-    /* "fa2util.pyx":264
+    /* "fa2_visualization/fa2util.pyx":264
  *     # Return calculated jitter tolerance or any other required values
  * 
  *     if totalEffectiveTraction and totalSwinging / totalEffectiveTraction > 2.0:             # <<<<<<<<<<<<<<
@@ -11692,7 +11692,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   }
 
-  /* "fa2util.pyx":270
+  /* "fa2_visualization/fa2util.pyx":270
  * 
  *     cdef double targetSpeed
  *     if totalSwinging == 0:             # <<<<<<<<<<<<<<
@@ -11702,7 +11702,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_t_9 = (__pyx_v_totalSwinging == 0.0);
   if (__pyx_t_9) {
 
-    /* "fa2util.pyx":271
+    /* "fa2_visualization/fa2util.pyx":271
  *     cdef double targetSpeed
  *     if totalSwinging == 0:
  *         targetSpeed = float('inf')             # <<<<<<<<<<<<<<
@@ -11712,7 +11712,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     __pyx_t_8 = __Pyx_PyUnicode_AsDouble(__pyx_n_u_inf); if (unlikely(__pyx_t_8 == ((double)((double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 271, __pyx_L1_error)
     __pyx_v_targetSpeed = __pyx_t_8;
 
-    /* "fa2util.pyx":270
+    /* "fa2_visualization/fa2util.pyx":270
  * 
  *     cdef double targetSpeed
  *     if totalSwinging == 0:             # <<<<<<<<<<<<<<
@@ -11722,7 +11722,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     goto __pyx_L10;
   }
 
-  /* "fa2util.pyx":273
+  /* "fa2_visualization/fa2util.pyx":273
  *         targetSpeed = float('inf')
  *     else:
  *         targetSpeed = jt * speedEfficiency * totalEffectiveTraction / totalSwinging             # <<<<<<<<<<<<<<
@@ -11739,7 +11739,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   }
   __pyx_L10:;
 
-  /* "fa2util.pyx":275
+  /* "fa2_visualization/fa2util.pyx":275
  *         targetSpeed = jt * speedEfficiency * totalEffectiveTraction / totalSwinging
  * 
  *     if totalSwinging > jt * totalEffectiveTraction:             # <<<<<<<<<<<<<<
@@ -11749,7 +11749,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_t_9 = (__pyx_v_totalSwinging > (__pyx_v_jt * __pyx_v_totalEffectiveTraction));
   if (__pyx_t_9) {
 
-    /* "fa2util.pyx":276
+    /* "fa2_visualization/fa2util.pyx":276
  * 
  *     if totalSwinging > jt * totalEffectiveTraction:
  *         if speedEfficiency > minSpeedEfficiency:             # <<<<<<<<<<<<<<
@@ -11759,7 +11759,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     __pyx_t_9 = (__pyx_v_speedEfficiency > __pyx_v_minSpeedEfficiency);
     if (__pyx_t_9) {
 
-      /* "fa2util.pyx":277
+      /* "fa2_visualization/fa2util.pyx":277
  *     if totalSwinging > jt * totalEffectiveTraction:
  *         if speedEfficiency > minSpeedEfficiency:
  *             speedEfficiency *= 0.7             # <<<<<<<<<<<<<<
@@ -11768,7 +11768,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
       __pyx_v_speedEfficiency = (__pyx_v_speedEfficiency * 0.7);
 
-      /* "fa2util.pyx":276
+      /* "fa2_visualization/fa2util.pyx":276
  * 
  *     if totalSwinging > jt * totalEffectiveTraction:
  *         if speedEfficiency > minSpeedEfficiency:             # <<<<<<<<<<<<<<
@@ -11777,7 +11777,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     }
 
-    /* "fa2util.pyx":275
+    /* "fa2_visualization/fa2util.pyx":275
  *         targetSpeed = jt * speedEfficiency * totalEffectiveTraction / totalSwinging
  * 
  *     if totalSwinging > jt * totalEffectiveTraction:             # <<<<<<<<<<<<<<
@@ -11787,7 +11787,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     goto __pyx_L11;
   }
 
-  /* "fa2util.pyx":278
+  /* "fa2_visualization/fa2util.pyx":278
  *         if speedEfficiency > minSpeedEfficiency:
  *             speedEfficiency *= 0.7
  *     elif speedEfficiency < 1000:             # <<<<<<<<<<<<<<
@@ -11797,7 +11797,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_t_9 = (__pyx_v_speedEfficiency < 1000.0);
   if (__pyx_t_9) {
 
-    /* "fa2util.pyx":279
+    /* "fa2_visualization/fa2util.pyx":279
  *             speedEfficiency *= 0.7
  *     elif speedEfficiency < 1000:
  *         speedEfficiency *= 1.3             # <<<<<<<<<<<<<<
@@ -11806,7 +11806,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     __pyx_v_speedEfficiency = (__pyx_v_speedEfficiency * 1.3);
 
-    /* "fa2util.pyx":278
+    /* "fa2_visualization/fa2util.pyx":278
  *         if speedEfficiency > minSpeedEfficiency:
  *             speedEfficiency *= 0.7
  *     elif speedEfficiency < 1000:             # <<<<<<<<<<<<<<
@@ -11816,7 +11816,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   }
   __pyx_L11:;
 
-  /* "fa2util.pyx":281
+  /* "fa2_visualization/fa2util.pyx":281
  *         speedEfficiency *= 1.3
  * 
  *     cdef double maxRise = .5             # <<<<<<<<<<<<<<
@@ -11825,7 +11825,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
   __pyx_v_maxRise = .5;
 
-  /* "fa2util.pyx":282
+  /* "fa2_visualization/fa2util.pyx":282
  * 
  *     cdef double maxRise = .5
  *     speed = speed + min(targetSpeed - speed, maxRise * speed)             # <<<<<<<<<<<<<<
@@ -11842,7 +11842,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   }
   __pyx_v_speed = (__pyx_v_speed + __pyx_t_7);
 
-  /* "fa2util.pyx":285
+  /* "fa2_visualization/fa2util.pyx":285
  * 
  *     cdef double factor
  *     cdef dict values = {}             # <<<<<<<<<<<<<<
@@ -11854,7 +11854,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_v_values = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":287
+  /* "fa2_visualization/fa2util.pyx":287
  *     cdef dict values = {}
  * 
  *     for n in nodes:             # <<<<<<<<<<<<<<
@@ -11881,11 +11881,11 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     __pyx_t_3 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 287, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_7fa2util_Node))))) __PYX_ERR(0, 287, __pyx_L1_error)
-    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_7fa2util_Node *)__pyx_t_3));
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_17fa2_visualization_7fa2util_Node))))) __PYX_ERR(0, 287, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_n, ((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "fa2util.pyx":288
+    /* "fa2_visualization/fa2util.pyx":288
  * 
  *     for n in nodes:
  *         swinging = n.mass * sqrt((n.old_dx - n.dx) * (n.old_dx - n.dx) + (n.old_dy - n.dy) * (n.old_dy - n.dy))             # <<<<<<<<<<<<<<
@@ -11894,7 +11894,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     __pyx_v_swinging = (__pyx_v_n->mass * sqrt((((__pyx_v_n->old_dx - __pyx_v_n->dx) * (__pyx_v_n->old_dx - __pyx_v_n->dx)) + ((__pyx_v_n->old_dy - __pyx_v_n->dy) * (__pyx_v_n->old_dy - __pyx_v_n->dy)))));
 
-    /* "fa2util.pyx":289
+    /* "fa2_visualization/fa2util.pyx":289
  *     for n in nodes:
  *         swinging = n.mass * sqrt((n.old_dx - n.dx) * (n.old_dx - n.dx) + (n.old_dy - n.dy) * (n.old_dy - n.dy))
  *         factor = speed / (1.0 + sqrt(speed * swinging))             # <<<<<<<<<<<<<<
@@ -11908,7 +11908,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
     }
     __pyx_v_factor = (__pyx_v_speed / __pyx_t_7);
 
-    /* "fa2util.pyx":290
+    /* "fa2_visualization/fa2util.pyx":290
  *         swinging = n.mass * sqrt((n.old_dx - n.dx) * (n.old_dx - n.dx) + (n.old_dy - n.dy) * (n.old_dy - n.dy))
  *         factor = speed / (1.0 + sqrt(speed * swinging))
  *         n.x += n.dx * factor             # <<<<<<<<<<<<<<
@@ -11917,7 +11917,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     __pyx_v_n->x = (__pyx_v_n->x + (__pyx_v_n->dx * __pyx_v_factor));
 
-    /* "fa2util.pyx":291
+    /* "fa2_visualization/fa2util.pyx":291
  *         factor = speed / (1.0 + sqrt(speed * swinging))
  *         n.x += n.dx * factor
  *         n.y += n.dy * factor             # <<<<<<<<<<<<<<
@@ -11926,7 +11926,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
  */
     __pyx_v_n->y = (__pyx_v_n->y + (__pyx_v_n->dy * __pyx_v_factor));
 
-    /* "fa2util.pyx":287
+    /* "fa2_visualization/fa2util.pyx":287
  *     cdef dict values = {}
  * 
  *     for n in nodes:             # <<<<<<<<<<<<<<
@@ -11936,7 +11936,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":293
+  /* "fa2_visualization/fa2util.pyx":293
  *         n.y += n.dy * factor
  * 
  *     values['speed'] = speed             # <<<<<<<<<<<<<<
@@ -11948,7 +11948,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   if (unlikely((PyDict_SetItem(__pyx_v_values, __pyx_n_u_speed, __pyx_t_1) < 0))) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":294
+  /* "fa2_visualization/fa2util.pyx":294
  * 
  *     values['speed'] = speed
  *     values['speedEfficiency'] = speedEfficiency             # <<<<<<<<<<<<<<
@@ -11959,7 +11959,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   if (unlikely((PyDict_SetItem(__pyx_v_values, __pyx_n_u_speedEfficiency, __pyx_t_1) < 0))) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "fa2util.pyx":295
+  /* "fa2_visualization/fa2util.pyx":295
  *     values['speed'] = speed
  *     values['speedEfficiency'] = speedEfficiency
  *     return values             # <<<<<<<<<<<<<<
@@ -11969,7 +11969,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_r = __pyx_v_values;
   goto __pyx_L0;
 
-  /* "fa2util.pyx":241
+  /* "fa2_visualization/fa2util.pyx":241
  *             self.applyForce(n, theta, coefficient)
  * 
  * cpdef adjustSpeedAndApplyForces(list[Node] nodes, double speed, double speedEfficiency, double jitterTolerance):             # <<<<<<<<<<<<<<
@@ -11981,7 +11981,7 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("fa2util.adjustSpeedAndApplyForces", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.adjustSpeedAndApplyForces", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_n);
@@ -11992,15 +11992,15 @@ static PyObject *__pyx_f_7fa2util_adjustSpeedAndApplyForces(PyObject *__pyx_v_no
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_17adjustSpeedAndApplyForces(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_17adjustSpeedAndApplyForces(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_17adjustSpeedAndApplyForces = {"adjustSpeedAndApplyForces", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_17adjustSpeedAndApplyForces, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_17adjustSpeedAndApplyForces(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_17adjustSpeedAndApplyForces = {"adjustSpeedAndApplyForces", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_17adjustSpeedAndApplyForces, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_17adjustSpeedAndApplyForces(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12115,12 +12115,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.adjustSpeedAndApplyForces", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.adjustSpeedAndApplyForces", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_nodes), (&PyList_Type), 1, "nodes", 1))) __PYX_ERR(0, 241, __pyx_L1_error)
-  __pyx_r = __pyx_pf_7fa2util_16adjustSpeedAndApplyForces(__pyx_self, __pyx_v_nodes, __pyx_v_speed, __pyx_v_speedEfficiency, __pyx_v_jitterTolerance);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_16adjustSpeedAndApplyForces(__pyx_self, __pyx_v_nodes, __pyx_v_speed, __pyx_v_speedEfficiency, __pyx_v_jitterTolerance);
 
   /* function exit code */
   goto __pyx_L0;
@@ -12137,7 +12137,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_16adjustSpeedAndApplyForces(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_speed, double __pyx_v_speedEfficiency, double __pyx_v_jitterTolerance) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_16adjustSpeedAndApplyForces(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_nodes, double __pyx_v_speed, double __pyx_v_speedEfficiency, double __pyx_v_jitterTolerance) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12146,7 +12146,7 @@ static PyObject *__pyx_pf_7fa2util_16adjustSpeedAndApplyForces(CYTHON_UNUSED PyO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("adjustSpeedAndApplyForces", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7fa2util_adjustSpeedAndApplyForces(__pyx_v_nodes, __pyx_v_speed, __pyx_v_speedEfficiency, __pyx_v_jitterTolerance, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util_adjustSpeedAndApplyForces(__pyx_v_nodes, __pyx_v_speed, __pyx_v_speedEfficiency, __pyx_v_jitterTolerance, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -12155,7 +12155,7 @@ static PyObject *__pyx_pf_7fa2util_16adjustSpeedAndApplyForces(CYTHON_UNUSED PyO
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("fa2util.adjustSpeedAndApplyForces", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.adjustSpeedAndApplyForces", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12170,15 +12170,15 @@ static PyObject *__pyx_pf_7fa2util_16adjustSpeedAndApplyForces(CYTHON_UNUSED PyO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_19__pyx_unpickle_Node(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_19__pyx_unpickle_Node(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_19__pyx_unpickle_Node = {"__pyx_unpickle_Node", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_19__pyx_unpickle_Node, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_19__pyx_unpickle_Node(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_19__pyx_unpickle_Node = {"__pyx_unpickle_Node", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_19__pyx_unpickle_Node, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_19__pyx_unpickle_Node(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12278,11 +12278,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Node", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Node", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fa2util_18__pyx_unpickle_Node(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_18__pyx_unpickle_Node(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -12295,7 +12295,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -12377,7 +12377,7 @@ static PyObject *__pyx_pf_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject 
  *     if __pyx_state is not None:
  *         __pyx_unpickle_Node__set_state(<Node> __pyx_result, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_7fa2util_Node), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Node), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -12422,7 +12422,7 @@ static PyObject *__pyx_pf_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject 
  * cdef __pyx_unpickle_Node__set_state(Node __pyx_result, tuple __pyx_state):
  */
     if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 9, __pyx_L1_error)
-    __pyx_t_1 = __pyx_f_7fa2util___pyx_unpickle_Node__set_state(((struct __pyx_obj_7fa2util_Node *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Node__set_state(((struct __pyx_obj_17fa2_visualization_7fa2util_Node *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -12458,7 +12458,7 @@ static PyObject *__pyx_pf_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject 
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Node", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Node", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v___pyx_PickleError);
@@ -12476,7 +12476,7 @@ static PyObject *__pyx_pf_7fa2util_18__pyx_unpickle_Node(CYTHON_UNUSED PyObject 
  *     if len(__pyx_state) > 7 and hasattr(__pyx_result, '__dict__'):
  */
 
-static PyObject *__pyx_f_7fa2util___pyx_unpickle_Node__set_state(struct __pyx_obj_7fa2util_Node *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Node__set_state(struct __pyx_obj_17fa2_visualization_7fa2util_Node *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -12651,7 +12651,7 @@ static PyObject *__pyx_f_7fa2util___pyx_unpickle_Node__set_state(struct __pyx_ob
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Node__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Node__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -12666,15 +12666,15 @@ static PyObject *__pyx_f_7fa2util___pyx_unpickle_Node__set_state(struct __pyx_ob
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_21__pyx_unpickle_Edge(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_21__pyx_unpickle_Edge(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_21__pyx_unpickle_Edge = {"__pyx_unpickle_Edge", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_21__pyx_unpickle_Edge, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_21__pyx_unpickle_Edge(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_21__pyx_unpickle_Edge = {"__pyx_unpickle_Edge", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_21__pyx_unpickle_Edge, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_21__pyx_unpickle_Edge(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12774,11 +12774,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Edge", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Edge", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fa2util_20__pyx_unpickle_Edge(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_20__pyx_unpickle_Edge(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -12791,7 +12791,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -12873,7 +12873,7 @@ static PyObject *__pyx_pf_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject 
  *     if __pyx_state is not None:
  *         __pyx_unpickle_Edge__set_state(<Edge> __pyx_result, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_7fa2util_Edge), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Edge), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -12918,7 +12918,7 @@ static PyObject *__pyx_pf_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject 
  * cdef __pyx_unpickle_Edge__set_state(Edge __pyx_result, tuple __pyx_state):
  */
     if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 9, __pyx_L1_error)
-    __pyx_t_1 = __pyx_f_7fa2util___pyx_unpickle_Edge__set_state(((struct __pyx_obj_7fa2util_Edge *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Edge__set_state(((struct __pyx_obj_17fa2_visualization_7fa2util_Edge *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -12954,7 +12954,7 @@ static PyObject *__pyx_pf_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject 
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Edge", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Edge", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v___pyx_PickleError);
@@ -12972,7 +12972,7 @@ static PyObject *__pyx_pf_7fa2util_20__pyx_unpickle_Edge(CYTHON_UNUSED PyObject 
  *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):
  */
 
-static PyObject *__pyx_f_7fa2util___pyx_unpickle_Edge__set_state(struct __pyx_obj_7fa2util_Edge *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Edge__set_state(struct __pyx_obj_17fa2_visualization_7fa2util_Edge *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -13111,7 +13111,7 @@ static PyObject *__pyx_f_7fa2util___pyx_unpickle_Edge__set_state(struct __pyx_ob
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Edge__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Edge__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -13126,15 +13126,15 @@ static PyObject *__pyx_f_7fa2util___pyx_unpickle_Edge__set_state(struct __pyx_ob
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fa2util_23__pyx_unpickle_Region(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_23__pyx_unpickle_Region(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7fa2util_23__pyx_unpickle_Region = {"__pyx_unpickle_Region", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_23__pyx_unpickle_Region, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7fa2util_23__pyx_unpickle_Region(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_17fa2_visualization_7fa2util_23__pyx_unpickle_Region = {"__pyx_unpickle_Region", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_23__pyx_unpickle_Region, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_17fa2_visualization_7fa2util_23__pyx_unpickle_Region(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13234,11 +13234,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Region", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Region", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fa2util_22__pyx_unpickle_Region(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_17fa2_visualization_7fa2util_22__pyx_unpickle_Region(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   {
@@ -13251,7 +13251,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_17fa2_visualization_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -13333,7 +13333,7 @@ static PyObject *__pyx_pf_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObjec
  *     if __pyx_state is not None:
  *         __pyx_unpickle_Region__set_state(<Region> __pyx_result, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_7fa2util_Region), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -13378,7 +13378,7 @@ static PyObject *__pyx_pf_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObjec
  * cdef __pyx_unpickle_Region__set_state(Region __pyx_result, tuple __pyx_state):
  */
     if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 9, __pyx_L1_error)
-    __pyx_t_1 = __pyx_f_7fa2util___pyx_unpickle_Region__set_state(((struct __pyx_obj_7fa2util_Region *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Region__set_state(((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -13414,7 +13414,7 @@ static PyObject *__pyx_pf_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObjec
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Region", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Region", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v___pyx_PickleError);
@@ -13432,7 +13432,7 @@ static PyObject *__pyx_pf_7fa2util_22__pyx_unpickle_Region(CYTHON_UNUSED PyObjec
  *     if len(__pyx_state) > 6 and hasattr(__pyx_result, '__dict__'):
  */
 
-static PyObject *__pyx_f_7fa2util___pyx_unpickle_Region__set_state(struct __pyx_obj_7fa2util_Region *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_f_17fa2_visualization_7fa2util___pyx_unpickle_Region__set_state(struct __pyx_obj_17fa2_visualization_7fa2util_Region *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -13604,7 +13604,7 @@ static PyObject *__pyx_f_7fa2util___pyx_unpickle_Region__set_state(struct __pyx_
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("fa2util.__pyx_unpickle_Region__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fa2_visualization.fa2util.__pyx_unpickle_Region__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -13612,7 +13612,7 @@ static PyObject *__pyx_f_7fa2util___pyx_unpickle_Region__set_state(struct __pyx_
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_7fa2util_Node(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_17fa2_visualization_7fa2util_Node(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
   #if CYTHON_COMPILING_IN_LIMITED_API
   allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
@@ -13628,10 +13628,10 @@ static PyObject *__pyx_tp_new_7fa2util_Node(PyTypeObject *t, CYTHON_UNUSED PyObj
   return o;
 }
 
-static void __pyx_tp_dealloc_7fa2util_Node(PyObject *o) {
+static void __pyx_tp_dealloc_17fa2_visualization_7fa2util_Node(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && (!PyType_IS_GC(Py_TYPE(o)) || !__Pyx_PyObject_GC_IsFinalized(o))) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_7fa2util_Node) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_17fa2_visualization_7fa2util_Node) {
       if (PyObject_CallFinalizerFromDealloc(o)) return;
     }
   }
@@ -13646,13 +13646,13 @@ static void __pyx_tp_dealloc_7fa2util_Node(PyObject *o) {
   #endif
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Node_mass(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Node_4mass_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Node_mass(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Node_4mass_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Node_mass(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Node_mass(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Node_4mass_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Node_4mass_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13660,13 +13660,13 @@ static int __pyx_setprop_7fa2util_4Node_mass(PyObject *o, PyObject *v, CYTHON_UN
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Node_old_dx(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Node_6old_dx_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Node_old_dx(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dx_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Node_old_dx(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Node_old_dx(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Node_6old_dx_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dx_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13674,13 +13674,13 @@ static int __pyx_setprop_7fa2util_4Node_old_dx(PyObject *o, PyObject *v, CYTHON_
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Node_old_dy(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Node_6old_dy_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Node_old_dy(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dy_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Node_old_dy(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Node_old_dy(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Node_6old_dy_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Node_6old_dy_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13688,13 +13688,13 @@ static int __pyx_setprop_7fa2util_4Node_old_dy(PyObject *o, PyObject *v, CYTHON_
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Node_dx(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Node_2dx_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Node_dx(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Node_2dx_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Node_dx(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Node_dx(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Node_2dx_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Node_2dx_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13702,13 +13702,13 @@ static int __pyx_setprop_7fa2util_4Node_dx(PyObject *o, PyObject *v, CYTHON_UNUS
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Node_dy(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Node_2dy_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Node_dy(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Node_2dy_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Node_dy(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Node_dy(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Node_2dy_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Node_2dy_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13716,13 +13716,13 @@ static int __pyx_setprop_7fa2util_4Node_dy(PyObject *o, PyObject *v, CYTHON_UNUS
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Node_x(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Node_1x_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Node_x(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Node_1x_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Node_x(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Node_x(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Node_1x_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Node_1x_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13730,13 +13730,13 @@ static int __pyx_setprop_7fa2util_4Node_x(PyObject *o, PyObject *v, CYTHON_UNUSE
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Node_y(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Node_1y_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Node_y(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Node_1y_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Node_y(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Node_y(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Node_1y_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Node_1y_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13744,46 +13744,46 @@ static int __pyx_setprop_7fa2util_4Node_y(PyObject *o, PyObject *v, CYTHON_UNUSE
   }
 }
 
-static PyMethodDef __pyx_methods_7fa2util_Node[] = {
-  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Node_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Node_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_17fa2_visualization_7fa2util_Node[] = {
+  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Node_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Node_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static struct PyGetSetDef __pyx_getsets_7fa2util_Node[] = {
-  {(char *)"mass", __pyx_getprop_7fa2util_4Node_mass, __pyx_setprop_7fa2util_4Node_mass, (char *)0, 0},
-  {(char *)"old_dx", __pyx_getprop_7fa2util_4Node_old_dx, __pyx_setprop_7fa2util_4Node_old_dx, (char *)0, 0},
-  {(char *)"old_dy", __pyx_getprop_7fa2util_4Node_old_dy, __pyx_setprop_7fa2util_4Node_old_dy, (char *)0, 0},
-  {(char *)"dx", __pyx_getprop_7fa2util_4Node_dx, __pyx_setprop_7fa2util_4Node_dx, (char *)0, 0},
-  {(char *)"dy", __pyx_getprop_7fa2util_4Node_dy, __pyx_setprop_7fa2util_4Node_dy, (char *)0, 0},
-  {(char *)"x", __pyx_getprop_7fa2util_4Node_x, __pyx_setprop_7fa2util_4Node_x, (char *)0, 0},
-  {(char *)"y", __pyx_getprop_7fa2util_4Node_y, __pyx_setprop_7fa2util_4Node_y, (char *)0, 0},
+static struct PyGetSetDef __pyx_getsets_17fa2_visualization_7fa2util_Node[] = {
+  {(char *)"mass", __pyx_getprop_17fa2_visualization_7fa2util_4Node_mass, __pyx_setprop_17fa2_visualization_7fa2util_4Node_mass, (char *)0, 0},
+  {(char *)"old_dx", __pyx_getprop_17fa2_visualization_7fa2util_4Node_old_dx, __pyx_setprop_17fa2_visualization_7fa2util_4Node_old_dx, (char *)0, 0},
+  {(char *)"old_dy", __pyx_getprop_17fa2_visualization_7fa2util_4Node_old_dy, __pyx_setprop_17fa2_visualization_7fa2util_4Node_old_dy, (char *)0, 0},
+  {(char *)"dx", __pyx_getprop_17fa2_visualization_7fa2util_4Node_dx, __pyx_setprop_17fa2_visualization_7fa2util_4Node_dx, (char *)0, 0},
+  {(char *)"dy", __pyx_getprop_17fa2_visualization_7fa2util_4Node_dy, __pyx_setprop_17fa2_visualization_7fa2util_4Node_dy, (char *)0, 0},
+  {(char *)"x", __pyx_getprop_17fa2_visualization_7fa2util_4Node_x, __pyx_setprop_17fa2_visualization_7fa2util_4Node_x, (char *)0, 0},
+  {(char *)"y", __pyx_getprop_17fa2_visualization_7fa2util_4Node_y, __pyx_setprop_17fa2_visualization_7fa2util_4Node_y, (char *)0, 0},
   {0, 0, 0, 0, 0}
 };
 #if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_7fa2util_Node_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_7fa2util_Node},
-  {Py_tp_methods, (void *)__pyx_methods_7fa2util_Node},
-  {Py_tp_getset, (void *)__pyx_getsets_7fa2util_Node},
-  {Py_tp_init, (void *)__pyx_pw_7fa2util_4Node_1__init__},
-  {Py_tp_new, (void *)__pyx_tp_new_7fa2util_Node},
+static PyType_Slot __pyx_type_17fa2_visualization_7fa2util_Node_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_17fa2_visualization_7fa2util_Node},
+  {Py_tp_methods, (void *)__pyx_methods_17fa2_visualization_7fa2util_Node},
+  {Py_tp_getset, (void *)__pyx_getsets_17fa2_visualization_7fa2util_Node},
+  {Py_tp_init, (void *)__pyx_pw_17fa2_visualization_7fa2util_4Node_1__init__},
+  {Py_tp_new, (void *)__pyx_tp_new_17fa2_visualization_7fa2util_Node},
   {0, 0},
 };
-static PyType_Spec __pyx_type_7fa2util_Node_spec = {
-  "fa2util.Node",
-  sizeof(struct __pyx_obj_7fa2util_Node),
+static PyType_Spec __pyx_type_17fa2_visualization_7fa2util_Node_spec = {
+  "fa2_visualization.fa2util.Node",
+  sizeof(struct __pyx_obj_17fa2_visualization_7fa2util_Node),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
-  __pyx_type_7fa2util_Node_slots,
+  __pyx_type_17fa2_visualization_7fa2util_Node_slots,
 };
 #else
 
-static PyTypeObject __pyx_type_7fa2util_Node = {
+static PyTypeObject __pyx_type_17fa2_visualization_7fa2util_Node = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fa2util.""Node", /*tp_name*/
-  sizeof(struct __pyx_obj_7fa2util_Node), /*tp_basicsize*/
+  "fa2_visualization.fa2util.""Node", /*tp_name*/
+  sizeof(struct __pyx_obj_17fa2_visualization_7fa2util_Node), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_7fa2util_Node, /*tp_dealloc*/
+  __pyx_tp_dealloc_17fa2_visualization_7fa2util_Node, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -13816,9 +13816,9 @@ static PyTypeObject __pyx_type_7fa2util_Node = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_7fa2util_Node, /*tp_methods*/
+  __pyx_methods_17fa2_visualization_7fa2util_Node, /*tp_methods*/
   0, /*tp_members*/
-  __pyx_getsets_7fa2util_Node, /*tp_getset*/
+  __pyx_getsets_17fa2_visualization_7fa2util_Node, /*tp_getset*/
   0, /*tp_base*/
   0, /*tp_dict*/
   0, /*tp_descr_get*/
@@ -13826,9 +13826,9 @@ static PyTypeObject __pyx_type_7fa2util_Node = {
   #if !CYTHON_USE_TYPE_SPECS
   0, /*tp_dictoffset*/
   #endif
-  __pyx_pw_7fa2util_4Node_1__init__, /*tp_init*/
+  __pyx_pw_17fa2_visualization_7fa2util_4Node_1__init__, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_7fa2util_Node, /*tp_new*/
+  __pyx_tp_new_17fa2_visualization_7fa2util_Node, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -13860,7 +13860,7 @@ static PyTypeObject __pyx_type_7fa2util_Node = {
 };
 #endif
 
-static PyObject *__pyx_tp_new_7fa2util_Edge(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_17fa2_visualization_7fa2util_Edge(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
   #if CYTHON_COMPILING_IN_LIMITED_API
   allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
@@ -13876,10 +13876,10 @@ static PyObject *__pyx_tp_new_7fa2util_Edge(PyTypeObject *t, CYTHON_UNUSED PyObj
   return o;
 }
 
-static void __pyx_tp_dealloc_7fa2util_Edge(PyObject *o) {
+static void __pyx_tp_dealloc_17fa2_visualization_7fa2util_Edge(PyObject *o) {
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && (!PyType_IS_GC(Py_TYPE(o)) || !__Pyx_PyObject_GC_IsFinalized(o))) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_7fa2util_Edge) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_17fa2_visualization_7fa2util_Edge) {
       if (PyObject_CallFinalizerFromDealloc(o)) return;
     }
   }
@@ -13894,13 +13894,13 @@ static void __pyx_tp_dealloc_7fa2util_Edge(PyObject *o) {
   #endif
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Edge_node1(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Edge_5node1_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Edge_node1(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node1_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Edge_node1(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Edge_node1(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Edge_5node1_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node1_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13908,13 +13908,13 @@ static int __pyx_setprop_7fa2util_4Edge_node1(PyObject *o, PyObject *v, CYTHON_U
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Edge_node2(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Edge_5node2_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Edge_node2(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node2_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Edge_node2(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Edge_node2(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Edge_5node2_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Edge_5node2_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13922,13 +13922,13 @@ static int __pyx_setprop_7fa2util_4Edge_node2(PyObject *o, PyObject *v, CYTHON_U
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_4Edge_weight(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_4Edge_6weight_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_4Edge_weight(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_4Edge_6weight_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_4Edge_weight(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_4Edge_weight(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_4Edge_6weight_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_4Edge_6weight_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -13936,42 +13936,42 @@ static int __pyx_setprop_7fa2util_4Edge_weight(PyObject *o, PyObject *v, CYTHON_
   }
 }
 
-static PyMethodDef __pyx_methods_7fa2util_Edge[] = {
-  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Edge_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_4Edge_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_17fa2_visualization_7fa2util_Edge[] = {
+  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Edge_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_4Edge_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static struct PyGetSetDef __pyx_getsets_7fa2util_Edge[] = {
-  {(char *)"node1", __pyx_getprop_7fa2util_4Edge_node1, __pyx_setprop_7fa2util_4Edge_node1, (char *)0, 0},
-  {(char *)"node2", __pyx_getprop_7fa2util_4Edge_node2, __pyx_setprop_7fa2util_4Edge_node2, (char *)0, 0},
-  {(char *)"weight", __pyx_getprop_7fa2util_4Edge_weight, __pyx_setprop_7fa2util_4Edge_weight, (char *)0, 0},
+static struct PyGetSetDef __pyx_getsets_17fa2_visualization_7fa2util_Edge[] = {
+  {(char *)"node1", __pyx_getprop_17fa2_visualization_7fa2util_4Edge_node1, __pyx_setprop_17fa2_visualization_7fa2util_4Edge_node1, (char *)0, 0},
+  {(char *)"node2", __pyx_getprop_17fa2_visualization_7fa2util_4Edge_node2, __pyx_setprop_17fa2_visualization_7fa2util_4Edge_node2, (char *)0, 0},
+  {(char *)"weight", __pyx_getprop_17fa2_visualization_7fa2util_4Edge_weight, __pyx_setprop_17fa2_visualization_7fa2util_4Edge_weight, (char *)0, 0},
   {0, 0, 0, 0, 0}
 };
 #if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_7fa2util_Edge_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_7fa2util_Edge},
-  {Py_tp_methods, (void *)__pyx_methods_7fa2util_Edge},
-  {Py_tp_getset, (void *)__pyx_getsets_7fa2util_Edge},
-  {Py_tp_init, (void *)__pyx_pw_7fa2util_4Edge_1__init__},
-  {Py_tp_new, (void *)__pyx_tp_new_7fa2util_Edge},
+static PyType_Slot __pyx_type_17fa2_visualization_7fa2util_Edge_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_17fa2_visualization_7fa2util_Edge},
+  {Py_tp_methods, (void *)__pyx_methods_17fa2_visualization_7fa2util_Edge},
+  {Py_tp_getset, (void *)__pyx_getsets_17fa2_visualization_7fa2util_Edge},
+  {Py_tp_init, (void *)__pyx_pw_17fa2_visualization_7fa2util_4Edge_1__init__},
+  {Py_tp_new, (void *)__pyx_tp_new_17fa2_visualization_7fa2util_Edge},
   {0, 0},
 };
-static PyType_Spec __pyx_type_7fa2util_Edge_spec = {
-  "fa2util.Edge",
-  sizeof(struct __pyx_obj_7fa2util_Edge),
+static PyType_Spec __pyx_type_17fa2_visualization_7fa2util_Edge_spec = {
+  "fa2_visualization.fa2util.Edge",
+  sizeof(struct __pyx_obj_17fa2_visualization_7fa2util_Edge),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
-  __pyx_type_7fa2util_Edge_slots,
+  __pyx_type_17fa2_visualization_7fa2util_Edge_slots,
 };
 #else
 
-static PyTypeObject __pyx_type_7fa2util_Edge = {
+static PyTypeObject __pyx_type_17fa2_visualization_7fa2util_Edge = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fa2util.""Edge", /*tp_name*/
-  sizeof(struct __pyx_obj_7fa2util_Edge), /*tp_basicsize*/
+  "fa2_visualization.fa2util.""Edge", /*tp_name*/
+  sizeof(struct __pyx_obj_17fa2_visualization_7fa2util_Edge), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_7fa2util_Edge, /*tp_dealloc*/
+  __pyx_tp_dealloc_17fa2_visualization_7fa2util_Edge, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -14004,9 +14004,9 @@ static PyTypeObject __pyx_type_7fa2util_Edge = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_7fa2util_Edge, /*tp_methods*/
+  __pyx_methods_17fa2_visualization_7fa2util_Edge, /*tp_methods*/
   0, /*tp_members*/
-  __pyx_getsets_7fa2util_Edge, /*tp_getset*/
+  __pyx_getsets_17fa2_visualization_7fa2util_Edge, /*tp_getset*/
   0, /*tp_base*/
   0, /*tp_dict*/
   0, /*tp_descr_get*/
@@ -14014,9 +14014,9 @@ static PyTypeObject __pyx_type_7fa2util_Edge = {
   #if !CYTHON_USE_TYPE_SPECS
   0, /*tp_dictoffset*/
   #endif
-  __pyx_pw_7fa2util_4Edge_1__init__, /*tp_init*/
+  __pyx_pw_17fa2_visualization_7fa2util_4Edge_1__init__, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_7fa2util_Edge, /*tp_new*/
+  __pyx_tp_new_17fa2_visualization_7fa2util_Edge, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -14047,10 +14047,10 @@ static PyTypeObject __pyx_type_7fa2util_Edge = {
   #endif
 };
 #endif
-static struct __pyx_vtabstruct_7fa2util_Region __pyx_vtable_7fa2util_Region;
+static struct __pyx_vtabstruct_17fa2_visualization_7fa2util_Region __pyx_vtable_17fa2_visualization_7fa2util_Region;
 
-static PyObject *__pyx_tp_new_7fa2util_Region(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
-  struct __pyx_obj_7fa2util_Region *p;
+static PyObject *__pyx_tp_new_17fa2_visualization_7fa2util_Region(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  struct __pyx_obj_17fa2_visualization_7fa2util_Region *p;
   PyObject *o;
   #if CYTHON_COMPILING_IN_LIMITED_API
   allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
@@ -14063,18 +14063,18 @@ static PyObject *__pyx_tp_new_7fa2util_Region(PyTypeObject *t, CYTHON_UNUSED PyO
   }
   if (unlikely(!o)) return 0;
   #endif
-  p = ((struct __pyx_obj_7fa2util_Region *)o);
-  p->__pyx_vtab = __pyx_vtabptr_7fa2util_Region;
+  p = ((struct __pyx_obj_17fa2_visualization_7fa2util_Region *)o);
+  p->__pyx_vtab = __pyx_vtabptr_17fa2_visualization_7fa2util_Region;
   p->nodes = ((PyObject*)Py_None); Py_INCREF(Py_None);
   p->subregions = ((PyObject*)Py_None); Py_INCREF(Py_None);
   return o;
 }
 
-static void __pyx_tp_dealloc_7fa2util_Region(PyObject *o) {
-  struct __pyx_obj_7fa2util_Region *p = (struct __pyx_obj_7fa2util_Region *)o;
+static void __pyx_tp_dealloc_17fa2_visualization_7fa2util_Region(PyObject *o) {
+  struct __pyx_obj_17fa2_visualization_7fa2util_Region *p = (struct __pyx_obj_17fa2_visualization_7fa2util_Region *)o;
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_7fa2util_Region) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_17fa2_visualization_7fa2util_Region) {
       if (PyObject_CallFinalizerFromDealloc(o)) return;
     }
   }
@@ -14092,9 +14092,9 @@ static void __pyx_tp_dealloc_7fa2util_Region(PyObject *o) {
   #endif
 }
 
-static int __pyx_tp_traverse_7fa2util_Region(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_17fa2_visualization_7fa2util_Region(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_7fa2util_Region *p = (struct __pyx_obj_7fa2util_Region *)o;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Region *p = (struct __pyx_obj_17fa2_visualization_7fa2util_Region *)o;
   if (p->nodes) {
     e = (*v)(p->nodes, a); if (e) return e;
   }
@@ -14104,9 +14104,9 @@ static int __pyx_tp_traverse_7fa2util_Region(PyObject *o, visitproc v, void *a) 
   return 0;
 }
 
-static int __pyx_tp_clear_7fa2util_Region(PyObject *o) {
+static int __pyx_tp_clear_17fa2_visualization_7fa2util_Region(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_7fa2util_Region *p = (struct __pyx_obj_7fa2util_Region *)o;
+  struct __pyx_obj_17fa2_visualization_7fa2util_Region *p = (struct __pyx_obj_17fa2_visualization_7fa2util_Region *)o;
   tmp = ((PyObject*)p->nodes);
   p->nodes = ((PyObject*)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
@@ -14116,13 +14116,13 @@ static int __pyx_tp_clear_7fa2util_Region(PyObject *o) {
   return 0;
 }
 
-static PyObject *__pyx_getprop_7fa2util_6Region_mass(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_6Region_4mass_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_6Region_mass(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_6Region_4mass_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_6Region_mass(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_6Region_mass(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_6Region_4mass_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_4mass_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -14130,13 +14130,13 @@ static int __pyx_setprop_7fa2util_6Region_mass(PyObject *o, PyObject *v, CYTHON_
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_6Region_massCenterX(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_6Region_11massCenterX_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_6Region_massCenterX(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterX_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_6Region_massCenterX(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_6Region_massCenterX(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_6Region_11massCenterX_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterX_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -14144,13 +14144,13 @@ static int __pyx_setprop_7fa2util_6Region_massCenterX(PyObject *o, PyObject *v, 
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_6Region_massCenterY(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_6Region_11massCenterY_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_6Region_massCenterY(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterY_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_6Region_massCenterY(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_6Region_massCenterY(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_6Region_11massCenterY_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_11massCenterY_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -14158,13 +14158,13 @@ static int __pyx_setprop_7fa2util_6Region_massCenterY(PyObject *o, PyObject *v, 
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_6Region_size(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_6Region_4size_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_6Region_size(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_6Region_4size_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_6Region_size(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_6Region_size(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_6Region_4size_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_4size_3__set__(o, v);
   }
   else {
     PyErr_SetString(PyExc_NotImplementedError, "__del__");
@@ -14172,73 +14172,73 @@ static int __pyx_setprop_7fa2util_6Region_size(PyObject *o, PyObject *v, CYTHON_
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_6Region_nodes(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_6Region_5nodes_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_6Region_nodes(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_6Region_nodes(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_6Region_nodes(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_6Region_5nodes_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_3__set__(o, v);
   }
   else {
-    return __pyx_pw_7fa2util_6Region_5nodes_5__del__(o);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_5nodes_5__del__(o);
   }
 }
 
-static PyObject *__pyx_getprop_7fa2util_6Region_subregions(PyObject *o, CYTHON_UNUSED void *x) {
-  return __pyx_pw_7fa2util_6Region_10subregions_1__get__(o);
+static PyObject *__pyx_getprop_17fa2_visualization_7fa2util_6Region_subregions(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_1__get__(o);
 }
 
-static int __pyx_setprop_7fa2util_6Region_subregions(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+static int __pyx_setprop_17fa2_visualization_7fa2util_6Region_subregions(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
   if (v) {
-    return __pyx_pw_7fa2util_6Region_10subregions_3__set__(o, v);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_3__set__(o, v);
   }
   else {
-    return __pyx_pw_7fa2util_6Region_10subregions_5__del__(o);
+    return __pyx_pw_17fa2_visualization_7fa2util_6Region_10subregions_5__del__(o);
   }
 }
 
-static PyMethodDef __pyx_methods_7fa2util_Region[] = {
-  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_11__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fa2util_6Region_13__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_17fa2_visualization_7fa2util_Region[] = {
+  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_11__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_17fa2_visualization_7fa2util_6Region_13__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
-static struct PyGetSetDef __pyx_getsets_7fa2util_Region[] = {
-  {(char *)"mass", __pyx_getprop_7fa2util_6Region_mass, __pyx_setprop_7fa2util_6Region_mass, (char *)0, 0},
-  {(char *)"massCenterX", __pyx_getprop_7fa2util_6Region_massCenterX, __pyx_setprop_7fa2util_6Region_massCenterX, (char *)0, 0},
-  {(char *)"massCenterY", __pyx_getprop_7fa2util_6Region_massCenterY, __pyx_setprop_7fa2util_6Region_massCenterY, (char *)0, 0},
-  {(char *)"size", __pyx_getprop_7fa2util_6Region_size, __pyx_setprop_7fa2util_6Region_size, (char *)0, 0},
-  {(char *)"nodes", __pyx_getprop_7fa2util_6Region_nodes, __pyx_setprop_7fa2util_6Region_nodes, (char *)0, 0},
-  {(char *)"subregions", __pyx_getprop_7fa2util_6Region_subregions, __pyx_setprop_7fa2util_6Region_subregions, (char *)0, 0},
+static struct PyGetSetDef __pyx_getsets_17fa2_visualization_7fa2util_Region[] = {
+  {(char *)"mass", __pyx_getprop_17fa2_visualization_7fa2util_6Region_mass, __pyx_setprop_17fa2_visualization_7fa2util_6Region_mass, (char *)0, 0},
+  {(char *)"massCenterX", __pyx_getprop_17fa2_visualization_7fa2util_6Region_massCenterX, __pyx_setprop_17fa2_visualization_7fa2util_6Region_massCenterX, (char *)0, 0},
+  {(char *)"massCenterY", __pyx_getprop_17fa2_visualization_7fa2util_6Region_massCenterY, __pyx_setprop_17fa2_visualization_7fa2util_6Region_massCenterY, (char *)0, 0},
+  {(char *)"size", __pyx_getprop_17fa2_visualization_7fa2util_6Region_size, __pyx_setprop_17fa2_visualization_7fa2util_6Region_size, (char *)0, 0},
+  {(char *)"nodes", __pyx_getprop_17fa2_visualization_7fa2util_6Region_nodes, __pyx_setprop_17fa2_visualization_7fa2util_6Region_nodes, (char *)0, 0},
+  {(char *)"subregions", __pyx_getprop_17fa2_visualization_7fa2util_6Region_subregions, __pyx_setprop_17fa2_visualization_7fa2util_6Region_subregions, (char *)0, 0},
   {0, 0, 0, 0, 0}
 };
 #if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_7fa2util_Region_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_7fa2util_Region},
-  {Py_tp_traverse, (void *)__pyx_tp_traverse_7fa2util_Region},
-  {Py_tp_clear, (void *)__pyx_tp_clear_7fa2util_Region},
-  {Py_tp_methods, (void *)__pyx_methods_7fa2util_Region},
-  {Py_tp_getset, (void *)__pyx_getsets_7fa2util_Region},
-  {Py_tp_init, (void *)__pyx_pw_7fa2util_6Region_1__init__},
-  {Py_tp_new, (void *)__pyx_tp_new_7fa2util_Region},
+static PyType_Slot __pyx_type_17fa2_visualization_7fa2util_Region_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_17fa2_visualization_7fa2util_Region},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_17fa2_visualization_7fa2util_Region},
+  {Py_tp_clear, (void *)__pyx_tp_clear_17fa2_visualization_7fa2util_Region},
+  {Py_tp_methods, (void *)__pyx_methods_17fa2_visualization_7fa2util_Region},
+  {Py_tp_getset, (void *)__pyx_getsets_17fa2_visualization_7fa2util_Region},
+  {Py_tp_init, (void *)__pyx_pw_17fa2_visualization_7fa2util_6Region_1__init__},
+  {Py_tp_new, (void *)__pyx_tp_new_17fa2_visualization_7fa2util_Region},
   {0, 0},
 };
-static PyType_Spec __pyx_type_7fa2util_Region_spec = {
-  "fa2util.Region",
-  sizeof(struct __pyx_obj_7fa2util_Region),
+static PyType_Spec __pyx_type_17fa2_visualization_7fa2util_Region_spec = {
+  "fa2_visualization.fa2util.Region",
+  sizeof(struct __pyx_obj_17fa2_visualization_7fa2util_Region),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
-  __pyx_type_7fa2util_Region_slots,
+  __pyx_type_17fa2_visualization_7fa2util_Region_slots,
 };
 #else
 
-static PyTypeObject __pyx_type_7fa2util_Region = {
+static PyTypeObject __pyx_type_17fa2_visualization_7fa2util_Region = {
   PyVarObject_HEAD_INIT(0, 0)
-  "fa2util.""Region", /*tp_name*/
-  sizeof(struct __pyx_obj_7fa2util_Region), /*tp_basicsize*/
+  "fa2_visualization.fa2util.""Region", /*tp_name*/
+  sizeof(struct __pyx_obj_17fa2_visualization_7fa2util_Region), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_7fa2util_Region, /*tp_dealloc*/
+  __pyx_tp_dealloc_17fa2_visualization_7fa2util_Region, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -14265,15 +14265,15 @@ static PyTypeObject __pyx_type_7fa2util_Region = {
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_7fa2util_Region, /*tp_traverse*/
-  __pyx_tp_clear_7fa2util_Region, /*tp_clear*/
+  __pyx_tp_traverse_17fa2_visualization_7fa2util_Region, /*tp_traverse*/
+  __pyx_tp_clear_17fa2_visualization_7fa2util_Region, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_7fa2util_Region, /*tp_methods*/
+  __pyx_methods_17fa2_visualization_7fa2util_Region, /*tp_methods*/
   0, /*tp_members*/
-  __pyx_getsets_7fa2util_Region, /*tp_getset*/
+  __pyx_getsets_17fa2_visualization_7fa2util_Region, /*tp_getset*/
   0, /*tp_base*/
   0, /*tp_dict*/
   0, /*tp_descr_get*/
@@ -14281,9 +14281,9 @@ static PyTypeObject __pyx_type_7fa2util_Region = {
   #if !CYTHON_USE_TYPE_SPECS
   0, /*tp_dictoffset*/
   #endif
-  __pyx_pw_7fa2util_6Region_1__init__, /*tp_init*/
+  __pyx_pw_17fa2_visualization_7fa2util_6Region_1__init__, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_7fa2util_Region, /*tp_new*/
+  __pyx_tp_new_17fa2_visualization_7fa2util_Region, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -14368,7 +14368,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_edgeWeightInfluence, __pyx_k_edgeWeightInfluence, sizeof(__pyx_k_edgeWeightInfluence), 0, 0, 1, 1},
     {&__pyx_n_s_edges, __pyx_k_edges, sizeof(__pyx_k_edges), 0, 0, 1, 1},
     {&__pyx_kp_u_enable, __pyx_k_enable, sizeof(__pyx_k_enable), 0, 1, 0, 0},
-    {&__pyx_n_s_fa2util, __pyx_k_fa2util, sizeof(__pyx_k_fa2util), 0, 0, 1, 1},
+    {&__pyx_n_s_fa2_visualization_fa2util, __pyx_k_fa2_visualization_fa2util, sizeof(__pyx_k_fa2_visualization_fa2util), 0, 0, 1, 1},
     {&__pyx_kp_s_fa2util_pyx, __pyx_k_fa2util_pyx, sizeof(__pyx_k_fa2util_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_g, __pyx_k_g, sizeof(__pyx_k_g), 0, 0, 1, 1},
     {&__pyx_kp_u_gc, __pyx_k_gc, sizeof(__pyx_k_gc), 0, 1, 0, 0},
@@ -14488,7 +14488,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  */
   __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(1, 16, __pyx_L1_error)
 
-  /* "fa2util.pyx":32
+  /* "fa2_visualization/fa2util.pyx":32
  *         self.weight = 0.0
  * 
  * cpdef linRepulsion(Node n1, Node n2, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -14503,7 +14503,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "fa2util.pyx":45
+  /* "fa2_visualization/fa2util.pyx":45
  *         n2.dy -= yDist * factor
  * 
  * cpdef linRepulsion_region(Node n, Region r, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -14515,7 +14515,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__14);
   __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_linRepulsion_region, 45, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 45, __pyx_L1_error)
 
-  /* "fa2util.pyx":56
+  /* "fa2_visualization/fa2util.pyx":56
  *         n.dy += yDist * factor
  * 
  * cpdef linGravity(Node n, double g):             # <<<<<<<<<<<<<<
@@ -14527,7 +14527,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__16);
   __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_linGravity, 56, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 56, __pyx_L1_error)
 
-  /* "fa2util.pyx":67
+  /* "fa2_visualization/fa2util.pyx":67
  *         n.dy -= yDist * factor
  * 
  * cpdef strongGravity(Node n, double g, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -14539,7 +14539,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__18);
   __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_strongGravity, 67, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 67, __pyx_L1_error)
 
-  /* "fa2util.pyx":77
+  /* "fa2_visualization/fa2util.pyx":77
  *         n.dy -= yDist * factor
  * 
  * cpdef linAttraction(Node n1, Node n2, double e, bint distributedAttraction, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -14551,7 +14551,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__20);
   __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(5, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_linAttraction, 77, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 77, __pyx_L1_error)
 
-  /* "fa2util.pyx":92
+  /* "fa2_visualization/fa2util.pyx":92
  *     n2.dy -= yDist * factor
  * 
  * cpdef apply_repulsion(list[Node] nodes, double coefficient):             # <<<<<<<<<<<<<<
@@ -14563,7 +14563,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__22);
   __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_apply_repulsion, 92, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 92, __pyx_L1_error)
 
-  /* "fa2util.pyx":105
+  /* "fa2_visualization/fa2util.pyx":105
  *         i += 1
  * 
  * cpdef apply_gravity(list[Node] nodes, double gravity, double scalingRatio, bint useStrongGravity=False):             # <<<<<<<<<<<<<<
@@ -14578,7 +14578,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
 
-  /* "fa2util.pyx":113
+  /* "fa2_visualization/fa2util.pyx":113
  *             strongGravity(n, gravity, scalingRatio)
  * 
  * cpdef apply_attraction(list[Node] nodes, list[Edge] edges, bint distributedAttraction, double coefficient, double edgeWeightInfluence):             # <<<<<<<<<<<<<<
@@ -14590,7 +14590,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__27);
   __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(5, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_apply_attraction, 113, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(0, 113, __pyx_L1_error)
 
-  /* "fa2util.pyx":140
+  /* "fa2_visualization/fa2util.pyx":140
  *         self.updateMassAndGeometry()
  * 
  *     cpdef updateMassAndGeometry(self):             # <<<<<<<<<<<<<<
@@ -14602,7 +14602,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__29);
   __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_updateMassAndGeometry, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 140, __pyx_L1_error)
 
-  /* "fa2util.pyx":162
+  /* "fa2_visualization/fa2util.pyx":162
  *                 self.size = max(self.size, 2 * distance)
  * 
  *     cpdef buildSubRegions(self):             # <<<<<<<<<<<<<<
@@ -14611,7 +14611,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  */
   __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_buildSubRegions, 162, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 162, __pyx_L1_error)
 
-  /* "fa2util.pyx":222
+  /* "fa2_visualization/fa2util.pyx":222
  *                 subregion.buildSubRegions()
  * 
  *     cpdef applyForce(self, Node n, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -14623,7 +14623,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__32);
   __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(4, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__32, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_fa2util_pyx, __pyx_n_s_applyForce, 222, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(0, 222, __pyx_L1_error)
 
-  /* "fa2util.pyx":236
+  /* "fa2_visualization/fa2util.pyx":236
  *                     subregion.applyForce(n, theta, coefficient)
  * 
  *     cpdef applyForceOnNodes(self, list[Node] nodes, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
@@ -14650,7 +14650,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  */
   __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(1, 16, __pyx_L1_error)
 
-  /* "fa2util.pyx":241
+  /* "fa2_visualization/fa2util.pyx":241
  *             self.applyForce(n, theta, coefficient)
  * 
  * cpdef adjustSpeedAndApplyForces(list[Node] nodes, double speed, double speedEfficiency, double jitterTolerance):             # <<<<<<<<<<<<<<
@@ -14744,82 +14744,82 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_7fa2util_Node = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7fa2util_Node_spec, NULL); if (unlikely(!__pyx_ptype_7fa2util_Node)) __PYX_ERR(0, 4, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7fa2util_Node_spec, __pyx_ptype_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_ptype_17fa2_visualization_7fa2util_Node = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_17fa2_visualization_7fa2util_Node_spec, NULL); if (unlikely(!__pyx_ptype_17fa2_visualization_7fa2util_Node)) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_17fa2_visualization_7fa2util_Node_spec, __pyx_ptype_17fa2_visualization_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   #else
-  __pyx_ptype_7fa2util_Node = &__pyx_type_7fa2util_Node;
+  __pyx_ptype_17fa2_visualization_7fa2util_Node = &__pyx_type_17fa2_visualization_7fa2util_Node;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_17fa2_visualization_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
-  __pyx_ptype_7fa2util_Node->tp_print = 0;
+  __pyx_ptype_17fa2_visualization_7fa2util_Node->tp_print = 0;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_7fa2util_Node->tp_dictoffset && __pyx_ptype_7fa2util_Node->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_ptype_7fa2util_Node->tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_17fa2_visualization_7fa2util_Node->tp_dictoffset && __pyx_ptype_17fa2_visualization_7fa2util_Node->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_ptype_17fa2_visualization_7fa2util_Node->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Node, (PyObject *) __pyx_ptype_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Node, (PyObject *) __pyx_ptype_17fa2_visualization_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_17fa2_visualization_7fa2util_Node) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_7fa2util_Edge = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7fa2util_Edge_spec, NULL); if (unlikely(!__pyx_ptype_7fa2util_Edge)) __PYX_ERR(0, 22, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7fa2util_Edge_spec, __pyx_ptype_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_ptype_17fa2_visualization_7fa2util_Edge = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_17fa2_visualization_7fa2util_Edge_spec, NULL); if (unlikely(!__pyx_ptype_17fa2_visualization_7fa2util_Edge)) __PYX_ERR(0, 22, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_17fa2_visualization_7fa2util_Edge_spec, __pyx_ptype_17fa2_visualization_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   #else
-  __pyx_ptype_7fa2util_Edge = &__pyx_type_7fa2util_Edge;
+  __pyx_ptype_17fa2_visualization_7fa2util_Edge = &__pyx_type_17fa2_visualization_7fa2util_Edge;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_17fa2_visualization_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
-  __pyx_ptype_7fa2util_Edge->tp_print = 0;
+  __pyx_ptype_17fa2_visualization_7fa2util_Edge->tp_print = 0;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_7fa2util_Edge->tp_dictoffset && __pyx_ptype_7fa2util_Edge->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_ptype_7fa2util_Edge->tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_17fa2_visualization_7fa2util_Edge->tp_dictoffset && __pyx_ptype_17fa2_visualization_7fa2util_Edge->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_ptype_17fa2_visualization_7fa2util_Edge->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Edge, (PyObject *) __pyx_ptype_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Edge, (PyObject *) __pyx_ptype_17fa2_visualization_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_17fa2_visualization_7fa2util_Edge) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   #endif
-  __pyx_vtabptr_7fa2util_Region = &__pyx_vtable_7fa2util_Region;
-  __pyx_vtable_7fa2util_Region.updateMassAndGeometry = (PyObject *(*)(struct __pyx_obj_7fa2util_Region *, int __pyx_skip_dispatch))__pyx_f_7fa2util_6Region_updateMassAndGeometry;
-  __pyx_vtable_7fa2util_Region.buildSubRegions = (PyObject *(*)(struct __pyx_obj_7fa2util_Region *, int __pyx_skip_dispatch))__pyx_f_7fa2util_6Region_buildSubRegions;
-  __pyx_vtable_7fa2util_Region.applyForce = (PyObject *(*)(struct __pyx_obj_7fa2util_Region *, struct __pyx_obj_7fa2util_Node *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForce *__pyx_optional_args))__pyx_f_7fa2util_6Region_applyForce;
-  __pyx_vtable_7fa2util_Region.applyForceOnNodes = (PyObject *(*)(struct __pyx_obj_7fa2util_Region *, PyObject *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args))__pyx_f_7fa2util_6Region_applyForceOnNodes;
+  __pyx_vtabptr_17fa2_visualization_7fa2util_Region = &__pyx_vtable_17fa2_visualization_7fa2util_Region;
+  __pyx_vtable_17fa2_visualization_7fa2util_Region.updateMassAndGeometry = (PyObject *(*)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, int __pyx_skip_dispatch))__pyx_f_17fa2_visualization_7fa2util_6Region_updateMassAndGeometry;
+  __pyx_vtable_17fa2_visualization_7fa2util_Region.buildSubRegions = (PyObject *(*)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, int __pyx_skip_dispatch))__pyx_f_17fa2_visualization_7fa2util_6Region_buildSubRegions;
+  __pyx_vtable_17fa2_visualization_7fa2util_Region.applyForce = (PyObject *(*)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, struct __pyx_obj_17fa2_visualization_7fa2util_Node *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForce *__pyx_optional_args))__pyx_f_17fa2_visualization_7fa2util_6Region_applyForce;
+  __pyx_vtable_17fa2_visualization_7fa2util_Region.applyForceOnNodes = (PyObject *(*)(struct __pyx_obj_17fa2_visualization_7fa2util_Region *, PyObject *, double, int __pyx_skip_dispatch, struct __pyx_opt_args_17fa2_visualization_7fa2util_6Region_applyForceOnNodes *__pyx_optional_args))__pyx_f_17fa2_visualization_7fa2util_6Region_applyForceOnNodes;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_7fa2util_Region = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7fa2util_Region_spec, NULL); if (unlikely(!__pyx_ptype_7fa2util_Region)) __PYX_ERR(0, 126, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7fa2util_Region_spec, __pyx_ptype_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
+  __pyx_ptype_17fa2_visualization_7fa2util_Region = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_17fa2_visualization_7fa2util_Region_spec, NULL); if (unlikely(!__pyx_ptype_17fa2_visualization_7fa2util_Region)) __PYX_ERR(0, 126, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_17fa2_visualization_7fa2util_Region_spec, __pyx_ptype_17fa2_visualization_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   #else
-  __pyx_ptype_7fa2util_Region = &__pyx_type_7fa2util_Region;
+  __pyx_ptype_17fa2_visualization_7fa2util_Region = &__pyx_type_17fa2_visualization_7fa2util_Region;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_17fa2_visualization_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
-  __pyx_ptype_7fa2util_Region->tp_print = 0;
+  __pyx_ptype_17fa2_visualization_7fa2util_Region->tp_print = 0;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_7fa2util_Region->tp_dictoffset && __pyx_ptype_7fa2util_Region->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_ptype_7fa2util_Region->tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_17fa2_visualization_7fa2util_Region->tp_dictoffset && __pyx_ptype_17fa2_visualization_7fa2util_Region->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_ptype_17fa2_visualization_7fa2util_Region->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_ptype_7fa2util_Region, __pyx_vtabptr_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_ptype_17fa2_visualization_7fa2util_Region, __pyx_vtabptr_17fa2_visualization_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_MergeVtables(__pyx_ptype_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_ptype_17fa2_visualization_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Region, (PyObject *) __pyx_ptype_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Region, (PyObject *) __pyx_ptype_17fa2_visualization_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_17fa2_visualization_7fa2util_Region) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   #endif
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -15102,14 +15102,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_fa2util) {
+  if (__pyx_module_is_main_fa2_visualization__fa2util) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "fa2util")) {
-      if (unlikely((PyDict_SetItemString(modules, "fa2util", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "fa2_visualization.fa2util")) {
+      if (unlikely((PyDict_SetItemString(modules, "fa2_visualization.fa2util", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -15135,11 +15135,11 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_4Node_3__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node___reduce_cython, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_4Node_3__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node___reduce_cython, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Node, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Node, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Node);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Node);
 
   /* "(tree fragment)":16
  *     else:
@@ -15147,22 +15147,22 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Node__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_4Node_5__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node___setstate_cython, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_4Node_5__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Node___setstate_cython, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Node, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Node, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Node);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Node);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_4Edge_3__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Edge___reduce_cython, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_4Edge_3__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Edge___reduce_cython, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Edge, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Edge, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Edge);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Edge);
 
   /* "(tree fragment)":16
  *     else:
@@ -15170,177 +15170,177 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Edge__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_4Edge_5__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Edge___setstate_cython, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_4Edge_5__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Edge___setstate_cython, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Edge, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Edge, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Edge);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Edge);
 
-  /* "fa2util.pyx":32
+  /* "fa2_visualization/fa2util.pyx":32
  *         self.weight = 0.0
  * 
  * cpdef linRepulsion(Node n1, Node n2, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n1.x - n2.x
  *     cdef double yDist = n1.y - n2.y
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_1linRepulsion, 0, __pyx_n_s_linRepulsion, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_1linRepulsion, 0, __pyx_n_s_linRepulsion, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__13);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_linRepulsion, __pyx_t_2) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":45
+  /* "fa2_visualization/fa2util.pyx":45
  *         n2.dy -= yDist * factor
  * 
  * cpdef linRepulsion_region(Node n, Region r, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n.x - r.massCenterX
  *     cdef double yDist = n.y - r.massCenterY
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_3linRepulsion_region, 0, __pyx_n_s_linRepulsion_region, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_3linRepulsion_region, 0, __pyx_n_s_linRepulsion_region, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__13);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_linRepulsion_region, __pyx_t_2) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":56
+  /* "fa2_visualization/fa2util.pyx":56
  *         n.dy += yDist * factor
  * 
  * cpdef linGravity(Node n, double g):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n.x
  *     cdef double yDist = n.y
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_5linGravity, 0, __pyx_n_s_linGravity, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_5linGravity, 0, __pyx_n_s_linGravity, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_linGravity, __pyx_t_2) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":67
+  /* "fa2_visualization/fa2util.pyx":67
  *         n.dy -= yDist * factor
  * 
  * cpdef strongGravity(Node n, double g, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n.x
  *     cdef double yDist = n.y
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_7strongGravity, 0, __pyx_n_s_strongGravity, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_7strongGravity, 0, __pyx_n_s_strongGravity, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__13);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_strongGravity, __pyx_t_2) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":77
+  /* "fa2_visualization/fa2util.pyx":77
  *         n.dy -= yDist * factor
  * 
  * cpdef linAttraction(Node n1, Node n2, double e, bint distributedAttraction, double coefficient=0):             # <<<<<<<<<<<<<<
  *     cdef double xDist = n1.x - n2.x
  *     cdef double yDist = n1.y - n2.y
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_9linAttraction, 0, __pyx_n_s_linAttraction, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_9linAttraction, 0, __pyx_n_s_linAttraction, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__13);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_linAttraction, __pyx_t_2) < 0) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":92
+  /* "fa2_visualization/fa2util.pyx":92
  *     n2.dy -= yDist * factor
  * 
  * cpdef apply_repulsion(list[Node] nodes, double coefficient):             # <<<<<<<<<<<<<<
  *     cdef int i = 0, j
  *     cdef Node n1, n2
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_11apply_repulsion, 0, __pyx_n_s_apply_repulsion, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_11apply_repulsion, 0, __pyx_n_s_apply_repulsion, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_apply_repulsion, __pyx_t_2) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":105
+  /* "fa2_visualization/fa2util.pyx":105
  *         i += 1
  * 
  * cpdef apply_gravity(list[Node] nodes, double gravity, double scalingRatio, bint useStrongGravity=False):             # <<<<<<<<<<<<<<
  *     cdef Node n
  *     for n in nodes:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_13apply_gravity, 0, __pyx_n_s_apply_gravity, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_13apply_gravity, 0, __pyx_n_s_apply_gravity, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__26);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_apply_gravity, __pyx_t_2) < 0) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":113
+  /* "fa2_visualization/fa2util.pyx":113
  *             strongGravity(n, gravity, scalingRatio)
  * 
  * cpdef apply_attraction(list[Node] nodes, list[Edge] edges, bint distributedAttraction, double coefficient, double edgeWeightInfluence):             # <<<<<<<<<<<<<<
  *     cdef Edge edge
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_15apply_attraction, 0, __pyx_n_s_apply_attraction, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_15apply_attraction, 0, __pyx_n_s_apply_attraction, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_apply_attraction, __pyx_t_2) < 0) __PYX_ERR(0, 113, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":140
+  /* "fa2_visualization/fa2util.pyx":140
  *         self.updateMassAndGeometry()
  * 
  *     cpdef updateMassAndGeometry(self):             # <<<<<<<<<<<<<<
  *         cdef double massSumX = 0
  *         cdef double massSumY = 0
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_6Region_3updateMassAndGeometry, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_updateMassAndGeometry, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_6Region_3updateMassAndGeometry, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_updateMassAndGeometry, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Region, __pyx_n_s_updateMassAndGeometry, __pyx_t_2) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region, __pyx_n_s_updateMassAndGeometry, __pyx_t_2) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Region);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Region);
 
-  /* "fa2util.pyx":162
+  /* "fa2_visualization/fa2util.pyx":162
  *                 self.size = max(self.size, 2 * distance)
  * 
  *     cpdef buildSubRegions(self):             # <<<<<<<<<<<<<<
  *         cdef list[Node] topleftNodes = []
  *         cdef list[Node] bottomleftNodes = []
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_6Region_5buildSubRegions, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_buildSubRegions, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_6Region_5buildSubRegions, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_buildSubRegions, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Region, __pyx_n_s_buildSubRegions, __pyx_t_2) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region, __pyx_n_s_buildSubRegions, __pyx_t_2) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Region);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Region);
 
-  /* "fa2util.pyx":222
+  /* "fa2_visualization/fa2util.pyx":222
  *                 subregion.buildSubRegions()
  * 
  *     cpdef applyForce(self, Node n, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
  *         cdef double distance
  *         cdef Region subregion
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_6Region_7applyForce, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_applyForce, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_6Region_7applyForce, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_applyForce, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__13);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Region, __pyx_n_s_applyForce, __pyx_t_2) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region, __pyx_n_s_applyForce, __pyx_t_2) < 0) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Region);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Region);
 
-  /* "fa2util.pyx":236
+  /* "fa2_visualization/fa2util.pyx":236
  *                     subregion.applyForce(n, theta, coefficient)
  * 
  *     cpdef applyForceOnNodes(self, list[Node] nodes, double theta, double coefficient=0):             # <<<<<<<<<<<<<<
  *         cdef Node n
  *         for n in nodes:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_6Region_9applyForceOnNodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_applyForceOnNodes, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_6Region_9applyForceOnNodes, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region_applyForceOnNodes, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__13);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Region, __pyx_n_s_applyForceOnNodes, __pyx_t_2) < 0) __PYX_ERR(0, 236, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region, __pyx_n_s_applyForceOnNodes, __pyx_t_2) < 0) __PYX_ERR(0, 236, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Region);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Region);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_6Region_11__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region___reduce_cython, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_6Region_11__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region___reduce_cython, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Region, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region, __pyx_n_s_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Region);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Region);
 
   /* "(tree fragment)":16
  *     else:
@@ -15348,20 +15348,20 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Region__set_state(self, __pyx_state)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_6Region_13__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region___setstate_cython, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_6Region_13__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Region___setstate_cython, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_7fa2util_Region, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_17fa2_visualization_7fa2util_Region, __pyx_n_s_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  PyType_Modified(__pyx_ptype_7fa2util_Region);
+  PyType_Modified(__pyx_ptype_17fa2_visualization_7fa2util_Region);
 
-  /* "fa2util.pyx":241
+  /* "fa2_visualization/fa2util.pyx":241
  *             self.applyForce(n, theta, coefficient)
  * 
  * cpdef adjustSpeedAndApplyForces(list[Node] nodes, double speed, double speedEfficiency, double jitterTolerance):             # <<<<<<<<<<<<<<
  *     cdef double totalSwinging = 0.0
  *     cdef double totalEffectiveTraction = 0.0
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_17adjustSpeedAndApplyForces, 0, __pyx_n_s_adjustSpeedAndApplyForces, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_17adjustSpeedAndApplyForces, 0, __pyx_n_s_adjustSpeedAndApplyForces, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_adjustSpeedAndApplyForces, __pyx_t_2) < 0) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15371,7 +15371,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_19__pyx_unpickle_Node, 0, __pyx_n_s_pyx_unpickle_Node, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_19__pyx_unpickle_Node, 0, __pyx_n_s_pyx_unpickle_Node, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Node, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15383,7 +15383,7 @@ if (!__Pyx_RefNanny) {
  *     __pyx_result.dx = __pyx_state[0]; __pyx_result.dy = __pyx_state[1]; __pyx_result.mass = __pyx_state[2]; __pyx_result.old_dx = __pyx_state[3]; __pyx_result.old_dy = __pyx_state[4]; __pyx_result.x = __pyx_state[5]; __pyx_result.y = __pyx_state[6]
  *     if len(__pyx_state) > 7 and hasattr(__pyx_result, '__dict__'):
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_21__pyx_unpickle_Edge, 0, __pyx_n_s_pyx_unpickle_Edge, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_21__pyx_unpickle_Edge, 0, __pyx_n_s_pyx_unpickle_Edge, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Edge, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15393,12 +15393,12 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fa2util_23__pyx_unpickle_Region, 0, __pyx_n_s_pyx_unpickle_Region, NULL, __pyx_n_s_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_17fa2_visualization_7fa2util_23__pyx_unpickle_Region, 0, __pyx_n_s_pyx_unpickle_Region, NULL, __pyx_n_s_fa2_visualization_fa2util, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Region, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fa2util.pyx":1
+  /* "fa2_visualization/fa2util.pyx":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * from libc.math cimport sqrt
  * 
@@ -15415,7 +15415,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init fa2util", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init fa2_visualization.fa2util", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -15429,7 +15429,7 @@ if (!__Pyx_RefNanny) {
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init fa2util");
+    PyErr_SetString(PyExc_ImportError, "init fa2_visualization.fa2util");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
