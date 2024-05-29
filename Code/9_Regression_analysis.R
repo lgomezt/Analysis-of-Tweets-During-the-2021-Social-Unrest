@@ -52,7 +52,6 @@ df$t1_critico <- as.numeric(df$t1_critico)
 # Crear una columna lógica para indicar los fines de semana
 df$weekend <- df$day_number %in% c(6, 7)
 
-
 # Total RTs vs PA ---------------------------------------------------------
 # 2. Sin Efectos Fijos, sin PA
 modelo1 <- lm(Total_RTs ~ t0_critico, data = df)
@@ -81,6 +80,16 @@ stargazer(modelo1_fe, modelo2_fe, modelo3_fe, modelo4_fe, type = "latex",
                                "Weekend", "Tuesday", "Wednesday", "Thursday",
                                "Friday", "Saturday", "Sunday"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
+
+stargazer(modelo4, modelo4_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+          dep.var.caption = "Total RTs",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t)", "Critical day (t+1)",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
 
 # 4. Sin efectos fijos, con PA
 modelo5 <- lm(Total_RTs ~ -1 + t0_critico + Political_Affiliation, data = df)
@@ -160,6 +169,23 @@ stargazer(modelo9_fe, modelo10_fe, modelo11_fe, modelo12_fe, type = "latex",
                                "Weekend", "Tuesday", "Wednesday", "Thursday",
                                "Friday", "Saturday", "Sunday", "Constant"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
+
+stargazer(modelo12, modelo12_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+          dep.var.caption = "Total RTs",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t) $\\times$ P.A. Left",
+                               "Critical day (t) $\\times$ P.A. Right",
+                               "Critical day (t) $\\times$ P.A. Center",
+                               "Critical day (t) $\\times$ P.A. Unknown",
+                               "Critical day (t + 1) $\\times$ P.A. Left",
+                               "Critical day (t + 1) $\\times$ P.A. Right",
+                               "Critical day (t + 1) $\\times$ P.A. Center",
+                               "Critical day (t + 1) $\\times$ P.A. Unknown",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
 
 # Inner Proximity vs PA -----------------------------------------------------
 # 8. Inner Proximity vs critical day sin FE
@@ -251,6 +277,23 @@ stargazer(modelo21_fe, modelo22_fe, modelo23_fe, modelo24_fe, type = "latex",
                                "Friday", "Saturday", "Sunday", "Constant"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
 
+stargazer(modelo24, modelo24_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+          dep.var.caption = "Inner Proximity",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t) $\\times$ P.A. Left",
+                               "Critical day (t) $\\times$ P.A. Right",
+                               "Critical day (t) $\\times$ P.A. Center",
+                               "Critical day (t) $\\times$ P.A. Unknown",
+                               "Critical day (t + 1) $\\times$ P.A. Left",
+                               "Critical day (t + 1) $\\times$ P.A. Right",
+                               "Critical day (t + 1) $\\times$ P.A. Center",
+                               "Critical day (t + 1) $\\times$ P.A. Unknown",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
+
 # Outer proximity vs PA ---------------------------------------------------
 # 13. Outer Proximity vs critical day sin FE
 modelo25 <- lm(P_Otros ~ t0_critico, data = df)
@@ -340,6 +383,23 @@ stargazer(modelo33_fe, modelo34_fe, modelo35_fe, modelo36_fe, type = "latex",
                                "Weekend", "Tuesday", "Wednesday", "Thursday",
                                "Friday", "Saturday", "Sunday", "Constant"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
+
+stargazer(modelo36, modelo36_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+            dep.var.caption = "Outer Proximity",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t) $\\times$ P.A. Left",
+                               "Critical day (t) $\\times$ P.A. Right",
+                               "Critical day (t) $\\times$ P.A. Center",
+                               "Critical day (t) $\\times$ P.A. Unknown",
+                               "Critical day (t + 1) $\\times$ P.A. Left",
+                               "Critical day (t + 1) $\\times$ P.A. Right",
+                               "Critical day (t + 1) $\\times$ P.A. Center",
+                               "Critical day (t + 1) $\\times$ P.A. Unknown",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
 
 # Left proximity vs PA ---------------------------------------------------
 # 18. Left Proximity vs critical day sin FE
@@ -431,6 +491,23 @@ stargazer(modelo45_fe, modelo46_fe, modelo47_fe, modelo48_fe, type = "latex",
                                "Friday", "Saturday", "Sunday", "Constant"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
 
+stargazer(modelo48, modelo48_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+          dep.var.caption = "Proximity to the Left",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t) $\\times$ P.A. Left",
+                               "Critical day (t) $\\times$ P.A. Right",
+                               "Critical day (t) $\\times$ P.A. Center",
+                               "Critical day (t) $\\times$ P.A. Unknown",
+                               "Critical day (t + 1) $\\times$ P.A. Left",
+                               "Critical day (t + 1) $\\times$ P.A. Right",
+                               "Critical day (t + 1) $\\times$ P.A. Center",
+                               "Critical day (t + 1) $\\times$ P.A. Unknown",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
+
 # Right proximity vs PA ---------------------------------------------------
 # 23. Right Proximity vs critical day sin FE
 modelo49 <- lm(P_Derecha ~ t0_critico, data = df)
@@ -520,6 +597,23 @@ stargazer(modelo61_fe, modelo62_fe, modelo63_fe, modelo64_fe, type = "latex",
                                "Weekend", "Tuesday", "Wednesday", "Thursday",
                                "Friday", "Saturday", "Sunday", "Constant"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
+
+stargazer(modelo60, modelo64_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+          dep.var.caption = "Proximity to the Right",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t) $\\times$ P.A. Left",
+                               "Critical day (t) $\\times$ P.A. Right",
+                               "Critical day (t) $\\times$ P.A. Center",
+                               "Critical day (t) $\\times$ P.A. Unknown",
+                               "Critical day (t + 1) $\\times$ P.A. Left",
+                               "Critical day (t + 1) $\\times$ P.A. Right",
+                               "Critical day (t + 1) $\\times$ P.A. Center",
+                               "Critical day (t + 1) $\\times$ P.A. Unknown",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
 
 # Center proximity vs PA ---------------------------------------------------
 # 28. Center proximity vs critical day sin FE
@@ -611,6 +705,23 @@ stargazer(modelo73_fe, modelo74_fe, modelo75_fe, modelo76_fe, type = "latex",
                                "Friday", "Saturday", "Sunday", "Constant"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
 
+stargazer(modelo76, modelo76_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+          dep.var.caption = "Proximity to the Center",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t) $\\times$ P.A. Left",
+                               "Critical day (t) $\\times$ P.A. Right",
+                               "Critical day (t) $\\times$ P.A. Center",
+                               "Critical day (t) $\\times$ P.A. Unknown",
+                               "Critical day (t + 1) $\\times$ P.A. Left",
+                               "Critical day (t + 1) $\\times$ P.A. Right",
+                               "Critical day (t + 1) $\\times$ P.A. Center",
+                               "Critical day (t + 1) $\\times$ P.A. Unknown",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
+
 # Unknown proximity vs PA ---------------------------------------------------
 # 33. Unknown proximity vs critical day sin FE
 modelo77 <- lm(`P_Sin Clasificar` ~ t0_critico, data = df)
@@ -701,3 +812,19 @@ stargazer(modelo85_fe, modelo86_fe, modelo87_fe, modelo88_fe, type = "latex",
                                "Friday", "Saturday", "Sunday", "Constant"),
           add.lines = list(c("Individual FE", rep("Yes", 4))))
 
+stargazer(modelo88, modelo88_fe, type = "latex",
+          dep.var.labels.include = FALSE,
+          dep.var.caption = "Proximity to the Unknown group",
+          table.placement = "H",
+          model.names = FALSE, 
+          covariate.labels = c("Critical day (t) $\\times$ P.A. Left",
+                               "Critical day (t) $\\times$ P.A. Right",
+                               "Critical day (t) $\\times$ P.A. Center",
+                               "Critical day (t) $\\times$ P.A. Unknown",
+                               "Critical day (t + 1) $\\times$ P.A. Left",
+                               "Critical day (t + 1) $\\times$ P.A. Right",
+                               "Critical day (t + 1) $\\times$ P.A. Center",
+                               "Critical day (t + 1) $\\times$ P.A. Unknown",
+                               "Tuesday", "Wednesday", "Thursday",
+                               "Friday", "Saturday", "Sunday", "Constant"),
+          add.lines = list(c("Individual FE", c("No", "Yes"))))
