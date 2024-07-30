@@ -38,7 +38,7 @@ script_path <- "/home/fcastrillon/repo/Results/Regresiones"
 setwd(script_path)
 
 # Importar datos
-df <- read_delim("proximidad.csv", delim = ";")
+df <- read_delim("/mnt/disk2/Data/Segregation/proximidad.csv", delim = ";")
 
 # Definir los días críticos
 dias_criticos <- as.Date(c('2021-04-28',
