@@ -153,6 +153,6 @@ cython_debug/
 
 # Files inside data
 Data/*
-
+Results/Regresiones/proximidad.csv
 # Ignore virtual environment folder in Git
 myenv/

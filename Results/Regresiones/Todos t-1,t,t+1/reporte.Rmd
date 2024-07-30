@@ -43,6 +43,8 @@ df <- read_delim("proximidad.csv", delim = ";")
 # Definir los días críticos
 dias_criticos <- as.Date(c('2021-04-28',
                            '2021-05-01',
+                           '2021-05-03',
+                           '2021-05-04',
                            '2021-05-05', 
                            '2021-05-09',
                            '2021-06-20',
@@ -121,11 +123,14 @@ modificar_tabla_latex <- function(texto_latex,tamano="!") {
     \label{tab:dias_criticos}
     \begin{tabular}{c}
         \toprule
-        2021-05-01 \\
-        2021-05-05 \\
-        2021-05-09 \\
-        2021-06-20 \\
-        2021-06-02 \\
+          2021-04-28 \\
+          2021-05-01 \\
+          2021-05-03 \\
+          2021-05-04 \\
+          2021-05-05 \\
+          2021-05-09 \\
+          2021-06-20 \\
+          2021-06-28 \\
         \bottomrule
     \end{tabular}
 \end{table}
