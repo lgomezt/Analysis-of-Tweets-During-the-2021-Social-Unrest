@@ -1,0 +1,3127 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{sectsty,amssymb,amsmath,amsfonts,eurosym,geometry,ulem,graphicx,caption,color,setspace,comment,footmisc,caption,pdflscape,subfigure,array,hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[english,spanish]{babel}
+\usepackage[backend=biber, style=apa, sorting=nyt, natbib]{biblatex}
+\usepackage[toc,page]{appendix}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tikz,pgfplots}
+\usepackage{adjustbox}
+\usetikzlibrary{decorations.pathmorphing, patterns,shapes}
+\usetikzlibrary{positioning}
+\normalem
+\onehalfspacing
+\geometry{left = 1.0in, right = 1.0in, top = 1.0in, bottom = 1.0in}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\begin{table}[H]
+    \centering
+    \caption{Dias Criticos}
+    \label{tab:dias_criticos}
+    \begin{tabular}{c}
+        \toprule
+          2021-04-28 \\
+          2021-05-01 \\
+          2021-05-03 \\
+          2021-05-04 \\
+          2021-05-05 \\
+          2021-05-09 \\
+          2021-06-20 \\
+          2021-06-28 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\tableofcontents
+\newpage
+\section{Total RTs vs PA}
+\subsection{Sin Efectos Fijos, sin PA}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Total RTs} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 2.836$^{***}$ & 2.140$^{***}$ & 2.216$^{***}$ & 2.200$^{***}$ \\ 
+  & (0.034) & (0.035) & (0.035) & (0.037) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 1.515$^{***}$ & 1.648$^{***}$ & 1.641$^{***}$ \\ 
+  &  & (0.035) & (0.036) & (0.037) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 1.109$^{***}$ & 1.043$^{***}$ & 1.222$^{***}$ \\ 
+  &  & (0.037) & (0.038) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 1.680$^{***}$ & 1.682$^{***}$ & 1.561$^{***}$ \\ 
+  &  & (0.037) & (0.037) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.245$^{***}$ & 0.110$^{***}$ & 0.191$^{***}$ \\ 
+  &  & (0.037) & (0.039) & (0.039) \\ 
+  & & & & \\ 
+ Weekend &  &  & 0.343$^{***}$ &  \\ 
+  &  &  & (0.027) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.242$^{***}$ \\ 
+  &  &  &  & (0.042) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.338$^{***}$ \\ 
+  &  &  &  & (0.044) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.921$^{***}$ \\ 
+  &  &  &  & (0.043) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.413$^{***}$ \\ 
+  &  &  &  & (0.044) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.756$^{***}$ \\ 
+  &  &  &  & (0.044) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.636$^{***}$ \\ 
+  &  &  &  & (0.042) \\ 
+  & & & & \\ 
+ Constant & 4.968$^{***}$ & 4.527$^{***}$ & 4.425$^{***}$ & 4.037$^{***}$ \\ 
+  & (0.012) & (0.013) & (0.015) & (0.032) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 2,194,920 & 2,194,920 & 2,194,920 & 2,194,920 \\ 
+R$^{2}$ & 0.003 & 0.006 & 0.006 & 0.007 \\ 
+Adjusted R$^{2}$ & 0.003 & 0.006 & 0.006 & 0.007 \\ 
+Residual Std. Error & 16.542 (df = 2194918) & 16.516 (df = 2194914) & 16.515 (df = 2194913) & 16.513 (df = 2194908) \\ 
+F Statistic & 7,151.454$^{***}$ (df = 1; 2194918) & 2,831.079$^{***}$ (df = 5; 2194914) & 2,386.163$^{***}$ (df = 6; 2194913) & 1,347.418$^{***}$ (df = 11; 2194908) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Con Efectos Fijos, sin PA}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Total RTs} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 2.836$^{***}$ & 2.140$^{***}$ & 2.216$^{***}$ & 2.200$^{***}$ \\ 
+  & (0.021) & (0.022) & (0.022) & (0.023) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 1.515$^{***}$ & 1.648$^{***}$ & 1.641$^{***}$ \\ 
+  &  & (0.022) & (0.023) & (0.023) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 1.109$^{***}$ & 1.043$^{***}$ & 1.222$^{***}$ \\ 
+  &  & (0.023) & (0.024) & (0.025) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 1.680$^{***}$ & 1.682$^{***}$ & 1.561$^{***}$ \\ 
+  &  & (0.023) & (0.023) & (0.025) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.245$^{***}$ & 0.110$^{***}$ & 0.191$^{***}$ \\ 
+  &  & (0.023) & (0.024) & (0.025) \\ 
+  & & & & \\ 
+ Weekend &  &  & 0.343$^{***}$ &  \\ 
+  &  &  & (0.017) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.242$^{***}$ \\ 
+  &  &  &  & (0.027) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.338$^{***}$ \\ 
+  &  &  &  & (0.028) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.921$^{***}$ \\ 
+  &  &  &  & (0.027) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.413$^{***}$ \\ 
+  &  &  &  & (0.028) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.756$^{***}$ \\ 
+  &  &  &  & (0.028) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.636$^{***}$ \\ 
+  &  &  &  & (0.027) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 2,194,920 & 2,194,920 & 2,194,920 & 2,194,920 \\ 
+R$^{2}$ & 0.607 & 0.610 & 0.610 & 0.610 \\ 
+Adjusted R$^{2}$ & 0.601 & 0.604 & 0.604 & 0.604 \\ 
+Residual Std. Error & 10.472 (df = 2160079) & 10.430 (df = 2160075) & 10.429 (df = 2160074) & 10.426 (df = 2160069) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Sin efectos fijos, con PA}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Total RTs} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 2.836$^{***}$ & 2.140$^{***}$ & 2.216$^{***}$ & 2.200$^{***}$ \\ 
+  & (0.033) & (0.034) & (0.035) & (0.036) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 1.515$^{***}$ & 1.648$^{***}$ & 1.641$^{***}$ \\ 
+  &  & (0.034) & (0.036) & (0.036) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 1.109$^{***}$ & 1.043$^{***}$ & 1.222$^{***}$ \\ 
+  &  & (0.037) & (0.037) & (0.038) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 1.680$^{***}$ & 1.682$^{***}$ & 1.561$^{***}$ \\ 
+  &  & (0.037) & (0.037) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.245$^{***}$ & 0.110$^{***}$ & 0.191$^{***}$ \\ 
+  &  & (0.037) & (0.038) & (0.039) \\ 
+  & & & & \\ 
+ Political Affiliation: Center & 3.272$^{***}$ & 2.831$^{***}$ & 2.728$^{***}$ & 2.341$^{***}$ \\ 
+  & (0.032) & (0.033) & (0.034) & (0.043) \\ 
+  & & & & \\ 
+ Political Affiliation: Right & 8.062$^{***}$ & 7.621$^{***}$ & 7.519$^{***}$ & 7.132$^{***}$ \\ 
+  & (0.029) & (0.030) & (0.031) & (0.041) \\ 
+  & & & & \\ 
+ Political Affiliation: Left & 7.453$^{***}$ & 7.012$^{***}$ & 6.910$^{***}$ & 6.523$^{***}$ \\ 
+  & (0.018) & (0.019) & (0.021) & (0.034) \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown & 1.646$^{***}$ & 1.205$^{***}$ & 1.102$^{***}$ & 0.715$^{***}$ \\ 
+  & (0.020) & (0.020) & (0.022) & (0.035) \\ 
+  & & & & \\ 
+ Weekend & 2.180$^{***}$ & 1.739$^{***}$ & 1.637$^{***}$ & 1.250$^{***}$ \\ 
+  & (0.059) & (0.059) & (0.059) & (0.065) \\ 
+  & & & & \\ 
+ Tuesday &  &  & 0.343$^{***}$ &  \\ 
+  &  &  & (0.027) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.242$^{***}$ \\ 
+  &  &  &  & (0.042) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.338$^{***}$ \\ 
+  &  &  &  & (0.043) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.921$^{***}$ \\ 
+  &  &  &  & (0.043) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.413$^{***}$ \\ 
+  &  &  &  & (0.043) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.756$^{***}$ \\ 
+  &  &  &  & (0.044) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & 0.636$^{***}$ \\ 
+  &  &  &  & (0.042) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 2,194,920 & 2,194,920 & 2,194,920 & 2,194,920 \\ 
+R$^{2}$ & 0.123 & 0.126 & 0.126 & 0.126 \\ 
+Adjusted R$^{2}$ & 0.123 & 0.126 & 0.126 & 0.126 \\ 
+Residual Std. Error & 16.301 (df = 2194914) & 16.274 (df = 2194910) & 16.274 (df = 2194909) & 16.272 (df = 2194904) \\ 
+F Statistic & 51,209.610$^{***}$ (df = 6; 2194914) & 31,545.350$^{***}$ (df = 10; 2194910) & 28,694.770$^{***}$ (df = 11; 2194909) & 19,764.520$^{***}$ (df = 16; 2194904) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Con efectos fijos, con PA}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Total RTs} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 2.836$^{***}$ & 2.140$^{***}$ & 2.216$^{***}$ & 2.200$^{***}$ \\ 
+  & (0.021) & (0.022) & (0.022) & (0.023) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 1.515$^{***}$ & 1.648$^{***}$ & 1.641$^{***}$ \\ 
+  &  & (0.022) & (0.023) & (0.023) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 1.109$^{***}$ & 1.043$^{***}$ & 1.222$^{***}$ \\ 
+  &  & (0.023) & (0.024) & (0.025) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 1.680$^{***}$ & 1.682$^{***}$ & 1.561$^{***}$ \\ 
+  &  & (0.023) & (0.023) & (0.025) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.245$^{***}$ & 0.110$^{***}$ & 0.191$^{***}$ \\ 
+  &  & (0.023) & (0.024) & (0.025) \\ 
+  & & & & \\ 
+ Political Affiliation: Right &  &  &  &  \\ 
+  &  &  &  &  \\ 
+  & & & & \\ 
+ Political Affiliation: Left &  &  &  &  \\ 
+  &  &  &  &  \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown &  &  &  &  \\ 
+  &  &  &  &  \\ 
+  & & & & \\ 
+ Weekend &  &  &  &  \\ 
+  &  &  &  &  \\ 
+  & & & & \\ 
+ Tuesday &  &  & 0.343$^{***}$ &  \\ 
+  &  &  & (0.017) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.242$^{***}$ \\ 
+  &  &  &  & (0.027) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.338$^{***}$ \\ 
+  &  &  &  & (0.028) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.921$^{***}$ \\ 
+  &  &  &  & (0.027) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.413$^{***}$ \\ 
+  &  &  &  & (0.028) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.756$^{***}$ \\ 
+  &  &  &  & (0.028) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & 0.636$^{***}$ \\ 
+  &  &  &  & (0.027) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 2,194,920 & 2,194,920 & 2,194,920 & 2,194,920 \\ 
+R$^{2}$ & 0.607 & 0.610 & 0.610 & 0.610 \\ 
+Adjusted R$^{2}$ & 0.601 & 0.604 & 0.604 & 0.604 \\ 
+Residual Std. Error & 10.472 (df = 2160079) & 10.430 (df = 2160075) & 10.429 (df = 2160074) & 10.426 (df = 2160069) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Total RTs vs PA con interacción}
+\subsection{Total RTs vs Critical day interactuado con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Total RTs} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & 7.378$^{***}$ & 7.515$^{***}$ & 4.833$^{***}$ & 4.825$^{***}$ \\ 
+  & (0.053) & (0.053) & (0.056) & (0.057) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & 4.773$^{***}$ & 4.910$^{***}$ & 3.333$^{***}$ & 3.324$^{***}$ \\ 
+  & (0.083) & (0.083) & (0.089) & (0.089) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 1.094$^{***}$ & 1.230$^{***}$ & 1.303$^{***}$ & 1.294$^{***}$ \\ 
+  & (0.091) & (0.092) & (0.098) & (0.099) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & $-$0.510$^{***}$ & $-$0.373$^{**}$ & 0.365$^{**}$ & 0.356$^{**}$ \\ 
+  & (0.166) & (0.166) & (0.179) & (0.179) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 3.792$^{***}$ & 3.785$^{***}$ \\ 
+  &  &  & (0.056) & (0.057) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & 2.779$^{***}$ & 2.771$^{***}$ \\ 
+  &  &  & (0.089) & (0.089) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 0.847$^{***}$ & 0.839$^{***}$ \\ 
+  &  &  & (0.098) & (0.099) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & $-$0.035 & $-$0.042 \\ 
+  &  &  & (0.179) & (0.180) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & 3.138$^{***}$ & 3.338$^{***}$ \\ 
+  &  &  & (0.060) & (0.061) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & 1.669$^{***}$ & 1.868$^{***}$ \\ 
+  &  &  & (0.096) & (0.096) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & 0.232$^{**}$ & 0.432$^{***}$ \\ 
+  &  &  & (0.106) & (0.106) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.404$^{**}$ & $-$0.205 \\ 
+  &  &  & (0.194) & (0.194) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 3.840$^{***}$ & 3.699$^{***}$ \\ 
+  &  &  & (0.060) & (0.061) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 2.467$^{***}$ & 2.326$^{***}$ \\ 
+  &  &  & (0.095) & (0.096) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.717$^{***}$ & 0.577$^{***}$ \\ 
+  &  &  & (0.106) & (0.106) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.120 & $-$0.021 \\ 
+  &  &  & (0.194) & (0.194) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & 1.605$^{***}$ & 1.688$^{***}$ \\ 
+  &  &  & (0.061) & (0.061) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & 1.042$^{***}$ & 1.125$^{***}$ \\ 
+  &  &  & (0.096) & (0.096) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & $-$0.436$^{***}$ & $-$0.353$^{***}$ \\ 
+  &  &  & (0.106) & (0.106) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & $-$0.984$^{***}$ & $-$0.901$^{***}$ \\ 
+  &  &  & (0.194) & (0.194) \\ 
+  & & & & \\ 
+ Weekend & 0.283$^{***}$ &  & 0.300$^{***}$ &  \\ 
+  & (0.025) &  & (0.026) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.462$^{***}$ &  & 0.224$^{***}$ \\ 
+  &  & (0.042) &  & (0.042) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.872$^{***}$ &  & 0.381$^{***}$ \\ 
+  &  & (0.042) &  & (0.043) \\ 
+  & & & & \\ 
+ Thursday &  & 0.802$^{***}$ &  & 1.031$^{***}$ \\ 
+  &  & (0.042) &  & (0.042) \\ 
+  & & & & \\ 
+ Friday &  & 0.822$^{***}$ &  & 0.490$^{***}$ \\ 
+  &  & (0.042) &  & (0.043) \\ 
+  & & & & \\ 
+ Saturday &  & 1.131$^{***}$ &  & 0.773$^{***}$ \\ 
+  &  & (0.042) &  & (0.043) \\ 
+  & & & & \\ 
+ Sunday &  & 0.637$^{***}$ &  & 0.636$^{***}$ \\ 
+  &  & (0.042) &  & (0.042) \\ 
+  & & & & \\ 
+ Constant & 4.794$^{***}$ & 4.188$^{***}$ & 4.243$^{***}$ & 3.814$^{***}$ \\ 
+  & (0.014) & (0.030) & (0.014) & (0.031) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 2,194,920 & 2,194,920 & 2,194,920 & 2,194,920 \\ 
+R$^{2}$ & 0.010 & 0.011 & 0.021 & 0.021 \\ 
+Adjusted R$^{2}$ & 0.010 & 0.011 & 0.021 & 0.021 \\ 
+Residual Std. Error & 16.484 (df = 2194914) & 16.482 (df = 2194909) & 16.397 (df = 2194898) & 16.394 (df = 2194893) \\ 
+F Statistic & 4,518.704$^{***}$ (df = 5; 2194914) & 2,335.714$^{***}$ (df = 10; 2194909) & 2,206.339$^{***}$ (df = 21; 2194898) & 1,808.505$^{***}$ (df = 26; 2194893) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Total RTs vs Critical day interactuado con PA, con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Total RTs} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & 5.065$^{***}$ & 5.141$^{***}$ & 3.750$^{***}$ & 3.726$^{***}$ \\ 
+  & (0.035) & (0.035) & (0.036) & (0.036) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & 1.384$^{***}$ & 1.460$^{***}$ & 1.275$^{***}$ & 1.251$^{***}$ \\ 
+  & (0.056) & (0.056) & (0.057) & (0.058) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 2.657$^{***}$ & 2.733$^{***}$ & 2.057$^{***}$ & 2.033$^{***}$ \\ 
+  & (0.062) & (0.062) & (0.063) & (0.064) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & 2.070$^{***}$ & 2.146$^{***}$ & 1.613$^{***}$ & 1.589$^{***}$ \\ 
+  & (0.113) & (0.113) & (0.116) & (0.116) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 2.700$^{***}$ & 2.696$^{***}$ \\ 
+  &  &  & (0.036) & (0.036) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & 0.711$^{***}$ & 0.708$^{***}$ \\ 
+  &  &  & (0.057) & (0.058) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 1.592$^{***}$ & 1.588$^{***}$ \\ 
+  &  &  & (0.064) & (0.064) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 1.205$^{***}$ & 1.201$^{***}$ \\ 
+  &  &  & (0.116) & (0.116) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & 2.264$^{***}$ & 2.434$^{***}$ \\ 
+  &  &  & (0.038) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.011 & 0.159$^{***}$ \\ 
+  &  &  & (0.061) & (0.062) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & 0.875$^{***}$ & 1.046$^{***}$ \\ 
+  &  &  & (0.068) & (0.068) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & 0.647$^{***}$ & 0.818$^{***}$ \\ 
+  &  &  & (0.124) & (0.124) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 2.955$^{***}$ & 2.829$^{***}$ \\ 
+  &  &  & (0.038) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 0.776$^{***}$ & 0.651$^{***}$ \\ 
+  &  &  & (0.061) & (0.062) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 1.350$^{***}$ & 1.224$^{***}$ \\ 
+  &  &  & (0.068) & (0.068) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 1.161$^{***}$ & 1.035$^{***}$ \\ 
+  &  &  & (0.124) & (0.124) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & 0.741$^{***}$ & 0.827$^{***}$ \\ 
+  &  &  & (0.039) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.627$^{***}$ & $-$0.541$^{***}$ \\ 
+  &  &  & (0.062) & (0.062) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & 0.218$^{***}$ & 0.304$^{***}$ \\ 
+  &  &  & (0.068) & (0.068) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.078 & 0.164 \\ 
+  &  &  & (0.124) & (0.124) \\ 
+  & & & & \\ 
+ Weekend & 0.175$^{***}$ &  & 0.246$^{***}$ &  \\ 
+  & (0.016) &  & (0.016) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.462$^{***}$ &  & 0.286$^{***}$ \\ 
+  &  & (0.026) &  & (0.027) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.747$^{***}$ &  & 0.379$^{***}$ \\ 
+  &  & (0.026) &  & (0.027) \\ 
+  & & & & \\ 
+ Thursday &  & 0.802$^{***}$ &  & 0.926$^{***}$ \\ 
+  &  & (0.026) &  & (0.027) \\ 
+  & & & & \\ 
+ Friday &  & 0.572$^{***}$ &  & 0.369$^{***}$ \\ 
+  &  & (0.027) &  & (0.027) \\ 
+  & & & & \\ 
+ Saturday &  & 0.882$^{***}$ &  & 0.677$^{***}$ \\ 
+  &  & (0.027) &  & (0.027) \\ 
+  & & & & \\ 
+ Sunday &  & 0.512$^{***}$ &  & 0.558$^{***}$ \\ 
+  &  & (0.026) &  & (0.027) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 2,194,920 & 2,194,920 & 2,194,920 & 2,194,920 \\ 
+R$^{2}$ & 0.608 & 0.608 & 0.612 & 0.613 \\ 
+Adjusted R$^{2}$ & 0.602 & 0.602 & 0.606 & 0.606 \\ 
+Residual Std. Error & 10.458 (df = 2160075) & 10.454 (df = 2160070) & 10.397 (df = 2160059) & 10.394 (df = 2160054) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Inner Proximity vs PA}
+\subsection{Inner Proximity vs critical day sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Inner Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.131$^{***}$ & $-$0.101$^{***}$ & $-$0.110$^{***}$ & $-$0.094$^{***}$ \\ 
+  & (0.007) & (0.007) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & $-$0.074$^{***}$ & $-$0.091$^{***}$ & $-$0.099$^{***}$ \\ 
+  &  & (0.007) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.006 & 0.002 & 0.008 \\ 
+  &  & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.129$^{***}$ & $-$0.128$^{***}$ & $-$0.159$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.048$^{***}$ & 0.064$^{***}$ & 0.069$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Weekend &  &  & $-$0.045$^{***}$ &  \\ 
+  &  &  & (0.006) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.078$^{***}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.082$^{***}$ \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.010 \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.041$^{***}$ \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.043$^{***}$ \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.052$^{***}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Constant & 2.501$^{***}$ & 2.519$^{***}$ & 2.533$^{***}$ & 2.492$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.007) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.0003 & 0.001 & 0.001 & 0.001 \\ 
+Adjusted R$^{2}$ & 0.0003 & 0.001 & 0.001 & 0.001 \\ 
+Residual Std. Error & 2.595 (df = 1132251) & 2.594 (df = 1132247) & 2.594 (df = 1132246) & 2.594 (df = 1132241) \\ 
+F Statistic & 349.923$^{***}$ (df = 1; 1132251) & 161.900$^{***}$ (df = 5; 1132247) & 144.709$^{***}$ (df = 6; 1132246) & 99.012$^{***}$ (df = 11; 1132241) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Inner Proximity vs critical day con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Inner Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.061$^{***}$ & $-$0.051$^{***}$ & $-$0.057$^{***}$ & $-$0.043$^{***}$ \\ 
+  & (0.005) & (0.005) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & $-$0.019$^{***}$ & $-$0.030$^{***}$ & $-$0.038$^{***}$ \\ 
+  &  & (0.005) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 0.001 & 0.006 & 0.017$^{***}$ \\ 
+  &  & (0.006) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.065$^{***}$ & $-$0.065$^{***}$ & $-$0.093$^{***}$ \\ 
+  &  & (0.006) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.028$^{***}$ & 0.038$^{***}$ & 0.043$^{***}$ \\ 
+  &  & (0.006) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Weekend &  &  & $-$0.028$^{***}$ &  \\ 
+  &  &  & (0.004) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.090$^{***}$ \\ 
+  &  &  &  & (0.007) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.080$^{***}$ \\ 
+  &  &  &  & (0.007) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.036$^{***}$ \\ 
+  &  &  &  & (0.007) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.058$^{***}$ \\ 
+  &  &  &  & (0.007) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.062$^{***}$ \\ 
+  &  &  &  & (0.007) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.014$^{**}$ \\ 
+  &  &  &  & (0.007) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.470 & 0.470 & 0.470 & 0.470 \\ 
+Adjusted R$^{2}$ & 0.454 & 0.454 & 0.454 & 0.454 \\ 
+Residual Std. Error & 1.917 (df = 1098987) & 1.917 (df = 1098983) & 1.917 (df = 1098982) & 1.917 (df = 1098977) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Inner Proximity vs Critical day, con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Inner Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.086$^{***}$ & $-$0.070$^{***}$ & $-$0.077$^{***}$ & $-$0.062$^{***}$ \\ 
+  & (0.006) & (0.006) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & $-$0.035$^{***}$ & $-$0.048$^{***}$ & $-$0.056$^{***}$ \\ 
+  &  & (0.006) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.003 & 0.003 & 0.013$^{*}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.082$^{***}$ & $-$0.081$^{***}$ & $-$0.110$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.033$^{***}$ & 0.044$^{***}$ & 0.049$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Political Affiliation: Center & 3.560$^{***}$ & 3.570$^{***}$ & 3.580$^{***}$ & 3.531$^{***}$ \\ 
+  & (0.006) & (0.006) & (0.006) & (0.008) \\ 
+  & & & & \\ 
+ Political Affiliation: Right & 4.342$^{***}$ & 4.351$^{***}$ & 4.360$^{***}$ & 4.311$^{***}$ \\ 
+  & (0.005) & (0.005) & (0.005) & (0.008) \\ 
+  & & & & \\ 
+ Political Affiliation: Left & 2.263$^{***}$ & 2.273$^{***}$ & 2.283$^{***}$ & 2.233$^{***}$ \\ 
+  & (0.003) & (0.004) & (0.004) & (0.007) \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown & 0.714$^{***}$ & 0.724$^{***}$ & 0.734$^{***}$ & 0.685$^{***}$ \\ 
+  & (0.005) & (0.005) & (0.005) & (0.008) \\ 
+  & & & & \\ 
+ Weekend & 2.609$^{***}$ & 2.620$^{***}$ & 2.630$^{***}$ & 2.580$^{***}$ \\ 
+  & (0.012) & (0.012) & (0.012) & (0.013) \\ 
+  & & & & \\ 
+ Tuesday &  &  & $-$0.033$^{***}$ &  \\ 
+  &  &  & (0.005) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.092$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.080$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.029$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.053$^{***}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.058$^{***}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & $-$0.025$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.592 & 0.592 & 0.592 & 0.592 \\ 
+Adjusted R$^{2}$ & 0.592 & 0.592 & 0.592 & 0.592 \\ 
+Residual Std. Error & 2.294 (df = 1132247) & 2.294 (df = 1132243) & 2.294 (df = 1132242) & 2.294 (df = 1132237) \\ 
+F Statistic & 273,579.000$^{***}$ (df = 6; 1132247) & 164,197.500$^{***}$ (df = 10; 1132243) & 149,279.100$^{***}$ (df = 11; 1132242) & 102,666.900$^{***}$ (df = 16; 1132237) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Inner Proximity vs PA con interacción}
+\subsection{Inner Proximity vs Critical day interactuado con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Inner Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & $-$0.523$^{***}$ & $-$0.491$^{***}$ & $-$0.246$^{***}$ & $-$0.224$^{***}$ \\ 
+  & (0.010) & (0.010) & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & 2.524$^{***}$ & 2.556$^{***}$ & 1.386$^{***}$ & 1.408$^{***}$ \\ 
+  & (0.016) & (0.016) & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 0.859$^{***}$ & 0.891$^{***}$ & 0.308$^{***}$ & 0.330$^{***}$ \\ 
+  & (0.018) & (0.018) & (0.019) & (0.020) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & $-$0.199$^{***}$ & $-$0.167$^{***}$ & $-$0.221$^{***}$ & $-$0.199$^{***}$ \\ 
+  & (0.034) & (0.034) & (0.037) & (0.037) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & $-$0.216$^{***}$ & $-$0.226$^{***}$ \\ 
+  &  &  & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & 1.180$^{***}$ & 1.170$^{***}$ \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 0.723$^{***}$ & 0.714$^{***}$ \\ 
+  &  &  & (0.019) & (0.019) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 0.161$^{***}$ & 0.152$^{***}$ \\ 
+  &  &  & (0.037) & (0.037) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.198$^{***}$ & $-$0.180$^{***}$ \\ 
+  &  &  & (0.012) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & 1.260$^{***}$ & 1.281$^{***}$ \\ 
+  &  &  & (0.018) & (0.018) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & 0.407$^{***}$ & 0.425$^{***}$ \\ 
+  &  &  & (0.022) & (0.022) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.096$^{**}$ & $-$0.079$^{*}$ \\ 
+  &  &  & (0.041) & (0.041) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & $-$0.193$^{***}$ & $-$0.223$^{***}$ \\ 
+  &  &  & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 0.858$^{***}$ & 0.828$^{***}$ \\ 
+  &  &  & (0.018) & (0.018) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.524$^{***}$ & 0.494$^{***}$ \\ 
+  &  &  & (0.020) & (0.021) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.055 & 0.025 \\ 
+  &  &  & (0.039) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & $-$0.116$^{***}$ & $-$0.113$^{***}$ \\ 
+  &  &  & (0.012) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & 1.196$^{***}$ & 1.198$^{***}$ \\ 
+  &  &  & (0.018) & (0.018) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & 0.495$^{***}$ & 0.498$^{***}$ \\ 
+  &  &  & (0.022) & (0.022) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.197$^{***}$ & 0.200$^{***}$ \\ 
+  &  &  & (0.041) & (0.041) \\ 
+  & & & & \\ 
+ Weekend & 0.027$^{***}$ &  & 0.003 &  \\ 
+  & (0.005) &  & (0.006) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.043$^{***}$ &  & 0.040$^{***}$ \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.068$^{***}$ &  & 0.060$^{***}$ \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Thursday &  & $-$0.036$^{***}$ &  & 0.034$^{***}$ \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Friday &  & 0.101$^{***}$ &  & 0.084$^{***}$ \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Saturday &  & 0.118$^{***}$ &  & 0.089$^{***}$ \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Sunday &  & 0.010 &  & 0.003 \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Constant & 2.431$^{***}$ & 2.392$^{***}$ & 2.364$^{***}$ & 2.319$^{***}$ \\ 
+  & (0.003) & (0.007) & (0.003) & (0.007) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.027 & 0.028 & 0.059 & 0.059 \\ 
+Adjusted R$^{2}$ & 0.027 & 0.028 & 0.059 & 0.059 \\ 
+Residual Std. Error & 2.559 (df = 1132247) & 2.559 (df = 1132242) & 2.518 (df = 1132231) & 2.518 (df = 1132226) \\ 
+F Statistic & 6,366.058$^{***}$ (df = 5; 1132247) & 3,226.606$^{***}$ (df = 10; 1132242) & 3,355.820$^{***}$ (df = 21; 1132231) & 2,717.294$^{***}$ (df = 26; 1132226) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Inner Proximity vs Critical day interactuado con PA, con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Inner Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & $-$0.373$^{***}$ & $-$0.368$^{***}$ & $-$0.247$^{***}$ & $-$0.234$^{***}$ \\ 
+  & (0.008) & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & 0.746$^{***}$ & 0.750$^{***}$ & 0.507$^{***}$ & 0.520$^{***}$ \\ 
+  & (0.012) & (0.013) & (0.013) & (0.013) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & $-$0.272$^{***}$ & $-$0.267$^{***}$ & $-$0.284$^{***}$ & $-$0.272$^{***}$ \\ 
+  & (0.014) & (0.015) & (0.015) & (0.015) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & $-$0.284$^{***}$ & $-$0.279$^{***}$ & $-$0.266$^{***}$ & $-$0.253$^{***}$ \\ 
+  & (0.028) & (0.028) & (0.029) & (0.029) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & $-$0.229$^{***}$ & $-$0.237$^{***}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & 0.294$^{***}$ & 0.285$^{***}$ \\ 
+  &  &  & (0.013) & (0.013) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 0.103$^{***}$ & 0.095$^{***}$ \\ 
+  &  &  & (0.015) & (0.015) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 0.017 & 0.010 \\ 
+  &  &  & (0.029) & (0.029) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.196$^{***}$ & $-$0.186$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & 0.548$^{***}$ & 0.561$^{***}$ \\ 
+  &  &  & (0.014) & (0.014) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.036$^{**}$ & $-$0.026 \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.169$^{***}$ & $-$0.161$^{***}$ \\ 
+  &  &  & (0.032) & (0.032) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & $-$0.196$^{***}$ & $-$0.224$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 0.101$^{***}$ & 0.073$^{***}$ \\ 
+  &  &  & (0.014) & (0.014) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.024 & $-$0.004 \\ 
+  &  &  & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & $-$0.031 & $-$0.059$^{**}$ \\ 
+  &  &  & (0.030) & (0.030) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & $-$0.105$^{***}$ & $-$0.100$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & 0.444$^{***}$ & 0.449$^{***}$ \\ 
+  &  &  & (0.014) & (0.014) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & $-$0.026 & $-$0.020 \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.093$^{***}$ & 0.099$^{***}$ \\ 
+  &  &  & (0.032) & (0.032) \\ 
+  & & & & \\ 
+ Weekend & $-$0.018$^{***}$ &  & $-$0.029$^{***}$ &  \\ 
+  & (0.004) &  & (0.004) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.070$^{***}$ &  & 0.090$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.048$^{***}$ &  & 0.081$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Thursday &  & 0.015$^{**}$ &  & 0.033$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Friday &  & 0.028$^{***}$ &  & 0.053$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Saturday &  & 0.037$^{***}$ &  & 0.058$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Sunday &  & $-$0.007 &  & $-$0.017$^{**}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.473 & 0.473 & 0.477 & 0.477 \\ 
+Adjusted R$^{2}$ & 0.457 & 0.457 & 0.461 & 0.461 \\ 
+Residual Std. Error & 1.912 (df = 1098983) & 1.912 (df = 1098978) & 1.905 (df = 1098967) & 1.905 (df = 1098962) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Outer proximity vs PA}
+\subsection{Outer Proximity vs critical day sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Outer Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 0.012$^{***}$ & 0.007$^{***}$ & 0.008$^{***}$ & 0.008$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.024$^{***}$ & 0.025$^{***}$ & 0.024$^{***}$ \\ 
+  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.008$^{***}$ & $-$0.008$^{***}$ & $-$0.004$^{**}$ \\ 
+  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.024$^{***}$ & 0.024$^{***}$ & 0.021$^{***}$ \\ 
+  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.011$^{***}$ & $-$0.013$^{***}$ & $-$0.011$^{***}$ \\ 
+  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Weekend &  &  & 0.004$^{***}$ &  \\ 
+  &  &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.010$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.013$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.021$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.020$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.014$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.018$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Constant & 0.694$^{***}$ & 0.691$^{***}$ & 0.689$^{***}$ & 0.676$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.002) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.0001 & 0.0005 & 0.0005 & 0.001 \\ 
+Adjusted R$^{2}$ & 0.0001 & 0.0005 & 0.0005 & 0.001 \\ 
+Residual Std. Error & 0.579 (df = 1132251) & 0.579 (df = 1132247) & 0.579 (df = 1132246) & 0.579 (df = 1132241) \\ 
+F Statistic & 58.408$^{***}$ (df = 1; 1132251) & 107.253$^{***}$ (df = 5; 1132247) & 90.815$^{***}$ (df = 6; 1132246) & 61.798$^{***}$ (df = 11; 1132241) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Outer Proximity vs critical day con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Outer proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.005$^{***}$ & $-$0.006$^{***}$ & $-$0.006$^{***}$ & $-$0.004$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.010$^{***}$ & 0.010$^{***}$ & 0.008$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.008$^{***}$ & $-$0.008$^{***}$ & $-$0.005$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.009$^{***}$ & 0.009$^{***}$ & 0.006$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.005$^{***}$ & $-$0.005$^{***}$ & $-$0.004$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Weekend &  &  & $-$0.0001 &  \\ 
+  &  &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.007$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.012$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.014$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.016$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.010$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.009$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.512 & 0.512 & 0.512 & 0.512 \\ 
+Adjusted R$^{2}$ & 0.497 & 0.497 & 0.497 & 0.497 \\ 
+Residual Std. Error & 0.410 (df = 1098987) & 0.410 (df = 1098983) & 0.410 (df = 1098982) & 0.410 (df = 1098977) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Outer Proximity vs Critical day, con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Outer Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.0003 & $-$0.002 & $-$0.002 & $-$0.001 \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.013$^{***}$ & 0.014$^{***}$ & 0.013$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.008$^{***}$ & $-$0.008$^{***}$ & $-$0.005$^{***}$ \\ 
+  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.012$^{***}$ & 0.012$^{***}$ & 0.010$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.008$^{***}$ & $-$0.008$^{***}$ & $-$0.007$^{***}$ \\ 
+  &  & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Political Affiliation: Center & 0.684$^{***}$ & 0.682$^{***}$ & 0.682$^{***}$ & 0.673$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.002) \\ 
+  & & & & \\ 
+ Political Affiliation: Right & 0.400$^{***}$ & 0.399$^{***}$ & 0.399$^{***}$ & 0.390$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.002) \\ 
+  & & & & \\ 
+ Political Affiliation: Left & 0.546$^{***}$ & 0.544$^{***}$ & 0.544$^{***}$ & 0.535$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown & 1.234$^{***}$ & 1.232$^{***}$ & 1.232$^{***}$ & 1.222$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.002) \\ 
+  & & & & \\ 
+ Weekend & 0.956$^{***}$ & 0.955$^{***}$ & 0.954$^{***}$ & 0.945$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Tuesday &  &  & 0.002 &  \\ 
+  &  &  & (0.001) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.006$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.011$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.014$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.015$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.008$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & 0.012$^{***}$ \\ 
+  &  &  &  & (0.002) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.700 & 0.700 & 0.700 & 0.700 \\ 
+Adjusted R$^{2}$ & 0.700 & 0.700 & 0.700 & 0.700 \\ 
+Residual Std. Error & 0.496 (df = 1132247) & 0.495 (df = 1132243) & 0.495 (df = 1132242) & 0.495 (df = 1132237) \\ 
+F Statistic & 440,868.400$^{***}$ (df = 6; 1132247) & 264,588.000$^{***}$ (df = 10; 1132243) & 240,535.000$^{***}$ (df = 11; 1132242) & 165,387.600$^{***}$ (df = 16; 1132237) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Outer proximity vs PA con interacción}
+\subsection{Outer Proximity vs Critical day interactuado con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Outer Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & $-$0.118$^{***}$ & $-$0.122$^{***}$ & $-$0.071$^{***}$ & $-$0.072$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$0.346$^{***}$ & $-$0.350$^{***}$ & $-$0.189$^{***}$ & $-$0.189$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & $-$0.024$^{***}$ & $-$0.029$^{***}$ & $-$0.016$^{***}$ & $-$0.016$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & 0.251$^{***}$ & 0.246$^{***}$ & 0.114$^{***}$ & 0.114$^{***}$ \\ 
+  & (0.008) & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & $-$0.059$^{***}$ & $-$0.061$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & $-$0.178$^{***}$ & $-$0.180$^{***}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & $-$0.044$^{***}$ & $-$0.045$^{***}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 0.110$^{***}$ & 0.109$^{***}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.056$^{***}$ & $-$0.055$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.167$^{***}$ & $-$0.164$^{***}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.016$^{***}$ & $-$0.014$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & 0.087$^{***}$ & 0.088$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & $-$0.062$^{***}$ & $-$0.066$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & $-$0.133$^{***}$ & $-$0.137$^{***}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & $-$0.022$^{***}$ & $-$0.025$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.103$^{***}$ & 0.100$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & $-$0.059$^{***}$ & $-$0.056$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.183$^{***}$ & $-$0.180$^{***}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & $-$0.017$^{***}$ & $-$0.014$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.089$^{***}$ & 0.091$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Weekend & $-$0.015$^{***}$ &  & $-$0.009$^{***}$ &  \\ 
+  & (0.001) &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.015$^{***}$ &  & 0.021$^{***}$ \\ 
+  &  & (0.002) &  & (0.002) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.011$^{***}$ &  & 0.021$^{***}$ \\ 
+  &  & (0.002) &  & (0.002) \\ 
+  & & & & \\ 
+ Thursday &  & 0.029$^{***}$ &  & 0.015$^{***}$ \\ 
+  &  & (0.002) &  & (0.002) \\ 
+  & & & & \\ 
+ Friday &  & $-$0.001 &  & 0.010$^{***}$ \\ 
+  &  & (0.002) &  & (0.002) \\ 
+  & & & & \\ 
+ Saturday &  & $-$0.011$^{***}$ &  & 0.004$^{*}$ \\ 
+  &  & (0.002) &  & (0.002) \\ 
+  & & & & \\ 
+ Sunday &  & 0.003 &  & 0.003$^{*}$ \\ 
+  &  & (0.002) &  & (0.002) \\ 
+  & & & & \\ 
+ Constant & 0.715$^{***}$ & 0.704$^{***}$ & 0.735$^{***}$ & 0.722$^{***}$ \\ 
+  & (0.001) & (0.002) & (0.001) & (0.002) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.012 & 0.012 & 0.026 & 0.026 \\ 
+Adjusted R$^{2}$ & 0.012 & 0.012 & 0.026 & 0.026 \\ 
+Residual Std. Error & 0.576 (df = 1132247) & 0.575 (df = 1132242) & 0.571 (df = 1132231) & 0.571 (df = 1132226) \\ 
+F Statistic & 2,642.257$^{***}$ (df = 5; 1132247) & 1,355.945$^{***}$ (df = 10; 1132242) & 1,443.030$^{***}$ (df = 21; 1132231) & 1,171.187$^{***}$ (df = 26; 1132226) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Outer Proximity vs Critical day interactuado con PA, con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Outer Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & 0.051$^{***}$ & 0.054$^{***}$ & 0.030$^{***}$ & 0.033$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$0.043$^{***}$ & $-$0.039$^{***}$ & $-$0.027$^{***}$ & $-$0.024$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 0.002 & 0.006$^{*}$ & 0.007$^{**}$ & 0.009$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & 0.005 & 0.008 & 0.005 & 0.007 \\ 
+  & (0.006) & (0.006) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 0.051$^{***}$ & 0.049$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & $-$0.014$^{***}$ & $-$0.015$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & $-$0.019$^{***}$ & $-$0.020$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & $-$0.001 & $-$0.003 \\ 
+  &  &  & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & 0.020$^{***}$ & 0.024$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.037$^{***}$ & $-$0.032$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.002 & 0.003 \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & 0.004 & 0.009 \\ 
+  &  &  & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 0.030$^{***}$ & 0.027$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 0.006$^{*}$ & 0.002 \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & $-$0.007$^{*}$ & $-$0.010$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.001 & $-$0.002 \\ 
+  &  &  & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & 0.018$^{***}$ & 0.019$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.047$^{***}$ & $-$0.046$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & 0.003 & 0.004 \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & $-$0.003 & $-$0.002 \\ 
+  &  &  & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Weekend & $-$0.001 &  & 0.002$^{*}$ &  \\ 
+  & (0.001) &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.009$^{***}$ &  & 0.007$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.017$^{***}$ &  & 0.013$^{***}$ \\ 
+  &  & (0.001) &  & (0.002) \\ 
+  & & & & \\ 
+ Thursday &  & 0.016$^{***}$ &  & 0.016$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Friday &  & 0.024$^{***}$ &  & 0.021$^{***}$ \\ 
+  &  & (0.001) &  & (0.002) \\ 
+  & & & & \\ 
+ Saturday &  & 0.015$^{***}$ &  & 0.014$^{***}$ \\ 
+  &  & (0.001) &  & (0.002) \\ 
+  & & & & \\ 
+ Sunday &  & 0.010$^{***}$ &  & 0.012$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.513 & 0.513 & 0.514 & 0.514 \\ 
+Adjusted R$^{2}$ & 0.498 & 0.498 & 0.499 & 0.499 \\ 
+Residual Std. Error & 0.410 (df = 1098983) & 0.410 (df = 1098978) & 0.410 (df = 1098967) & 0.410 (df = 1098962) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Left proximity vs PA}
+\subsection{Left Proximity vs critical day sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Left Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.237$^{***}$ & $-$0.152$^{***}$ & $-$0.157$^{***}$ & $-$0.148$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & $-$0.136$^{***}$ & $-$0.144$^{***}$ & $-$0.148$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.124$^{***}$ & $-$0.120$^{***}$ & $-$0.113$^{***}$ \\ 
+  &  & (0.005) & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.101$^{***}$ & $-$0.101$^{***}$ & $-$0.119$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.096$^{***}$ & $-$0.088$^{***}$ & $-$0.082$^{***}$ \\ 
+  &  & (0.005) & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Weekend &  &  & $-$0.021$^{***}$ &  \\ 
+  &  &  & (0.003) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.031$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.051$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.026$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.033$^{***}$ \\ 
+  &  &  &  & (0.006) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.028$^{***}$ \\ 
+  &  &  &  & (0.006) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.018$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Constant & 1.538$^{***}$ & 1.585$^{***}$ & 1.591$^{***}$ & 1.563$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.004) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.003 & 0.007 & 0.007 & 0.007 \\ 
+Adjusted R$^{2}$ & 0.003 & 0.007 & 0.007 & 0.007 \\ 
+Residual Std. Error & 1.491 (df = 1132251) & 1.488 (df = 1132247) & 1.488 (df = 1132246) & 1.488 (df = 1132241) \\ 
+F Statistic & 3,499.330$^{***}$ (df = 1; 1132251) & 1,583.537$^{***}$ (df = 5; 1132247) & 1,326.346$^{***}$ (df = 6; 1132246) & 737.081$^{***}$ (df = 11; 1132241) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Left Proximity vs critical day con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Left proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.252$^{***}$ & $-$0.162$^{***}$ & $-$0.169$^{***}$ & $-$0.155$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & $-$0.156$^{***}$ & $-$0.169$^{***}$ & $-$0.175$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.134$^{***}$ & $-$0.127$^{***}$ & $-$0.117$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.130$^{***}$ & $-$0.130$^{***}$ & $-$0.159$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.085$^{***}$ & $-$0.073$^{***}$ & $-$0.061$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Weekend &  &  & $-$0.035$^{***}$ &  \\ 
+  &  &  & (0.002) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.029$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.080$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.035$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.043$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.038$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.039$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.519 & 0.524 & 0.524 & 0.524 \\ 
+Adjusted R$^{2}$ & 0.504 & 0.509 & 0.509 & 0.510 \\ 
+Residual Std. Error & 1.051 (df = 1098987) & 1.046 (df = 1098983) & 1.046 (df = 1098982) & 1.045 (df = 1098977) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Left Proximity vs Critical day, con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Left Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.254$^{***}$ & $-$0.162$^{***}$ & $-$0.168$^{***}$ & $-$0.158$^{***}$ \\ 
+  & (0.003) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & $-$0.149$^{***}$ & $-$0.160$^{***}$ & $-$0.164$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.130$^{***}$ & $-$0.125$^{***}$ & $-$0.118$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.119$^{***}$ & $-$0.119$^{***}$ & $-$0.140$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.094$^{***}$ & $-$0.085$^{***}$ & $-$0.077$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Political Affiliation: Center & 1.162$^{***}$ & 1.213$^{***}$ & 1.222$^{***}$ & 1.193$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.004) & (0.005) \\ 
+  & & & & \\ 
+ Political Affiliation: Right & 0.112$^{***}$ & 0.159$^{***}$ & 0.167$^{***}$ & 0.139$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.004) \\ 
+  & & & & \\ 
+ Political Affiliation: Left & 2.286$^{***}$ & 2.337$^{***}$ & 2.345$^{***}$ & 2.317$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.004) \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown & 1.455$^{***}$ & 1.507$^{***}$ & 1.516$^{***}$ & 1.487$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.004) \\ 
+  & & & & \\ 
+ Weekend & 1.496$^{***}$ & 1.550$^{***}$ & 1.558$^{***}$ & 1.530$^{***}$ \\ 
+  & (0.006) & (0.006) & (0.006) & (0.007) \\ 
+  & & & & \\ 
+ Tuesday &  &  & $-$0.028$^{***}$ &  \\ 
+  &  &  & (0.003) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.027$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.062$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.024$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.030$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.028$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & $-$0.029$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.649 & 0.651 & 0.651 & 0.651 \\ 
+Adjusted R$^{2}$ & 0.649 & 0.651 & 0.651 & 0.651 \\ 
+Residual Std. Error & 1.256 (df = 1132247) & 1.252 (df = 1132243) & 1.252 (df = 1132242) & 1.252 (df = 1132237) \\ 
+F Statistic & 348,213.700$^{***}$ (df = 6; 1132247) & 210,994.900$^{***}$ (df = 10; 1132243) & 191,837.800$^{***}$ (df = 11; 1132242) & 131,945.200$^{***}$ (df = 16; 1132237) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Left proximity vs PA con interacción}
+\subsection{Left Proximity vs Critical day interactuado con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Left Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & 0.383$^{***}$ & 0.385$^{***}$ & 0.156$^{***}$ & 0.166$^{***}$ \\ 
+  & (0.006) & (0.006) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$1.463$^{***}$ & $-$1.461$^{***}$ & $-$0.770$^{***}$ & $-$0.760$^{***}$ \\ 
+  & (0.009) & (0.009) & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & $-$0.535$^{***}$ & $-$0.534$^{***}$ & $-$0.280$^{***}$ & $-$0.270$^{***}$ \\ 
+  & (0.010) & (0.010) & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & $-$0.277$^{***}$ & $-$0.275$^{***}$ & $-$0.168$^{***}$ & $-$0.159$^{***}$ \\ 
+  & (0.019) & (0.019) & (0.021) & (0.021) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 0.200$^{***}$ & 0.196$^{***}$ \\ 
+  &  &  & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & $-$0.769$^{***}$ & $-$0.774$^{***}$ \\ 
+  &  &  & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & $-$0.321$^{***}$ & $-$0.325$^{***}$ \\ 
+  &  &  & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & $-$0.184$^{***}$ & $-$0.189$^{***}$ \\ 
+  &  &  & (0.021) & (0.021) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & 0.112$^{***}$ & 0.122$^{***}$ \\ 
+  &  &  & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.613$^{***}$ & $-$0.602$^{***}$ \\ 
+  &  &  & (0.010) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.212$^{***}$ & $-$0.202$^{***}$ \\ 
+  &  &  & (0.012) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.111$^{***}$ & $-$0.103$^{***}$ \\ 
+  &  &  & (0.024) & (0.024) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 0.170$^{***}$ & 0.152$^{***}$ \\ 
+  &  &  & (0.006) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & $-$0.660$^{***}$ & $-$0.678$^{***}$ \\ 
+  &  &  & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & $-$0.237$^{***}$ & $-$0.255$^{***}$ \\ 
+  &  &  & (0.012) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & $-$0.083$^{***}$ & $-$0.101$^{***}$ \\ 
+  &  &  & (0.022) & (0.022) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & 0.213$^{***}$ & 0.219$^{***}$ \\ 
+  &  &  & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.643$^{***}$ & $-$0.637$^{***}$ \\ 
+  &  &  & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & $-$0.218$^{***}$ & $-$0.212$^{***}$ \\ 
+  &  &  & (0.012) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & $-$0.082$^{***}$ & $-$0.075$^{***}$ \\ 
+  &  &  & (0.024) & (0.024) \\ 
+  & & & & \\ 
+ Weekend & $-$0.016$^{***}$ &  & $-$0.013$^{***}$ &  \\ 
+  & (0.003) &  & (0.003) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.014$^{***}$ &  & 0.021$^{***}$ \\ 
+  &  & (0.005) &  & (0.005) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.027$^{***}$ &  & 0.049$^{***}$ \\ 
+  &  & (0.005) &  & (0.005) \\ 
+  & & & & \\ 
+ Thursday &  & 0.047$^{***}$ &  & 0.030$^{***}$ \\ 
+  &  & (0.005) &  & (0.005) \\ 
+  & & & & \\ 
+ Friday &  & 0.025$^{***}$ &  & 0.041$^{***}$ \\ 
+  &  & (0.005) &  & (0.005) \\ 
+  & & & & \\ 
+ Saturday &  & 0.020$^{***}$ &  & 0.036$^{***}$ \\ 
+  &  & (0.005) &  & (0.005) \\ 
+  & & & & \\ 
+ Sunday &  & $-$0.006 &  & $-$0.008 \\ 
+  &  & (0.005) &  & (0.005) \\ 
+  & & & & \\ 
+ Constant & 1.532$^{***}$ & 1.508$^{***}$ & 1.562$^{***}$ & 1.533$^{***}$ \\ 
+  & (0.002) & (0.004) & (0.002) & (0.004) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.030 & 0.030 & 0.065 & 0.065 \\ 
+Adjusted R$^{2}$ & 0.030 & 0.030 & 0.065 & 0.065 \\ 
+Residual Std. Error & 1.470 (df = 1132247) & 1.470 (df = 1132242) & 1.444 (df = 1132231) & 1.443 (df = 1132226) \\ 
+F Statistic & 6,959.936$^{***}$ (df = 5; 1132247) & 3,491.521$^{***}$ (df = 10; 1132242) & 3,752.624$^{***}$ (df = 21; 1132231) & 3,037.580$^{***}$ (df = 26; 1132226) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Left Proximity vs Critical day interactuado con PA, con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Left Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & $-$0.374$^{***}$ & $-$0.371$^{***}$ & $-$0.247$^{***}$ & $-$0.232$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$0.023$^{***}$ & $-$0.019$^{***}$ & $-$0.021$^{***}$ & $-$0.006 \\ 
+  & (0.007) & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & $-$0.169$^{***}$ & $-$0.166$^{***}$ & $-$0.106$^{***}$ & $-$0.092$^{***}$ \\ 
+  & (0.008) & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & $-$0.252$^{***}$ & $-$0.249$^{***}$ & $-$0.162$^{***}$ & $-$0.148$^{***}$ \\ 
+  & (0.015) & (0.015) & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & $-$0.228$^{***}$ & $-$0.234$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & $-$0.012$^{*}$ & $-$0.019$^{***}$ \\ 
+  &  &  & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & $-$0.147$^{***}$ & $-$0.153$^{***}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & $-$0.202$^{***}$ & $-$0.207$^{***}$ \\ 
+  &  &  & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.197$^{***}$ & $-$0.184$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.002 & 0.013 \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.077$^{***}$ & $-$0.066$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.117$^{***}$ & $-$0.107$^{***}$ \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & $-$0.196$^{***}$ & $-$0.225$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & $-$0.006 & $-$0.036$^{***}$ \\ 
+  &  &  & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & $-$0.090$^{***}$ & $-$0.119$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & $-$0.094$^{***}$ & $-$0.122$^{***}$ \\ 
+  &  &  & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & $-$0.105$^{***}$ & $-$0.096$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & 0.004 & 0.013$^{*}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & $-$0.043$^{***}$ & $-$0.032$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & $-$0.072$^{***}$ & $-$0.061$^{***}$ \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Weekend & $-$0.024$^{***}$ &  & $-$0.028$^{***}$ &  \\ 
+  & (0.002) &  & (0.002) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.002 &  & 0.023$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.043$^{***}$ &  & 0.075$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Thursday &  & 0.050$^{***}$ &  & 0.036$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Friday &  & 0.020$^{***}$ &  & 0.047$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Saturday &  & 0.019$^{***}$ &  & 0.045$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Sunday &  & $-$0.021$^{***}$ &  & $-$0.031$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.519 & 0.519 & 0.524 & 0.524 \\ 
+Adjusted R$^{2}$ & 0.505 & 0.505 & 0.510 & 0.510 \\ 
+Residual Std. Error & 1.051 (df = 1098983) & 1.051 (df = 1098978) & 1.045 (df = 1098967) & 1.045 (df = 1098962) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Right proximity vs PA}
+\subsection{Right Proximity vs critical day sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Right Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 0.073$^{***}$ & 0.053$^{***}$ & 0.043$^{***}$ & 0.053$^{***}$ \\ 
+  & (0.006) & (0.006) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & $-$0.016$^{***}$ & $-$0.036$^{***}$ & $-$0.040$^{***}$ \\ 
+  &  & (0.006) & (0.006) & (0.006) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 0.084$^{***}$ & 0.093$^{***}$ & 0.095$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.054$^{***}$ & $-$0.053$^{***}$ & $-$0.074$^{***}$ \\ 
+  &  & (0.006) & (0.006) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.090$^{***}$ & 0.108$^{***}$ & 0.113$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Weekend &  &  & $-$0.052$^{***}$ &  \\ 
+  &  &  & (0.005) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.040$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.050$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & $-$0.003 \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.011 \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.004 \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.070$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Constant & 1.029$^{***}$ & 1.020$^{***}$ & 1.036$^{***}$ & 1.017$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.003) & (0.006) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.0001 & 0.001 & 0.001 & 0.001 \\ 
+Adjusted R$^{2}$ & 0.0001 & 0.001 & 0.001 & 0.001 \\ 
+Residual Std. Error & 2.110 (df = 1132251) & 2.110 (df = 1132247) & 2.110 (df = 1132246) & 2.110 (df = 1132241) \\ 
+F Statistic & 166.793$^{***}$ (df = 1; 1132251) & 123.124$^{***}$ (df = 5; 1132247) & 122.086$^{***}$ (df = 6; 1132246) & 82.188$^{***}$ (df = 11; 1132241) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Right Proximity vs critical day con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Right proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 0.158$^{***}$ & 0.108$^{***}$ & 0.100$^{***}$ & 0.107$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.056$^{***}$ & 0.042$^{***}$ & 0.037$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 0.111$^{***}$ & 0.118$^{***}$ & 0.128$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.020$^{***}$ & 0.020$^{***}$ & 0.003 \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.091$^{***}$ & 0.104$^{***}$ & 0.105$^{***}$ \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Weekend &  &  & $-$0.037$^{***}$ &  \\ 
+  &  &  & (0.002) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.063$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.034$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.033$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.041$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.022$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.029$^{***}$ \\ 
+  &  &  &  & (0.004) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.765 & 0.766 & 0.766 & 0.766 \\ 
+Adjusted R$^{2}$ & 0.758 & 0.759 & 0.759 & 0.759 \\ 
+Residual Std. Error & 1.038 (df = 1098987) & 1.036 (df = 1098983) & 1.036 (df = 1098982) & 1.036 (df = 1098977) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Right Proximity vs Critical day, con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Right Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 0.129$^{***}$ & 0.089$^{***}$ & 0.081$^{***}$ & 0.089$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.029$^{***}$ & 0.014$^{***}$ & 0.010$^{**}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & 0.099$^{***}$ & 0.106$^{***}$ & 0.114$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & $-$0.003 & $-$0.003 & $-$0.020$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.087$^{***}$ & 0.101$^{***}$ & 0.103$^{***}$ \\ 
+  &  & (0.004) & (0.004) & (0.005) \\ 
+  & & & & \\ 
+ Political Affiliation: Center & 0.296$^{***}$ & 0.275$^{***}$ & 0.287$^{***}$ & 0.260$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.005) \\ 
+  & & & & \\ 
+ Political Affiliation: Right & 4.313$^{***}$ & 4.294$^{***}$ & 4.306$^{***}$ & 4.279$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.005) \\ 
+  & & & & \\ 
+ Political Affiliation: Left & 0.057$^{***}$ & 0.037$^{***}$ & 0.049$^{***}$ & 0.021$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.004) \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown & 0.707$^{***}$ & 0.687$^{***}$ & 0.699$^{***}$ & 0.671$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.005) \\ 
+  & & & & \\ 
+ Weekend & 0.383$^{***}$ & 0.362$^{***}$ & 0.374$^{***}$ & 0.346$^{***}$ \\ 
+  & (0.007) & (0.007) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Tuesday &  &  & $-$0.040$^{***}$ &  \\ 
+  &  &  & (0.003) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.055$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.037$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Friday &  &  &  & 0.019$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.029$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.017$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & $-$0.042$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.649 & 0.650 & 0.650 & 0.650 \\ 
+Adjusted R$^{2}$ & 0.649 & 0.650 & 0.650 & 0.650 \\ 
+Residual Std. Error & 1.393 (df = 1132247) & 1.392 (df = 1132243) & 1.392 (df = 1132242) & 1.392 (df = 1132237) \\ 
+F Statistic & 349,597.700$^{***}$ (df = 6; 1132247) & 210,149.600$^{***}$ (df = 10; 1132243) & 191,085.200$^{***}$ (df = 11; 1132242) & 131,416.800$^{***}$ (df = 16; 1132237) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Right proximity vs PA con interacción}
+\subsection{Right Proximity vs Critical day interactuado con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Right Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & $-$0.937$^{***}$ & $-$0.928$^{***}$ & $-$0.456$^{***}$ & $-$0.445$^{***}$ \\ 
+  & (0.008) & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & 3.939$^{***}$ & 3.949$^{***}$ & 2.083$^{***}$ & 2.094$^{***}$ \\ 
+  & (0.012) & (0.012) & (0.012) & (0.013) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & $-$0.699$^{***}$ & $-$0.689$^{***}$ & $-$0.333$^{***}$ & $-$0.322$^{***}$ \\ 
+  & (0.014) & (0.014) & (0.015) & (0.015) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & $-$0.614$^{***}$ & $-$0.605$^{***}$ & $-$0.282$^{***}$ & $-$0.270$^{***}$ \\ 
+  & (0.026) & (0.026) & (0.028) & (0.028) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & $-$0.499$^{***}$ & $-$0.503$^{***}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & 1.879$^{***}$ & 1.875$^{***}$ \\ 
+  &  &  & (0.013) & (0.013) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & $-$0.374$^{***}$ & $-$0.377$^{***}$ \\ 
+  &  &  & (0.014) & (0.014) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & $-$0.326$^{***}$ & $-$0.329$^{***}$ \\ 
+  &  &  & (0.027) & (0.027) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.339$^{***}$ & $-$0.335$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & 1.837$^{***}$ & 1.844$^{***}$ \\ 
+  &  &  & (0.014) & (0.014) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.244$^{***}$ & $-$0.240$^{***}$ \\ 
+  &  &  & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.214$^{***}$ & $-$0.211$^{***}$ \\ 
+  &  &  & (0.031) & (0.031) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & $-$0.412$^{***}$ & $-$0.432$^{***}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 1.470$^{***}$ & 1.449$^{***}$ \\ 
+  &  &  & (0.013) & (0.013) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & $-$0.298$^{***}$ & $-$0.318$^{***}$ \\ 
+  &  &  & (0.015) & (0.015) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & $-$0.273$^{***}$ & $-$0.293$^{***}$ \\ 
+  &  &  & (0.029) & (0.029) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & $-$0.349$^{***}$ & $-$0.347$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & 1.812$^{***}$ & 1.815$^{***}$ \\ 
+  &  &  & (0.014) & (0.014) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & $-$0.253$^{***}$ & $-$0.250$^{***}$ \\ 
+  &  &  & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & $-$0.207$^{***}$ & $-$0.204$^{***}$ \\ 
+  &  &  & (0.031) & (0.031) \\ 
+  & & & & \\ 
+ Weekend & $-$0.008$^{*}$ &  & $-$0.039$^{***}$ &  \\ 
+  & (0.004) &  & (0.004) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.013$^{*}$ &  & 0.035$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.027$^{***}$ &  & 0.039$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Thursday &  & $-$0.048$^{***}$ &  & 0.0004 \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Friday &  & $-$0.001 &  & 0.018$^{**}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Saturday &  & 0.018$^{**}$ &  & 0.016$^{**}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Sunday &  & $-$0.038$^{***}$ &  & $-$0.058$^{***}$ \\ 
+  &  & (0.007) &  & (0.007) \\ 
+  & & & & \\ 
+ Constant & 1.020$^{***}$ & 1.021$^{***}$ & 0.997$^{***}$ & 0.979$^{***}$ \\ 
+  & (0.002) & (0.005) & (0.002) & (0.005) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.100 & 0.100 & 0.209 & 0.209 \\ 
+Adjusted R$^{2}$ & 0.100 & 0.100 & 0.208 & 0.209 \\ 
+Residual Std. Error & 2.002 (df = 1132247) & 2.002 (df = 1132242) & 1.878 (df = 1132231) & 1.877 (df = 1132226) \\ 
+F Statistic & 25,064.720$^{***}$ (df = 5; 1132247) & 12,553.820$^{***}$ (df = 10; 1132242) & 14,203.660$^{***}$ (df = 21; 1132231) & 11,480.620$^{***}$ (df = 26; 1132226) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Right Proximity vs Critical day interactuado con PA, con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Right Proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & 0.007 & 0.013$^{***}$ & 0.003 & 0.009$^{**}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & 0.746$^{***}$ & 0.751$^{***}$ & 0.506$^{***}$ & 0.511$^{***}$ \\ 
+  & (0.007) & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 0.016$^{**}$ & 0.023$^{***}$ & 0.008 & 0.014$^{*}$ \\ 
+  & (0.008) & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & 0.026$^{*}$ & 0.033$^{**}$ & 0.010 & 0.016 \\ 
+  & (0.015) & (0.015) & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & $-$0.019$^{***}$ & $-$0.023$^{***}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & 0.291$^{***}$ & 0.287$^{***}$ \\ 
+  &  &  & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & $-$0.015$^{*}$ & $-$0.018$^{**}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & $-$0.003 & $-$0.006 \\ 
+  &  &  & (0.015) & (0.015) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & 0.007 & 0.016$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & 0.549$^{***}$ & 0.559$^{***}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & 0.016$^{*}$ & 0.024$^{***}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & 0.017 & 0.024 \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 0.0002 & $-$0.015$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 0.101$^{***}$ & 0.086$^{***}$ \\ 
+  &  &  & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.013 & $-$0.003 \\ 
+  &  &  & (0.008) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.023 & 0.008 \\ 
+  &  &  & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & 0.014$^{***}$ & 0.015$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & 0.447$^{***}$ & 0.448$^{***}$ \\ 
+  &  &  & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & 0.017$^{*}$ & 0.018$^{**}$ \\ 
+  &  &  & (0.009) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.035$^{**}$ & 0.036$^{**}$ \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Weekend & $-$0.018$^{***}$ &  & $-$0.036$^{***}$ &  \\ 
+  & (0.002) &  & (0.002) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.054$^{***}$ &  & 0.062$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.018$^{***}$ &  & 0.032$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Thursday &  & $-$0.012$^{***}$ &  & 0.026$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Friday &  & 0.020$^{***}$ &  & 0.032$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Saturday &  & 0.021$^{***}$ &  & 0.018$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+ Sunday &  & $-$0.023$^{***}$ &  & $-$0.031$^{***}$ \\ 
+  &  & (0.004) &  & (0.004) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.767 & 0.767 & 0.771 & 0.771 \\ 
+Adjusted R$^{2}$ & 0.760 & 0.760 & 0.764 & 0.764 \\ 
+Residual Std. Error & 1.033 (df = 1098983) & 1.033 (df = 1098978) & 1.026 (df = 1098967) & 1.026 (df = 1098962) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Center proximity vs PA}
+\subsection{Center proximity vs critical day sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Center proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.053$^{***}$ & $-$0.083$^{***}$ & $-$0.072$^{***}$ & $-$0.079$^{***}$ \\ 
+  & (0.007) & (0.007) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.131$^{***}$ & 0.150$^{***}$ & 0.145$^{***}$ \\ 
+  &  & (0.007) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.017$^{**}$ & $-$0.026$^{***}$ & $-$0.041$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.009) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.103$^{***}$ & 0.102$^{***}$ & 0.113$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.051$^{***}$ & $-$0.069$^{***}$ & $-$0.062$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.009) \\ 
+  & & & & \\ 
+ Weekend &  &  & 0.051$^{***}$ &  \\ 
+  &  &  & (0.006) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.032$^{***}$ \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.073$^{***}$ \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & $-$0.012 \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Friday &  &  &  & $-$0.0001 \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.019$^{*}$ \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.118$^{***}$ \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Constant & 1.752$^{***}$ & 1.732$^{***}$ & 1.716$^{***}$ & 1.699$^{***}$ \\ 
+  & (0.003) & (0.003) & (0.003) & (0.007) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.00005 & 0.001 & 0.001 & 0.001 \\ 
+Adjusted R$^{2}$ & 0.00005 & 0.001 & 0.001 & 0.001 \\ 
+Residual Std. Error & 2.641 (df = 1132251) & 2.640 (df = 1132247) & 2.640 (df = 1132246) & 2.640 (df = 1132241) \\ 
+F Statistic & 55.741$^{***}$ (df = 1; 1132251) & 123.518$^{***}$ (df = 5; 1132247) & 114.782$^{***}$ (df = 6; 1132246) & 82.414$^{***}$ (df = 11; 1132241) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Center proximity vs critical day con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Center proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.091$^{***}$ & $-$0.109$^{***}$ & $-$0.096$^{***}$ & $-$0.104$^{***}$ \\ 
+  & (0.006) & (0.006) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.105$^{***}$ & 0.128$^{***}$ & 0.124$^{***}$ \\ 
+  &  & (0.006) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.027$^{***}$ & $-$0.038$^{***}$ & $-$0.058$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.093$^{***}$ & 0.092$^{***}$ & 0.109$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.066$^{***}$ & $-$0.088$^{***}$ & $-$0.084$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.007) \\ 
+  & & & & \\ 
+ Weekend &  &  & 0.061$^{***}$ &  \\ 
+  &  &  & (0.005) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & 0.027$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.054$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & $-$0.035$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+ Friday &  &  &  & $-$0.018$^{**}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & 0.012 \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.120$^{***}$ \\ 
+  &  &  &  & (0.008) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.287 & 0.287 & 0.287 & 0.287 \\ 
+Adjusted R$^{2}$ & 0.265 & 0.266 & 0.266 & 0.266 \\ 
+Residual Std. Error & 2.264 (df = 1098987) & 2.263 (df = 1098983) & 2.263 (df = 1098982) & 2.263 (df = 1098977) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Center proximity vs Critical day, con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Center proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & $-$0.070$^{***}$ & $-$0.094$^{***}$ & $-$0.083$^{***}$ & $-$0.090$^{***}$ \\ 
+  & (0.007) & (0.007) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.118$^{***}$ & 0.138$^{***}$ & 0.133$^{***}$ \\ 
+  &  & (0.007) & (0.007) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.022$^{***}$ & $-$0.032$^{***}$ & $-$0.050$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.094$^{***}$ & 0.093$^{***}$ & 0.107$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & $-$0.056$^{***}$ & $-$0.074$^{***}$ & $-$0.067$^{***}$ \\ 
+  &  & (0.008) & (0.008) & (0.008) \\ 
+  & & & & \\ 
+ Political Affiliation: Center & 3.558$^{***}$ & 3.541$^{***}$ & 3.526$^{***}$ & 3.515$^{***}$ \\ 
+  & (0.007) & (0.007) & (0.007) & (0.009) \\ 
+  & & & & \\ 
+ Political Affiliation: Right & 1.076$^{***}$ & 1.061$^{***}$ & 1.045$^{***}$ & 1.034$^{***}$ \\ 
+  & (0.006) & (0.006) & (0.006) & (0.008) \\ 
+  & & & & \\ 
+ Political Affiliation: Left & 1.608$^{***}$ & 1.591$^{***}$ & 1.576$^{***}$ & 1.565$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.007) \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown & 1.496$^{***}$ & 1.478$^{***}$ & 1.462$^{***}$ & 1.451$^{***}$ \\ 
+  & (0.005) & (0.005) & (0.006) & (0.008) \\ 
+  & & & & \\ 
+ Weekend & 2.244$^{***}$ & 2.226$^{***}$ & 2.210$^{***}$ & 2.199$^{***}$ \\ 
+  & (0.013) & (0.013) & (0.013) & (0.014) \\ 
+  & & & & \\ 
+ Tuesday &  &  & 0.052$^{***}$ &  \\ 
+  &  &  & (0.006) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & 0.028$^{***}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & 0.069$^{***}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Friday &  &  &  & $-$0.023$^{**}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & $-$0.010 \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.012 \\ 
+  &  &  &  & (0.010) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & 0.115$^{***}$ \\ 
+  &  &  &  & (0.009) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.356 & 0.357 & 0.357 & 0.357 \\ 
+Adjusted R$^{2}$ & 0.356 & 0.357 & 0.357 & 0.357 \\ 
+Residual Std. Error & 2.539 (df = 1132247) & 2.538 (df = 1132243) & 2.538 (df = 1132242) & 2.538 (df = 1132237) \\ 
+F Statistic & 104,522.800$^{***}$ (df = 6; 1132247) & 62,791.670$^{***}$ (df = 10; 1132243) & 57,094.560$^{***}$ (df = 11; 1132242) & 39,277.650$^{***}$ (df = 16; 1132237) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Center proximity vs PA con interacción}
+\subsection{Center proximity vs Critical day interactuado con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Center proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & $-$0.155$^{***}$ & $-$0.148$^{***}$ & $-$0.143$^{***}$ & $-$0.145$^{***}$ \\ 
+  & (0.010) & (0.010) & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$0.792$^{***}$ & $-$0.784$^{***}$ & $-$0.347$^{***}$ & $-$0.348$^{***}$ \\ 
+  & (0.016) & (0.016) & (0.017) & (0.018) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 1.555$^{***}$ & 1.562$^{***}$ & 0.638$^{***}$ & 0.636$^{***}$ \\ 
+  & (0.018) & (0.018) & (0.020) & (0.020) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & 0.497$^{***}$ & 0.502$^{***}$ & 0.184$^{***}$ & 0.180$^{***}$ \\ 
+  & (0.035) & (0.035) & (0.039) & (0.039) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 0.113$^{***}$ & 0.106$^{***}$ \\ 
+  &  &  & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & $-$0.325$^{***}$ & $-$0.332$^{***}$ \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 1.076$^{***}$ & 1.070$^{***}$ \\ 
+  &  &  & (0.020) & (0.020) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 0.475$^{***}$ & 0.469$^{***}$ \\ 
+  &  &  & (0.038) & (0.038) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.036$^{***}$ & $-$0.047$^{***}$ \\ 
+  &  &  & (0.012) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.393$^{***}$ & $-$0.402$^{***}$ \\ 
+  &  &  & (0.019) & (0.019) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & 0.639$^{***}$ & 0.629$^{***}$ \\ 
+  &  &  & (0.022) & (0.022) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & 0.171$^{***}$ & 0.160$^{***}$ \\ 
+  &  &  & (0.043) & (0.043) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 0.083$^{***}$ & 0.089$^{***}$ \\ 
+  &  &  & (0.011) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & $-$0.304$^{***}$ & $-$0.299$^{***}$ \\ 
+  &  &  & (0.018) & (0.019) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.811$^{***}$ & 0.818$^{***}$ \\ 
+  &  &  & (0.021) & (0.021) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.307$^{***}$ & 0.315$^{***}$ \\ 
+  &  &  & (0.040) & (0.040) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & $-$0.104$^{***}$ & $-$0.096$^{***}$ \\ 
+  &  &  & (0.012) & (0.012) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.530$^{***}$ & $-$0.523$^{***}$ \\ 
+  &  &  & (0.019) & (0.019) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & 0.740$^{***}$ & 0.748$^{***}$ \\ 
+  &  &  & (0.022) & (0.022) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.181$^{***}$ & 0.190$^{***}$ \\ 
+  &  &  & (0.043) & (0.043) \\ 
+  & & & & \\ 
+ Weekend & 0.017$^{***}$ &  & 0.051$^{***}$ &  \\ 
+  & (0.006) &  & (0.006) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.063$^{***}$ &  & 0.035$^{***}$ \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.126$^{***}$ &  & 0.085$^{***}$ \\ 
+  &  & (0.009) &  & (0.010) \\ 
+  & & & & \\ 
+ Thursday &  & 0.014 &  & $-$0.001 \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Friday &  & 0.062$^{***}$ &  & 0.020$^{**}$ \\ 
+  &  & (0.009) &  & (0.010) \\ 
+  & & & & \\ 
+ Saturday &  & 0.046$^{***}$ &  & 0.033$^{***}$ \\ 
+  &  & (0.009) &  & (0.010) \\ 
+  & & & & \\ 
+ Sunday &  & 0.097$^{***}$ &  & 0.123$^{***}$ \\ 
+  &  & (0.009) &  & (0.009) \\ 
+  & & & & \\ 
+ Constant & 1.737$^{***}$ & 1.683$^{***}$ & 1.703$^{***}$ & 1.676$^{***}$ \\ 
+  & (0.003) & (0.007) & (0.003) & (0.007) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.009 & 0.009 & 0.023 & 0.023 \\ 
+Adjusted R$^{2}$ & 0.009 & 0.009 & 0.023 & 0.023 \\ 
+Residual Std. Error & 2.629 (df = 1132247) & 2.628 (df = 1132242) & 2.611 (df = 1132231) & 2.610 (df = 1132226) \\ 
+F Statistic & 2,060.172$^{***}$ (df = 5; 1132247) & 1,056.410$^{***}$ (df = 10; 1132242) & 1,245.817$^{***}$ (df = 21; 1132231) & 1,014.519$^{***}$ (df = 26; 1132226) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Center proximity vs Critical day interactuado con PA, con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Center proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & $-$0.030$^{***}$ & $-$0.030$^{***}$ & $-$0.076$^{***}$ & $-$0.081$^{***}$ \\ 
+  & (0.009) & (0.009) & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$0.153$^{***}$ & $-$0.152$^{***}$ & $-$0.060$^{***}$ & $-$0.063$^{***}$ \\ 
+  & (0.015) & (0.015) & (0.015) & (0.015) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & $-$0.265$^{***}$ & $-$0.266$^{***}$ & $-$0.268$^{***}$ & $-$0.273$^{***}$ \\ 
+  & (0.017) & (0.017) & (0.018) & (0.018) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & $-$0.033 & $-$0.034 & $-$0.079$^{**}$ & $-$0.084$^{**}$ \\ 
+  & (0.033) & (0.033) & (0.034) & (0.034) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 0.186$^{***}$ & 0.181$^{***}$ \\ 
+  &  &  & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & $-$0.034$^{**}$ & $-$0.040$^{***}$ \\ 
+  &  &  & (0.015) & (0.015) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 0.135$^{***}$ & 0.130$^{***}$ \\ 
+  &  &  & (0.018) & (0.018) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 0.224$^{***}$ & 0.219$^{***}$ \\ 
+  &  &  & (0.034) & (0.034) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & 0.019$^{*}$ & 0.002 \\ 
+  &  &  & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.151$^{***}$ & $-$0.166$^{***}$ \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.050$^{**}$ & $-$0.066$^{***}$ \\ 
+  &  &  & (0.020) & (0.020) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.015 & $-$0.032 \\ 
+  &  &  & (0.038) & (0.038) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 0.154$^{***}$ & 0.166$^{***}$ \\ 
+  &  &  & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & $-$0.056$^{***}$ & $-$0.047$^{***}$ \\ 
+  &  &  & (0.016) & (0.016) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.023 & 0.035$^{*}$ \\ 
+  &  &  & (0.019) & (0.019) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.088$^{**}$ & 0.101$^{***}$ \\ 
+  &  &  & (0.035) & (0.036) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & $-$0.050$^{***}$ & $-$0.045$^{***}$ \\ 
+  &  &  & (0.011) & (0.011) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.271$^{***}$ & $-$0.267$^{***}$ \\ 
+  &  &  & (0.017) & (0.017) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & $-$0.055$^{***}$ & $-$0.051$^{***}$ \\ 
+  &  &  & (0.020) & (0.020) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & $-$0.013 & $-$0.008 \\ 
+  &  &  & (0.038) & (0.038) \\ 
+  & & & & \\ 
+ Weekend & 0.022$^{***}$ &  & 0.056$^{***}$ &  \\ 
+  & (0.005) &  & (0.005) &  \\ 
+  & & & & \\ 
+ Tuesday &  & 0.058$^{***}$ &  & 0.035$^{***}$ \\ 
+  &  & (0.008) &  & (0.008) \\ 
+  & & & & \\ 
+ Wednesday &  & 0.108$^{***}$ &  & 0.068$^{***}$ \\ 
+  &  & (0.008) &  & (0.008) \\ 
+  & & & & \\ 
+ Thursday &  & 0.005 &  & $-$0.023$^{***}$ \\ 
+  &  & (0.008) &  & (0.008) \\ 
+  & & & & \\ 
+ Friday &  & 0.032$^{***}$ &  & $-$0.001 \\ 
+  &  & (0.008) &  & (0.008) \\ 
+  & & & & \\ 
+ Saturday &  & 0.029$^{***}$ &  & 0.023$^{***}$ \\ 
+  &  & (0.008) &  & (0.009) \\ 
+  & & & & \\ 
+ Sunday &  & 0.099$^{***}$ &  & 0.119$^{***}$ \\ 
+  &  & (0.008) &  & (0.008) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.287 & 0.287 & 0.288 & 0.288 \\ 
+Adjusted R$^{2}$ & 0.265 & 0.266 & 0.266 & 0.266 \\ 
+Residual Std. Error & 2.263 (df = 1098983) & 2.263 (df = 1098978) & 2.262 (df = 1098967) & 2.262 (df = 1098962) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Unknown proximity vs PA}
+\subsection{Unknown proximity vs critical day sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Unknown proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 0.008$^{***}$ & 0.004$^{***}$ & 0.005$^{***}$ & 0.003$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.014$^{***}$ & 0.015$^{***}$ & 0.017$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.007$^{***}$ & $-$0.008$^{***}$ & $-$0.010$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.008$^{***}$ & 0.008$^{***}$ & 0.014$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.008$^{***}$ & 0.007$^{***}$ & 0.002$^{*}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Weekend &  &  & 0.005$^{***}$ &  \\ 
+  &  &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & $-$0.006$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & $-$0.026$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & $-$0.015$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Friday &  &  &  & $-$0.008$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & $-$0.010$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & 0.0003 \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Constant & 0.078$^{***}$ & 0.075$^{***}$ & 0.074$^{***}$ & 0.085$^{***}$ \\ 
+  & (0.0003) & (0.0003) & (0.0004) & (0.001) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.0001 & 0.001 & 0.001 & 0.001 \\ 
+Adjusted R$^{2}$ & 0.0001 & 0.001 & 0.001 & 0.001 \\ 
+Residual Std. Error & 0.295 (df = 1132251) & 0.295 (df = 1132247) & 0.295 (df = 1132246) & 0.295 (df = 1132241) \\ 
+F Statistic & 90.279$^{***}$ (df = 1; 1132251) & 126.895$^{***}$ (df = 5; 1132247) & 115.737$^{***}$ (df = 6; 1132246) & 134.225$^{***}$ (df = 11; 1132241) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Unknown proximity vs critical day con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Unknown proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 0.005$^{***}$ & 0.002$^{**}$ & 0.003$^{***}$ & 0.002$^{**}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.011$^{***}$ & 0.013$^{***}$ & 0.014$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.008$^{***}$ & $-$0.009$^{***}$ & $-$0.011$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.005$^{***}$ & 0.005$^{***}$ & 0.011$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.008$^{***}$ & 0.007$^{***}$ & 0.002$^{**}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Weekend &  &  & 0.004$^{***}$ &  \\ 
+  &  &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  &  &  & $-$0.006$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & $-$0.025$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & $-$0.016$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Friday &  &  &  & $-$0.008$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & $-$0.010$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.001 \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.144 & 0.144 & 0.144 & 0.145 \\ 
+Adjusted R$^{2}$ & 0.118 & 0.118 & 0.118 & 0.119 \\ 
+Residual Std. Error & 0.277 (df = 1098987) & 0.277 (df = 1098983) & 0.277 (df = 1098982) & 0.277 (df = 1098977) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Unknown proximity vs Critical day, con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Unknown proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) & 0.006$^{***}$ & 0.003$^{***}$ & 0.004$^{***}$ & 0.003$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+1) &  & 0.013$^{***}$ & 0.014$^{***}$ & 0.016$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-1) &  & $-$0.007$^{***}$ & $-$0.008$^{***}$ & $-$0.011$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t+2) &  & 0.007$^{***}$ & 0.007$^{***}$ & 0.013$^{***}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t-2) &  & 0.008$^{***}$ & 0.007$^{***}$ & 0.002$^{*}$ \\ 
+  &  & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Political Affiliation: Center & 0.086$^{***}$ & 0.084$^{***}$ & 0.082$^{***}$ & 0.093$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Political Affiliation: Right & 0.013$^{***}$ & 0.011$^{***}$ & 0.009$^{***}$ & 0.020$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Political Affiliation: Left & 0.095$^{***}$ & 0.092$^{***}$ & 0.091$^{***}$ & 0.102$^{***}$ \\ 
+  & (0.0004) & (0.0005) & (0.0005) & (0.001) \\ 
+  & & & & \\ 
+ Political Affiliation: Unknown & 0.082$^{***}$ & 0.080$^{***}$ & 0.078$^{***}$ & 0.089$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Weekend & 0.160$^{***}$ & 0.158$^{***}$ & 0.156$^{***}$ & 0.167$^{***}$ \\ 
+  & (0.001) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Tuesday &  &  & 0.005$^{***}$ &  \\ 
+  &  &  & (0.001) &  \\ 
+  & & & & \\ 
+ Wednesday &  &  &  & $-$0.006$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Thursday &  &  &  & $-$0.026$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Friday &  &  &  & $-$0.015$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Saturday &  &  &  & $-$0.008$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ Sunday &  &  &  & $-$0.010$^{***}$ \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+ day\_number7 &  &  &  & $-$0.0003 \\ 
+  &  &  &  & (0.001) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.079 & 0.080 & 0.080 & 0.080 \\ 
+Adjusted R$^{2}$ & 0.079 & 0.080 & 0.080 & 0.080 \\ 
+Residual Std. Error & 0.293 (df = 1132247) & 0.293 (df = 1132243) & 0.293 (df = 1132242) & 0.293 (df = 1132237) \\ 
+F Statistic & 16,233.250$^{***}$ (df = 6; 1132247) & 9,792.149$^{***}$ (df = 10; 1132243) & 8,907.347$^{***}$ (df = 11; 1132242) & 6,176.079$^{***}$ (df = 16; 1132237) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\section{Unknown proximity vs PA con interacción}
+\subsection{Unknown proximity vs Critical day interactuado con PA, sin FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Unknown proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & 0.024$^{***}$ & 0.024$^{***}$ & 0.012$^{***}$ & 0.011$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$0.065$^{***}$ & $-$0.066$^{***}$ & $-$0.034$^{***}$ & $-$0.035$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 0.018$^{***}$ & 0.018$^{***}$ & 0.010$^{***}$ & 0.009$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & 0.086$^{***}$ & 0.086$^{***}$ & 0.042$^{***}$ & 0.042$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 0.023$^{***}$ & 0.024$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & $-$0.029$^{***}$ & $-$0.028$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 0.023$^{***}$ & 0.024$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 0.049$^{***}$ & 0.050$^{***}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.006$^{***}$ & $-$0.008$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.027$^{***}$ & $-$0.030$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.005$^{**}$ & $-$0.007$^{***}$ \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & 0.027$^{***}$ & 0.025$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 0.016$^{***}$ & 0.022$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & $-$0.026$^{***}$ & $-$0.019$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.010$^{***}$ & 0.017$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.034$^{***}$ & 0.040$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & 0.019$^{***}$ & 0.014$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.029$^{***}$ & $-$0.034$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & 0.005$^{*}$ & $-$0.00002 \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.042$^{***}$ & 0.037$^{***}$ \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Weekend & 0.002$^{***}$ &  & 0.004$^{***}$ &  \\ 
+  & (0.001) &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  & $-$0.001 &  & $-$0.005$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Wednesday &  & $-$0.021$^{***}$ &  & $-$0.025$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Thursday &  & $-$0.011$^{***}$ &  & $-$0.014$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Friday &  & $-$0.001 &  & $-$0.007$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Saturday &  & $-$0.008$^{***}$ &  & $-$0.010$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Sunday &  & $-$0.002$^{*}$ &  & $-$0.001 \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Constant & 0.078$^{***}$ & 0.085$^{***}$ & 0.076$^{***}$ & 0.086$^{***}$ \\ 
+  & (0.0003) & (0.001) & (0.0004) & (0.001) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & No & No & No & No \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.002 & 0.003 & 0.005 & 0.006 \\ 
+Adjusted R$^{2}$ & 0.002 & 0.003 & 0.005 & 0.005 \\ 
+Residual Std. Error & 0.295 (df = 1132247) & 0.295 (df = 1132242) & 0.294 (df = 1132231) & 0.294 (df = 1132226) \\ 
+F Statistic & 484.778$^{***}$ (df = 5; 1132247) & 307.175$^{***}$ (df = 10; 1132242) & 263.662$^{***}$ (df = 21; 1132231) & 241.474$^{***}$ (df = 26; 1132226) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table} 
+\newpage
+\subsection{Unknown proximity vs Critical day interactuado con PA, con FE}
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{Unknown proximity} \\ 
+\cline{2-5} 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Critical day (t) $\times$ P.A. Left & 0.007$^{***}$ & 0.007$^{***}$ & 0.003$^{***}$ & 0.003$^{**}$ \\ 
+  & (0.001) & (0.001) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Right & $-$0.001 & $-$0.002 & $-$0.002 & $-$0.003 \\ 
+  & (0.002) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Center & 0.010$^{***}$ & 0.010$^{***}$ & 0.006$^{***}$ & 0.006$^{***}$ \\ 
+  & (0.002) & (0.002) & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t) $\times$ P.A. Unknown & 0.012$^{***}$ & 0.013$^{***}$ & 0.009$^{**}$ & 0.009$^{**}$ \\ 
+  & (0.004) & (0.004) & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Left &  &  & 0.014$^{***}$ & 0.015$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Right &  &  & 0.003 & 0.004$^{**}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Center &  &  & 0.019$^{***}$ & 0.020$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 1) $\times$ P.A. Unknown &  &  & 0.009$^{**}$ & 0.010$^{**}$ \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Left &  &  & $-$0.012$^{***}$ & $-$0.014$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Right &  &  & $-$0.001 & $-$0.004$^{*}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Center &  &  & $-$0.008$^{***}$ & $-$0.010$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 1) $\times$ P.A. Unknown &  &  & $-$0.001 & $-$0.002 \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Left &  &  & 0.008$^{***}$ & 0.014$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Right &  &  & 0.002 & 0.008$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Center &  &  & 0.007$^{***}$ & 0.013$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t + 2) $\times$ P.A. Unknown &  &  & 0.001 & 0.006 \\ 
+  &  &  & (0.004) & (0.004) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Left &  &  & 0.013$^{***}$ & 0.009$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Right &  &  & $-$0.002 & $-$0.006$^{***}$ \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Center &  &  & 0.003 & $-$0.002 \\ 
+  &  &  & (0.002) & (0.002) \\ 
+  & & & & \\ 
+ Critical day (t - 2) $\times$ P.A. Unknown &  &  & 0.010$^{**}$ & 0.005 \\ 
+  &  &  & (0.005) & (0.005) \\ 
+  & & & & \\ 
+ Weekend & 0.002$^{***}$ &  & 0.004$^{***}$ &  \\ 
+  & (0.001) &  & (0.001) &  \\ 
+  & & & & \\ 
+ Tuesday &  & $-$0.002$^{**}$ &  & $-$0.005$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Wednesday &  & $-$0.021$^{***}$ &  & $-$0.024$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Thursday &  & $-$0.012$^{***}$ &  & $-$0.015$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Friday &  & $-$0.002$^{*}$ &  & $-$0.007$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Saturday &  & $-$0.008$^{***}$ &  & $-$0.010$^{***}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+ Sunday &  & $-$0.003$^{***}$ &  & $-$0.002$^{*}$ \\ 
+  &  & (0.001) &  & (0.001) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Individual FE & Yes & Yes & Yes & Yes \\ 
+Observations & 1,132,253 & 1,132,253 & 1,132,253 & 1,132,253 \\ 
+R$^{2}$ & 0.144 & 0.144 & 0.144 & 0.145 \\ 
+Adjusted R$^{2}$ & 0.118 & 0.119 & 0.118 & 0.119 \\ 
+Residual Std. Error & 0.277 (df = 1098983) & 0.277 (df = 1098978) & 0.277 (df = 1098967) & 0.277 (df = 1098962) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular}
+} 
+\end{table}
+
+\end{document}
