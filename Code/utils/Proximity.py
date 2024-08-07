@@ -2,7 +2,7 @@ from utils.Bojanowski import *
 import graph_tool.all as gt
 
 # ========================================================================================
-def individual_proximity_to_h(G: gt.Graph, vertex:int, property_label:str, group:str, in_proximity = True): 
+def individual_proximity_to_h(G: gt.Graph, vertex:int,weights:str, property_label:str, group:str, in_proximity = True): 
     """
      Individual Proximity Index: This index calculates the proximity from and individual to a political group
      
@@ -25,12 +25,12 @@ def individual_proximity_to_h(G: gt.Graph, vertex:int, property_label:str, group
         return np.nan
     for e in v.out_edges():
         if G.vp[property_label][e.target()] == group:
-            individual_weight += G.ep['Normal Weight'][e]
+            individual_weight += G.ep[weights][e]
     
     return individual_weight
 
 # ========================================================================================
-def individual_proximity_to_others(G: gt.Graph, vertex:int, property_label:str, in_proximity = True): 
+def individual_proximity_to_others(G: gt.Graph, vertex:int, weights:str, property_label:str, in_proximity = True): 
     """
      Individual Proximity Index: This index calculates the proximity from and individual to a political group
      Different from its political group
@@ -38,8 +38,8 @@ def individual_proximity_to_others(G: gt.Graph, vertex:int, property_label:str, 
      W_jk
     Args:
         G (Graph): The Graph object to analize.
-        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
         weights (String): The name of the EdgePropertyMap where the weights of the edges resides
+        property_name (String): The name of the PropertyMap where the tipification of the nodes groups resides.
         g (String): name of the group g
         in_proximity (bool): boolean that specifes if you want the proximity from g to h or from h to g
     Returns:
@@ -55,7 +55,7 @@ def individual_proximity_to_others(G: gt.Graph, vertex:int, property_label:str, 
     for e in v.out_edges():
         group = G.vp['Political Label'][v]
         if G.vp[property_label][e.target()] != group:
-            individual_weight += G.ep['Normal Weight'][e]
+            individual_weight += G.ep[weights][e]
     
     return individual_weight
 

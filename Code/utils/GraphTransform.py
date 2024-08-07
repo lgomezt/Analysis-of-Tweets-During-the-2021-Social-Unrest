@@ -93,3 +93,36 @@ def to_graphtool(G):
             g.gp[key] = gprop
     
     return g
+
+def get_normal_weight(g:gt.Graph, categories:list,copy=False,nombre = None):
+    """
+    Calculates the normal weights of the graph in case the nodes are filtered
+    
+    """
+    if copy:
+        g = g.copy()
+    
+    g_filter = gt.GraphView(g,vfilt=lambda x: g.vp['Political Label'][x] in categories)
+    
+    # Crear un nuevo EdgePropertyMap para los valores normalizados
+    normal_weight = g.new_edge_property("float")
+
+    # Iterar sobre todos los bordes
+    for e in g_filter.edges():
+        source = e.source()
+        
+        # Calcular la suma de los pesos de los bordes conectados al nodo fuente
+        sum_rts = sum(g_filter.ep['Number of rts'][e_out] for e_out in source.out_edges())
+        
+        # Calcular el nuevo valor normalizado
+        if sum_rts > 0:
+            normal_weight[e] = g_filter.ep['Number of rts'][e] / sum_rts
+        else:
+            normal_weight[e] = 0  # O cualquier otro valor predeterminado
+
+    if not nombre:
+        nombre = '_'.join(palabra[:2] for palabra in map(lambda x: x.replace(' ', ''), categories))
+        
+    g.ep[nombre] = normal_weight
+
+    return g
